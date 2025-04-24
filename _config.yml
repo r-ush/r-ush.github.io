@@ -1,0 +1,29 @@
+title: "Seunghwan Um"
+description: "PhD student at SKKU Robotics Innovatory, researching robotic grasping and manipulation"
+url: "https://r-ush.github.io"
+baseurl: ""
+lang: "en"
+
+author:
+  name: "Seunghwan Um"
+  email: "seunghwanum@gmail.com"
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+markdown: kramdown
+# theme: minima
+
+social_links:
+  github: r-ush
+  google_scholar: fPPS03MAAAAJ
+
+permalink: /:year/:month/:day/:title/
+
+google_site_verification: ""  # Search Console 등록 후 코드 삽입
+
+timezone: Asia/Seoul
+
+include:
+  - robots.txt

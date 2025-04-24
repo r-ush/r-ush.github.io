@@ -27,3 +27,4 @@ timezone: Asia/Seoul
 
 include:
   - robots.txt
+  - rb10_admittance_control/

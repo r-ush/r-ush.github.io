@@ -68,8 +68,19 @@ a {
   text-decoration: none;
 }
 
+b {
+  color: #000000;
+  text-decoration: none;
+}
+
 a:focus,
 a:hover {
+  color: #f09228;
+  text-decoration: none;
+}
+
+b:focus,
+b:hover {
   color: #f09228;
   text-decoration: none;
 }
@@ -79,6 +90,7 @@ td,
 th,
 tr,
 p,
+b,
 a {
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
   font-size: 14px;

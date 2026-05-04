@@ -96,7 +96,7 @@
           <table
             style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
             <tbody>
-              <tr onmouseout="HandGrasp_stop()" onmouseover="palm_start()" bgcolor="#ecece3">
+              <tr onmouseout="palm_stop()" onmouseover="palm_start()" bgcolor="#ecece3">
                 <td style="padding:16px;width:20%;vertical-align:middle">
                   <div class="one">
                     <div class="two" id='palm_image'><video width=100% height=100% muted autoplay loop>
@@ -971,28 +971,32 @@
       const currentHeader = headers[currentHeaderIndex];
       const nextHeader = headers[currentHeaderIndex + 1];
 
-      allItems.forEach(item => {
+      const sectionItems = Array.from(allItems).filter(item => {
         const isAfterCurrent = currentHeader.compareDocumentPosition(item) & Node.DOCUMENT_POSITION_FOLLOWING;
         const isBeforeNext = nextHeader ? (item.compareDocumentPosition(nextHeader) & Node.DOCUMENT_POSITION_FOLLOWING) : true;
+        return isAfterCurrent && isBeforeNext;
+      });
 
-        if (isAfterCurrent && isBeforeNext) {
-          if (shouldExpand) {
-            if (item._hideTimeout) {
-              clearTimeout(item._hideTimeout);
-              item._hideTimeout = null;
-            }
-            item.style.display = getCollapsibleDisplay(item);
-            requestAnimationFrame(() => item.classList.add('show'));
-          } else {
-            item.classList.remove('show');
-            if (item._hideTimeout) {
-              clearTimeout(item._hideTimeout);
-            }
-            item._hideTimeout = setTimeout(() => {
-              item.style.display = 'none';
-              item._hideTimeout = null;
-            }, 500);
+      sectionItems.forEach((item, index) => {
+        if (shouldExpand) {
+          if (item._hideTimeout) {
+            clearTimeout(item._hideTimeout);
+            item._hideTimeout = null;
           }
+          item.style.transitionDelay = `${index * 45}ms`;
+          item.style.display = getCollapsibleDisplay(item);
+          requestAnimationFrame(() => item.classList.add('show'));
+        } else {
+          item.style.transitionDelay = `${index * 24}ms`;
+          item.classList.remove('show');
+          if (item._hideTimeout) {
+            clearTimeout(item._hideTimeout);
+          }
+          item._hideTimeout = setTimeout(() => {
+            item.style.display = 'none';
+            item.style.transitionDelay = '';
+            item._hideTimeout = null;
+          }, 380 + index * 24);
         }
       });
     }

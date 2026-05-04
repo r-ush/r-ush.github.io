@@ -82,7 +82,13 @@
               </tr> -->
               <tr>
                 <td style="padding:0px;width:100%;vertical-align:middle">
-                  <h2>Research</h2>
+                  <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap;">
+                    <h2 style="cursor:pointer;user-select:none;" data-section="research" onclick="toggleSection('research')"><span class="toggle-arrow">▶</span> Research</h2>
+                    <div class="section-actions">
+                      <button type="button" class="section-toggle-button section-toggle-extend" onclick="expandAllSections()">Extend all</button>
+                      <button type="button" class="section-toggle-button section-toggle-collapse" onclick="collapseAllSections()">Collapse all</button>
+                    </div>
+                  </div>
                 </td>
               </tr>
             </tbody>
@@ -90,7 +96,7 @@
           <table
             style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
             <tbody>
-              <tr onmouseout="palm_stop()" onmouseover="palm_start()" bgcolor="#ecece3">
+              <tr onmouseout="HandGrasp_stop()" onmouseover="palm_start()" bgcolor="#ecece3">
                 <td style="padding:16px;width:20%;vertical-align:middle">
                   <div class="one">
                     <div class="two" id='palm_image'><video width=100% height=100% muted autoplay loop>
@@ -115,14 +121,14 @@
                   <span class="nolinkpapertitle">PALM-Gripper: Integrated Gripper with Parallel AdaptabLe Mechanism for Shelf Picking in Logistics</span>
                   <br>
                   <strong>Seunghwan Um</strong>,
-                  Yeong Gwang Son,
+                  <a href="https://sonyeonggwang.github.io/" target="_blank"><b>Yeong Gwang Son</b></a>,
                   Juyong Hong,
                   Chun Soo Kim,
                   Issac Rhee,
                   Heeyeon Jeong,
                   Hyouk Ryeol Choi*
                   <br>
-                  <strong><em>IEEE Transactions on Mechatronics (T-mech)</em></strong>, 2026, <span style="color:#ff0000; font-weight:bold;">Recently accepted </span>
+                  <strong><em>IEEE Transactions on Mechatronics (TMECH)</em></strong>, 2026, <span style="color:#ff0000; font-weight:bold;">Recently published </span>
                   <br>
                   <a href="https://ieeexplore.ieee.org/document/11361366" target="_blank">Paper</a>
                   <p></p>
@@ -134,7 +140,7 @@
                 </td>
               </tr>
 
-              <tr onmouseout="RAP_stop()" onmouseover="RAP_start()">
+              <tr class="collapsible-item" onmouseout="RAP_stop()" onmouseover="RAP_start()">
                 <td style="padding:16px;width:20%;vertical-align:middle">
                   <div class="one">
                     <div class="two" id='RAP_image'><video width=100% height=100% muted autoplay loop>
@@ -159,11 +165,11 @@
                   <span class="nolinkpapertitle">Toward Reliable Bin-Picking: Collision-Aware Robotic Design and Control Strategy for Heavily Cluttered Environment</span>
                   <br>
                   <strong>Seunghwan Um</strong>,
-                  Yeong Gwang Son,
-                  Jaeyoon Shim,
+                  <a href="https://sonyeonggwang.github.io/" target="_blank"><b>Yeong Gwang Son</b></a>,
+                  <a href="https://mechanjshim.github.io/MechanSim_Web.github.io/" target="_blank"><b>Jaeyun Sim</b></a>,
                   Hyouk Ryeol Choi*
                   <br>
-                  <strong><em>IEEE Robotics and Automation Practice (RA-P)</em></strong>, 2026, <span style="color:#ff0000; font-weight:bold;">Recently accepted </span>
+                  <strong><em>IEEE Robotics and Automation Practice (RA-P)</em></strong>, 2026, <span style="color:#ff0000; font-weight:bold;">Recently published </span>
                   <br>
                   <a href="https://ieeexplore.ieee.org/document/11358698" target="_blank">Paper</a>
 
@@ -176,7 +182,7 @@
                 </td>
               </tr>
 
-              <tr onmouseout="PnP_stop()" onmouseover="PnP_start()">
+              <tr class="collapsible-item" onmouseout="PnP_stop()" onmouseover="PnP_start()">
                 <td style="padding:16px;width:20%;vertical-align:middle">
                   <div class="one">
                     <div class="two" id='PnP_image'><video width=100% height=100% muted autoplay loop>
@@ -201,7 +207,7 @@
                   <span class="nolinkpapertitle">Plug-and-Play Shape Matching Module for Zero-Shot Mesh-Free Grasp Refinement on Unknown Objects</span>
                   <br>
                   Juyong Hong,
-                  Yeong Gwang Son,
+                  <a href="https://sonyeonggwang.github.io/" target="_blank"><b>Yeong Gwang Son</b></a>,
                   <strong>Seunghwan Um</strong>,
                   Hyouk Ryeol Choi*
                   <br>
@@ -216,7 +222,7 @@
                 </td>
               </tr>
 
-              <tr onmouseout="rgmcws_stop()" onmouseover="rgmcws_start()">
+              <tr class="collapsible-item" onmouseout="rgmcws_stop()" onmouseover="rgmcws_start()">
                 <td style="padding:16px;width:20%;vertical-align:middle">
                   <div class="one">
                     <div class="two" id='rgmcws_image'><video width=100% height=100% muted autoplay loop>
@@ -241,7 +247,7 @@
                   <span class="nolinkpapertitle">Overcoming Heavy Clutter: Utilizing the Hybrid Grasping Network and Gripper</span>
                   <br>
                   <strong>Seunghwan Um</strong>,
-                  Yeong Gwang Son,
+                  <a href="https://sonyeonggwang.github.io/" target="_blank"><b>Yeong Gwang Son</b></a>,
                   Tat Hieu Bui,
                   Ho Sang Jung,
                   Hyouk Ryeol Choi*
@@ -265,7 +271,7 @@
               </tr>
 
 
-              <tr onmouseout="Linear_stop()" onmouseover="Linear_start()">
+              <tr class="collapsible-item" onmouseout="Linear_stop()" onmouseover="Linear_start()">
                 <td style="padding:16px;width:20%;vertical-align:middle">
                   <div class="one">
                     <div class="two" id='Linear_image'><video width=100% height=100% muted autoplay loop>
@@ -295,7 +301,7 @@
                   Heeyeon Jeong,
                   Seung Jae Moon,
                   <strong>Seunghwan Um</strong>,
-                  Yeong Gwang Son,
+                  <a href="https://sonyeonggwang.github.io/" target="_blank"><b>Yeong Gwang Son</b></a>,
                   Yong Bum Kim,
                   Ho Sang Jung,
                   Hyouk Ryeol Choi*
@@ -398,39 +404,38 @@
             <tbody>
               <tr>
                 <td style="padding:0px;width:100%;vertical-align:middle">
-                  <h2 id="awards">Award</h2>
+                  <h2 id="awards" style="cursor:pointer;user-select:none;" data-section="award" onclick="toggleSection('award')"><span class="toggle-arrow">▶</span> Award</h2>
                 </td>
               </tr>
             </tbody>
           </table>
 
-          <table
-            style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+          <table class="collapsible-item" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
             <tbody>
-              <tr onmouseout="rgmc_stop()" onmouseover="rgmc_start()">
+              <tr onmouseout="REDShow_stop()" onmouseover="REDShow_start()">
                 <td style="padding:16px;width:20%;vertical-align:middle">
                   <div class="one">
-                    <div class="two" id='rgmc_image'><img src='images/rgmc_wt.jpg' width="160"></div>
-                    <img src='images/rgmc.png' width="160">
+                    <div class="two" id='REDShow_image'><img src='images/RED_Show_wt.jpg' width="160"></div>
+                    <img src='images/RED_Show_logo.jpg' width="160">
                   </div>
                   <script type="text/javascript">
-                    function rgmc_start() {
-                      document.getElementById('rgmc_image').style.opacity = "1";
+                    function REDShow_start() {
+                      document.getElementById('REDShow_image').style.opacity = "1";
                     }
 
-                    function rgmc_stop() {
-                      document.getElementById('rgmc_image').style.opacity = "0";
+                    function REDShow_stop() {
+                      document.getElementById('REDShow_image').style.opacity = "0";
                     }
-                    rgmc_stop()
+                    REDShow_stop()
                   </script>
                 </td>
                 <td style="padding:8px;width:80%;vertical-align:middle">
-                  <a href="https://cse.usf.edu/~yusun/rgmc/2024.html" target="_blank">
-                    <span style="color:#83807d; font-weight:bold;">🥈 2nd Place</span>
+                  <a href="https://kros.org/eng/sub/sub02_1.asp" target="_blank">
+                    <span style="color:#d35400; font-weight:bold;">🥇 1st Place</span>
                     <span class="papertitle">in the Competition</span>
                   </a>
                   <br>
-                  Chemin Ahn, 
+                  <a href="https://chemx3937.github.io/" target="_blank"><b>Chemin Ahn</b></a>,
                   <strong>Seunghwan Um</strong>,
                   Jeong Hwan Park, 
                   Sung Jun Lee
@@ -438,13 +443,13 @@
                   <br>
                   <strong><em>Robot Engineering & Design Show (RED Show) at KRoC</em></strong>, 2026
                   <br>
-                  <a href="https://www.irobotnews.com/news/articleView.html?idxno=34929" target="_blank">News</a>
+                  <a href="https://www.irobotnews.com/news/articleView.html?idxno=44808" target="_blank">News</a>
                   /
-                  <a href="https://cse.usf.edu/~yusun/rgmc/2024.html" target="_blank">Competition page</a>
+                  <a href="https://kros.org/eng/sub/sub02_1.asp" target="_blank">KRoC 2026</a>
+                  /
+                  <a href="https://kros.org/Conference/ConferenceView.asp?AC=0&CODE=CC20250901&B_CATE=BBC1" target="_blank">RED Show (Kor)</a>
                   <p></p>
-                  We participated 9th Robotic Grasping and Manipulation Competition (RGMC) at ICRA 2024
-                  <br>with <a href="https://ieeexplore.ieee.org/document/10306271" target="_blank">ReC-Gripper</a> and Extended <a
-                      href="https://ieeexplore.ieee.org/abstract/document/10333337" target="_blank">CoAS-Net</a>.
+                  Force Feedback Leader Arm for High Quality Demo Data using F/T Sensor
                 </td>
               </tr>
             </tbody>
@@ -477,7 +482,7 @@
                   </a>
                   <br>
                   <strong>Seunghwan Um</strong>,
-                  Yeong Gwang Son,
+                  <a href="https://sonyeonggwang.github.io/" target="_blank"><b>Yeong Gwang Son</b></a>,
                   Juyong Hong,
                   Chun Soo Kim,
                   Hyouk Ryeol Choi*
@@ -496,8 +501,7 @@
             </tbody>
           </table>
 
-          <table
-            style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+          <table class="collapsible-item" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
             <tbody>
               <tr onmouseout="rgmc_stop()" onmouseover="rgmc_start()">
                 <td style="padding:16px;width:20%;vertical-align:middle">
@@ -522,7 +526,7 @@
                     <span class="papertitle">in the Competition</span>
                   </a>
                   <br>
-                  Yeong Gwang Son,
+                  <a href="https://sonyeonggwang.github.io/" target="_blank"><b>Yeong Gwang Son</b></a>,
                   <strong>Seunghwan Um</strong>,
                   Juyong Hong,
                   Chun Soo Kim,
@@ -635,8 +639,7 @@
             </tbody>
           </table> -->
 
-          <table
-            style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+          <table class="collapsible-item" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
             <tbody>
               <tr onmouseout="wccc_stop()" onmouseover="wccc_start()">
                 <td style="padding:16px;width:20%;vertical-align:middle">
@@ -713,11 +716,54 @@
             <tbody>
               <tr>
                 <td style="padding:0px;width:100%;vertical-align:middle">
-                  <h2>Personal Project</h2>
+                  <h2 style="cursor:pointer;user-select:none;" data-section="personal" onclick="toggleSection('personal')"><span class="toggle-arrow">▶</span> Personal Project</h2>
                 </td>
               </tr>
             </tbody>
           </table>
+
+          <table
+            style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+            <tbody>
+              <tr onmouseout="HandGrasp_stop()" onmouseover="HandGrasp_start()" bgcolor="#ecece3">
+                <td style="padding:16px;width:20%;vertical-align:middle">
+                  <div class="one">
+                    <div class="two" id='HandGrasp_image'><video width=100% height=100% muted autoplay loop>
+                        <source src="images/HandGrasp.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                      </video></div>
+                    <img src='images/HandGrasp.png' style="width: 100%; height: 100%; object-fit: cover;">
+                  </div>
+                  <script type="text/javascript">
+                    function HandGrasp_start() {
+                      document.getElementById('HandGrasp_image').style.opacity = "1";
+                    }
+
+                    function HandGrasp_stop() {
+                      document.getElementById('HandGrasp_image').style.opacity = "0";
+                    }
+                    HandGrasp_stop()
+                  </script>
+                </td>
+                <td style="padding:8px;width:80%;vertical-align:middle">
+                  <a href="https://r-ush.github.io/m0609_impedance_control/" target="_blank">
+                    <span class="papertitle">Robotic Hand Grasping with Impedance Control</span>
+                  </a>
+                  <br>
+                  <strong>Seunghwan Um</strong>
+                  <br>
+                  <a href="" target="_blank">Code (TBD)</a>
+                  /
+                  <a href="" target="_blank">Page</a>
+                  <p></p>
+                  <p>
+                    <!-- Unknown object picking in cluttered bin-picking environment with a suction grasp detection neural network trained on a large-scale domain randomized synthetic dataset. -->
+                  </p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
           <!-- <div class="two" id='wccc_image'><video width=100% height=100% muted autoplay loop>
             <source src="images/WCC.mp4" type="video/mp4">
             Your browser does not support the video tag.
@@ -726,7 +772,7 @@
           <table
             style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
             <tbody>
-              <tr onmouseout="m0609_imp_stop()" onmouseover="m0609_imp_start()">
+              <tr class="collapsible-item" onmouseout="m0609_imp_stop()" onmouseover="m0609_imp_start()">
                 <td style="padding:16px;width:20%;vertical-align:middle">
                   <div class="one">
                     <div class="two" id='m0609_imp_image'><video width=100% height=100% muted autoplay loop>
@@ -770,7 +816,7 @@
                 </td>
               </tr>
 
-              <tr onmouseout="rb10_adm_stop()" onmouseover="rb10_adm_start()">
+              <tr class="collapsible-item" onmouseout="rb10_adm_stop()" onmouseover="rb10_adm_start()">
                 <td style="padding:16px;width:20%;vertical-align:middle">
                   <div class="one">
                     <div class="two" id='rb10_adm_image'><video width=100% height=100% muted autoplay loop>
@@ -802,7 +848,7 @@
                   </a>
                   <br>
                   <strong>Seunghwan Um</strong>,
-                  <a href="https://kinggotgamja.github.io/My_WEB/" target="_blank"><b>Jaeyoon Shim</b></a>
+                  <a href="https://mechanjshim.github.io/MechanSim_Web.github.io/" target="_blank"><b>Jaeyun Sim</b></a>
                   <br>
                   <a href="https://github.com/r-ush/rb10_admittance_control" target="_blank">Code (TBD)</a>
                   /
@@ -814,7 +860,7 @@
                 </td>
               </tr>
 
-              <tr onmouseout="leader_arm_stop()" onmouseover="leader_arm_start()">
+              <tr class="collapsible-item" onmouseout="leader_arm_stop()" onmouseover="leader_arm_start()">
                 <td style="padding:16px;width:20%;vertical-align:middle">
                   <div class="one">
                     <div class="two" id='leader_arm_image'><video width=100% height=100% muted autoplay loop style="object-fit: contain; object-position: center middle;">
@@ -840,7 +886,8 @@
                   </a>
                   <br>
                   <strong>Seunghwan Um</strong>,
-                  Chemin Ahn, Jeong Hwan Park, Sung Jun Lee
+                  <a href="https://chemx3937.github.io/" target="_blank"><b>Chemin Ahn</b></a>
+                  , Jeong Hwan Park, Sung Jun Lee
                   <br>
                   <a href="https://chemx3937.github.io/">Code (TBD)</a>
                   /
@@ -876,6 +923,94 @@
         </td>
       </tr>
   </table>
+
+  <script type="text/javascript">
+    // Track section expansion state
+    const sectionStates = {
+      research: false,
+      award: false,
+      personal: false
+    };
+
+    function getCollapsibleDisplay(item) {
+      if (item.dataset.displayType) {
+        return item.dataset.displayType;
+      }
+
+      if (item.tagName === 'TABLE') {
+        return 'table';
+      }
+
+      if (item.tagName === 'TR') {
+        return 'table-row';
+      }
+
+      return 'block';
+    }
+
+    function initializeCollapsibles() {
+      document.querySelectorAll('.collapsible-item').forEach(item => {
+        const displayType = window.getComputedStyle(item).display;
+        item.dataset.displayType = displayType === 'none' ? getCollapsibleDisplay(item) : displayType;
+        item.style.display = 'none';
+        item.classList.remove('show');
+      });
+    }
+
+    function setSectionState(sectionName, shouldExpand) {
+      sectionStates[sectionName] = shouldExpand;
+
+      const header = document.querySelector(`h2[data-section="${sectionName}"]`);
+      if (header) {
+        header.setAttribute('data-expanded', shouldExpand ? 'true' : 'false');
+      }
+
+      const allItems = document.querySelectorAll('.collapsible-item');
+      const headers = Array.from(document.querySelectorAll('h2[data-section]'));
+      const currentHeaderIndex = headers.findIndex(h => h.dataset.section === sectionName);
+      const currentHeader = headers[currentHeaderIndex];
+      const nextHeader = headers[currentHeaderIndex + 1];
+
+      allItems.forEach(item => {
+        const isAfterCurrent = currentHeader.compareDocumentPosition(item) & Node.DOCUMENT_POSITION_FOLLOWING;
+        const isBeforeNext = nextHeader ? (item.compareDocumentPosition(nextHeader) & Node.DOCUMENT_POSITION_FOLLOWING) : true;
+
+        if (isAfterCurrent && isBeforeNext) {
+          if (shouldExpand) {
+            if (item._hideTimeout) {
+              clearTimeout(item._hideTimeout);
+              item._hideTimeout = null;
+            }
+            item.style.display = getCollapsibleDisplay(item);
+            requestAnimationFrame(() => item.classList.add('show'));
+          } else {
+            item.classList.remove('show');
+            if (item._hideTimeout) {
+              clearTimeout(item._hideTimeout);
+            }
+            item._hideTimeout = setTimeout(() => {
+              item.style.display = 'none';
+              item._hideTimeout = null;
+            }, 500);
+          }
+        }
+      });
+    }
+
+    function toggleSection(sectionName) {
+      setSectionState(sectionName, !sectionStates[sectionName]);
+    }
+
+    function expandAllSections() {
+      Object.keys(sectionStates).forEach(sectionName => setSectionState(sectionName, true));
+    }
+
+    function collapseAllSections() {
+      Object.keys(sectionStates).forEach(sectionName => setSectionState(sectionName, false));
+    }
+
+    initializeCollapsibles();
+  </script>
 </body>
 
 </html>

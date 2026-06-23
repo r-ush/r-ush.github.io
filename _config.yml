@@ -21,10 +21,11 @@ social_links:
 
 permalink: /:year/:month/:day/:title/
 
-google_site_verification: ""  # Search Console 등록 후 코드 삽입
+google_site_verification: "google46985f01587fa3e1"
 
 timezone: Asia/Seoul
 
 include:
   - robots.txt
+  - llms.txt
   - rb10_admittance_control/

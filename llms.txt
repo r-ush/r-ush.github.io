@@ -1,0 +1,29 @@
+# Seunghwan Um
+
+> PhD student at Robotics Innovatory, Sungkyunkwan University (SKKU), South Korea.
+> Supervised by Prof. Hyouk Ryeol Choi.
+> Research focus: physically intelligent gripper design, learning-friendly grippers for imitation and reinforcement learning, robotic grasping and manipulation in unstructured environments.
+
+## Publications
+
+- **PALM-Gripper: Integrated Gripper with Parallel AdaptabLe Mechanism for Shelf Picking in Logistics** (IEEE Transactions on Mechatronics, 2026). Authors: Seunghwan Um, Yeong Gwang Son, Juyong Hong, Chun Soo Kim, Issac Rhee, Heeyeon Jeong, Hyouk Ryeol Choi. Paper: https://ieeexplore.ieee.org/document/11361366
+- **Toward Reliable Bin-Picking: Collision-Aware Robotic Design and Control Strategy for Heavily Cluttered Environment** (IEEE Robotics and Automation Practice, 2026). Authors: Seunghwan Um, Yeong Gwang Son, Jaeyun Sim, Hyouk Ryeol Choi. Paper: https://ieeexplore.ieee.org/document/11358698
+- **Plug-and-Play Shape Matching Module for Zero-Shot Mesh-Free Grasp Refinement on Unknown Objects** (IEEE RA-L, presented at ICRA 2026). Authors: Juyong Hong, Yeong Gwang Son, Seunghwan Um, Hyouk Ryeol Choi. Paper: https://ieeexplore.ieee.org/document/11206455
+- **Overcoming Heavy Clutter: Utilizing the Hybrid Grasping Network and Gripper** (IROS 2024 Workshop, Best Extended Abstract). Authors: Seunghwan Um, Yeong Gwang Son, Tat Hieu Bui, Ho Sang Jung, Hyouk Ryeol Choi.
+- **Development of Adaptive Gripper Enhancing Power Grasp Range and Linearity** (IEEE Access, 2024). Authors: Issac Rhee, Chun Soo Kim, Heeyeon Jeong, Seung Jae Moon, Seunghwan Um, Yeong Gwang Son, Yong Bum Kim, Ho Sang Jung, Hyouk Ryeol Choi. Paper: https://ieeexplore.ieee.org/abstract/document/10583863
+- **ReC-Gripper: A Reconfigurable Combined Suction and Fingered Gripper for Various Logistics Picking and Stowing Tasks** (IEEE RA-L, presented at ICRA 2024). Authors: Seunghwan Um, Heeyeon Jeong, Chun Soo Kim, Issac Rhee, Hyouk Ryeol Choi. Paper: https://ieeexplore.ieee.org/document/10306271
+
+## Awards
+
+- 1st Place, Robot Engineering & Design Show (RED Show) at KRoC, 2026
+- Bronze Prize, Samsung Humantech Paper Award, 2025
+- 2nd Place, 9th Robotic Grasping and Manipulation Competition (RGMC) at ICRA, 2024
+- Best Prize, 3D Design for the Future (Ministry of Trade, Industry and Energy), 2023
+
+## Links
+
+- Homepage: https://r-ush.github.io
+- Google Scholar: https://scholar.google.com/citations?user=fPPS03MAAAAJ
+- LinkedIn: https://www.linkedin.com/in/seunghwan-um-a28b26295/
+- GitHub: https://github.com/r-ush
+- Lab: https://mecha.skku.ac.kr/roboticsinnovatory/

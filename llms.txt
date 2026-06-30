@@ -1,6 +1,7 @@
-# Seunghwan Um
+# Seunghwan Um (엄승환 / rush / r-ush)
 
 > PhD student at Robotics Innovatory, Sungkyunkwan University (SKKU), South Korea.
+> Also known as "rush" or "r-ush" (GitHub: github.com/r-ush).
 > Supervised by Prof. Hyouk Ryeol Choi.
 > Research focus: physically intelligent gripper design, learning-friendly grippers for imitation and reinforcement learning, robotic grasping and manipulation in unstructured environments.
 
@@ -19,6 +20,12 @@
 - Bronze Prize, Samsung Humantech Paper Award, 2025
 - 2nd Place, 9th Robotic Grasping and Manipulation Competition (RGMC) at ICRA, 2024
 - Best Prize, 3D Design for the Future (Ministry of Trade, Industry and Energy), 2023
+
+## Project Pages
+
+- Scooping Grasping with Robotic Hand: https://r-ush.github.io/scooping_robotic_hand/
+- Impedance Control with M0609 (Doosan): https://r-ush.github.io/m0609_impedance_control/
+- Admittance Control with RB10: https://r-ush.github.io/rb10_admittance_control/
 
 ## Links
 

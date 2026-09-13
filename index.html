@@ -12,20 +12,24 @@
   <link rel="icon" type="image/ico" href="images/rush.ico">
 
   <meta name="description"
-    content="Robotics research and projects by Seunghwan Um: RB10 admittance control, grasping networks, adaptive grippers, bin-picking, and award-winning competitions.">
+    content="엄승환(Seunghwan Um / rush) — 성균관대학교 로보틱스이노베이터리 박사과정. 물리 지능형 그리퍼 설계, 로봇 파지, 빈피킹 연구. PALM-Gripper(IEEE TMECH), ReC-Gripper(IEEE RA-L), 삼성휴먼테크 동상, RGMC 2위. Robotics research by Seunghwan Um at SKKU.">
   <meta name="keywords"
-    content="Admittance Control, ReC-Gripper, Bin Picking, Samsung Humantech, RGMC, ICRA, IROS, 엄승환, 성균관대, 로봇, 그리퍼, 삼성휴먼테크, rush, r-ush, Seunghwan Um rush">
+    content="엄승환, 로봇 그리퍼, 빈피킹, 로봇 파지, 성균관대 로봇, 삼성휴먼테크, PALM-Gripper, ReC-Gripper, 임피던스 제어, 어드미턴스 제어, rush, r-ush, Seunghwan Um, Admittance Control, Bin Picking, RGMC, ICRA, IROS, Samsung Humantech">
   <meta name="robots" content="index, follow">
   <meta name="google-site-verification" content="google46985f01587fa3e1">
+  <meta name="naver-site-verification" content="3307571a966fd541ccaf46efdb86587fa3dba188">
+  <meta name="NaverBot" content="All">
+  <meta name="Yeti" content="All">
+  <meta name="description:ko"
+    content="성균관대학교 로보틱스이노베이터리 박사과정 엄승환(rush)의 홈페이지. 물리 지능형 그리퍼 설계, 로봇 파지, 빈피킹, 모방 및 강화학습 기반 그리퍼 연구. PALM-Gripper, ReC-Gripper, 삼성휴먼테크 동상, RGMC 2위.">
 
   <link rel="canonical" href="https://r-ush.github.io/">
 
-  <meta property="og:title" content="Seunghwan Um | Robotics Researcher">
-  <meta property="og:description"
-    content="PhD student at SKKU Robotics Innovatory. Research on physically intelligent gripper design, bin-picking, and learning-friendly grippers.">
+  <meta property="og:title" content="엄승환 (Seunghwan Um / rush) | 로봇 연구자">
+  <meta property="og:description" content="성균관대학교 로보틱스이노베이터리 박사과정 엄승환(rush). 물리 지능형 그리퍼 설계, 빈피킹, 모방학습 기반 로봇 파지 연구.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://r-ush.github.io/">
-  <meta property="og:image" content="https://r-ush.github.io/images/seunghwan.jpg">
+  <meta property="og:image" content="https://r-ush.github.io/images/seunghwan34.jpg">
   <meta property="og:locale" content="en_US">
   <meta property="og:site_name" content="Seunghwan Um">
 
@@ -33,7 +37,7 @@
   <meta name="twitter:title" content="Seunghwan Um | Robotics Researcher">
   <meta name="twitter:description"
     content="PhD student at SKKU Robotics Innovatory. Research on physically intelligent gripper design, bin-picking, and learning-friendly grippers.">
-  <meta name="twitter:image" content="https://r-ush.github.io/images/seunghwan.jpg">
+  <meta name="twitter:image" content="https://r-ush.github.io/images/seunghwan34.jpg">
 
   <script type="application/ld+json">
   {
@@ -42,7 +46,7 @@
     "name": "Seunghwan Um",
     "alternateName": ["엄승환", "rush", "r-ush"],
     "url": "https://r-ush.github.io",
-    "image": "https://r-ush.github.io/images/seunghwan.jpg",
+    "image": "https://r-ush.github.io/images/seunghwan34.jpg",
     "jobTitle": "PhD Student",
     "affiliation": {
       "@type": "Organization",
@@ -218,6 +222,145 @@
 </head>
 
 <body>
+  <!-- CV abstract popup -->
+  <style>
+    #cv-popup-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.75);
+      opacity: 1;
+      transition: opacity 0.25s ease;
+    }
+
+    #cv-popup-overlay.cv-popup-hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    #cv-popup-box {
+      position: relative;
+      width: 40vw;
+      max-width: 40vw;
+      max-height: 85vh;
+      overflow: auto;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    }
+
+    #cv-popup-box img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    #cv-popup-close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 38px;
+      height: 38px;
+      border: none;
+      border-radius: 50%;
+      background: rgba(0, 0, 0, 0.65);
+      color: #fff;
+      font-size: 22px;
+      line-height: 38px;
+      text-align: center;
+      cursor: pointer;
+      padding: 0;
+      transition: background 0.2s ease;
+    }
+
+    #cv-popup-close:hover {
+      background: rgba(0, 0, 0, 0.9);
+    }
+
+    #cv-popup-open {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      width: 38px;
+      height: 38px;
+      border: none;
+      border-radius: 50%;
+      background: rgba(0, 0, 0, 0.65);
+      color: #fff;
+      font-size: 18px;
+      line-height: 38px;
+      text-align: center;
+      cursor: pointer;
+      padding: 0;
+      transition: background 0.2s ease;
+    }
+
+    #cv-popup-open:hover {
+      background: rgba(0, 0, 0, 0.9);
+    }
+
+    #cv-popup-open::after {
+      content: "Click to open in new tab";
+      position: absolute;
+      top: 50%;
+      left: calc(100% + 8px);
+      transform: translateY(-50%);
+      white-space: nowrap;
+      background: rgba(0, 0, 0, 0.85);
+      color: #fff;
+      font-size: 12px;
+      padding: 5px 9px;
+      border-radius: 5px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.15s ease;
+    }
+
+    #cv-popup-open:hover::after {
+      opacity: 1;
+    }
+
+    @media (max-width: 800px) {
+      #cv-popup-box {
+        width: 92vw;
+        max-width: 92vw;
+      }
+    }
+  </style>
+  <div id="cv-popup-overlay" role="dialog" aria-modal="true" aria-label="CV abstract">
+    <div id="cv-popup-box">
+      <button id="cv-popup-open" type="button" aria-label="Open image in new tab">&#8599;</button>
+      <button id="cv-popup-close" type="button" aria-label="Close">&times;</button>
+      <img src="images/cv_abstract.png" alt="CV abstract - research overview">
+    </div>
+  </div>
+  <script>
+    (function () {
+      var overlay = document.getElementById('cv-popup-overlay');
+      var closeBtn = document.getElementById('cv-popup-close');
+      function closePopup() {
+        overlay.classList.add('cv-popup-hidden');
+      }
+      closeBtn.addEventListener('click', closePopup);
+      var openBtn = document.getElementById('cv-popup-open');
+      openBtn.addEventListener('click', function () {
+        window.open('images/cv_abstract.png', '_blank', 'noopener');
+        closePopup();
+      });
+      overlay.addEventListener('click', function (e) {
+        if (e.target === overlay) closePopup();
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') closePopup();
+      });
+    })();
+  </script>
+
   <table
     style="width:100%;max-width:900px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
     <tbody>
@@ -260,8 +403,8 @@
                 <td style="padding:1.0%;width:37%;max-width:37%">
                   <a href="images/seunghwan.jpg" target="_blank"><img
                       style="width:100%;max-width:100%;object-fit: cover; border-radius: 10%;"
-                      alt="Seunghwan Um, PhD student at SKKU Robotics Innovatory" src="images/seunghwan34.jpg"
-                      class="hoverZoomLink"></a>
+                      alt="Seunghwan Um (엄승환 / rush / r-ush), PhD student at SKKU Robotics Innovatory"
+                      src="images/seunghwan34.jpg" class="hoverZoomLink"></a>
                 </td>
               </tr>
             </tbody>
@@ -367,7 +510,7 @@
                         Your browser does not support the video tag.
                       </video></div>
                     <img src='images/palm.png'
-                      alt="PALM-Gripper: parallel adaptable palm mechanism for shelf picking in logistics"
+                      alt="PALM-Gripper by Seunghwan Um (rush, 엄승환): parallel adaptable palm mechanism for shelf picking in logistics, IEEE TMECH 2026"
                       style="width: 100%; height: 100%; object-fit: cover;">
                   </div>
                   <script type="text/javascript">
@@ -416,7 +559,8 @@
                         Your browser does not support the video tag.
                       </video></div>
                     <img src='images/RAP.png'
-                      alt="Collision-aware robotic bin-picking system for heavily cluttered environments" width=100%>
+                      alt="Toward Reliable Bin-Picking by Seunghwan Um (rush, 엄승환): collision-aware robotic design for heavily cluttered environments, IEEE RA-P 2026"
+                      width=100%>
                   </div>
                   <script type="text/javascript">
                     function RAP_start() {
@@ -465,7 +609,7 @@
                         Your browser does not support the video tag.
                       </video></div>
                     <img src='images/PnP.png'
-                      alt="Plug-and-Play shape matching module for zero-shot grasp refinement on unknown objects"
+                      alt="Plug-and-Play shape matching module for zero-shot mesh-free grasp refinement by Seunghwan Um (rush), IEEE RA-L presented at ICRA 2026"
                       width=100%>
                   </div>
                   <script type="text/javascript">
@@ -509,7 +653,8 @@
                         Your browser does not support the video tag.
                       </video></div>
                     <img src='images/rgmcws.png'
-                      alt="Hybrid grasping network and gripper system for bin-picking in heavy clutter" width=100%>
+                      alt="Overcoming Heavy Clutter: hybrid grasping network and gripper by Seunghwan Um (rush, 엄승환), IROS 2024 Workshop Best Extended Abstract"
+                      width=100%>
                   </div>
                   <script type="text/javascript">
                     function rgmcws_start() {
@@ -564,7 +709,7 @@
                         Your browser does not support the video tag.
                       </video></div>
                     <img src='images/adaptive.png'
-                      alt="Adaptive gripper with Grasshopper mechanism for enhanced power grasp range and linearity"
+                      alt="Adaptive gripper with Grasshopper mechanism by Seunghwan Um (rush): enhanced power grasp range and linearity, IEEE Access 2024"
                       width="160">
                   </div>
                   <script type="text/javascript">
@@ -615,7 +760,7 @@
                         Your browser does not support the video tag.
                       </video></div>
                     <img src='images/ReC-Gripper.png'
-                      alt="ReC-Gripper: reconfigurable combined suction and fingered gripper for logistics picking and stowing"
+                      alt="ReC-Gripper by Seunghwan Um (rush, 엄승환): reconfigurable combined suction and fingered gripper for logistics picking and stowing, IEEE RA-L ICRA 2024"
                       width="160">
                   </div>
                   <script type="text/javascript">
@@ -708,8 +853,9 @@
                 <td style="padding:16px;width:20%;vertical-align:middle">
                   <div class="one">
                     <div class="two" id='REDShow_image'><img src='images/RED_Show_wt.jpg'
-                        alt="RED Show 1st place team photo at KRoC 2026" width="160"></div>
-                    <img src='images/RED_Show_logo.jpg' alt="Robot Engineering and Design Show (RED Show) logo at KRoC"
+                        alt="RED Show 1st place team photo at KRoC 2026 — Seunghwan Um (rush, 엄승환)" width="160"></div>
+                    <img src='images/RED_Show_logo.jpg'
+                      alt="Robot Engineering and Design Show (RED Show) 1st Place at KRoC 2026 — Seunghwan Um (rush)"
                       width="160">
                   </div>
                   <script type="text/javascript">
@@ -757,8 +903,10 @@
                 <td style="padding:16px;width:20%;vertical-align:middle">
                   <div class="one">
                     <div class="two" id='hutech_image'><img src='images/humantech_team.jpg'
-                        alt="Samsung Humantech Paper Award 2025 Bronze Prize team photo" width="160"></div>
-                    <img src='images/humantech_logo.jpg' alt="Samsung Humantech Paper Award logo" width="160">
+                        alt="Samsung Humantech Paper Award 2025 Bronze Prize team photo — Seunghwan Um (rush, 엄승환), PALM-Gripper"
+                        width="160"></div>
+                    <img src='images/humantech_logo.jpg'
+                      alt="Samsung Humantech Paper Award 2025 Bronze Prize — Seunghwan Um (rush)" width="160">
                   </div>
                   <script type="text/javascript">
                     function hutech_start() {
@@ -804,9 +952,11 @@
                 <td style="padding:16px;width:20%;vertical-align:middle">
                   <div class="one">
                     <div class="two" id='rgmc_image'><img src='images/rgmc_wt.jpg'
-                        alt="RGMC 2024 competition team at ICRA with ReC-Gripper" width="160"></div>
+                        alt="RGMC 2024 2nd place team at ICRA 2024 — Seunghwan Um (rush, 엄승환) with ReC-Gripper"
+                        width="160"></div>
                     <img src='images/rgmc.png'
-                      alt="9th Robotic Grasping and Manipulation Competition (RGMC) at ICRA 2024 logo" width="160">
+                      alt="9th Robotic Grasping and Manipulation Competition (RGMC) at ICRA 2024 — 2nd Place, Seunghwan Um (rush)"
+                      width="160">
                   </div>
                   <script type="text/javascript">
                     function rgmc_start() {

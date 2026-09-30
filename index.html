@@ -336,7 +336,7 @@
     <div id="cv-popup-box">
       <button id="cv-popup-open" type="button" aria-label="Open image in new tab">&#8599;</button>
       <button id="cv-popup-close" type="button" aria-label="Close">&times;</button>
-      <img src="images/cv_abstract.png" alt="CV abstract - research overview">
+      <img src="images/cv_abstract.png?v=aedac388" alt="CV abstract - research overview">
     </div>
   </div>
   <script>
@@ -349,7 +349,7 @@
       closeBtn.addEventListener('click', closePopup);
       var openBtn = document.getElementById('cv-popup-open');
       openBtn.addEventListener('click', function () {
-        window.open('images/cv_abstract.png', '_blank', 'noopener');
+        window.open('images/cv_abstract.png?v=aedac388', '_blank', 'noopener');
         closePopup();
       });
       overlay.addEventListener('click', function (e) {

@@ -8,7 +8,7 @@
 
   <meta name="author" content="Seunghwan Um">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+  <link rel="stylesheet" type="text/css" href="stylesheet.css?v=rush-name-1">
   <link rel="icon" type="image/ico" href="images/rush.ico">
 
   <meta name="description"
@@ -44,7 +44,7 @@
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Seunghwan Um",
-    "alternateName": ["엄승환", "rush", "r-ush"],
+    "alternateName": ["엄승환", "嚴勝煥", "rush", "r-ush"],
     "url": "https://r-ush.github.io",
     "image": "https://r-ush.github.io/images/seunghwan34.jpg",
     "jobTitle": "PhD Student",
@@ -373,7 +373,13 @@
               <tr style="padding:0px">
                 <td style="padding:2.5%;width:70%;vertical-align:middle">
                   <p class="name" style="text-align: center;">
-                    Seunghwan Um <span style="font-size:0.6em; color:#666; font-weight:normal;">(엄승환 / rush)</span>
+                    Seunghwan Um
+                    <span class="name-aliases"><span lang="ko">엄승환 / 嚴勝煥</span> /
+                      <button class="rush-name" type="button" aria-label="rush: robot &amp; um seunghwan" aria-expanded="false">
+                        <span class="rush-short" aria-hidden="true"><span class="rush-r">r</span><span class="rush-u">u</span><span class="rush-s">s</span><span class="rush-h">h</span></span>
+                        <span class="rush-full" aria-hidden="true"><span class="rush-r">r</span>obot &amp; <span class="rush-u">u</span>m <span class="rush-s">s</span>eung<span class="rush-h">h</span>wan</span>
+                      </button>
+                    </span>
                   </p>
                   <p>Hi there! I'm a PhD student at <a href="https://mecha.skku.ac.kr/roboticsinnovatory/"
                       target="_blank">Robotics
@@ -1376,6 +1382,25 @@
   </table>
 
   <script type="text/javascript">
+    // Hover on desktop, or toggle with touch / Enter / Space.
+    const rushName = document.querySelector('.rush-name');
+    function expandRush(expanded) {
+      rushName.setAttribute('aria-expanded', String(expanded));
+    }
+    rushName.addEventListener('pointerenter', event => {
+      if (event.pointerType === 'mouse') expandRush(true);
+    });
+    rushName.addEventListener('pointerleave', event => {
+      if (event.pointerType === 'mouse') expandRush(false);
+    });
+    rushName.addEventListener('click', event => {
+      if (event.pointerType !== 'mouse') expandRush(rushName.getAttribute('aria-expanded') !== 'true');
+    });
+    rushName.addEventListener('blur', () => expandRush(false));
+    rushName.addEventListener('keydown', event => {
+      if (event.key === 'Escape') expandRush(false);
+    });
+
     // Track section expansion state
     const sectionStates = {
       research: false,

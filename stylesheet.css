@@ -183,6 +183,10 @@ h2 {
   font-size: 32px;
 }
 
+.research-interest em {
+  color: #1772d0;
+}
+
 .name-aliases {
   display: block;
   margin-top: 6px;

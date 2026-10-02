@@ -6,4 +6,4 @@ Run `python ~/webpages/preview.py` to preview this homepage at
 
 The profile shows `엄승환 / 嚴勝煥 / rush` beneath the English name. Hover over
 `rush`, or activate it with touch / keyboard, to reveal `robot & um seunghwan`.
-The r, u, s, and h initials retain their individual colors in both forms.
+The r, u, s, and h initials stay black against the gray text in both forms.

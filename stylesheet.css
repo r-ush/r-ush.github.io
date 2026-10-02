@@ -211,10 +211,7 @@ h2 {
 .rush-name[aria-expanded="true"] .rush-short { visibility: hidden; }
 .rush-name[aria-expanded="true"] .rush-full { visibility: visible; }
 .rush-name:focus-visible { outline: 2px solid #1772d0; outline-offset: 4px; border-radius: 2px; }
-.rush-r { color: #b54237; font-weight: 700; }
-.rush-u { color: #226bb0; font-weight: 700; }
-.rush-s { color: #27804b; font-weight: 700; }
-.rush-h { color: #8850a3; font-weight: 700; }
+.rush-r, .rush-u, .rush-s, .rush-h { color: #000; font-weight: 700; }
 
 .one {
   position: relative;

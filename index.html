@@ -244,8 +244,8 @@
 
     #cv-popup-box {
       position: relative;
-      width: 40vw;
-      max-width: 40vw;
+      width: 60vw;
+      max-width: 60vw;
       max-height: 85vh;
       overflow: auto;
       background: #fff;
@@ -255,6 +255,7 @@
 
     #cv-popup-box img {
       display: block;
+      width: 100%;
       max-width: 100%;
       height: auto;
       border-radius: 10px;
@@ -1356,6 +1357,12 @@
               <tr>
                 <td style="padding:0px">
                   <br>
+                  <details id="visitor-map" class="visitor-map">
+                    <summary id="visitor-map-heading"><span class="toggle-arrow" aria-hidden="true">▶</span> Visitors around the world</summary>
+                    <div class="visitor-map-content">
+                      <img class="search-history-map" src="assets/images/search-history-map.svg" alt="Country-level distribution of historical Google search clicks" width="720" height="300" loading="lazy">
+                    </div>
+                  </details>
                   <p style="text-align:right;font-size:small;">
                     Template <a href="https://github.com/jonbarron/jonbarron_website/" target="_blank"> Jon Barron's
                       website</a>.
@@ -1464,6 +1471,8 @@
 
     initializeCollapsibles();
   </script>
+  <script defer src="assets/js/visitor-history.js"></script>
+  <script defer src="assets/js/visitor-map.js"></script>
 </body>
 
 </html>

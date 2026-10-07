@@ -1,0 +1,88 @@
+{
+  "source": "Google Search Console",
+  "sourceFile": "https___r-ush.github.io_-Performance-on-Search-2026-10-07.xlsx",
+  "exportedOn": "2026-10-07",
+  "startDate": "2025-06-05",
+  "endDate": "2026-10-04",
+  "searchType": "Web",
+  "clicks": 134,
+  "impressions": 1860,
+  "countriesWithClicks": 15,
+  "countries": [
+    {
+      "code": "KR",
+      "name": "South Korea",
+      "clicks": 102
+    },
+    {
+      "code": "US",
+      "name": "United States of America",
+      "clicks": 6
+    },
+    {
+      "code": "CA",
+      "name": "Canada",
+      "clicks": 5
+    },
+    {
+      "code": "HK",
+      "name": "Hong Kong",
+      "clicks": 4
+    },
+    {
+      "code": "CN",
+      "name": "People's Republic of China",
+      "clicks": 3
+    },
+    {
+      "code": "FI",
+      "name": "Finland",
+      "clicks": 2
+    },
+    {
+      "code": "IN",
+      "name": "India",
+      "clicks": 2
+    },
+    {
+      "code": "JP",
+      "name": "Japan",
+      "clicks": 2
+    },
+    {
+      "code": "RU",
+      "name": "Russia",
+      "clicks": 2
+    },
+    {
+      "code": "AT",
+      "name": "Austria",
+      "clicks": 1
+    },
+    {
+      "code": "FR",
+      "name": "France",
+      "clicks": 1
+    },
+    {
+      "code": "IT",
+      "name": "Italy",
+      "clicks": 1
+    },
+    {
+      "code": "SG",
+      "name": "Singapore",
+      "clicks": 1
+    },
+    {
+      "code": "TW",
+      "name": "Taiwan",
+      "clicks": 1
+    },
+    {
+      "code": "UZ",
+      "name": "Uzbekistan",
+      "clicks": 1
+    }
+  ]
+}

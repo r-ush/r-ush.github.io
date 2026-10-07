@@ -252,3 +252,44 @@ span.highlight {
 h2[data-expanded="true"] .toggle-arrow {
   transform: rotate(90deg);
 }
+
+.visitor-map {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 560px;
+  margin: 32px auto 24px;
+  padding: 20px 12px 0;
+  border-top: 1px solid #e5e5e5;
+  text-align: center;
+}
+
+.visitor-map > summary {
+  padding: 8px 0;
+  font-size: 16px;
+  list-style: none;
+  cursor: pointer;
+  user-select: none;
+}
+
+.visitor-map > summary::-webkit-details-marker {
+  display: none;
+}
+
+.visitor-map[open] > summary .toggle-arrow {
+  transform: rotate(90deg);
+}
+
+.visitor-map > summary:focus-visible {
+  outline: 2px solid #1772d0;
+  outline-offset: 3px;
+}
+
+.visitor-map-content {
+  margin-top: 16px;
+}
+
+.search-history-map {
+  display: block;
+  width: 100%;
+  height: auto;
+}

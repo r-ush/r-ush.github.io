@@ -183,6 +183,40 @@ h2 {
   font-size: 32px;
 }
 
+.research-interest em {
+  color: #1772d0;
+}
+
+.name-aliases {
+  display: block;
+  margin-top: 6px;
+  color: #666;
+  font-size: 0.55em;
+  font-weight: normal;
+  line-height: 1.6;
+}
+
+.rush-name {
+  display: inline-grid;
+  vertical-align: baseline;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  white-space: nowrap;
+  text-align: left;
+}
+
+/* Reserve the expanded phrase's width so hovering cannot move its hit area. */
+.rush-name > span { grid-area: 1 / 1; }
+.rush-full { visibility: hidden; }
+.rush-name[aria-expanded="true"] .rush-short { visibility: hidden; }
+.rush-name[aria-expanded="true"] .rush-full { visibility: visible; }
+.rush-name:focus-visible { outline: 2px solid #1772d0; outline-offset: 4px; border-radius: 2px; }
+.rush-r, .rush-u, .rush-s, .rush-h { color: #000; font-weight: 700; }
+
 .one {
   position: relative;
   overflow: hidden;

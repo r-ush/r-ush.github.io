@@ -1,7 +1,9 @@
 User-agent: *
 Allow: /
+Disallow: /scooping_robotic_hand/rl/rollouts/ep
 
 User-agent: Yeti
 Allow: /
+Disallow: /scooping_robotic_hand/rl/rollouts/ep
 
 Sitemap: https://r-ush.github.io/sitemap.xml

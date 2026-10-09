@@ -3,16 +3,22 @@
 > PhD student at Robotics Innovatory, Sungkyunkwan University (SKKU), South Korea.
 > Also known as "rush" or "r-ush" (GitHub: github.com/r-ush).
 > Supervised by Prof. Hyouk Ryeol Choi.
-> Research focus: physically intelligent gripper design, learning-friendly grippers for imitation and reinforcement learning, robotic grasping and manipulation in unstructured environments.
+> Research focus: contact-rich robotic manipulation, connecting physically intelligent gripper design, compliant control, and robot learning.
+> Recent work: force-feedback teleoperation, imitation and reinforcement learning for robotic hands, and improving manipulation policies through human corrections.
 
 ## Publications
 
 - **PALM-Gripper: Integrated Gripper with Parallel AdaptabLe Mechanism for Shelf Picking in Logistics** (IEEE Transactions on Mechatronics, 2026). Authors: Seunghwan Um, Yeong Gwang Son, Juyong Hong, Chun Soo Kim, Issac Rhee, Heeyeon Jeong, Hyouk Ryeol Choi. Paper: https://ieeexplore.ieee.org/document/11361366
 - **Toward Reliable Bin-Picking: Collision-Aware Robotic Design and Control Strategy for Heavily Cluttered Environment** (IEEE Robotics and Automation Practice, 2026). Authors: Seunghwan Um, Yeong Gwang Son, Jaeyun Sim, Hyouk Ryeol Choi. Paper: https://ieeexplore.ieee.org/document/11358698
 - **Plug-and-Play Shape Matching Module for Zero-Shot Mesh-Free Grasp Refinement on Unknown Objects** (IEEE RA-L, presented at ICRA 2026). Authors: Juyong Hong, Yeong Gwang Son, Seunghwan Um, Hyouk Ryeol Choi. Paper: https://ieeexplore.ieee.org/document/11206455
+- **Corner-Grasp: Multi-Action Grasp Detection and Active Gripper Adaptation for Grasping in Cluttered Environments** (arXiv preprint, 2025). Authors: Yeong Gwang Son, Seunghwan Um, Juyong Hong, Tat Hieu Bui, Hyouk Ryeol Choi.
 - **Overcoming Heavy Clutter: Utilizing the Hybrid Grasping Network and Gripper** (IROS 2024 Workshop, Best Extended Abstract). Authors: Seunghwan Um, Yeong Gwang Son, Tat Hieu Bui, Ho Sang Jung, Hyouk Ryeol Choi.
 - **Development of Adaptive Gripper Enhancing Power Grasp Range and Linearity** (IEEE Access, 2024). Authors: Issac Rhee, Chun Soo Kim, Heeyeon Jeong, Seung Jae Moon, Seunghwan Um, Yeong Gwang Son, Yong Bum Kim, Ho Sang Jung, Hyouk Ryeol Choi. Paper: https://ieeexplore.ieee.org/abstract/document/10583863
 - **ReC-Gripper: A Reconfigurable Combined Suction and Fingered Gripper for Various Logistics Picking and Stowing Tasks** (IEEE RA-L, presented at ICRA 2024). Authors: Seunghwan Um, Heeyeon Jeong, Chun Soo Kim, Issac Rhee, Hyouk Ryeol Choi. Paper: https://ieeexplore.ieee.org/document/10306271
+
+## Current Research
+
+- **Force-Aware Imitation Learning with a High-Sensitivity Robotic Hand** (Sep 2025 - Present). Part of "Development of a K-Logistics Humanoid Robot Integrated with a High-Sensitivity Robotic Hand Based on a Multimodal AI Foundation Model" (with AIDIN ROBOTICS, SKKU, KETI, CJ Logistics). Building fingertip force/torque sensing, impedance control with friction compensation, and diffusion-policy (U-Net) imitation learning from teleoperated demonstrations for a high-sensitivity robotic hand on a dual-arm humanoid platform; extending from pick-and-place to generalizable connector/cable assembly (plugging) tasks.
 
 ## Awards
 
@@ -23,14 +29,18 @@
 
 ## Project Pages
 
-- Scooping Grasping with Robotic Hand: https://r-ush.github.io/scooping_robotic_hand/
-- Impedance Control with M0609 (Doosan): https://r-ush.github.io/m0609_impedance_control/
-- Admittance Control with RB10: https://r-ush.github.io/rb10_admittance_control/
+- [Scooping Grasping with Robotic Hand](https://r-ush.github.io/scooping_robotic_hand/): diffusion policy rollouts and data collection for scooping grasping with a robotic hand, with fingertip force feedback to compensate for low mechanical stiffness.
+- [Scooping Grasping with Robotic Hand — Reinforcement Learning](https://r-ush.github.io/scooping_robotic_hand/rl/): reinforcement learning for grasping with an AIDIN robotic hand, with simulation policy rollouts and interactive hand-model studies.
+- [Learning from Human Corrections — Contact Residual Learning](https://r-ush.github.io/contact_residual_learning/): human guidance and residual learning for robotic box insertion.
+- [Bilateral Leader Arm for Dual-Arm Teleoperation](https://r-ush.github.io/bilateral_leader_arm/): bilateral leader–follower teleoperation with backdrivable leader arms, gravity compensation, and Jacobian-based force feedback.
+- [Impedance Control with M0609 (Doosan)](https://r-ush.github.io/m0609_impedance_control/): impedance control on a Doosan M0609 arm for stable contact during teleoperation and constrained tasks such as pivoting.
+- [Admittance Control with RB10](https://r-ush.github.io/rb10_admittance_control/): admittance control on a Rainbow Robotics RB10 arm for pushing and grasping objects in clutter.
 
 ## Links
 
 - Homepage: https://r-ush.github.io
 - Google Scholar: https://scholar.google.com/citations?user=fPPS03MAAAAJ
+- ORCID: https://orcid.org/0009-0004-8466-6578
 - LinkedIn: https://www.linkedin.com/in/seunghwan-um-a28b26295/
 - GitHub: https://github.com/r-ush
 - Lab: https://mecha.skku.ac.kr/roboticsinnovatory/

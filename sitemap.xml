@@ -2,23 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://r-ush.github.io/</loc>
+    <lastmod>2026-10-09</lastmod>
   </url>
   <url>
     <loc>https://r-ush.github.io/scooping_robotic_hand/</loc>
+    <lastmod>2026-10-09</lastmod>
   </url>
   <url>
     <loc>https://r-ush.github.io/scooping_robotic_hand/rl/</loc>
+    <lastmod>2026-10-09</lastmod>
   </url>
   <url>
     <loc>https://r-ush.github.io/m0609_impedance_control/</loc>
+    <lastmod>2026-10-09</lastmod>
   </url>
   <url>
     <loc>https://r-ush.github.io/contact_residual_learning/</loc>
+    <lastmod>2026-10-09</lastmod>
   </url>
   <url>
     <loc>https://r-ush.github.io/bilateral_leader_arm/</loc>
+    <lastmod>2026-10-09</lastmod>
   </url>
   <url>
     <loc>https://r-ush.github.io/rb10_admittance_control/</loc>
+    <lastmod>2026-10-09</lastmod>
   </url>
 </urlset>

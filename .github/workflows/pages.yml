@@ -43,3 +43,22 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+  # Notify Bing, Naver, and other IndexNow engines about the sitemap URLs.
+  indexnow:
+    runs-on: ubuntu-latest
+    needs: deploy
+    continue-on-error: true
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Submit sitemap URLs to IndexNow
+        env:
+          INDEXNOW_KEY: 6cd30b4c890941f1c3e33e1e77e7cdf3
+        run: |
+          urls=$(grep -o '<loc>[^<]*</loc>' sitemap.xml | sed 's/<[^>]*>//g' | jq -R . | jq -s .)
+          jq -n --arg key "$INDEXNOW_KEY" --argjson urls "$urls" \
+            '{host: "r-ush.github.io", key: $key, keyLocation: "https://r-ush.github.io/\($key).txt", urlList: $urls}' |
+            curl -sS --fail-with-body -X POST https://api.indexnow.org/indexnow \
+              -H 'Content-Type: application/json; charset=utf-8' --data-binary @- -w '\nHTTP %{http_code}\n'

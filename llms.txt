@@ -22,6 +22,7 @@
 
 ## Awards
 
+- Prize winner (final ranking to be announced), The Korean Society of Mechanical Engineers (KSME), 2026, for [Handling Hand](https://rachy103.github.io/handling-hand/), a low-cost modular 16-DoF robotic hand
 - 1st Place, Robot Engineering & Design Show (RED Show) at KRoC, 2026
 - Bronze Prize, Samsung Humantech Paper Award, 2025
 - 2nd Place, 9th Robotic Grasping and Manipulation Competition (RGMC) at ICRA, 2024

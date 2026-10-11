@@ -1,5 +1,8 @@
 Page: https://r-ush.github.io/
 
+Aggregate analytics: see [setup, privacy model, and local preview](analytics/README.md).
+The shared tracker stays inactive until its Cloudflare collection endpoint is configured.
+
 Local checkout: `~/webpages/r-ush.github.io/`.
 Run `python ~/webpages/preview.py` to preview this homepage at
 <http://localhost:3000/> together with the Scooping IL and RL pages.

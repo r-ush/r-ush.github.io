@@ -1,0 +1,20 @@
+{
+  "name": "rush-aggregate-analytics",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.mjs",
+    "preview": "node scripts/preview.mjs",
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "db:local": "wrangler d1 migrations apply rush-analytics --local",
+    "db:remote": "wrangler d1 migrations apply rush-analytics --remote"
+  },
+  "devDependencies": {
+    "linkedom": "0.18.13",
+    "wrangler": "4.149.0"
+  }
+}

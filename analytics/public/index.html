@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>사이트 이용 통계 — Seunghwan Um</title>
+  <link rel="stylesheet" href="/dashboard.css">
+</head>
+<body>
+  <header class="topbar"><a class="brand" href="https://r-ush.github.io/">rush<span> / RESEARCH</span></a><span class="badge">PRIVATE ANALYTICS</span></header>
+  <main>
+    <div class="intro"><p class="eyebrow">SEUNGHWAN UM · WEBSITE</p><h1>사이트 이용 통계<span class="dot">.</span></h1><p class="muted">어떤 연구가 읽히고, 어떻게 이용되는지.</p></div>
+    <section id="login" class="panel login-panel">
+      <div><h2>관리자 접속</h2><p class="muted">관리자 키로 통계를 확인하세요. 키는 이 탭에서만 사용됩니다.</p></div>
+      <form id="login-form"><label for="token">관리자 키</label><div class="login-row"><input id="token" type="password" required minlength="32" maxlength="256" autocomplete="off" spellcheck="false" placeholder="관리자 키 입력"><button type="submit">통계 열기</button></div></form>
+      <button id="demo-button" class="text-button" type="button">예시 데이터로 화면 둘러보기 →</button>
+    </section>
+    <p id="status" class="status" role="status" aria-live="polite"></p>
+    <div id="report" hidden>
+      <p id="demo-notice" class="demo-notice" hidden>예시 데이터 미리보기입니다. 실제 방문 통계가 아닙니다.</p>
+      <div class="toolbar"><div><label for="period">조회 기간</label><select id="period"><option value="1">오늘</option><option value="7" selected>최근 7일</option><option value="30">최근 30일</option><option value="90">최근 90일</option><option value="180">최근 180일</option></select><span id="range" class="muted small"></span></div><div class="actions"><button id="refresh" class="secondary" type="button">새로고침</button><button id="csv" class="secondary" type="button">CSV</button><button id="json" class="secondary" type="button">JSON</button><button id="logout" class="text-button" type="button">나가기</button></div></div>
+      <div class="kpis" id="kpis"></div>
+      <div class="grid primary-grid">
+        <section class="panel"><div class="panel-heading"><h2>조회 추이</h2><span class="muted small">페이지 조회수</span></div><div id="daily-chart" class="daily-chart" aria-label="날짜별 조회수 그래프"></div><div class="chart-labels"><span id="chart-start"></span><span id="chart-end"></span></div></section>
+        <section class="panel"><h2>시간대</h2><p class="muted small">한국 시간 · 선택 기간의 합계</p><div id="hour-chart" class="hour-chart" aria-label="시간대별 조회수 그래프"></div><div class="chart-labels"><span>00시</span><span>12시</span><span>23시</span></div></section>
+      </div>
+      <section class="panel"><div class="panel-heading"><h2>많이 읽힌 페이지</h2><span class="muted small">동일인의 반복 조회 포함</span></div><div class="table-scroll"><table><thead><tr><th>페이지</th><th>조회수</th><th>평균 활동 시간</th><th>50% 도달</th><th>클릭</th></tr></thead><tbody id="pages"></tbody></table></div></section>
+      <div class="grid thirds"><section class="panel"><h2>유입 출처</h2><div id="source" class="rank-list"></div></section><section class="panel"><h2>국가</h2><div id="country" class="rank-list"></div></section><section class="panel"><h2>지역</h2><p class="muted small">국가-행정구역 코드 · 대략적인 위치</p><div id="region" class="rank-list"></div></section></div>
+      <div class="grid thirds"><section class="panel"><h2>기기</h2><div id="device" class="rank-list"></div></section><section class="panel"><h2>브라우저</h2><div id="browser" class="rank-list"></div></section><section class="panel"><h2>운영체제</h2><div id="os" class="rank-list"></div></section></div>
+      <div class="grid halves"><section class="panel"><h2>링크 클릭</h2><p class="muted small">다운로드는 링크 클릭 기준이며 완료 횟수가 아닙니다.</p><div id="link" class="rank-list"></div></section><section class="panel"><h2>스크롤 도달</h2><p class="muted small">현재 펼쳐진 페이지 높이 기준 · 조회당 최대 1회</p><div id="scroll" class="rank-list"></div></section></div>
+      <div class="grid halves"><section class="panel"><h2>콘텐츠 이용</h2><div id="content-metrics" class="detail-metrics"></div><div id="section" class="rank-list"></div></section><section class="panel"><h2>페이지 속도</h2><div id="performance-metrics" class="detail-metrics"></div><p class="muted small">지원 브라우저의 표본 평균입니다. 네트워크 상황과 캐시의 영향을 받습니다.</p></section></div>
+      <footer class="notes"><strong>통계를 읽는 방법</strong><p>사람 수·고유 방문자·재방문율·개인별 이동 경로는 수집하지 않습니다. 조회수에는 새로고침과 반복 방문이 포함됩니다. 브라우저 차단, 수집 제외, 전송 실패와 봇 필터로 일부 이용이 빠질 수 있습니다.</p><p>활동 시간은 화면이 보이고 포커스가 있는 시간 중 최근 60초 내 활동이 있었던 구간의 추정치입니다. 평균은 활동 시간 합계 ÷ 조회수입니다. 일별 집계의 경계에서는 행동과 조회가 다른 날짜에 속할 수 있습니다. 국가·지역의 3회 미만 항목은 작은 그룹으로 묶어 표시합니다. 조회 기간은 한국 시간 기준이며 최대 보관 기간은 180일입니다.</p></footer>
+    </div>
+  </main>
+  <script src="/dashboard.js" type="module"></script>
+</body>
+</html>

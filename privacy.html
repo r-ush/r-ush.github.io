@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy & Analytics — Seunghwan Um</title>
+  <meta name="robots" content="noindex, follow">
+  <link rel="stylesheet" href="stylesheet.css">
+  <style>
+    body { margin:0; background:#fafaf8; color:#25312e; }
+    main { max-width:720px; margin:48px auto; padding:0 24px 48px; font:16px/1.8 system-ui,sans-serif; }
+    h1 { font-size:30px; line-height:1.2; } h2 { font-size:20px; margin-top:32px; }
+    .settings { padding:22px; margin:28px 0; border:1px solid #d7dfd8; border-radius:12px; background:#fff; }
+    button { padding:12px 18px; border:0; border-radius:6px; background:#275746; color:#fff; font:inherit; cursor:pointer; }
+    button:disabled { opacity:.5; cursor:default; } a { color:#275746; }
+  </style>
+</head>
+<body>
+  <main>
+    <a href="/">← Seunghwan Um</a>
+    <h1>Privacy & analytics</h1>
+    <p>This site is configured for aggregate usage statistics to understand which research pages are useful and improve their presentation. There is no analytics consent popup and no visitor profile.</p>
+    <h2>What the statistics contain</h2>
+    <p>Daily page views, broad referral categories, country and administrative-region codes, device/browser/operating-system categories, link and download clicks, scroll milestones, section opens, deliberate video playback, estimated active reading time, and page-load timings.</p>
+    <p>The collector immediately adds these measurements to separate daily totals. It does not store raw event histories, visitor or session IDs, IP addresses, full user-agent strings, precise locations, search terms, query strings, email addresses, or cross-page journeys. Statistics do not count unique people or returning visitors. Aggregates are retained for up to 180 days.</p>
+    <h2>Your choice</h2>
+    <p>Global Privacy Control and Do Not Track signals are respected. You can also exclude this browser below. This preference is shared by pages on r-ush.github.io and is useful for excluding your own visits.</p>
+    <section class="settings" lang="ko" aria-label="통계 수집 설정">
+      <p id="analytics-preference-status" role="status" aria-live="polite">설정을 확인하는 중입니다.</p>
+      <button id="analytics-preference-toggle" type="button">이 브라우저 수집 제외 / Disable analytics</button>
+      <p><small>수집 제외를 선택하면 그 선택만 브라우저에 저장합니다. 방문자를 구분하는 값이 아니며 서버로 전송되지 않습니다. This stores only your opt-out preference, not an identifier. Clearing site data resets the preference.</small></p>
+    </section>
+    <noscript>JavaScript is disabled, so the custom analytics collector does not run.</noscript>
+    <h2>Infrastructure and external links</h2>
+    <p>GitHub Pages serves this website. When the collector is enabled, Cloudflare Workers and D1 receive and aggregate measurements. Their infrastructure necessarily handles network information to deliver requests; this site's analytics code does not persist the IP address and disables Worker application logs. Hosting providers may maintain their own security or operational records. External sites and embedded services have their own privacy practices.</p>
+    <p>Questions: <a href="mailto:seunghwanum@gmail.com">seunghwanum@gmail.com</a></p>
+    <p lang="ko">방문자를 식별하지 않고 페이지 이용 횟수와 분포만 집계합니다. 개인별 열람 기록과 재방문 여부는 추적하지 않습니다. 관리자 본인의 접속도 위 버튼으로 제외할 수 있습니다.</p>
+  </main>
+  <script src="assets/js/analytics-preferences.js" defer></script>
+</body>
+</html>

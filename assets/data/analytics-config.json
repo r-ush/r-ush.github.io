@@ -1,0 +1,52 @@
+{
+  "endpoint": "https://rush-analytics.r-ush.workers.dev/collect",
+  "siteOrigin": "https://r-ush.github.io",
+  "pages": {
+    "/": "Homepage",
+    "/scooping_robotic_hand/": "Scooping with a Robotic Hand",
+    "/scooping_robotic_hand/rl/": "Scooping — Reinforcement Learning",
+    "/scooping_robotic_hand/rl/rollouts/": "Scooping — Rollouts",
+    "/m0609_impedance_control/": "Impedance Control",
+    "/contact_residual_learning/": "Contact Residual Learning",
+    "/bilateral_leader_arm/": "Bilateral Leader Arm",
+    "/rb10_admittance_control/": "Admittance Control"
+  },
+  "sources": [
+    "Direct / unknown",
+    "Internal",
+    "Google",
+    "Bing",
+    "Naver",
+    "DuckDuckGo",
+    "Yahoo",
+    "Baidu",
+    "GitHub",
+    "LinkedIn",
+    "YouTube",
+    "X",
+    "Facebook",
+    "Reddit",
+    "Other external"
+  ],
+  "targets": [
+    "CV",
+    "PDF / download",
+    "Email",
+    "Google Scholar",
+    "GitHub",
+    "IEEE",
+    "arXiv",
+    "DOI",
+    "YouTube",
+    "LinkedIn",
+    "Other external",
+    "Other internal"
+  ],
+  "sections": [
+    "research",
+    "award",
+    "personal",
+    "visitor-map",
+    "other"
+  ]
+}

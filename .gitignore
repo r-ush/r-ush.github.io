@@ -1,2 +1,7 @@
 /*-Performance-on-Search-*.xlsx
 /scripts/__pycache__/
+/analytics/node_modules/
+/analytics/.wrangler/
+/analytics/.dev.vars*
+/analytics/.preview/
+/analytics/.env*

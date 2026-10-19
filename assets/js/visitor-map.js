@@ -1,4 +1,4 @@
-/* Shared by the homepage and project repositories. Aggregate analytics only. */
+/* Shared by the homepage and project repositories. Two independent counters. */
 (function () {
   'use strict';
   if (window.rushAnalyticsLoaded) return;
@@ -33,6 +33,27 @@
   if (excluded() || navigator.webdriver || /bot|crawler|spider|headless|lighthouse|preview/i.test(navigator.userAgent)) return;
   var localPreview = /^(localhost|127\.0\.0\.1)$/.test(location.hostname) && script && script.hasAttribute('data-analytics-preview');
   if (location.hostname !== 'r-ush.github.io' && !localPreview) return;
+  // Keep the existing public counter independent of our collector/configuration.
+  // A single eager image records the visit even when the footer map is collapsed.
+  var publicCounted = false;
+  function countPublicVisit() {
+    if (publicCounted || excluded() || location.hostname !== 'r-ush.github.io' ||
+        document.visibilityState !== 'visible' || document.prerendering || !document.body) return;
+    publicCounted = true;
+    var pixel = document.createElement('img');
+    pixel.width = 1;
+    pixel.height = 1;
+    pixel.alt = '';
+    pixel.setAttribute('aria-hidden', 'true');
+    pixel.referrerPolicy = 'no-referrer';
+    pixel.style.cssText = 'position:absolute;width:1px;height:1px;opacity:0;pointer-events:none;';
+    pixel.src = 'https://mapmyvisitors.com/map.png?d=fGQkHeJjD2q20QiECdFcDFPfH3JNP_cewlyjRrwjAf4&cl=ffffff';
+    document.body.appendChild(pixel);
+  }
+  document.addEventListener('DOMContentLoaded', countPublicVisit, { once: true });
+  document.addEventListener('visibilitychange', countPublicVisit);
+  document.addEventListener('prerenderingchange', countPublicVisit);
+  countPublicVisit();
   function flush() {
     if (excluded() || !endpoint || !queue.length) { if (excluded()) queue.length = 0; return; }
     var batch = queue.splice(0, 20);

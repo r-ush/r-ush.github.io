@@ -8,12 +8,13 @@ const source = readFileSync(new URL('../../assets/js/visitor-map.js', import.met
 const baseConfig = JSON.parse(readFileSync(new URL('../../assets/data/analytics-config.json', import.meta.url), 'utf8'));
 async function browser(options = {}) {
   let time = 0;
-  const requests = [], timers = [], winEvents = {}, docEvents = {}, storage = new Map();
+  const requests = [], pixels = [], timers = [], winEvents = {}, docEvents = {}, storage = new Map();
   if (options.optout) storage.set('rush-analytics-disabled', '1');
   const on = map => (name, fn) => { (map[name] ||= []).push(fn); };
   const doc = {
     currentScript: { src: 'https://r-ush.github.io/assets/js/visitor-map.js', hasAttribute: () => false },
-    querySelector: () => ({}), body: { scrollHeight: 4000 }, documentElement: { scrollHeight: 4000 },
+    querySelector: () => ({}), body: { scrollHeight: 4000, appendChild: el => pixels.push(el) }, documentElement: { scrollHeight: 4000 },
+    createElement: () => ({ style: {}, setAttribute() {} }),
     visibilityState: options.hidden ? 'hidden' : 'visible', readyState: 'complete', hasFocus: () => true,
     referrer: 'https://www.google.com/search?q=private+search', addEventListener: on(docEvents)
   };
@@ -27,14 +28,41 @@ async function browser(options = {}) {
     setInterval: fn => { timers.push(fn); return timers.length; }, clearInterval() {}, requestAnimationFrame: fn => fn(),
     fetch: async (url, init) => {
       requests.push({ url, init });
+      if (options.configFailure && !init?.method) throw new Error('Config unavailable');
       return { ok: true, json: async () => ({ ...baseConfig, endpoint: options.unconfigured ? '' : 'https://metrics.example/collect' }) };
     }
   };
   context.window = context;
   vm.runInNewContext(source, context);
   await setImmediate();
-  return { context, doc, requests, storage, tick(seconds = 5) { time += seconds * 1000; timers.forEach(fn => fn()); }, fire(name, event = {}, target = 'window') { (target === 'window' ? winEvents : docEvents)[name]?.forEach(fn => fn(event)); }, events() { return requests.filter(r => r.init?.method === 'POST').flatMap(r => JSON.parse(r.init.body).events); } };
+  return { context, doc, requests, pixels, storage, tick(seconds = 5) { time += seconds * 1000; timers.forEach(fn => fn()); }, fire(name, event = {}, target = 'window') { (target === 'window' ? winEvents : docEvents)[name]?.forEach(fn => fn(event)); }, events() { return requests.filter(r => r.init?.method === 'POST').flatMap(r => JSON.parse(r.init.body).events); } };
 }
+
+test('public counter and private collector both run once on homepage and project pages', async () => {
+  for (const path of ['/', '/scooping_robotic_hand/']) {
+    const b = await browser({ path });
+    b.fire('visibilitychange', {}, 'document'); b.fire('pageshow');
+    vm.runInNewContext(source, b.context);
+    assert.equal(b.pixels.length, 1);
+    assert.equal(new URL(b.pixels[0].src).searchParams.get('d'), 'fGQkHeJjD2q20QiECdFcDFPfH3JNP_cewlyjRrwjAf4');
+    assert.equal(b.pixels[0].referrerPolicy, 'no-referrer');
+    assert.equal(b.events().filter(e => e.type === 'view').length, 1);
+  }
+});
+
+test('public counter survives private configuration failure but respects privacy and visibility', async () => {
+  for (const options of [{ unconfigured: true }, { configFailure: true }]) {
+    const b = await browser(options);
+    assert.equal(b.pixels.length, 1); assert.equal(b.events().length, 0);
+  }
+  for (const options of [{ optout: true }, { dnt: true }, { gpc: true }, { hostname: 'localhost' }]) {
+    const b = await browser(options); assert.equal(b.pixels.length, 0);
+  }
+  const b = await browser({ hidden: true });
+  assert.equal(b.pixels.length, 0);
+  b.doc.visibilityState = 'visible'; b.fire('visibilitychange', {}, 'document');
+  assert.equal(b.pixels.length, 1);
+});
 
 test('client sends no identifiers, queries, raw referrers or cookies and counts one initial view', async () => {
   const b = await browser(); b.tick(); b.fire('pageshow'); b.tick();

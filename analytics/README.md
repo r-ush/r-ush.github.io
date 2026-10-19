@@ -1,8 +1,10 @@
 # Aggregate website analytics
 
 The homepage and seven project pages already import `/assets/js/visitor-map.js`.
-That shared entry now collects aggregate usage statistics instead of contacting
-MapMyVisitors. Existing Search Console map artwork remains a historical view.
+That shared entry sends one image request per visible page load to the existing
+MapMyVisitors counter (https://mapmyvisitors.com/web/1c8q7) and independently
+collects private aggregate usage statistics. Both respect browser privacy signals
+and the site's opt-out setting. Existing Search Console map artwork remains a historical view.
 
 ## What is implemented
 
@@ -33,7 +35,8 @@ The deployed dashboard is https://rush-analytics.r-ush.workers.dev/ and the
 collector is its `/collect` endpoint, configured in
 `assets/data/analytics-config.json`. Publishing this configuration through the
 GitHub Pages workflow activates collection on the homepage and project pages.
-The old MapMyVisitors calls are removed. An empty `endpoint` disables collection.
+MapMyVisitors uses the original site ID and works independently of this endpoint.
+An empty `endpoint` disables only the private aggregate collector.
 
 Dashboard data requires the administrator key; the login shell and sample-data
 mode are public. Version preview URLs are disabled. The Cloudflare dashboard

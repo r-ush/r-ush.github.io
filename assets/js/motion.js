@@ -233,13 +233,20 @@
   function closeModal() {
     if (!isOpen) return;
     isOpen = false;
+    // This dialog opens automatically, so there may be no trigger to return to.
+    // Do not focus the unrelated name button and leave its focus ring visible.
+    if (previousFocus instanceof HTMLElement && previousFocus.isConnected &&
+        previousFocus !== document.body && !overlay.contains(previousFocus)) {
+      previousFocus.focus({preventScroll: true});
+    } else if (overlay.contains(document.activeElement)) {
+      document.activeElement.blur();
+    }
     overlay.inert = true;
     overlay.setAttribute('aria-hidden', 'true');
     overlay.classList.add('cv-popup-hidden');
     box.classList.remove('is-open');
     box.classList.add('is-closing');
     document.body.style.overflow = previousOverflow;
-    (previousFocus instanceof HTMLElement && previousFocus !== document.body ? previousFocus : name).focus({preventScroll: true});
     const finish = () => { overlay.hidden = true; box.classList.remove('is-closing'); };
     const ms = duration(box, '--modal-close-dur', 150);
     if (ms) modalTimer = setTimeout(finish, ms);

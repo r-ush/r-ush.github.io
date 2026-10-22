@@ -9,6 +9,7 @@
   <meta name="author" content="Seunghwan Um">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="stylesheet.css?v=research-intro-1">
+  <link rel="stylesheet" href="assets/css/motion.css?v=20261023">
   <link rel="icon" type="image/ico" href="images/rush.ico">
 
   <meta name="description"
@@ -273,7 +274,7 @@
       padding: 20px;
       background: rgba(0, 0, 0, 0.75);
       opacity: 1;
-      transition: opacity 0.25s ease;
+      transition: opacity var(--modal-open-dur) var(--modal-ease);
     }
 
     #cv-popup-overlay.cv-popup-hidden {
@@ -372,34 +373,14 @@
       }
     }
   </style>
-  <div id="cv-popup-overlay" role="dialog" aria-modal="true" aria-label="CV abstract">
-    <div id="cv-popup-box">
+  <div id="cv-popup-overlay" class="cv-popup-hidden" aria-hidden="true" inert role="dialog" aria-modal="true" aria-label="CV abstract">
+    <div id="cv-popup-box" class="t-modal">
       <button id="cv-popup-open" type="button" aria-label="Open image in new tab">&#8599;</button>
       <button id="cv-popup-close" type="button" aria-label="Close">&times;</button>
       <img src="images/thumb/cv_abstract.webp" width="1600" height="868" alt="CV abstract - research overview">
     </div>
   </div>
-  <script>
-    (function () {
-      var overlay = document.getElementById('cv-popup-overlay');
-      var closeBtn = document.getElementById('cv-popup-close');
-      function closePopup() {
-        overlay.classList.add('cv-popup-hidden');
-      }
-      closeBtn.addEventListener('click', closePopup);
-      var openBtn = document.getElementById('cv-popup-open');
-      openBtn.addEventListener('click', function () {
-        window.open('images/cv_abstract.png?v=aedac388', '_blank', 'noopener');
-        closePopup();
-      });
-      overlay.addEventListener('click', function (e) {
-        if (e.target === overlay) closePopup();
-      });
-      document.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape') closePopup();
-      });
-    })();
-  </script>
+
 
   <table
     style="width:100%;max-width:900px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
@@ -415,9 +396,9 @@
                   <h1 class="name" style="text-align: center;">
                     Seunghwan Um
                     <span class="name-aliases"><span lang="ko">엄승환 / 嚴勝煥</span> /
-                      <button class="rush-name" type="button" aria-label="rush: robot &amp; um seunghwan" aria-expanded="false">
+                      <button class="rush-name" type="button" aria-label="rush: Robot &amp; Um Seung Hwan" aria-expanded="false">
                         <span class="rush-short" aria-hidden="true"><span class="rush-r">r</span><span class="rush-u">u</span><span class="rush-s">s</span><span class="rush-h">h</span></span>
-                        <span class="rush-full" aria-hidden="true"><span class="rush-r">r</span>obot &amp; <span class="rush-u">u</span>m <span class="rush-s">s</span>eung<span class="rush-h">h</span>wan</span>
+                        <span class="rush-full" aria-hidden="true"><span class="rush-r">R</span>obot &amp; <span class="rush-u">U</span>m <span class="rush-s">S</span>eung <span class="rush-h">H</span>wan</span>
                       </button>
                     </span>
                   </h1>
@@ -1497,116 +1478,7 @@
     </tbody>
   </table>
 
-  <script type="text/javascript">
-    // Hover on desktop, or toggle with touch / Enter / Space.
-    const rushName = document.querySelector('.rush-name');
-    function expandRush(expanded) {
-      rushName.setAttribute('aria-expanded', String(expanded));
-    }
-    rushName.addEventListener('pointerenter', event => {
-      if (event.pointerType === 'mouse') expandRush(true);
-    });
-    rushName.addEventListener('pointerleave', event => {
-      if (event.pointerType === 'mouse') expandRush(false);
-    });
-    rushName.addEventListener('click', event => {
-      if (event.pointerType !== 'mouse') expandRush(rushName.getAttribute('aria-expanded') !== 'true');
-    });
-    rushName.addEventListener('blur', () => expandRush(false));
-    rushName.addEventListener('keydown', event => {
-      if (event.key === 'Escape') expandRush(false);
-    });
-
-    // Track section expansion state
-    const sectionStates = {
-      research: false,
-      award: false,
-      personal: false
-    };
-
-    function getCollapsibleDisplay(item) {
-      if (item.dataset.displayType) {
-        return item.dataset.displayType;
-      }
-
-      if (item.tagName === 'TABLE') {
-        return 'table';
-      }
-
-      if (item.tagName === 'TR') {
-        return 'table-row';
-      }
-
-      return 'block';
-    }
-
-    function initializeCollapsibles() {
-      document.querySelectorAll('.collapsible-item').forEach(item => {
-        const displayType = window.getComputedStyle(item).display;
-        item.dataset.displayType = displayType === 'none' ? getCollapsibleDisplay(item) : displayType;
-        item.style.display = 'none';
-        item.classList.remove('show');
-      });
-    }
-
-    function setSectionState(sectionName, shouldExpand) {
-      sectionStates[sectionName] = shouldExpand;
-
-      const header = document.querySelector(`h2[data-section="${sectionName}"]`);
-      if (header) {
-        header.setAttribute('data-expanded', shouldExpand ? 'true' : 'false');
-      }
-
-      const allItems = document.querySelectorAll('.collapsible-item');
-      const headers = Array.from(document.querySelectorAll('h2[data-section]'));
-      const currentHeaderIndex = headers.findIndex(h => h.dataset.section === sectionName);
-      const currentHeader = headers[currentHeaderIndex];
-      const nextHeader = headers[currentHeaderIndex + 1];
-
-      const sectionItems = Array.from(allItems).filter(item => {
-        const isAfterCurrent = currentHeader.compareDocumentPosition(item) & Node.DOCUMENT_POSITION_FOLLOWING;
-        const isBeforeNext = nextHeader ? (item.compareDocumentPosition(nextHeader) & Node.DOCUMENT_POSITION_FOLLOWING) : true;
-        return isAfterCurrent && isBeforeNext;
-      });
-
-      sectionItems.forEach((item, index) => {
-        if (shouldExpand) {
-          if (item._hideTimeout) {
-            clearTimeout(item._hideTimeout);
-            item._hideTimeout = null;
-          }
-          item.style.transitionDelay = `${index * 45}ms`;
-          item.style.display = getCollapsibleDisplay(item);
-          requestAnimationFrame(() => item.classList.add('show'));
-        } else {
-          item.style.transitionDelay = `${index * 24}ms`;
-          item.classList.remove('show');
-          if (item._hideTimeout) {
-            clearTimeout(item._hideTimeout);
-          }
-          item._hideTimeout = setTimeout(() => {
-            item.style.display = 'none';
-            item.style.transitionDelay = '';
-            item._hideTimeout = null;
-          }, 380 + index * 24);
-        }
-      });
-    }
-
-    function toggleSection(sectionName) {
-      setSectionState(sectionName, !sectionStates[sectionName]);
-    }
-
-    function expandAllSections() {
-      Object.keys(sectionStates).forEach(sectionName => setSectionState(sectionName, true));
-    }
-
-    function collapseAllSections() {
-      Object.keys(sectionStates).forEach(sectionName => setSectionState(sectionName, false));
-    }
-
-    initializeCollapsibles();
-  </script>
+  <script src="assets/js/motion.js?v=20261023"></script>
   <script>
     // Hover previews use preload="none", so they download only when a row is first hovered.
     document.querySelectorAll('.two video').forEach(video => {

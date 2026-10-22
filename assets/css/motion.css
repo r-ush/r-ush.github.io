@@ -54,12 +54,6 @@
   transform: scaleY(-1);
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .t-acc-panel, .t-acc-panel-inner, .t-acc-chevron {
-    transition: none !important;
-  }
-}
-
 /* transitions.dev / 06-modal.md */
 :root {
   --modal-open-dur: 250ms;
@@ -93,10 +87,6 @@
     opacity   var(--modal-close-dur) var(--modal-ease);
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .t-modal { transition: none !important; }
-}
-
 /* transitions.dev / 04-text-states-swap.md */
 :root {
   --text-swap-dur: 150ms;
@@ -128,10 +118,6 @@
   transition: none;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .t-text-swap { transition: none !important; }
-}
-
 /* Integration with the existing page layout. */
 
 .t-acc-panel, .t-acc-panel-inner { min-width: 0; min-height: 0; }
@@ -153,6 +139,3 @@ table.collapsible-item.motion-ready { display: table; }
 .rush-display { grid-area: 1 / 1; }
 #cv-popup-overlay[hidden] { display: none; }
 #cv-popup-overlay.cv-popup-hidden { transition-duration: var(--modal-close-dur); }
-@media (prefers-reduced-motion: reduce) {
-  #cv-popup-overlay, .toggle-arrow { transition: none !important; }
-}

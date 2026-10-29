@@ -1,7 +1,9 @@
 /* Homepage visitor map: one dot per country, sized by Google search clicks, the
  * MapMyVisitors views from before collection started and collected page views, with
  * a total, zoom, hover details and the last day's visits.
- * Loads only when the footer map is opened, then polls the public live totals. */
+ * Loads only when the footer map is opened, then polls the public live totals.
+ * A cumulative visits chart beside the map is built but kept hidden on purpose; it
+ * appears only with ?visitors=trend (see analytics/README.md). */
 (function () {
   'use strict';
 
@@ -11,10 +13,15 @@
   var isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
   var previewHistory = isLocal && new URLSearchParams(window.location.search).get('visitors') === 'history';
   if (previewHistory) {
-    // Jump to the footer in the local preview without opening the default-closed map.
-    var popup = document.getElementById('cv-popup-overlay');
-    if (popup) popup.classList.add('cv-popup-hidden');
+    // Jump to the footer in the local preview without opening the default-closed map
+    // (motion.js skips the automatic CV dialog for these links).
     section.scrollIntoView({ block: 'start' });
+  }
+  // Hidden for now by the owner's choice: the chart appears only with this flag.
+  var showTrend = new URLSearchParams(window.location.search).get('visitors') === 'trend';
+  if (showTrend) {
+    section.classList.add('has-trend');
+    section.setAttribute('open', '');
   }
 
   var SVG = 'http://www.w3.org/2000/svg';
@@ -25,7 +32,7 @@
   var settings = { bucketMinutes: 10, recentMinutes: 60, homeCountry: 'KR', homeWeight: 0.3 };
   var points = {}, past = {}, pastUnknown = 0, liveUrl = null, ready = null;
   var map = null, layer = null, figure = null, total = null, tip = null, resetButton = null, recentBlock = null, recentList = null;
-  var timer = 0, polling = false, seen = null;
+  var timer = 0, polling = false, seen = null, trend = null;
   var view = { k: 1, x: 0, y: 0 }, pointers = {};
   var names = null;
   try { names = new Intl.DisplayNames(['en'], { type: 'region' }); } catch (_) {}
@@ -108,10 +115,15 @@
     recentBlock.hidden = true;
     recentList = html('ol', 'visitor-map-recent-list');
     recentBlock.append(html('p', 'visitor-map-recent-title', 'Recent visitors'), recentList);
-    content.replaceChildren(figure, recentBlock);
+    if (showTrend) {
+      trend = trendChart(history, mapmyvisitors);
+      var panels = html('div', 'visitor-panels');
+      panels.append(figure, trend.node);
+      content.replaceChildren(panels, recentBlock);
+    } else content.replaceChildren(figure, recentBlock);
     bindPointer();
     // Search history is drawn at once; live views are added when they arrive.
-    render({ countries: [], recent: [] });
+    render({ countries: [], recent: [], daily: [] });
   }
 
   function dotTransform(code) {
@@ -269,6 +281,184 @@
       recentList.appendChild(row);
     });
     recentBlock.hidden = !recent.length;
+    if (trend) trend.update(live.daily || []);
+  }
+
+  // Cumulative visits per day: search clicks until their export end, MapMyVisitors
+  // views until collection started, then collected page views (Asia/Seoul days).
+  function trendChart(history, mapmyvisitors) {
+    var DAY = 86400000;
+    var known = {}, points = [], all = null, x = null, y = null, active = -1, range = 'all';
+    function ms(day) { return Date.parse(day + 'T00:00:00Z'); }
+    function dayOf(t) { return new Date(t).toISOString().slice(0, 10); }
+    var shortDate = new Intl.DateTimeFormat('en', { month: 'short', day: 'numeric', timeZone: 'UTC' });
+    var longDate = new Intl.DateTimeFormat('en', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
+    [history.daily || {}, mapmyvisitors.daily || {}].forEach(function (daily) {
+      for (var day in daily) known[day] = (known[day] || 0) + daily[day];
+    });
+    var first = ms(history.startDate), searchEnd = ms(history.endDate);
+    var viewsStart = ms(Object.keys(mapmyvisitors.daily || {}).sort()[0] || history.endDate);
+    var ranges = { all: first, recent: viewsStart };
+
+    var node = html('figure', 'visitor-trend');
+    var head = html('div', 'visitor-trend-head');
+    var title = html('p', 'visitor-trend-title', 'Visits over time');
+    title.id = 'visitor-trend-title';
+    var group = html('div', 'visitor-trend-range');
+    group.setAttribute('role', 'group');
+    group.setAttribute('aria-label', 'Time range');
+    [['all', 'All'], ['recent', 'Since ' + shortDate.format(viewsStart)]].forEach(function (entry) {
+      var button = html('button', '', entry[1]);
+      button.type = 'button';
+      button.setAttribute('data-range', entry[0]);
+      button.setAttribute('aria-pressed', String(entry[0] === range));
+      button.addEventListener('click', function () {
+        range = entry[0];
+        for (var i = 0; i < group.children.length; i++) group.children[i].setAttribute('aria-pressed', String(group.children[i] === button));
+        draw();
+      });
+      group.appendChild(button);
+    });
+    head.append(title, group);
+    var plot = html('div', 'visitor-trend-plot'), chartTip = html('div', 'visitor-trend-tip');
+    chartTip.hidden = true;
+    plot.appendChild(chartTip);
+    // The counted unit changes: search clicks first, every page view later.
+    var note = html('p', 'visitor-trend-note', 'Search clicks until ' + shortDate.format(searchEnd) + ' · page views from ' + shortDate.format(viewsStart));
+    var table = html('table', 'visitor-trend-table'), body = html('tbody');
+    table.append(html('caption', '', 'Visits per month'), body);
+    node.append(head, plot, note, table);
+    var chart = null, cross = null, marker = null;
+
+    function update(daily) {
+      var counts = {};
+      for (var day in known) counts[day] = known[day];
+      daily.forEach(function (row) { if (row.views > 0) counts[row.day] = (counts[row.day] || 0) + row.views; });
+      var keys = Object.keys(counts).sort();
+      // The line runs to today in Seoul even when today has no views yet.
+      var end = Math.max(ms(keys[keys.length - 1] || history.endDate), ms(dayOf(Date.now() + 9 * 3600000)));
+      var sum = 0, months = {};
+      all = [];
+      for (var t = first; t <= end; t += DAY) {
+        var d = dayOf(t), n = counts[d] || 0;
+        sum += n;
+        months[d.slice(0, 7)] = (months[d.slice(0, 7)] || 0) + n;
+        all.push({ t: t, n: n, total: sum, gap: t > searchEnd && t < viewsStart });
+      }
+      body.replaceChildren();
+      Object.keys(months).forEach(function (month) {
+        var row = html('tr');
+        row.append(html('th', '', month), html('td', '', String(months[month])));
+        body.appendChild(row);
+      });
+      draw();
+    }
+    function ticks(t0, t1) {
+      var out = [];
+      if (t1 - t0 > 120 * DAY) {
+        // Quarter starts; the year on January and on the first tick.
+        var d = new Date(t0);
+        d = new Date(Date.UTC(d.getUTCFullYear(), Math.ceil(d.getUTCMonth() / 3) * 3, 1));
+        for (; d.getTime() <= t1; d.setUTCMonth(d.getUTCMonth() + 3)) {
+          var month = d.toLocaleString('en', { month: 'short', timeZone: 'UTC' });
+          out.push({ t: d.getTime(), label: month + (d.getUTCMonth() === 0 || !out.length ? ' ’' + String(d.getUTCFullYear()).slice(2) : '') });
+        }
+      } else for (var t = t0; t <= t1; t += 7 * DAY) out.push({ t: t, label: shortDate.format(t) });
+      return out;
+    }
+    function draw() {
+      if (!all) return;
+      if (chart) chart.remove();
+      hideChartTip();
+      points = all.filter(function (p) { return p.t >= ranges[range]; });
+      var last = points[points.length - 1], t0 = points[0].t, t1 = Math.max(last.t, t0 + DAY);
+      var w = plot.clientWidth || 320, h = plot.clientHeight || 170;
+      var m = { l: 32, r: 12 + 7 * String(last.total).length, t: 12, b: 20 };
+      // Clean y ticks (1, 2 or 5 x 10^n) with about four steps above the latest total.
+      var raw = Math.max(last.total, 1) * 1.08 / 4, mag = Math.pow(10, Math.floor(Math.log10(raw)));
+      var step = [1, 2, 5, 10].map(function (k) { return k * mag; }).filter(function (s) { return s >= raw; })[0];
+      var top = Math.ceil(Math.max(last.total, 1) * 1.08 / step) * step;
+      x = function (t) { return m.l + (t - t0) / (t1 - t0) * (w - m.l - m.r); };
+      y = function (v) { return m.t + (1 - v / top) * (h - m.t - m.b); };
+      chart = el('svg', { class: 'visitor-trend-chart', viewBox: '0 0 ' + w + ' ' + h, tabindex: '0', role: 'img', 'aria-labelledby': 'visitor-trend-title visitor-trend-desc' });
+      var desc = el('desc', { id: 'visitor-trend-desc' });
+      desc.textContent = 'Cumulative, ' + plural(last.total, 'visit') + ' by ' + longDate.format(last.t) + '. Arrow keys read each day.';
+      chart.appendChild(desc);
+      var grid = el('g', { class: 'visitor-trend-grid' }), axis = el('g', { class: 'visitor-trend-axis' });
+      chart.append(grid, axis);
+      for (var v = 0; v <= top; v += step) {
+        grid.appendChild(el('line', { x1: m.l, x2: w - m.r, y1: y(v), y2: y(v) }));
+        var label = el('text', { x: m.l - 6, y: y(v) + 3, 'text-anchor': 'end' });
+        label.textContent = v >= 1000 ? v / 1000 + 'K' : String(v);
+        axis.appendChild(label);
+      }
+      ticks(t0, t1).forEach(function (tick) {
+        var label = el('text', { x: x(tick.t), y: h - 4, 'text-anchor': 'middle' });
+        label.textContent = tick.label;
+        axis.appendChild(label);
+      });
+      if (viewsStart > t0) {
+        var mark = el('g', { class: 'visitor-trend-mark' }), text = el('text', { x: x(viewsStart) - 5, y: m.t + 8, 'text-anchor': 'end' });
+        text.textContent = 'page views from ' + shortDate.format(viewsStart) + ' →';
+        mark.append(el('line', { x1: x(viewsStart), x2: x(viewsStart), y1: m.t, y2: h - m.b }), text);
+        chart.appendChild(mark);
+      }
+      var path = points.map(function (p, i) { return (i ? 'L' : 'M') + x(p.t).toFixed(1) + ' ' + y(p.total).toFixed(1); }).join('');
+      chart.appendChild(el('path', { class: 'visitor-trend-area', d: path + 'L' + x(last.t).toFixed(1) + ' ' + y(0) + 'L' + x(t0).toFixed(1) + ' ' + y(0) + 'Z' }));
+      chart.appendChild(el('path', { class: 'visitor-trend-line', d: path }));
+      chart.appendChild(el('circle', { class: 'visitor-trend-dot', cx: x(last.t), cy: y(last.total), r: 4 }));
+      var endLabel = el('text', { class: 'visitor-trend-end', x: x(last.t) + 7, y: y(last.total) + 4 });
+      endLabel.textContent = String(last.total);
+      chart.appendChild(endLabel);
+      cross = el('line', { class: 'visitor-trend-cross', y1: m.t, y2: h - m.b, visibility: 'hidden' });
+      marker = el('circle', { class: 'visitor-trend-dot', r: 4, visibility: 'hidden' });
+      chart.append(cross, marker);
+      plot.insertBefore(chart, chartTip);
+      bindChart(w);
+    }
+    function showPoint(i) {
+      var p = points[i];
+      active = i;
+      cross.setAttribute('x1', x(p.t)); cross.setAttribute('x2', x(p.t)); cross.setAttribute('visibility', 'visible');
+      marker.setAttribute('cx', x(p.t)); marker.setAttribute('cy', y(p.total)); marker.setAttribute('visibility', 'visible');
+      chartTip.replaceChildren(html('strong', '', plural(p.total, 'visit')), html('span', '', longDate.format(p.t) + (p.gap ? ' · no data' : ' · +' + p.n)));
+      chartTip.hidden = false;
+      var half = (chartTip.offsetWidth || 0) / 2, width = plot.clientWidth || 320;
+      chartTip.style.left = Math.min(Math.max(x(p.t), half), Math.max(half, width - half)) + 'px';
+      chartTip.style.top = y(p.total) + 'px';
+    }
+    function hideChartTip() {
+      chartTip.hidden = true;
+      active = -1;
+      if (cross) { cross.setAttribute('visibility', 'hidden'); marker.setAttribute('visibility', 'hidden'); }
+    }
+    function bindChart(w) {
+      function nearest(clientX) {
+        var r = chart.getBoundingClientRect(), px = (clientX - r.left) / (r.width || 1) * w, best = 0;
+        for (var i = 1; i < points.length; i++) if (Math.abs(x(points[i].t) - px) < Math.abs(x(points[best].t) - px)) best = i;
+        return best;
+      }
+      // The crosshair finds the day, so the pointer never has to land on the line.
+      chart.addEventListener('pointermove', function (event) { showPoint(nearest(event.clientX)); });
+      chart.addEventListener('pointerdown', function (event) { showPoint(nearest(event.clientX)); });
+      chart.addEventListener('pointerleave', hideChartTip);
+      chart.addEventListener('focus', function () { showPoint(points.length - 1); });
+      chart.addEventListener('blur', hideChartTip);
+      chart.addEventListener('keydown', function (event) {
+        var at = active < 0 ? points.length - 1 : active, stride = event.shiftKey ? 7 : 1;
+        if (event.key === 'ArrowLeft') showPoint(Math.max(0, at - stride));
+        else if (event.key === 'ArrowRight') showPoint(Math.min(points.length - 1, at + stride));
+        else if (event.key === 'Home') showPoint(0);
+        else if (event.key === 'End') showPoint(points.length - 1);
+        else return;
+        event.preventDefault();
+      });
+    }
+    var lastWidth = 0;
+    if (window.ResizeObserver) new window.ResizeObserver(function () {
+      if (plot.clientWidth !== lastWidth) { lastWidth = plot.clientWidth; draw(); }
+    }).observe(plot);
+    return { node: node, update: update };
   }
 
   function isOpen() { return section.hasAttribute('open'); }
@@ -292,7 +482,13 @@
       .catch(function () { ready = null; throw new Error('Map unavailable'); });
     return ready;
   }
-  function start() { load().then(poll, function () {}); }
+  var scrolled = false;
+  function start() {
+    load().then(function () {
+      if (showTrend && !scrolled && section.scrollIntoView) { scrolled = true; section.scrollIntoView({ block: 'start' }); }
+      poll();
+    }, function () {});
+  }
 
   section.addEventListener('toggle', function () { if (isOpen()) start(); else { clearTimeout(timer); hideTip(); } });
   document.addEventListener('visibilitychange', function () {

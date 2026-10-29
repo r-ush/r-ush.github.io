@@ -152,6 +152,8 @@ def main():
         "impressions": impressions,
         "countriesWithClicks": len(countries),
         "countries": countries,
+        # Clicks per day (days with clicks only) for the cumulative visits chart.
+        "daily": {row["A"]: int(row["B"]) for row in sorted(daily, key=lambda r: r["A"]) if int(row["B"])},
     }
     data_dir, image_dir = ROOT / "assets/data", ROOT / "assets/images"
     data_dir.mkdir(parents=True, exist_ok=True)

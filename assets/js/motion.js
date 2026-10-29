@@ -257,5 +257,6 @@
       e.preventDefault(); (e.shiftKey ? close : image).focus();
     }
   });
-  requestAnimationFrame(() => requestAnimationFrame(openModal));
+  // Links straight to the footer visitor map (?visitors=...) skip the automatic CV dialog.
+  if (!['trend', 'history'].includes(new URLSearchParams(location.search).get('visitors'))) requestAnimationFrame(() => requestAnimationFrame(openModal));
 })();

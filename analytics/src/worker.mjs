@@ -61,11 +61,12 @@ async function liveMap(env, now = new Date()) {
   const cached = liveCache.get(env.DB);
   if (cached && now.getTime() - cached.at < LIVE_CACHE_MS) return cached.body;
   const since = liveBucket(new Date(now.getTime() - LIVE.listHours * 3600000));
-  const [views, recent] = await Promise.all([
+  const [views, recent, days] = await Promise.all([
     env.DB.prepare('SELECT country, views FROM country_totals WHERE views > 0').all(),
-    env.DB.prepare('SELECT bucket, country, views FROM live_country WHERE bucket >= ? AND views > 0 ORDER BY bucket DESC, country LIMIT 50').bind(since).all()
+    env.DB.prepare('SELECT bucket, country, views FROM live_country WHERE bucket >= ? AND views > 0 ORDER BY bucket DESC, country LIMIT 50').bind(since).all(),
+    env.DB.prepare('SELECT day, views FROM daily_totals WHERE views > 0 ORDER BY day').all()
   ]);
-  const body = JSON.stringify(liveReport(views.results || [], recent.results || [], now));
+  const body = JSON.stringify(liveReport(views.results || [], recent.results || [], now, days.results || []));
   liveCache.set(env.DB, { at: now.getTime(), body });
   return body;
 }

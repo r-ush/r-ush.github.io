@@ -10,5 +10,14 @@
     { "code": "US", "views": 30 },
     { "code": "KR", "views": 18 },
     { "code": "DE", "views": 1 }
-  ]
+  ],
+  "dailyNote": "Exact page views per day from the MapMyVisitors daily chart (its own day boundaries).",
+  "daily": {
+    "2026-10-07": 2,
+    "2026-10-08": 9,
+    "2026-10-09": 58,
+    "2026-10-10": 9,
+    "2026-10-11": 25,
+    "2026-10-12": 1
+  }
 }

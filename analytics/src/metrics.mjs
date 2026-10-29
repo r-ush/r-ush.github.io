@@ -97,13 +97,14 @@ export function liveCounts(events, request, now = new Date()) {
   return country === 'Unknown' || !views ? [] : [{ bucket: liveBucket(now), country, views }];
 }
 
-// Public map: all-time country views, plus the last day's country buckets for the
-// recent-visitor list (country, bucket start and count only).
-export function liveReport(views, recent, now = new Date()) {
+// Public map: all-time country views, the last day's country buckets for the
+// recent-visitor list (country, bucket start and count only) and site-wide views per day.
+export function liveReport(views, recent, now = new Date(), days = []) {
   const countries = views.map(row => ({ code: row.country, views: Number(row.views) }));
   countries.sort((a, b) => b.views - a.views || a.code.localeCompare(b.code));
   const visits = recent.map(row => ({ code: row.country, time: new Date(row.bucket * 1000).toISOString(), views: Number(row.views) }));
-  return { bucketMinutes: LIVE.bucketMinutes, generatedAt: now.toISOString(), countries, recent: visits };
+  const daily = days.map(row => ({ day: row.day, views: Number(row.views) }));
+  return { bucketMinutes: LIVE.bucketMinutes, generatedAt: now.toISOString(), countries, recent: visits, daily };
 }
 
 export function aggregate(events, request, now = new Date()) {
@@ -161,6 +162,10 @@ export async function persist(db, rows, live = []) {
     const chunk = rows.slice(i, i + 15);
     const sql = 'INSERT INTO daily_metrics(day,dimension,label,metric,value) VALUES ' + chunk.map(() => '(?,?,?,?,?)').join(',') + ' ON CONFLICT(day,dimension,label,metric) DO UPDATE SET value = daily_metrics.value + excluded.value';
     statements.push(db.prepare(sql).bind(...chunk.flatMap(r => [r.day, r.dimension, r.label, r.metric, r.value])));
+  }
+  // Day totals outlive daily_metrics' retention; unknown-country views are included.
+  for (const row of rows) {
+    if (row.dimension === 'total' && row.metric === 'views') statements.push(db.prepare('INSERT INTO daily_totals(day,views) VALUES (?,?) ON CONFLICT(day) DO UPDATE SET views = daily_totals.views + excluded.views').bind(row.day, row.value));
   }
   for (const row of live) {
     statements.push(db.prepare('INSERT INTO live_country(bucket,country,views) VALUES (?,?,?) ON CONFLICT(bucket,country) DO UPDATE SET views = live_country.views + excluded.views').bind(row.bucket, row.country, row.views));

@@ -466,6 +466,187 @@ h2[data-expanded="true"] .toggle-arrow {
   color: #888;
 }
 
+/* Cumulative visits chart beside the map, shown only with ?visitors=trend. */
+.visitor-map.has-trend {
+  max-width: 800px;
+}
+
+.visitor-panels {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+  gap: 18px;
+  align-items: stretch;
+}
+
+@media (max-width: 640px) {
+  .visitor-panels {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.visitor-trend {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  margin: 0;
+  text-align: left;
+}
+
+.visitor-trend-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.visitor-trend-title {
+  margin: 0;
+  color: #888;
+  font-size: 12px;
+}
+
+.visitor-trend-range {
+  display: inline-flex;
+  overflow: hidden;
+  border: 1px solid #d5dde5;
+  border-radius: 6px;
+}
+
+.visitor-trend-range button {
+  padding: 2px 8px;
+  border: 0;
+  background: #fff;
+  color: #555;
+  font: inherit;
+  font-size: 11px;
+  line-height: 18px;
+  cursor: pointer;
+}
+
+.visitor-trend-range button + button {
+  border-left: 1px solid #d5dde5;
+}
+
+.visitor-trend-range button[aria-pressed="true"] {
+  background: #f1f5f9;
+  color: #222;
+}
+
+.visitor-trend-range button:focus-visible,
+.visitor-trend-chart:focus-visible {
+  outline: 2px solid #1772d0;
+  outline-offset: 1px;
+}
+
+.visitor-trend-plot {
+  position: relative;
+  flex: 1;
+  min-height: 170px;
+}
+
+.visitor-trend-chart {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  touch-action: pan-y;
+}
+
+.visitor-trend-chart:focus {
+  outline: none;
+}
+
+.visitor-trend-grid line {
+  stroke: #eef1f4;
+  stroke-width: 1;
+}
+
+.visitor-trend-axis text,
+.visitor-trend-mark text {
+  fill: #888;
+  font-size: 10px;
+}
+
+.visitor-trend-mark line {
+  stroke: #c9d2db;
+  stroke-width: 1;
+}
+
+.visitor-trend-area {
+  fill: #f76707;
+  fill-opacity: 0.1;
+}
+
+.visitor-trend-line {
+  fill: none;
+  stroke: #f76707;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.visitor-trend-dot {
+  fill: #f76707;
+  stroke: #fff;
+  stroke-width: 2;
+}
+
+.visitor-trend-end {
+  fill: #222;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.visitor-trend-cross {
+  stroke: #9aa5b1;
+  stroke-width: 1;
+}
+
+.visitor-trend-tip {
+  position: absolute;
+  z-index: 1;
+  padding: 5px 9px;
+  border-radius: 6px;
+  background: rgba(34, 34, 34, 0.92);
+  color: #fff;
+  font-size: 12px;
+  line-height: 1.45;
+  white-space: nowrap;
+  pointer-events: none;
+  transform: translate(-50%, calc(-100% - 10px));
+}
+
+.visitor-trend-tip strong {
+  display: block;
+}
+
+.visitor-trend-tip span {
+  color: #ddd;
+}
+
+.visitor-trend-tip[hidden] {
+  display: none;
+}
+
+.visitor-trend-note {
+  margin: 6px 0 0;
+  color: #999;
+  font-size: 11px;
+}
+
+/* Monthly totals for screen readers. */
+.visitor-trend-table {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
 .live-dot {
   cursor: pointer;
 }

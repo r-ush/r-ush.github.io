@@ -17,13 +17,13 @@ const files = {
 const minutes = n => new Date(Date.now() - n * 60000).toISOString();
 
 async function settle() { for (let i = 0; i < 8; i++) await setImmediate(); }
-function homepage(liveResponses = []) {
+function homepage(liveResponses = [], search = '') {
   const { document, window } = parseHTML(readFileSync(new URL('index.html', site), 'utf8'));
   Object.defineProperty(document, 'visibilityState', { value: 'visible', configurable: true });
   const requests = [], timers = [];
   const context = {
     document, URL, URLSearchParams, Intl, Date, Math, JSON, Promise, Error,
-    location: { hostname: 'r-ush.github.io', href: 'https://r-ush.github.io/', search: '' },
+    location: { hostname: 'r-ush.github.io', href: 'https://r-ush.github.io/' + search, search },
     setTimeout: (fn, ms) => { timers.push({ fn, ms }); return timers.length; }, clearTimeout() {},
     fetch: async (url, init) => {
       requests.push({ url, init });
@@ -54,7 +54,7 @@ const sample = () => ({ bucketMinutes: 10, countries: [
 ], recent: [
   { code: 'ZZ', time: minutes(1), views: 1 }, { code: 'KR', time: minutes(5), views: 2 },
   { code: 'SG', time: minutes(30), views: 1 }, { code: 'DE', time: minutes(180), views: 1 }
-] });
+], daily: [{ day: '2026-10-12', views: 10 }, { day: '2026-10-20', views: 5 }] });
 const history = JSON.parse(files['assets/data/search-history.json']).countries;
 
 test('the closed footer map loads nothing until it is opened', async () => {
@@ -102,6 +102,54 @@ test('opening shows one dot per country for earlier counts plus page views, a to
   assert.deepEqual(rows, [['South Korea ×2', 'just now'], ['Singapore', '20 min ago'], ['Germany', '2 h ago']]);
   assert.equal(page.section.querySelector('.visitor-map-recent').hidden, false);
   assert.deepEqual(page.timers.map(t => t.ms), [60000]);
+  // The trend chart is hidden on purpose unless ?visitors=trend is given.
+  assert.equal(page.section.querySelector('.visitor-trend'), null);
+  assert.equal(page.section.classList.contains('has-trend'), false);
+});
+
+test('with ?visitors=trend a cumulative chart opens beside the map', async () => {
+  const later = sample();
+  later.daily.push({ day: '2026-10-21', views: 7 });
+  const page = homepage([sample(), later], '?visitors=trend');
+  await settle();
+  assert.equal(page.section.hasAttribute('open'), true);
+  assert.equal(page.section.classList.contains('has-trend'), true);
+  const panels = page.section.querySelector('.visitor-panels');
+  assert.deepEqual([...panels.children].map(n => n.className), ['visitor-world', 'visitor-trend']);
+  assert.deepEqual([...page.section.querySelectorAll('.visitor-trend-range button')].map(b => b.textContent), ['All', 'Since Oct 7']);
+  assert.equal(page.section.querySelector('.visitor-trend-note').textContent, 'Search clicks until Oct 4 · page views from Oct 7');
+  // 134 search clicks + 104 MapMyVisitors views + 15 collected views.
+  const chart = () => page.section.querySelector('.visitor-trend-chart');
+  const end = () => chart().querySelector('.visitor-trend-end').textContent;
+  assert.equal(end(), '253');
+  const tip = page.section.querySelector('.visitor-trend-tip');
+  const read = () => [...tip.children].map(n => n.textContent);
+  page.fire(chart(), 'focus');
+  assert.equal(read()[0], '253 visits');
+  page.fire(chart(), 'keydown', { key: 'Home' });
+  assert.deepEqual(read(), ['0 visits', 'Jun 5, 2025 · +0']);
+  // Oct 5-6 fall between the search export and the first counted page views.
+  const toGap = (Date.parse('2026-10-05') - Date.parse('2025-06-05')) / 86400000;
+  for (let i = 0; i < toGap; i++) page.fire(chart(), 'keydown', { key: 'ArrowRight' });
+  assert.deepEqual(read(), ['134 visits', 'Oct 5, 2026 · no data']);
+  page.fire(chart(), 'keydown', { key: 'ArrowRight' });
+  page.fire(chart(), 'keydown', { key: 'ArrowRight' });
+  assert.deepEqual(read(), ['136 visits', 'Oct 7, 2026 · +2']);
+  page.fire(page.section.querySelector('.visitor-trend-range [data-range="recent"]'), 'click');
+  assert.equal(page.section.querySelector('[data-range="recent"]').getAttribute('aria-pressed'), 'true');
+  assert.equal(tip.hidden, true);
+  page.fire(chart(), 'keydown', { key: 'Home' });
+  assert.deepEqual(read(), ['136 visits', 'Oct 7, 2026 · +2']);
+  page.fire(chart(), 'keydown', { key: 'ArrowRight' });
+  page.fire(chart(), 'keydown', { key: 'ArrowRight' });
+  assert.deepEqual(read(), ['203 visits', 'Oct 9, 2026 · +58']);
+  // A table view carries the same numbers without hovering.
+  const months = Object.fromEntries([...page.section.querySelectorAll('.visitor-trend-table tr')].map(r => [r.children[0].textContent, r.children[1].textContent]));
+  assert.equal(months['2025-06'], '3');
+  assert.equal(months['2026-10'], '119');
+  // The next poll moves the end of the line.
+  page.timers.shift().fn(); await settle();
+  assert.equal(end(), '260');
 });
 
 test('hovering or tapping a dot shows its country and visits', async () => {

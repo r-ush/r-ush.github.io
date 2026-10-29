@@ -4,7 +4,7 @@ import { readFile } from 'node:fs/promises';
 import { resolve, extname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import worker from '../src/worker.mjs';
-import { config } from '../src/metrics.mjs';
+import { config, dateParts } from '../src/metrics.mjs';
 import { createDatabase } from '../test/database.mjs';
 
 const root = fileURLToPath(new URL('../../', import.meta.url));
@@ -30,6 +30,9 @@ if (sampleLive) {
   const recent = env.DB.sqlite.prepare('INSERT INTO live_country VALUES (?,?,?)');
   for (const [country, views] of [['KR', 69], ['DE', 8], ['US', 7], ['SG', 3], ['JP', 2], ['FI', 1], ['CA', 1]]) totals.run(country, views);
   for (const [country, views, minutesAgo] of [['KR', 2, 10], ['SG', 1, 20], ['DE', 1, 180], ['US', 1, 540], ['KR', 1, 840]]) recent.run(now - minutesAgo * 60, country, views);
+  // Day totals for the hidden trend chart (?visitors=trend); they sum to the country totals.
+  const days = env.DB.sqlite.prepare('INSERT INTO daily_totals VALUES (?,?)');
+  for (const [daysAgo, views] of [[14, 30], [10, 21], [6, 20], [3, 12], [0, 8]]) days.run(dateParts(new Date(Date.now() - daysAgo * 86400000)).day, views);
 }
 http.createServer(async (incoming, outgoing) => {
   try {

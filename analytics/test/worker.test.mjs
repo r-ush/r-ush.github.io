@@ -155,6 +155,28 @@ test('cleanup deletes day-old recent buckets but keeps all-time country totals',
   assert.deepEqual(e.DB.sqlite.prepare('SELECT * FROM country_totals ORDER BY country').all().map(r => [r.country, r.views]), [['DE', 1], ['FR', 1]]);
 });
 
+test('views add site-wide day totals that outlive retention, including unknown countries', async () => {
+  const e = env();
+  await worker.fetch(visit('DE', [view, view, { type: 'scroll', page: '/', depth: 50 }]), e);
+  await worker.fetch(visit('', [view]), e);
+  await worker.fetch(visit('US', [view], { 'User-Agent': 'Googlebot' }), e);
+  const today = dateParts().day;
+  assert.deepEqual(e.DB.sqlite.prepare('SELECT * FROM daily_totals').all().map(r => [r.day, r.views]), [[today, 3]]);
+  e.DB.sqlite.exec("INSERT INTO daily_totals VALUES ('2020-01-01', 5), ('2020-01-02', 0)");
+  await cleanup(e);
+  const body = await (await live(e)).json();
+  assert.deepEqual(body.daily, [{ day: '2020-01-01', views: 5 }, { day: today, views: 3 }]);
+});
+
+test('the day-total migration seeds every collected day from daily totals only', () => {
+  const db = new DatabaseSync(':memory:');
+  db.exec(readFileSync(new URL('../migrations/0001_aggregate_metrics.sql', import.meta.url), 'utf8'));
+  const insert = db.prepare('INSERT INTO daily_metrics VALUES (?,?,?,?,?)');
+  for (const [day, dimension, label, metric, value] of [['2026-10-12', 'total', 'all', 'views', 10], ['2026-10-13', 'total', 'all', 'views', 4], ['2026-10-13', 'total', 'all', 'clicks', 9], ['2026-10-13', 'page', '/', 'views', 4]]) insert.run(day, dimension, label, metric, value);
+  db.exec(readFileSync(new URL('../migrations/0003_daily_totals.sql', import.meta.url), 'utf8'));
+  assert.deepEqual(db.prepare('SELECT * FROM daily_totals ORDER BY day').all().map(r => [r.day, r.views]), [['2026-10-12', 10], ['2026-10-13', 4]]);
+});
+
 test('the public map migration seeds all-time totals from every collected daily country total', () => {
   const db = new DatabaseSync(':memory:');
   db.exec(readFileSync(new URL('../migrations/0001_aggregate_metrics.sql', import.meta.url), 'utf8'));

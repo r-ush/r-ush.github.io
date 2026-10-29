@@ -94,6 +94,30 @@ far; views received between the migration and the deploy are not added to it.
 `npm run preview:live-sample` starts the local preview with clearly sample rows,
 because local requests carry no Cloudflare country.
 
+### Hidden visits-over-time chart
+
+A cumulative "Visits over time" chart sits beside the map (60/40 on desktop,
+stacked on phones), but it is **deliberately hidden**: the owner does not plan to
+show it yet. It appears only at `https://r-ush.github.io/?visitors=trend`, which
+also opens the map, scrolls to it and skips the automatic CV dialog (`motion.js`);
+without the flag the footer is unchanged. Do not expose or link it unless the
+owner asks.
+
+The line sums Search Console clicks per day (`daily` in `search-history.json`,
+written by the import script), MapMyVisitors' exact daily page views for its
+own window (`daily` in `mapmyvisitors-history.json`) and this collector's
+site-wide views per Asia/Seoul day from `daily_totals`. That table holds only a
+date and a count, includes views with an unknown country (so the chart can end
+above the map total if such views occur), is filled in the same batch as the
+daily aggregates and, unlike `daily_metrics`, is never deleted.
+`/api/live` returns it as `daily`, so the per-day totals are public even while the
+chart is hidden; the privacy page says so. Oct 5-6, 2026 have no source and read
+"no data". The counted unit changes on Oct 7 (search clicks before, every page
+view after), which the chart marks; "Since Oct 7" shows only page views.
+
+Apply `0003_daily_totals.sql` (`npm run db:remote`) before deploying a Worker
+that writes `daily_totals`; it seeds every day already in `daily_metrics`.
+
 ## Current activation state
 
 The deployed dashboard is https://rush-analytics.r-ush.workers.dev/ and the

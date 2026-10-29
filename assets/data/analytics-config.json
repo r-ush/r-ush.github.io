@@ -1,6 +1,12 @@
 {
   "endpoint": "https://rush-analytics.r-ush.workers.dev/collect",
   "siteOrigin": "https://r-ush.github.io",
+  "liveMap": {
+    "bucketMinutes": 10,
+    "recentMinutes": 60,
+    "homeCountry": "KR",
+    "homeWeight": 0.3
+  },
   "pages": {
     "/": "Homepage",
     "/scooping_robotic_hand/": "Scooping with a Robotic Hand",

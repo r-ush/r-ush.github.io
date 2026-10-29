@@ -22,6 +22,17 @@ const env = {
   ADMIN_TOKEN: 'local-preview-only-not-a-production-secret-12345',
   ASSETS: { fetch: async request => file(publicRoot, new URL(request.url).pathname.replace(/^\/admin\/?$/, '/index.html')) }
 };
+// Local requests carry no Cloudflare country, so optionally seed sample live-map rows.
+const sampleLive = process.argv.includes('--sample-live');
+if (sampleLive) {
+  const now = Math.floor(Date.now() / 600000) * 600;
+  const totals = env.DB.sqlite.prepare('INSERT INTO country_totals VALUES (?,?)');
+  const recent = env.DB.sqlite.prepare('INSERT INTO live_country VALUES (?,?,?)');
+  for (const [country, views, minutesAgo] of [['KR', 69, 10], ['DE', 8], ['US', 7], ['SG', 3, 20], ['JP', 2], ['FI', 1], ['CA', 1]]) {
+    totals.run(country, views);
+    if (minutesAgo) recent.run(now - minutesAgo * 60, country, 1);
+  }
+}
 http.createServer(async (incoming, outgoing) => {
   try {
     const origin = 'http://127.0.0.1:' + port;
@@ -44,4 +55,5 @@ http.createServer(async (incoming, outgoing) => {
   console.log('Dashboard: http://127.0.0.1:' + port + '/admin/');
   console.log('Local test key: ' + env.ADMIN_TOKEN);
   console.log('Temporary in-memory test database. No production data or cloud requests.');
+  if (sampleLive) console.log('SAMPLE live-map rows loaded for the homepage visitor map (not real visits).');
 });

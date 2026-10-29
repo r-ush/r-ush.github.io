@@ -4,7 +4,7 @@ The homepage and seven project pages already import `/assets/js/visitor-map.js`.
 That shared entry sends one image request per visible page load to the existing
 MapMyVisitors counter (https://mapmyvisitors.com/web/1c8q7) and independently
 collects private aggregate usage statistics. Both respect browser privacy signals
-and the site's opt-out setting. Existing Search Console map artwork remains a historical view.
+and the site's opt-out setting. The static Search Console map image remains the no-JavaScript fallback.
 
 ## What is implemented
 
@@ -22,12 +22,57 @@ and the site's opt-out setting. Existing Search Console map artwork remains a hi
 - A footer privacy/settings link; GPC and DNT handling; browser opt-out; no banner.
 
 There are no unique visitors, return rates, sessions, cross-page funnels, identity
-hashes, fingerprints, or per-visitor records. D1 has only separate daily totals.
+hashes, fingerprints, or per-visitor records. D1 has separate daily totals plus the
+two country-only public map tables described below.
 Country and region buckets below 3 views are combined in reports and exports.
 The collector's query/body schema rejects unknown fields, arbitrary URLs and PII.
 IP addresses and full user agents are handled by infrastructure but are not stored
 by this application. Worker application observability is disabled. Up to 180 days
-of aggregates are retained; a daily scheduled job removes older rows.
+of daily aggregates are retained; a daily scheduled job removes older rows. The
+public map's all-time country totals are kept.
+
+## Public live map
+
+The homepage footer map ("Visitors around the world") shows only a map: one dot
+per country, with no legend or text. A dot's size combines two counts:
+
+- Google Search Console clicks by country from `assets/data/search-history.json`
+  (`scripts/import-search-console.py`), and
+- this collector's all-time page views per country from `country_totals`, read
+  through the public, credential-free `GET /api/live`. Each view adds 1 to its
+  country's total in the same batch as the daily aggregates; the 180-day cleanup
+  does not touch this table (country code and count only, no dates).
+
+The Search Console export ends on 2026-10-04 and collection started on 2026-10-12,
+so the sum does not count the same visit twice. If a later Search Console import
+covers dates after collection started, clicks that led to collected page views
+would be counted in both; keep its end date before 2026-10-12 or reconsider the sum.
+
+A dot pulses a few times and keeps a ring when that country had a view within
+`liveMap.recentMinutes` (60). For that only, each view also adds 1 to its
+country's 10-minute UTC bucket in `live_country`; there is no region, city,
+coordinate, page or environment column, `/api/live` exposes a country's latest
+bucket only while it is recent, and the daily cleanup deletes buckets older than
+one day (so none is more than two days old).
+
+Unlike the dashboard, the public map does not merge countries below 3 views: a
+single view from one country is visible as one visit. That is disclosed on the privacy
+page. The response is memoized per isolate for 30 seconds and sent with
+`Cache-Control: public, max-age=30`; the homepage loads map data only when the
+footer map is opened and polls every 60 seconds while it is open and visible.
+If `/api/live` is unavailable, the Search Console dots are still drawn.
+
+`assets/data/analytics-config.json` → `liveMap` sets `recentMinutes` and the display
+weight of the home country (`homeCountry`, `homeWeight`). The weight changes dot
+size only; hover tooltips show real counts. Dot positions come from
+`assets/data/country-points.json` (`python scripts/build-country-points.py`).
+
+Apply migration `0002_public_map.sql` (`npm run db:remote`) before deploying this
+Worker: ingestion writes all tables in one batch and fails without the new ones.
+The migration seeds `country_totals` from every daily country total collected so
+far; views received between the migration and the deploy are not added to it.
+`npm run preview:live-sample` starts the local preview with clearly sample rows,
+because local requests carry no Cloudflare country.
 
 ## Current activation state
 

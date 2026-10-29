@@ -1,7 +1,9 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import { DatabaseSync } from 'node:sqlite';
+import { readFileSync } from 'node:fs';
 import worker, { cleanup } from '../src/worker.mjs';
-import { aggregate, dateParts, normalizePage, persist, report, validateBatch } from '../src/metrics.mjs';
+import { aggregate, dateParts, liveBucket, normalizePage, persist, report, validateBatch } from '../src/metrics.mjs';
 import { createDatabase } from './database.mjs';
 
 const token = 'test-only-admin-key-never-use-in-production-123456';
@@ -96,4 +98,66 @@ test('static dashboard gets security headers and collection errors disclose no i
   const bad = await worker.fetch(request([view]), { ...e, DB: { prepare() { throw new Error('private credentials'); } } });
   assert.equal(bad.status, 503);
   assert.equal((await bad.text()).includes('private credentials'), false);
+});
+
+function visit(country, events = [view], headers = {}) {
+  const req = new Request('https://metrics.example/collect', { method: 'POST', headers: { Origin: 'https://r-ush.github.io', 'User-Agent': 'Mozilla/5.0 Windows Chrome/130.0', ...headers }, body: JSON.stringify({ v: 1, events }) });
+  Object.defineProperty(req, 'cf', { value: { country, regionCode: 'BY', city: 'Never stored', latitude: '48.1', longitude: '11.6', postalCode: '80331' } });
+  return req;
+}
+const live = (e, headers = {}) => worker.fetch(new Request('https://metrics.example/api/live', { headers }), e);
+
+test('views add country-only live buckets; other events, unknown countries and bots do not', async () => {
+  const e = env();
+  assert.equal((await worker.fetch(visit('DE', [view, view]), e)).status, 204);
+  for (const req of [visit('DE', [{ type: 'scroll', page: '/', depth: 50 }]), visit('XX'), visit('T1'), visit('', [view]), visit('US', [view], { 'User-Agent': 'Googlebot' }), visit('US', [view], { DNT: '1' })]) assert.equal((await worker.fetch(req, e)).status, 204);
+  const rows = e.DB.sqlite.prepare('SELECT * FROM live_country').all();
+  assert.deepEqual(rows.map(r => [r.country, r.views]), [['DE', 2]]);
+  assert.deepEqual(e.DB.sqlite.prepare('SELECT * FROM country_totals').all().map(r => [r.country, r.views]), [['DE', 2]]);
+  assert.deepEqual(Object.keys(rows[0]), ['bucket', 'country', 'views']);
+  assert.equal(rows[0].bucket % 600, 0);
+  const text = JSON.stringify(rows);
+  for (const forbidden of ['BY', 'Never stored', '48.1', '11.6', '80331', 'Mozilla']) assert.equal(text.includes(forbidden), false);
+});
+
+test('public live map lists all-time country totals, including single views, and recent buckets only', async () => {
+  const e = env();
+  const now = Math.floor(Date.now() / 600000) * 600;
+  e.DB.sqlite.exec("INSERT INTO country_totals VALUES ('KR', 40), ('FI', 1), ('XZ', 0)");
+  await persist(e.DB, [], [{ bucket: now, country: 'KR', views: 2 }, { bucket: now - 7200, country: 'SG', views: 1 }]);
+  const response = await live(e, { Origin: 'https://r-ush.github.io' });
+  assert.equal(response.status, 200);
+  assert.equal(response.headers.get('access-control-allow-origin'), 'https://r-ush.github.io');
+  assert.equal(response.headers.get('cache-control'), 'public, max-age=30');
+  assert.equal(response.headers.get('set-cookie'), null);
+  // SG's last bucket is two hours old, so only its total is public; no small-count merging.
+  assert.deepEqual((await response.json()).countries, [{ code: 'KR', views: 42, last: new Date(now * 1000).toISOString() }, { code: 'FI', views: 1 }, { code: 'SG', views: 1 }]);
+  assert.equal((await live(e, { Origin: 'https://evil.example' })).headers.get('access-control-allow-origin'), null);
+  assert.equal((await worker.fetch(new Request('https://metrics.example/api/live', { method: 'POST', body: '{}' }), e)).status, 405);
+  // A new view invalidates this isolate's short cache.
+  await worker.fetch(visit('SG'), e);
+  const sg = (await (await live(e)).json()).countries.find(c => c.code === 'SG');
+  assert.equal(sg.views, 2);
+  assert.ok(sg.last);
+  assert.equal((await live({ ...e, DB: { prepare() { throw new Error('private credentials'); } } })).status, 503);
+});
+
+test('cleanup deletes day-old recent buckets but keeps all-time country totals', async () => {
+  const e = env();
+  const now = new Date('2026-10-29T12:00:00Z');
+  await persist(e.DB, [{ day: '2020-01-01', dimension: 'country', label: 'FR', metric: 'views', value: 1 }], [{ bucket: liveBucket(new Date('2026-10-28T11:00:00Z')), country: 'FR', views: 1 }, { bucket: liveBucket(new Date('2026-10-28T13:00:00Z')), country: 'DE', views: 1 }]);
+  await cleanup(e, now);
+  assert.deepEqual(e.DB.sqlite.prepare('SELECT country FROM live_country').all().map(r => r.country), ['DE']);
+  assert.equal(e.DB.sqlite.prepare("SELECT COUNT(*) AS n FROM daily_metrics WHERE label = 'FR'").get().n, 0);
+  assert.deepEqual(e.DB.sqlite.prepare('SELECT * FROM country_totals ORDER BY country').all().map(r => [r.country, r.views]), [['DE', 1], ['FR', 1]]);
+});
+
+test('the public map migration seeds all-time totals from every collected daily country total', () => {
+  const db = new DatabaseSync(':memory:');
+  db.exec(readFileSync(new URL('../migrations/0001_aggregate_metrics.sql', import.meta.url), 'utf8'));
+  const insert = db.prepare('INSERT INTO daily_metrics VALUES (?,?,?,?,?)');
+  for (const [day, dimension, label, value] of [['2026-10-12', 'country', 'DE', 6], ['2026-10-29', 'country', 'DE', 2], ['2026-10-29', 'country', 'KR', 1], ['2026-10-29', 'country', 'Unknown', 3], ['2026-10-29', 'region', 'DE-BY', 8]]) insert.run(day, dimension, label, 'views', value);
+  db.exec(readFileSync(new URL('../migrations/0002_public_map.sql', import.meta.url), 'utf8'));
+  assert.deepEqual(db.prepare('SELECT * FROM country_totals ORDER BY country').all().map(r => [r.country, r.views]), [['DE', 8], ['KR', 1]]);
+  assert.equal(db.prepare('SELECT COUNT(*) AS n FROM live_country').get().n, 0);
 });

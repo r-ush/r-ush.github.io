@@ -1,4 +1,8 @@
-import { aggregate, config, dateParts, ignoredRequest, MAX_BODY_BYTES, persist, report, RETENTION_DAYS, validateBatch } from './metrics.mjs';
+import { aggregate, config, dateParts, ignoredRequest, LIVE, liveBucket, liveCounts, liveReport, MAX_BODY_BYTES, persist, report, RETENTION_DAYS, validateBatch } from './metrics.mjs';
+
+// Per-isolate memo so polling homepages do not query D1 on every request.
+const LIVE_CACHE_MS = 30000;
+const liveCache = new WeakMap();
 
 const security = {
   'Cache-Control': 'no-store',
@@ -50,6 +54,20 @@ export async function cleanup(env, now = new Date()) {
   const retention = Math.min(RETENTION_DAYS, Math.max(1, Number(env.RETENTION_DAYS) || RETENTION_DAYS));
   const cutoff = dateParts(new Date(now.getTime() - (retention - 1) * 86400000)).day;
   await env.DB.prepare('DELETE FROM daily_metrics WHERE day < ?').bind(cutoff).run();
+  // Live buckets only mark recent visits, so they are kept for at most two days.
+  await env.DB.prepare('DELETE FROM live_country WHERE bucket < ?').bind(liveBucket(new Date(now.getTime() - 86400000))).run();
+}
+async function liveMap(env, now = new Date()) {
+  const cached = liveCache.get(env.DB);
+  if (cached && now.getTime() - cached.at < LIVE_CACHE_MS) return cached.body;
+  const since = liveBucket(new Date(now.getTime() - LIVE.recentMinutes * 60000));
+  const [views, recent] = await Promise.all([
+    env.DB.prepare('SELECT country, views FROM country_totals WHERE views > 0').all(),
+    env.DB.prepare('SELECT country, MAX(bucket) AS last FROM live_country WHERE bucket >= ? GROUP BY country').bind(since).all()
+  ]);
+  const body = JSON.stringify(liveReport(views.results || [], recent.results || [], now));
+  liveCache.set(env.DB, { at: now.getTime(), body });
+  return body;
 }
 export default {
   async fetch(request, env) {
@@ -66,12 +84,22 @@ export default {
       try { events = validateBatch(await readBody(request)); }
       catch { return json({ error: 'Invalid aggregate event' }, 400, cors); }
       try {
-        await persist(env.DB, aggregate(events, request));
+        const now = new Date();
+        await persist(env.DB, aggregate(events, request, now), liveCounts(events, request, now));
+        liveCache.delete(env.DB);
         return response(null, 204, cors);
       } catch {
         // Do not log request headers, bodies, tokens, IPs or database values.
         return json({ error: 'Collection unavailable' }, 503, cors);
       }
+    }
+    if (url.pathname === '/api/live') {
+      // Public, country-level only: the homepage map polls this without credentials.
+      const origin = request.headers.get('origin');
+      const cors = permittedOrigin(origin, env) ? { 'Access-Control-Allow-Origin': origin, 'Vary': 'Origin' } : { 'Vary': 'Origin' };
+      if (request.method !== 'GET') return response(null, 405, cors);
+      try { return response(await liveMap(env), 200, { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'public, max-age=30', ...cors }); }
+      catch { return json({ error: 'Live map unavailable' }, 503, cors); }
     }
     if (url.pathname === '/api/stats') {
       if (request.method !== 'GET') return response(null, 405);

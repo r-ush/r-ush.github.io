@@ -3,6 +3,7 @@ import config from '../../assets/data/analytics-config.json' with { type: 'json'
 export { config };
 export const MAX_BODY_BYTES = 8192;
 export const RETENTION_DAYS = 180;
+export const LIVE = config.liveMap;
 const TYPES = {
   view: ['type', 'page', 'source'],
   engagement: ['type', 'page', 'seconds', 'engaged'],
@@ -75,15 +76,40 @@ export function validateBatch(payload) {
   });
 }
 
-export function aggregate(events, request, now = new Date()) {
-  const { day, hour } = dateParts(now);
-  const rows = new Map();
-  const env = environment(request.headers.get('user-agent') || '');
+function geography(request) {
   const rawCountry = request.cf?.country || '';
   const country = /^[A-Z]{2}$/.test(rawCountry) && rawCountry !== 'XX' ? rawCountry : 'Unknown';
   // Administrative region codes only; never store city, coordinates or postal code.
   const regionCode = request.cf?.regionCode || '';
   const region = country !== 'Unknown' && /^[A-Z0-9-]{1,6}$/i.test(regionCode) ? country + '-' + regionCode.toUpperCase() : 'Unknown';
+  return { country, region };
+}
+
+export function liveBucket(now = new Date()) {
+  const size = LIVE.bucketMinutes * 60;
+  return Math.floor(now.getTime() / 1000 / size) * size;
+}
+
+// Country-only view counts for the public map; no region, page or environment.
+export function liveCounts(events, request, now = new Date()) {
+  const { country } = geography(request);
+  const views = events.filter(event => event.type === 'view').length;
+  return country === 'Unknown' || !views ? [] : [{ bucket: liveBucket(now), country, views }];
+}
+
+// Public map: all-time country views, plus the latest bucket only when it is recent.
+export function liveReport(views, recent, now = new Date()) {
+  const last = new Map(recent.map(row => [row.country, new Date(row.last * 1000).toISOString()]));
+  const countries = views.map(row => ({ code: row.country, views: Number(row.views), ...(last.has(row.country) ? { last: last.get(row.country) } : {}) }));
+  countries.sort((a, b) => b.views - a.views || a.code.localeCompare(b.code));
+  return { recentMinutes: LIVE.recentMinutes, generatedAt: now.toISOString(), countries };
+}
+
+export function aggregate(events, request, now = new Date()) {
+  const { day, hour } = dateParts(now);
+  const rows = new Map();
+  const env = environment(request.headers.get('user-agent') || '');
+  const { country, region } = geography(request);
   const add = (dimension, label, metric, value = 1) => {
     if (!value) return;
     const key = [dimension, label, metric].join('|');
@@ -127,13 +153,17 @@ export function aggregate(events, request, now = new Date()) {
   return Array.from(rows.values());
 }
 
-export async function persist(db, rows) {
+export async function persist(db, rows, live = []) {
   const statements = [];
   // D1 limits bound parameters: 15 rows x 5 columns = 75 parameters per query.
   for (let i = 0; i < rows.length; i += 15) {
     const chunk = rows.slice(i, i + 15);
     const sql = 'INSERT INTO daily_metrics(day,dimension,label,metric,value) VALUES ' + chunk.map(() => '(?,?,?,?,?)').join(',') + ' ON CONFLICT(day,dimension,label,metric) DO UPDATE SET value = daily_metrics.value + excluded.value';
     statements.push(db.prepare(sql).bind(...chunk.flatMap(r => [r.day, r.dimension, r.label, r.metric, r.value])));
+  }
+  for (const row of live) {
+    statements.push(db.prepare('INSERT INTO live_country(bucket,country,views) VALUES (?,?,?) ON CONFLICT(bucket,country) DO UPDATE SET views = live_country.views + excluded.views').bind(row.bucket, row.country, row.views));
+    statements.push(db.prepare('INSERT INTO country_totals(country,views) VALUES (?,?) ON CONFLICT(country) DO UPDATE SET views = country_totals.views + excluded.views').bind(row.country, row.views));
   }
   if (statements.length) await db.batch(statements);
 }

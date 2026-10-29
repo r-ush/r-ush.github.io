@@ -19,9 +19,13 @@ assert.equal(sent.headers.get('access-control-allow-origin'), 'https://r-ush.git
 const after = await stats();
 for (const [metric, delta] of Object.entries({ views: 1, active_seconds: 12, engaged_views: 1, scroll_50: 1, downloads: 1 })) assert.equal(after.totals[metric], (before.totals[metric] || 0) + delta);
 assert.equal((await fetch(new URL('/api/stats', base))).status, 401);
+const live = await fetch(new URL('/api/live', base), { headers: { Origin: 'https://r-ush.github.io' } });
+assert.equal(live.status, 200);
+assert.equal(live.headers.get('access-control-allow-origin'), 'https://r-ush.github.io');
+assert.ok(Array.isArray((await live.json()).countries));
 for (const path of ['/', '/dashboard.js', '/dashboard.css', '/demo.js']) {
   const r = await fetch(new URL(path, base)); assert.equal(r.status, 200, path);
   assert.equal(r.headers.get('x-robots-tag'), 'noindex, nofollow');
 }
 assert.equal((await fetch(new URL('/collect', base), { method: 'POST', headers: { Origin: 'https://other.example' }, body: JSON.stringify(input) })).status, 403);
-console.log('PASS: real local Worker + D1 ingestion, aggregation, authentication, assets and CORS.');
+console.log('PASS: real local Worker + D1 ingestion, aggregation, authentication, live map, assets and CORS.');

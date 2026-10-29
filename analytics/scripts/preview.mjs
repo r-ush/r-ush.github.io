@@ -28,10 +28,8 @@ if (sampleLive) {
   const now = Math.floor(Date.now() / 600000) * 600;
   const totals = env.DB.sqlite.prepare('INSERT INTO country_totals VALUES (?,?)');
   const recent = env.DB.sqlite.prepare('INSERT INTO live_country VALUES (?,?,?)');
-  for (const [country, views, minutesAgo] of [['KR', 69, 10], ['DE', 8], ['US', 7], ['SG', 3, 20], ['JP', 2], ['FI', 1], ['CA', 1]]) {
-    totals.run(country, views);
-    if (minutesAgo) recent.run(now - minutesAgo * 60, country, 1);
-  }
+  for (const [country, views] of [['KR', 69], ['DE', 8], ['US', 7], ['SG', 3], ['JP', 2], ['FI', 1], ['CA', 1]]) totals.run(country, views);
+  for (const [country, views, minutesAgo] of [['KR', 2, 10], ['SG', 1, 20], ['DE', 1, 180], ['US', 1, 540], ['KR', 1, 840]]) recent.run(now - minutesAgo * 60, country, views);
 }
 http.createServer(async (incoming, outgoing) => {
   try {

@@ -329,10 +329,145 @@ h2[data-expanded="true"] .toggle-arrow {
   height: auto;
 }
 
+.visitor-world {
+  position: relative;
+}
+
 .visitor-world-map {
   display: block;
   width: 100%;
   height: auto;
+  border-radius: 10px;
+}
+
+/* Borders stay hairline when the map is zoomed in. */
+.visitor-world-map path {
+  vector-effect: non-scaling-stroke;
+}
+
+.visitor-world-map.is-zoomed {
+  cursor: grab;
+  touch-action: none;
+}
+
+.visitor-world-map.is-dragging {
+  cursor: grabbing;
+}
+
+.visitor-map-total {
+  position: absolute;
+  top: 8px;
+  left: 10px;
+  padding: 2px 8px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.85);
+  color: #555;
+  font-size: 12px;
+  line-height: 18px;
+  pointer-events: none;
+}
+
+.visitor-map-zoom {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.visitor-map-zoom button {
+  width: 26px;
+  height: 26px;
+  padding: 0;
+  border: 1px solid #d5dde5;
+  border-radius: 6px;
+  background: #fff;
+  color: #444;
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.visitor-map-zoom button:hover {
+  background: #f1f5f9;
+}
+
+.visitor-map-zoom button:focus-visible {
+  outline: 2px solid #1772d0;
+  outline-offset: 1px;
+}
+
+.visitor-map-zoom button[hidden],
+.visitor-map-tip[hidden],
+.visitor-map-recent[hidden] {
+  display: none;
+}
+
+.visitor-map-tip {
+  position: absolute;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 5px 9px;
+  border-radius: 6px;
+  background: rgba(34, 34, 34, 0.92);
+  color: #fff;
+  font-size: 12px;
+  line-height: 1.45;
+  text-align: left;
+  white-space: nowrap;
+  pointer-events: none;
+  transform: translate(-50%, calc(-100% - 8px));
+}
+
+.visitor-map-tip span {
+  color: #ddd;
+}
+
+.visitor-map-recent {
+  max-width: 320px;
+  margin: 14px auto 0;
+  font-size: 12px;
+  text-align: left;
+}
+
+.visitor-map-recent-title {
+  margin: 0 0 4px;
+  color: #888;
+}
+
+.visitor-map-recent-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: #444;
+}
+
+.visitor-map-recent-list li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 3px 0;
+  border-top: 1px solid #f0f0f0;
+}
+
+.visitor-map-recent-list li::before {
+  content: "";
+  flex: none;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #f76707;
+}
+
+.visitor-map-recent-time {
+  margin-left: auto;
+  color: #888;
+}
+
+.live-dot {
+  cursor: pointer;
 }
 
 .live-dot-core {

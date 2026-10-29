@@ -4,6 +4,7 @@
   "liveMap": {
     "bucketMinutes": 10,
     "recentMinutes": 60,
+    "listHours": 24,
     "homeCountry": "KR",
     "homeWeight": 0.3
   },

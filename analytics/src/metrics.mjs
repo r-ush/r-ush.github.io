@@ -97,12 +97,13 @@ export function liveCounts(events, request, now = new Date()) {
   return country === 'Unknown' || !views ? [] : [{ bucket: liveBucket(now), country, views }];
 }
 
-// Public map: all-time country views, plus the latest bucket only when it is recent.
+// Public map: all-time country views, plus the last day's country buckets for the
+// recent-visitor list (country, bucket start and count only).
 export function liveReport(views, recent, now = new Date()) {
-  const last = new Map(recent.map(row => [row.country, new Date(row.last * 1000).toISOString()]));
-  const countries = views.map(row => ({ code: row.country, views: Number(row.views), ...(last.has(row.country) ? { last: last.get(row.country) } : {}) }));
+  const countries = views.map(row => ({ code: row.country, views: Number(row.views) }));
   countries.sort((a, b) => b.views - a.views || a.code.localeCompare(b.code));
-  return { recentMinutes: LIVE.recentMinutes, generatedAt: now.toISOString(), countries };
+  const visits = recent.map(row => ({ code: row.country, time: new Date(row.bucket * 1000).toISOString(), views: Number(row.views) }));
+  return { bucketMinutes: LIVE.bucketMinutes, generatedAt: now.toISOString(), countries, recent: visits };
 }
 
 export function aggregate(events, request, now = new Date()) {

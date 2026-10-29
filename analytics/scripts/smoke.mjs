@@ -22,7 +22,8 @@ assert.equal((await fetch(new URL('/api/stats', base))).status, 401);
 const live = await fetch(new URL('/api/live', base), { headers: { Origin: 'https://r-ush.github.io' } });
 assert.equal(live.status, 200);
 assert.equal(live.headers.get('access-control-allow-origin'), 'https://r-ush.github.io');
-assert.ok(Array.isArray((await live.json()).countries));
+const liveBody = await live.json();
+assert.ok(Array.isArray(liveBody.countries) && Array.isArray(liveBody.recent));
 for (const path of ['/', '/dashboard.js', '/dashboard.css', '/demo.js']) {
   const r = await fetch(new URL(path, base)); assert.equal(r.status, 200, path);
   assert.equal(r.headers.get('x-robots-tag'), 'noindex, nofollow');

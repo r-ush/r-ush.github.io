@@ -1,0 +1,14 @@
+{
+  "source": "MapMyVisitors",
+  "period": "2026-10-07T23:26+09:00/2026-10-12T04:39+09:00",
+  "note": "Page views counted only by MapMyVisitors, before the private collector started. Later MapMyVisitors views duplicate the collector and are not included.",
+  "method": "MapMyVisitors all-time location counts (KR 42, US 42, DE 1, unknown 83) minus its 50 most recent hits (KR 19, US 9, unknown 22) and about 14 earlier hits after its 2026-10-19 reinstall, split in the recent ratio. Rounded estimates.",
+  "estimated": true,
+  "pageviews": 104,
+  "unknown": 55,
+  "countries": [
+    { "code": "US", "views": 30 },
+    { "code": "KR", "views": 18 },
+    { "code": "DE", "views": 1 }
+  ]
+}

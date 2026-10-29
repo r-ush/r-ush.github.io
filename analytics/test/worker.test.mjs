@@ -120,25 +120,28 @@ test('views add country-only live buckets; other events, unknown countries and b
   for (const forbidden of ['BY', 'Never stored', '48.1', '11.6', '80331', 'Mozilla']) assert.equal(text.includes(forbidden), false);
 });
 
-test('public live map lists all-time country totals, including single views, and recent buckets only', async () => {
+test('public live map lists all-time country totals, including single views, and the last day of visits', async () => {
   const e = env();
   const now = Math.floor(Date.now() / 600000) * 600;
   e.DB.sqlite.exec("INSERT INTO country_totals VALUES ('KR', 40), ('FI', 1), ('XZ', 0)");
-  await persist(e.DB, [], [{ bucket: now, country: 'KR', views: 2 }, { bucket: now - 7200, country: 'SG', views: 1 }]);
+  await persist(e.DB, [], [{ bucket: now, country: 'KR', views: 2 }, { bucket: now - 7200, country: 'SG', views: 1 }, { bucket: now - 25 * 3600, country: 'DE', views: 1 }]);
   const response = await live(e, { Origin: 'https://r-ush.github.io' });
   assert.equal(response.status, 200);
   assert.equal(response.headers.get('access-control-allow-origin'), 'https://r-ush.github.io');
   assert.equal(response.headers.get('cache-control'), 'public, max-age=30');
   assert.equal(response.headers.get('set-cookie'), null);
-  // SG's last bucket is two hours old, so only its total is public; no small-count merging.
-  assert.deepEqual((await response.json()).countries, [{ code: 'KR', views: 42, last: new Date(now * 1000).toISOString() }, { code: 'FI', views: 1 }, { code: 'SG', views: 1 }]);
+  const body = await response.json();
+  // No small-count merging; the list holds only the last 24 hours, newest first.
+  assert.deepEqual(body.countries, [{ code: 'KR', views: 42 }, { code: 'DE', views: 1 }, { code: 'FI', views: 1 }, { code: 'SG', views: 1 }]);
+  assert.deepEqual(body.recent, [{ code: 'KR', time: new Date(now * 1000).toISOString(), views: 2 }, { code: 'SG', time: new Date((now - 7200) * 1000).toISOString(), views: 1 }]);
+  assert.equal(body.bucketMinutes, 10);
   assert.equal((await live(e, { Origin: 'https://evil.example' })).headers.get('access-control-allow-origin'), null);
   assert.equal((await worker.fetch(new Request('https://metrics.example/api/live', { method: 'POST', body: '{}' }), e)).status, 405);
   // A new view invalidates this isolate's short cache.
   await worker.fetch(visit('SG'), e);
-  const sg = (await (await live(e)).json()).countries.find(c => c.code === 'SG');
-  assert.equal(sg.views, 2);
-  assert.ok(sg.last);
+  const updated = await (await live(e)).json();
+  assert.equal(updated.countries.find(c => c.code === 'SG').views, 2);
+  assert.equal(updated.recent.filter(r => r.code === 'SG').reduce((n, r) => n + r.views, 0), 2);
   assert.equal((await live({ ...e, DB: { prepare() { throw new Error('private credentials'); } } })).status, 503);
 });
 

@@ -33,11 +33,16 @@ public map's all-time country totals are kept.
 
 ## Public live map
 
-The homepage footer map ("Visitors around the world") shows only a map: one dot
-per country, with no legend or text. A dot's size combines two counts:
+The homepage footer map ("Visitors around the world") shows one dot per country,
+the combined total (top left), zoom buttons and a "Recent visitors" list; hovering
+or tapping a dot shows its country, visits and latest interval. A dot's size
+combines three counts from periods that do not overlap:
 
 - Google Search Console clicks by country from `assets/data/search-history.json`
-  (`scripts/import-search-console.py`), and
+  (`scripts/import-search-console.py`), up to 2026-10-04;
+- MapMyVisitors page views from 2026-10-07 23:26 KST (when it was added) to
+  2026-10-12 04:39 KST (when this collector replaced it), from
+  `assets/data/mapmyvisitors-history.json`; and
 - this collector's all-time page views per country from `country_totals`, read
   through the public, credential-free `GET /api/live`. Each view adds 1 to its
   country's total in the same batch as the daily aggregates; the 180-day cleanup
@@ -45,24 +50,39 @@ per country, with no legend or text. A dot's size combines two counts:
 
 The Search Console export ends on 2026-10-04 and collection started on 2026-10-12,
 so the sum does not count the same visit twice. If a later Search Console import
-covers dates after collection started, clicks that led to collected page views
-would be counted in both; keep its end date before 2026-10-12 or reconsider the sum.
+covers dates after 2026-10-07, clicks that led to counted page views would be
+counted twice; keep its end date before then or reconsider the sum.
+
+MapMyVisitors was restored on 2026-10-19 10:51 KST and runs alongside this
+collector; those later views duplicate collected ones and are not added. Its
+public stats page gives exact per-location totals only for all time (KR 42, US 42,
+DE 1, unknown 83 on 2026-10-29) and IPs for the latest 50 hits, so the file's
+country split for the earlier window (104 page views by its daily chart) is an
+estimate: all-time totals minus the latest 50 hits and about 14 earlier
+post-restore hits, split in the latest-50 ratio. Its 55 views with no location
+are added to the total but have no dot. MapMyVisitors files Microsoft cloud
+addresses under the United States and many Korean addresses as unknown, so its
+US share is likely too high and Korea's too low. The file holds no IPs.
 
 A dot pulses a few times and keeps a ring when that country had a view within
-`liveMap.recentMinutes` (60). For that only, each view also adds 1 to its
-country's 10-minute UTC bucket in `live_country`; there is no region, city,
-coordinate, page or environment column, `/api/live` exposes a country's latest
-bucket only while it is recent, and the daily cleanup deletes buckets older than
-one day (so none is more than two days old).
+`liveMap.recentMinutes` (60). For that and the recent-visitors list, each view
+also adds 1 to its country's 10-minute UTC bucket in `live_country`; there is no
+region, city, coordinate, page or environment column. `/api/live` returns the
+newest 50 non-empty buckets from the last `liveMap.listHours` (24) as
+`{code, time, views}` (the list shows at most 8, with the interval's end as
+"N min ago"), and the daily cleanup deletes buckets older than one day (so none
+is more than two days old). There is no per-visitor list: with no visitor IDs,
+two views in one bucket from one country cannot be told apart.
 
 Unlike the dashboard, the public map does not merge countries below 3 views: a
-single view from one country is visible as one visit. That is disclosed on the privacy
+single view from one country is visible as one visit, and its 10-minute interval
+is visible in the list for a day. That is disclosed on the privacy
 page. The response is memoized per isolate for 30 seconds and sent with
 `Cache-Control: public, max-age=30`; the homepage loads map data only when the
 footer map is opened and polls every 60 seconds while it is open and visible.
 If `/api/live` is unavailable, the Search Console dots are still drawn.
 
-`assets/data/analytics-config.json` → `liveMap` sets `recentMinutes` and the display
+`assets/data/analytics-config.json` → `liveMap` sets `recentMinutes`, `listHours` and the display
 weight of the home country (`homeCountry`, `homeWeight`). The weight changes dot
 size only; hover tooltips show real counts. Dot positions come from
 `assets/data/country-points.json` (`python scripts/build-country-points.py`).

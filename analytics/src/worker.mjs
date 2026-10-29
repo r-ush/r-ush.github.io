@@ -60,10 +60,10 @@ export async function cleanup(env, now = new Date()) {
 async function liveMap(env, now = new Date()) {
   const cached = liveCache.get(env.DB);
   if (cached && now.getTime() - cached.at < LIVE_CACHE_MS) return cached.body;
-  const since = liveBucket(new Date(now.getTime() - LIVE.recentMinutes * 60000));
+  const since = liveBucket(new Date(now.getTime() - LIVE.listHours * 3600000));
   const [views, recent] = await Promise.all([
     env.DB.prepare('SELECT country, views FROM country_totals WHERE views > 0').all(),
-    env.DB.prepare('SELECT country, MAX(bucket) AS last FROM live_country WHERE bucket >= ? GROUP BY country').bind(since).all()
+    env.DB.prepare('SELECT bucket, country, views FROM live_country WHERE bucket >= ? AND views > 0 ORDER BY bucket DESC, country LIMIT 50').bind(since).all()
   ]);
   const body = JSON.stringify(liveReport(views.results || [], recent.results || [], now));
   liveCache.set(env.DB, { at: now.getTime(), body });

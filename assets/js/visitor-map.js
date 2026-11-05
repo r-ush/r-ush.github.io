@@ -1,6 +1,8 @@
 /* Shared by the homepage and project repositories. Two independent counters. */
 (function () {
   'use strict';
+  // Embedded studies/recordings belong to the parent view. Direct visits count.
+  if (window.top !== window.self) return;
   if (window.rushAnalyticsLoaded) return;
   window.rushAnalyticsLoaded = true;
   var script = document.currentScript;
@@ -72,6 +74,7 @@
     if (immediate || queue.length >= 20) flush();
   }
   function pagePath(path, config) {
+    if (Object.prototype.hasOwnProperty.call(config.pageAliases || {}, path)) path = config.pageAliases[path];
     path = path.replace(/index\.html$/, '');
     if (!path.endsWith('/')) path += '/';
     return Object.prototype.hasOwnProperty.call(config.pages, path) ? path : null;
@@ -211,7 +214,7 @@
     }, 5000);
     view();
   }
-  fetch(new URL('assets/data/analytics-config.json', root).href, { credentials: 'omit', referrerPolicy: 'no-referrer' })
+  fetch(new URL('assets/data/analytics-config.json', root).href, { cache: 'no-cache', credentials: 'omit', referrerPolicy: 'no-referrer' })
     .then(function (response) { return response.ok ? response.json() : null; })
     .then(function (config) { if (config) start(config); })
     .catch(function () {});

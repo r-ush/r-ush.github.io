@@ -55,5 +55,32 @@
     "personal",
     "visitor-map",
     "other"
-  ]
+  ],
+  "pageAliases": {
+    "/scooping_robotic_hand/rl/study.html": "/scooping_robotic_hand/rl/",
+    "/scooping_robotic_hand/rl/rollouts/ep100000/env0/pose_viewer_step_000000600_0000.html": "/scooping_robotic_hand/rl/rollouts/",
+    "/scooping_robotic_hand/rl/rollouts/ep100000/env1/pose_viewer_step_000000600_0000.html": "/scooping_robotic_hand/rl/rollouts/",
+    "/scooping_robotic_hand/rl/rollouts/ep100000/env2/pose_viewer_step_000000600_0000.html": "/scooping_robotic_hand/rl/rollouts/",
+    "/scooping_robotic_hand/rl/rollouts/ep100000/env3/pose_viewer_step_000000600_0000.html": "/scooping_robotic_hand/rl/rollouts/",
+    "/scooping_robotic_hand/rl/rollouts/ep100000/env4/pose_viewer_step_000000600_0000.html": "/scooping_robotic_hand/rl/rollouts/",
+    "/scooping_robotic_hand/rl/rollouts/ep100000/env5/pose_viewer_step_000000600_0000.html": "/scooping_robotic_hand/rl/rollouts/",
+    "/scooping_robotic_hand/rl/rollouts/ep100000/env6/pose_viewer_step_000000600_0000.html": "/scooping_robotic_hand/rl/rollouts/",
+    "/scooping_robotic_hand/rl/rollouts/ep100000/env7/pose_viewer_step_000000600_0000.html": "/scooping_robotic_hand/rl/rollouts/",
+    "/scooping_robotic_hand/rl/rollouts/ep80000/env0/pose_viewer_step_000000600_0000.html": "/scooping_robotic_hand/rl/rollouts/",
+    "/scooping_robotic_hand/rl/rollouts/ep80000/env1/pose_viewer_step_000000600_0000.html": "/scooping_robotic_hand/rl/rollouts/",
+    "/scooping_robotic_hand/rl/rollouts/ep80000/env2/pose_viewer_step_000000600_0000.html": "/scooping_robotic_hand/rl/rollouts/",
+    "/scooping_robotic_hand/rl/rollouts/ep80000/env3/pose_viewer_step_000000600_0000.html": "/scooping_robotic_hand/rl/rollouts/",
+    "/scooping_robotic_hand/rl/rollouts/ep80000/env4/pose_viewer_step_000000600_0000.html": "/scooping_robotic_hand/rl/rollouts/",
+    "/scooping_robotic_hand/rl/rollouts/ep80000/env5/pose_viewer_step_000000600_0000.html": "/scooping_robotic_hand/rl/rollouts/",
+    "/scooping_robotic_hand/rl/rollouts/ep80000/env6/pose_viewer_step_000000600_0000.html": "/scooping_robotic_hand/rl/rollouts/",
+    "/scooping_robotic_hand/rl/rollouts/ep80000/env7/pose_viewer_step_000000600_0000.html": "/scooping_robotic_hand/rl/rollouts/",
+    "/scooping_robotic_hand/rl/rollouts/ep90000/env0/pose_viewer_step_000000600_0000.html": "/scooping_robotic_hand/rl/rollouts/",
+    "/scooping_robotic_hand/rl/rollouts/ep90000/env1/pose_viewer_step_000000600_0000.html": "/scooping_robotic_hand/rl/rollouts/",
+    "/scooping_robotic_hand/rl/rollouts/ep90000/env2/pose_viewer_step_000000600_0000.html": "/scooping_robotic_hand/rl/rollouts/",
+    "/scooping_robotic_hand/rl/rollouts/ep90000/env3/pose_viewer_step_000000600_0000.html": "/scooping_robotic_hand/rl/rollouts/",
+    "/scooping_robotic_hand/rl/rollouts/ep90000/env4/pose_viewer_step_000000600_0000.html": "/scooping_robotic_hand/rl/rollouts/",
+    "/scooping_robotic_hand/rl/rollouts/ep90000/env5/pose_viewer_step_000000600_0000.html": "/scooping_robotic_hand/rl/rollouts/",
+    "/scooping_robotic_hand/rl/rollouts/ep90000/env6/pose_viewer_step_000000600_0000.html": "/scooping_robotic_hand/rl/rollouts/",
+    "/scooping_robotic_hand/rl/rollouts/ep90000/env7/pose_viewer_step_000000600_0000.html": "/scooping_robotic_hand/rl/rollouts/"
+  }
 }

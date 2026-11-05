@@ -1,10 +1,22 @@
 # Aggregate website analytics
 
-The homepage and seven project pages already import `/assets/js/visitor-map.js`.
+The homepage, seven project pages, the standalone RL study and all 24 recording
+viewers import `/assets/js/visitor-map.js` (33 public content URLs).
 That shared entry sends one image request per visible page load to the existing
 MapMyVisitors counter (https://mapmyvisitors.com/web/1c8q7) and independently
 collects private aggregate usage statistics. Both respect browser privacy signals
 and the site's opt-out setting. The static Search Console map image remains the no-JavaScript fallback.
+
+Direct study visits are grouped with the RL page, and direct recording visits
+with the Rollouts page, using the exact `pageAliases` allowlist in the shared
+configuration. Embedded frames do not count: their parent page already does.
+The RL source template retains the script when `rl/build.py` rebuilds the page.
+
+Run `npm run check:coverage` with the project repositories next to this checkout,
+or `npm run check:coverage:live` against published pages. These read-only checks
+verify one shared tracker import on every configured content URL. Privacy settings,
+search-verification files, source fragments and local build drafts are not content
+pages and are not counted.
 
 ## What is implemented
 
@@ -107,8 +119,8 @@ The line sums Search Console clicks per day (`daily` in `search-history.json`,
 written by the import script), MapMyVisitors' exact daily page views for its
 own window (`daily` in `mapmyvisitors-history.json`) and this collector's
 site-wide views per Asia/Seoul day from `daily_totals`. That table holds only a
-date and a count, includes views with an unknown country (so the chart can end
-above the map total if such views occur), is filled in the same batch as the
+date and a count, includes views with an unknown country, supplies the map total
+even when a country cannot be plotted, is filled in the same batch as the
 daily aggregates and, unlike `daily_metrics`, is never deleted.
 `/api/live` returns it as `daily`, so the per-day totals are public even while the
 chart is hidden; the privacy page says so. Oct 5-6, 2026 have no source and read
@@ -207,6 +219,32 @@ npx wrangler deploy --dry-run
 Use a separate admin key for local Wrangler development in ignored `.dev.vars`.
 Never publish `.dev.vars`, `.wrangler`, `node_modules`, or the preview database.
 The whole `analytics/` directory is excluded from the Jekyll Pages build.
+
+## Geolocation review (2026-11-05)
+
+The collector uses Cloudflare's `request.cf.country` and `regionCode` metadata.
+It does not infer location from a client-provided country, forwarded-IP header,
+language or time zone. Missing locations remain `Unknown`; their views still
+contribute to the overall total. Tests cover trusted metadata, misleading client
+headers, missing metadata, IPv4/IPv6-shaped headers and suppression of raw IPs.
+The public map places dots at fixed country label points from Natural Earth;
+they are not visitor coordinates. Its recent entries are country/10-minute
+view buckets, not identified people. The home-country display weight (0.3)
+changes marker size only, not stored counts or tooltip totals.
+
+MapMyVisitors states that it uses an offline MaxMind GeoIP2 database and stores
+IPs. Its database version, refresh cadence and internal matching logic cannot
+be audited from this repository. Its public recent list contains both located
+and unknown visits. No independent ground-truth sample exists here, so neither
+provider's measured accuracy can be established from these logs. VPNs, proxies,
+mobile gateways and changing IP assignments can move the apparent location;
+the displayed city cannot establish a person's residence, organization or identity.
+Country/region distributions are useful estimates, not exact visitor locations.
+
+Sources: [Cloudflare request metadata](https://developers.cloudflare.com/workers/runtime-apis/request/),
+[Cloudflare accuracy limits](https://developers.cloudflare.com/network/ip-geolocation/),
+[MapMyVisitors data source](https://mapmyvisitors.com/b/policy),
+[MaxMind accuracy limits](https://support.maxmind.com/knowledge-base/articles/maxmind-geolocation-accuracy).
 
 ## Measurement limits and operational choices
 

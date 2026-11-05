@@ -7,6 +7,8 @@
   },
   "scripts": {
     "test": "node --test test/*.test.mjs",
+    "check:coverage": "node scripts/check-coverage.mjs",
+    "check:coverage:live": "node scripts/check-coverage.mjs --live",
     "preview": "node scripts/preview.mjs",
     "preview:live-sample": "node scripts/preview.mjs --sample-live",
     "dev": "wrangler dev",

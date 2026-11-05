@@ -267,10 +267,15 @@
       dot.appendChild(el('circle', { class: 'live-dot-hit', r: Math.max(item.r, 10) }));
       layer.appendChild(dot);
     });
-    // The total also includes earlier views whose country was unknown (no dot).
+    // Daily totals include views without a known country or a drawable marker.
+    // Older collector responses may only have country totals; keep that fallback.
     var visits = pastUnknown;
-    items.forEach(function (item) { visits += item.visits; });
+    for (var pastCode in past) visits += past[pastCode];
+    var countryViews = (live.countries || []).reduce(function (sum, c) { return sum + Math.max(0, Number(c.views) || 0); }, 0);
+    var dailyViews = (live.daily || []).reduce(function (sum, d) { return sum + Math.max(0, Number(d.views) || 0); }, 0);
+    visits += Math.max(countryViews, dailyViews);
     total.textContent = plural(visits, 'visit') + ' · ' + plural(items.length, 'country');
+    total.title = 'Historical search clicks and page views, including unknown locations; not unique people. Country dots are approximate.';
     map.setAttribute('aria-label', 'World map of ' + plural(visits, 'visit') + ' from ' + plural(items.length, 'country') + '.');
 
     // Country and 10-minute interval only; the interval's end is used as "ago".

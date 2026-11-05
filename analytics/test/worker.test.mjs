@@ -37,6 +37,23 @@ test('unknown identifying fields, arbitrary URLs and malformed measurements are 
   assert.throws(() => validateBatch({ v: 1, events: [view], session: 'x' }));
 });
 
+test('geography trusts Cloudflare metadata, not client country or forwarded IP headers', async () => {
+  for (const ip of ['198.51.100.10', '2001:db8::10']) {
+    const e = env();
+    const headers = { 'CF-IPCountry': 'US', 'X-Forwarded-For': ip, 'CF-Connecting-IP': ip };
+    assert.equal((await worker.fetch(visit('KR', [view], headers), e)).status, 204);
+    const rows = e.DB.sqlite.prepare('SELECT * FROM daily_metrics').all();
+    assert.equal(rows.find(r => r.dimension === 'country').label, 'KR');
+    assert.equal(JSON.stringify(rows).includes(ip), false);
+  }
+  const e = env();
+  const req = new Request('https://metrics.example/collect', { method: 'POST', headers: { Origin: 'https://r-ush.github.io', 'User-Agent': 'Mozilla/5.0', 'CF-IPCountry': 'US', 'X-Forwarded-For': '198.51.100.10' }, body: JSON.stringify({ v: 1, events: [view] }) });
+  assert.equal((await worker.fetch(req, e)).status, 204);
+  assert.equal(e.DB.sqlite.prepare("SELECT label FROM daily_metrics WHERE dimension = 'country'").get().label, 'Unknown');
+  assert.equal(e.DB.sqlite.prepare('SELECT COUNT(*) AS n FROM country_totals').get().n, 0);
+  assert.equal(e.DB.sqlite.prepare('SELECT views FROM daily_totals').get().views, 1);
+});
+
 test('CORS, bots, privacy signals, oversized bodies and rate limiting are enforced', async () => {
   const e = env();
   for (const headers of [{ Origin: 'https://evil.example' }, {}]) assert.equal((await worker.fetch(request([view], { headers }), e)).status, 403);

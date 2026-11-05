@@ -1,7 +1,8 @@
 Page: https://r-ush.github.io/
 
 Aggregate analytics: see [setup, privacy model, and local preview](analytics/README.md).
-The shared tracker stays inactive until its Cloudflare collection endpoint is configured.
+The shared tracker is configured for the Cloudflare collector; the analytics guide
+includes local and live coverage checks for all 33 public content URLs.
 
 Local checkout: `~/webpages/r-ush.github.io/`.
 Run `python ~/webpages/preview.py` to preview this homepage at

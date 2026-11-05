@@ -33,13 +33,15 @@ async function browser(options = {}) {
     }
   };
   context.window = context;
+  context.self = context;
+  context.top = options.embedded ? {} : context;
   vm.runInNewContext(source, context);
   await setImmediate();
   return { context, doc, requests, pixels, storage, tick(seconds = 5) { time += seconds * 1000; timers.forEach(fn => fn()); }, fire(name, event = {}, target = 'window') { (target === 'window' ? winEvents : docEvents)[name]?.forEach(fn => fn(event)); }, events() { return requests.filter(r => r.init?.method === 'POST').flatMap(r => JSON.parse(r.init.body).events); } };
 }
 
 test('public counter and private collector both run once on homepage and project pages', async () => {
-  for (const path of ['/', '/scooping_robotic_hand/']) {
+  for (const path of Object.keys(baseConfig.pages)) {
     const b = await browser({ path });
     b.fire('visibilitychange', {}, 'document'); b.fire('pageshow');
     vm.runInNewContext(source, b.context);
@@ -47,6 +49,19 @@ test('public counter and private collector both run once on homepage and project
     assert.equal(new URL(b.pixels[0].src).searchParams.get('d'), 'fGQkHeJjD2q20QiECdFcDFPfH3JNP_cewlyjRrwjAf4');
     assert.equal(b.pixels[0].referrerPolicy, 'no-referrer');
     assert.equal(b.events().filter(e => e.type === 'view').length, 1);
+  }
+});
+
+test('standalone supplementary pages count under their research group; embedded pages do not count', async () => {
+  assert.equal(Object.keys(baseConfig.pageAliases).length, 25);
+  for (const [path, canonical] of Object.entries(baseConfig.pageAliases)) {
+    const direct = await browser({ path });
+    assert.equal(direct.pixels.length, 1, path);
+    assert.deepEqual(direct.events().filter(e => e.type === 'view').map(e => e.page), [canonical], path);
+    const embedded = await browser({ path, embedded: true });
+    embedded.fire('pageshow'); embedded.fire('visibilitychange', {}, 'document'); embedded.tick();
+    assert.equal(embedded.requests.length, 0, path);
+    assert.equal(embedded.pixels.length, 0, path);
   }
 });
 

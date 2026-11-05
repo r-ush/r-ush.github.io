@@ -57,6 +57,14 @@ const sample = () => ({ bucketMinutes: 10, countries: [
 ], daily: [{ day: '2026-10-12', views: 10 }, { day: '2026-10-20', views: 5 }] });
 const history = JSON.parse(files['assets/data/search-history.json']).countries;
 
+test('unknown locations remain in the total without creating a fabricated map position', async () => {
+  const page = homepage([{ countries: [{ code: 'KR', views: 3 }], recent: [], daily: [{ day: '2026-11-05', views: 8 }] }]);
+  await page.open();
+  assert.match(page.section.querySelector('.visitor-map-total').textContent, /^246 visits/);
+  assert.equal(page.dot('Unknown'), null);
+  assert.equal(page.dot('KR').getAttribute('data-visits'), '123 visits');
+});
+
 test('the closed footer map loads nothing until it is opened', async () => {
   const page = homepage([sample()]);
   await settle();
@@ -85,9 +93,9 @@ test('opening shows one dot per country for earlier counts plus page views, a to
   assert.deepEqual(detail('US'), ['United States', '43 visits', null]);
   assert.deepEqual(detail('DE'), ['Germany', '9 visits', 'Latest 2 h ago']);
   assert.deepEqual(detail('AT'), ['Austria', '1 visit', null]);
-  // 134 clicks + 104 earlier views (55 without a country) + 87 drawable collected views.
-  assert.equal(page.section.querySelector('.visitor-map-total').textContent, '325 visits · 16 countries');
-  assert.equal(svg.getAttribute('aria-label'), 'World map of 325 visits from 16 countries.');
+  // 134 clicks + 104 earlier views + all 91 collected views, including unmapped codes.
+  assert.equal(page.section.querySelector('.visitor-map-total').textContent, '329 visits · 16 countries');
+  assert.equal(svg.getAttribute('aria-label'), 'World map of 329 visits from 16 countries.');
 
   // Korea is scaled down for display only, so other countries get larger dots.
   assert.equal(page.radius('KR'), 11);

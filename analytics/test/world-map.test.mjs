@@ -125,7 +125,7 @@ test('with ?visitors=trend a cumulative chart opens beside the map', async () =>
   const panels = page.section.querySelector('.visitor-panels');
   assert.deepEqual([...panels.children].map(n => n.className), ['visitor-world', 'visitor-trend']);
   assert.deepEqual([...page.section.querySelectorAll('.visitor-trend-range button')].map(b => b.textContent), ['All', 'Since Oct 7']);
-  assert.equal(page.section.querySelector('.visitor-trend-note').textContent, 'Search clicks until Oct 4 · page views from Oct 7');
+  assert.equal(page.section.querySelector('.visitor-trend-note').textContent, 'Search clicks until Oct 6 · page views from Oct 7');
   // 134 search clicks + 104 MapMyVisitors views + 15 collected views.
   const chart = () => page.section.querySelector('.visitor-trend-chart');
   const end = () => chart().querySelector('.visitor-trend-end').textContent;
@@ -136,10 +136,10 @@ test('with ?visitors=trend a cumulative chart opens beside the map', async () =>
   assert.equal(read()[0], '253 visits');
   page.fire(chart(), 'keydown', { key: 'Home' });
   assert.deepEqual(read(), ['0 visits', 'Jun 5, 2025 · +0']);
-  // Oct 5-6 fall between the search export and the first counted page views.
+  // The new Search Console export confirms zero clicks on Oct 5-6.
   const toGap = (Date.parse('2026-10-05') - Date.parse('2025-06-05')) / 86400000;
   for (let i = 0; i < toGap; i++) page.fire(chart(), 'keydown', { key: 'ArrowRight' });
-  assert.deepEqual(read(), ['134 visits', 'Oct 5, 2026 · no data']);
+  assert.deepEqual(read(), ['134 visits', 'Oct 5, 2026 · +0']);
   page.fire(chart(), 'keydown', { key: 'ArrowRight' });
   page.fire(chart(), 'keydown', { key: 'ArrowRight' });
   assert.deepEqual(read(), ['136 visits', 'Oct 7, 2026 · +2']);

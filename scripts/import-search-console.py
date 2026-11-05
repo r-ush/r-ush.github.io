@@ -1,12 +1,16 @@
-"""Build public country totals and a map from a Search Console XLSX export.
+"""Import a Search Console XLSX or CSV ZIP without double-counting page views.
 
-Usage: python scripts/import-search-console.py path/to/export.xlsx
-The source workbook is read only. No queries or individual records are published.
+Usage: python scripts/import-search-console.py path/to/export.xlsx_or_zip
+Source files are read only. No queries or individual records are published.
 Natural Earth map data is public domain: https://www.naturalearthdata.com/about/terms-of-use/
 """
 
 import argparse
+import copy
+import csv
+from datetime import date, timedelta
 import html
+import io
 import json
 import math
 from pathlib import Path
@@ -28,6 +32,14 @@ COUNTRY_CODES = {
 
 def read_sheets(path):
     with zipfile.ZipFile(path) as archive:
+        if path.suffix.lower() == ".zip":
+            sheets = {}
+            for name in archive.namelist():
+                if Path(name).stem not in {"차트", "국가", "필터"} or not name.endswith(".csv"):
+                    continue
+                rows = csv.reader(io.StringIO(archive.read(name).decode("utf-8-sig")))
+                sheets[Path(name).stem] = [{chr(65 + i): value for i, value in enumerate(row)} for row in rows if row]
+            return sheets
         strings = []
         if "xl/sharedStrings.xml" in archive.namelist():
             strings = ["".join(n.itertext()) for n in ET.fromstring(
@@ -109,6 +121,37 @@ def map_svg(features, countries):
     return "\n".join(parts) + "\n"
 
 
+def merge_history(history, report, first_view_day):
+    """Preserve the older country baseline; append only uncovered pre-counter days."""
+    history = copy.deepcopy(history)
+    if history["endDate"] >= first_view_day:
+        raise ValueError("Existing search history overlaps page-view collection.")
+    for day, clicks in report["daily"].items():
+        if history["startDate"] <= day <= history["endDate"] and clicks != history["daily"].get(day, 0):
+            raise ValueError("Revised historical clicks on " + day + "; country totals need reconciliation before publishing.")
+    next_day = date.fromisoformat(history["endDate"]) + timedelta(days=1)
+    added_clicks = 0
+    while next_day.isoformat() < first_view_day and next_day.isoformat() in report["daily"]:
+        day = next_day.isoformat()
+        clicks = report["daily"][day]
+        history["daily"][day] = clicks  # Keep confirmed zero days distinct from missing data.
+        history["clicks"] += clicks
+        history["impressions"] += report["dailyImpressions"][day]
+        history["endDate"] = day
+        added_clicks += clicks
+        next_day += timedelta(days=1)
+    if added_clicks:
+        # A range-wide country table cannot reveal the countries of selected days.
+        history["unknown"] = history.get("unknown", 0) + added_clicks
+    history["timezone"] = "America/Los_Angeles"
+    history["lastUpdatedOn"] = report["exportedOn"]
+    history["sourceFiles"] = list(dict.fromkeys([*history.get("sourceFiles", [history["sourceFile"]]), report["sourceFile"]]))
+    history["latestReport"] = "search-latest.json"
+    if sum(history["daily"].values()) != history["clicks"] or sum(c["clicks"] for c in history["countries"]) + history.get("unknown", 0) != history["clicks"]:
+        raise ValueError("Merged search history does not reconcile.")
+    return history
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("workbook", type=Path)
@@ -117,8 +160,13 @@ def main():
     daily = sheets["차트"][1:]
     rows = sheets["국가"][1:]
     filters = {row["A"]: row["B"] for row in sheets["필터"][1:]}
-    if filters.get("검색 유형") != "웹":
+    if filters.get("검색 유형") not in {"웹", "웹(텍스트 기반)"}:
         raise ValueError("This view expects a Web search export.")
+    if set(filters) - {"검색 유형", "날짜"}:
+        raise ValueError("Filtered exports cannot replace the site-wide search report.")
+    dates = sorted(row["A"] for row in daily)
+    if len(set(dates)) != len(dates) or len(dates) != (date.fromisoformat(dates[-1]) - date.fromisoformat(dates[0])).days + 1:
+        raise ValueError("Expected one row per day, including zero-click days.")
     clicks = sum(int(row["B"]) for row in daily)
     impressions = sum(int(row["C"]) for row in daily)
     if clicks != sum(int(row["B"]) for row in rows) or impressions != sum(int(row["C"]) for row in rows):
@@ -128,7 +176,7 @@ def main():
     lookup = {f["properties"].get("ISO_A2_EH"): f for f in detail}
     countries = []
     for row in rows:
-        if not row["B"]:
+        if not int(row["B"]):
             continue
         if row["A"] not in COUNTRY_CODES:
             raise ValueError("Add an explicit country-code mapping for: " + row["A"])
@@ -137,7 +185,7 @@ def main():
     countries.sort(key=lambda c: (-c["clicks"], c["name"]))
     present = {f["properties"].get("ISO_A2_EH") for f in features}
     features += [lookup[c["code"]] for c in countries if c["code"] not in present]
-    exported = re.search(r"\d{4}-\d{2}-\d{2}(?=\.xlsx$)", args.workbook.name)
+    exported = re.search(r"\d{4}-\d{2}-\d{2}(?=\.(?:xlsx|zip)$)", args.workbook.name)
     if exported is None:
         raise ValueError("Expected the export date in the workbook filename.")
     dates = sorted(row["A"] for row in daily)
@@ -148,20 +196,40 @@ def main():
         "startDate": dates[0],
         "endDate": dates[-1],
         "searchType": "Web",
+        "timezone": "America/Los_Angeles",
         "clicks": clicks,
         "impressions": impressions,
         "countriesWithClicks": len(countries),
         "countries": countries,
-        # Clicks per day (days with clicks only) for the cumulative visits chart.
-        "daily": {row["A"]: int(row["B"]) for row in sorted(daily, key=lambda r: r["A"]) if int(row["B"])},
+        "daily": {row["A"]: int(row["B"]) for row in sorted(daily, key=lambda r: r["A"])},
+        "dailyImpressions": {row["A"]: int(row["C"]) for row in sorted(daily, key=lambda r: r["A"])},
     }
     data_dir, image_dir = ROOT / "assets/data", ROOT / "assets/images"
     data_dir.mkdir(parents=True, exist_ok=True)
     image_dir.mkdir(parents=True, exist_ok=True)
-    (data_dir / "search-history.json").write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
-    (image_dir / "search-history-map.svg").write_text(map_svg(features, countries), encoding="utf-8")
-    (image_dir / "world-map.svg").write_text(map_svg(features, []), encoding="utf-8")
-    print(f"Imported {clicks} search clicks from {len(countries)} countries/regions ({dates[0]} to {dates[-1]}).")
+    history_path = data_dir / "search-history.json"
+    latest_path = data_dir / "search-latest.json"
+    if latest_path.exists() and json.loads(latest_path.read_text(encoding="utf-8"))["exportedOn"] > data["exportedOn"]:
+        raise ValueError("An older export cannot replace the latest report.")
+    counter = json.loads((data_dir / "mapmyvisitors-history.json").read_text(encoding="utf-8"))
+    first_view_day = min(counter["daily"])
+    previous = json.loads(history_path.read_text(encoding="utf-8")) if history_path.exists() else None
+    if previous:
+        history = merge_history(previous, data, first_view_day)
+    else:
+        if data["endDate"] >= first_view_day:
+            raise ValueError("Import a pre-counter baseline before importing overlapping exports.")
+        history = copy.deepcopy(data)
+    latest_path.write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    history_path.write_text(json.dumps(history, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    if not previous or previous["countries"] != history["countries"]:
+        present = {f["properties"].get("ISO_A2_EH") for f in features}
+        features += [lookup[c["code"]] for c in history["countries"] if c["code"] not in present]
+        (image_dir / "search-history-map.svg").write_text(map_svg(features, history["countries"]), encoding="utf-8")
+        (image_dir / "world-map.svg").write_text(map_svg(features, []), encoding="utf-8")
+    excluded = sum(value for day, value in data["daily"].items() if day >= first_view_day)
+    print(f"Latest report: {clicks} search clicks, {impressions} impressions ({dates[0]} to {dates[-1]}).")
+    print(f"Visitor baseline: {history['clicks']} search clicks through {history['endDate']}; {excluded} concurrent search clicks excluded from the visitor total.")
 
 
 if __name__ == "__main__":

@@ -74,7 +74,7 @@
     // date, then MapMyVisitors views until collection started. Neither overlaps it.
     history.countries.forEach(function (c) { past[c.code] = (past[c.code] || 0) + c.clicks; });
     mapmyvisitors.countries.forEach(function (c) { past[c.code] = (past[c.code] || 0) + c.views; });
-    pastUnknown = mapmyvisitors.unknown || 0;
+    pastUnknown = (history.unknown || 0) + (mapmyvisitors.unknown || 0);
     if (config.liveMap) for (var key in settings) if (key in config.liveMap) settings[key] = config.liveMap[key];
     try {
       var collector = new URL(config.endpoint);

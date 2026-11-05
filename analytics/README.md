@@ -51,7 +51,7 @@ or tapping a dot shows its country, visits and latest interval. A dot's size
 combines three counts from periods that do not overlap:
 
 - Google Search Console clicks by country from `assets/data/search-history.json`
-  (`scripts/import-search-console.py`), up to 2026-10-04;
+  (`scripts/import-search-console.py`), up to 2026-10-06;
 - MapMyVisitors page views from 2026-10-07 23:26 KST (when it was added) to
   2026-10-12 04:39 KST (when this collector replaced it), from
   `assets/data/mapmyvisitors-history.json`; and
@@ -60,10 +60,12 @@ combines three counts from periods that do not overlap:
   country's total in the same batch as the daily aggregates; the 180-day cleanup
   does not touch this table (country code and count only, no dates).
 
-The Search Console export ends on 2026-10-04 and collection started on 2026-10-12,
-so the sum does not count the same visit twice. If a later Search Console import
-covers dates after 2026-10-07, clicks that led to counted page views would be
-counted twice; keep its end date before then or reconsider the sum.
+The visitor baseline includes Search Console dates through 2026-10-06, before
+MapMyVisitors page-view collection began on 2026-10-07. Later search clicks are
+kept in `assets/data/search-latest.json` and are not added to the visitor total.
+The importer preserves the older country baseline and checks overlapping daily
+click counts before extending coverage; it never substitutes a shorter rolling
+report for the cumulative history.
 
 MapMyVisitors was restored on 2026-10-19 10:51 KST and runs alongside this
 collector; those later views duplicate collected ones and are not added. Its
@@ -123,12 +125,38 @@ date and a count, includes views with an unknown country, supplies the map total
 even when a country cannot be plotted, is filled in the same batch as the
 daily aggregates and, unlike `daily_metrics`, is never deleted.
 `/api/live` returns it as `daily`, so the per-day totals are public even while the
-chart is hidden; the privacy page says so. Oct 5-6, 2026 have no source and read
-"no data". The counted unit changes on Oct 7 (search clicks before, every page
-view after), which the chart marks; "Since Oct 7" shows only page views.
+chart is hidden; the privacy page says so. The 2026-11-05 Search Console export
+confirms zero search clicks on Oct 5-6, so those dates show +0. The counted unit
+changes on Oct 7 (search clicks before, every page view after), which the chart
+marks; "Since Oct 7" shows only page views.
 
 Apply `0003_daily_totals.sql` (`npm run db:remote`) before deploying a Worker
 that writes `daily_totals`; it seeds every day already in `daily_metrics`.
+
+## Search Console updates
+
+Run `python scripts/import-search-console.py path/to/export.zip` from the homepage
+repository root. Korean CSV ZIP and XLSX exports are supported. The raw export
+stays outside Git; only country-click totals and daily click/impression totals
+are published. Query strings, search terms and per-page export rows are omitted.
+
+`assets/data/search-latest.json` is the latest report for its stated date range.
+The 2026-11-05 export covers 2026-08-04 through 2026-11-03: 57 clicks and 717
+impressions. Its overlapping historical daily clicks match the previous export;
+Oct 5-6 add zero clicks, and 20 clicks from Oct 7 onward are excluded from the
+combined visitor total because that period uses page-view counters. The cumulative
+pre-counter baseline remains 134 search clicks from 2025-06-05 through 2026-10-06.
+
+Reimporting a file does not add it again. Revised overlapping click counts fail
+for reconciliation rather than silently changing the country distribution. Only
+consecutive, newly covered days before page-view tracking can extend the baseline.
+If those days contain clicks, their country stays unknown: a range-wide country
+table cannot assign countries to individual days. Search Console daily dates use
+Pacific Time (`America/Los_Angeles`; [Google's date definition](https://support.google.com/webmasters/answer/17011259?hl=en)); collector dates use Asia/Seoul. Daily exports
+cannot reconstruct matching timestamps across those time zones.
+
+Run `python -m unittest discover -s scripts -p test_import_search_console.py` to
+check the ZIP reader, overlap handling, missing/zero distinction and repeat imports.
 
 ## Current activation state
 

@@ -3,10 +3,10 @@
   "sourceFile": "https___r-ush.github.io_-Performance-on-Search-2026-10-07.xlsx",
   "exportedOn": "2026-10-07",
   "startDate": "2025-06-05",
-  "endDate": "2026-10-04",
+  "endDate": "2026-10-06",
   "searchType": "Web",
   "clicks": 134,
-  "impressions": 1860,
+  "impressions": 1868,
   "countriesWithClicks": 15,
   "countries": [
     {
@@ -193,6 +193,15 @@
     "2026-09-26": 2,
     "2026-09-27": 1,
     "2026-09-28": 1,
-    "2026-09-29": 1
-  }
+    "2026-09-29": 1,
+    "2026-10-05": 0,
+    "2026-10-06": 0
+  },
+  "timezone": "America/Los_Angeles",
+  "lastUpdatedOn": "2026-11-05",
+  "sourceFiles": [
+    "https___r-ush.github.io_-Performance-on-Search-2026-10-07.xlsx",
+    "https___r-ush.github.io_-Performance-on-Search-2026-11-05.zip"
+  ],
+  "latestReport": "search-latest.json"
 }

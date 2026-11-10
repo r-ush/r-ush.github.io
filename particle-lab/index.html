@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101715">
+  <meta name="description" content="Six robot assemblies, reconstructed as interactive particles. Set their poses, rotate them, and scatter their surfaces.">
+  <title>Robot particles · rush</title>
+  <link rel="icon" href="../images/rush.ico">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="models.js"></script>
+  <script defer src="pose-math.js"></script>
+  <script defer src="transitions.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <div class="app">
+    <header class="masthead">
+      <a class="wordmark" href="../index.html" aria-label="rush 홈페이지">rush<span> / </span><span class="wordmark-sub">playground</span></a>
+      <div class="mode-switch" role="group" aria-label="작업 모드"><button id="edit-mode" aria-pressed="false">자세 편집</button><button id="animate-mode" aria-pressed="true">애니메이션</button></div>
+      <button class="text-button" id="theme" aria-label="밝은 배경으로 변경">Light mode <span aria-hidden="true">↗</span></button>
+    </header>
+
+    <main class="scene" id="scene">
+      <div class="intro">
+        <p class="eyebrow"><span class="live-dot"></span> FROM SOLID TO PARTICLE</p>
+        <h1>Built to move.<br>Free to <em>scatter.</em></h1>
+        <p class="instructions">마우스를 가까이 가져가 보세요.<br>흩어진 점들이 다시 로봇이 됩니다.</p>
+        <div class="interaction-note"><span aria-hidden="true">↗</span><span>Hover to scatter<br><small>Touch & move on mobile</small></span></div>
+        <button id="pair-switch" class="pair-switch">조립체로 연결 · 02 <span aria-hidden="true">↗</span></button>
+        <p class="pair-note" id="pair-note">01 ↔ 02 · 그리퍼와 전체 로봇</p>
+      </div>
+
+      <aside class="pose-editor" id="pose-editor" aria-label="기본 자세 편집">
+        <p class="eyebrow"><span class="live-dot"></span> SET THE STARTING POSE</p>
+        <h2>Find its angle.</h2>
+        <p class="pose-help">드래그로 회전 · Shift + 드래그로 기울이기<br>아래에서 모델을 고른 뒤 자세를 정해 주세요.</p>
+        <p class="pose-source" id="pose-source"></p>
+        <div class="pose-axes">
+          <div class="pose-axis"><label for="pose-roll">Roll <span>X</span></label><input id="pose-roll-range" type="range" min="-180" max="180" step="0.01" value="0" aria-label="Roll X축 각도"><span class="angle-value"><input id="pose-roll" type="number" min="-180" max="180" step="0.01" value="0" inputmode="decimal"><span>°</span></span></div>
+          <div class="pose-axis"><label for="pose-pitch">Pitch <span>Y</span></label><input id="pose-pitch-range" type="range" min="-180" max="180" step="0.01" value="0" aria-label="Pitch Y축 각도"><span class="angle-value"><input id="pose-pitch" type="number" min="-180" max="180" step="0.01" value="0" inputmode="decimal"><span>°</span></span></div>
+          <div class="pose-axis"><label for="pose-yaw">Yaw <span>Z</span></label><input id="pose-yaw-range" type="range" min="-180" max="180" step="0.01" value="0" aria-label="Yaw Z축 각도"><span class="angle-value"><input id="pose-yaw" type="number" min="-180" max="180" step="0.01" value="0" inputmode="decimal"><span>°</span></span></div>
+        </div>
+        <p class="axis-note">STL 원본 축 기준 · 단위 deg · X → Y → Z</p>
+        <div class="pose-actions"><button id="copy-pose" class="pose-primary">이 모델 값 복사 <span aria-hidden="true">↗</span></button><button id="copy-all" class="pose-secondary">6개 전체 복사</button></div>
+        <div class="pose-meta"><span id="pose-save-status" role="status">모델별로 자세가 유지됩니다.</span><button id="zero-pose">이 모델 0°</button></div>
+        <details class="pose-export"><summary>복사할 값 보기</summary><textarea id="pose-output" readonly spellcheck="false" aria-label="복사할 자세 JSON"></textarea><p id="copy-status" role="status">버튼으로 복사하거나 텍스트를 직접 선택하세요.</p></details>
+      </aside>
+
+      <canvas id="particles" tabindex="0" aria-label="회전하는 로봇 입자 모델. 마우스로 입자를 흩뜨리고 아래 버튼으로 모델을 전환할 수 있습니다."></canvas>
+      <div class="loader" id="loader" role="status">Assembling particles<span>…</span></div>
+      <div class="scene-label" aria-hidden="true"><span id="scene-number">01 / 06</span><span class="scene-line"></span><span id="scene-caption">ROTATION GRIPPER · V06</span></div>
+      <div class="scene-readout" aria-hidden="true"><span id="point-count">32,000</span> POINTS <span class="readout-divider">/</span> <span id="motion-state">ROTATING</span></div>
+      <div class="cursor-ring" id="cursor-ring" aria-hidden="true"></div>
+    </main>
+
+    <section class="model-strip" aria-label="로봇 모델 선택">
+      <button class="model active" aria-pressed="true" data-model="0"><span class="model-number">01</span><span class="model-info"><strong>Rotation gripper</strong><small>Version 06 · revised base</small></span><span class="model-symbol" aria-hidden="true">↗</span><span class="model-progress"></span></button>
+      <button class="model" aria-pressed="false" data-model="1"><span class="model-number">02</span><span class="model-info"><strong>RGMC test bed</strong><small>Competition workspace</small></span><span class="model-symbol" aria-hidden="true">↗</span><span class="model-progress"></span></button>
+      <button class="model" aria-pressed="false" data-model="2"><span class="model-number">03</span><span class="model-info"><strong>Rotation gripper</strong><small>Version 09</small></span><span class="model-symbol" aria-hidden="true">↗</span><span class="model-progress"></span></button>
+      <button class="model" aria-pressed="false" data-model="3"><span class="model-number">04</span><span class="model-info"><strong>Gripper test bed</strong><small>Rotation gripper · Version 09</small></span><span class="model-symbol" aria-hidden="true">↗</span><span class="model-progress"></span></button>
+      <button class="model" aria-pressed="false" data-model="4"><span class="model-number">05</span><span class="model-info"><strong>Robotic hand</strong><small>Right hand · assembly</small></span><span class="model-symbol" aria-hidden="true">↗</span><span class="model-progress"></span></button>
+      <button class="model" aria-pressed="false" data-model="5"><span class="model-number">06</span><span class="model-info"><strong>Bi-manipulator</strong><small>Inverse triangle · upper</small></span><span class="model-symbol" aria-hidden="true">↗</span><span class="model-progress"></span></button>
+    </section>
+
+    <footer class="controls">
+      <div class="play-controls"><button id="pause" class="control-button" aria-pressed="false"><span id="pause-symbol" aria-hidden="true">Ⅱ</span> <span id="pause-text">회전 멈춤</span></button><button id="cycle" class="control-button" aria-pressed="true"><span class="toggle-dot" aria-hidden="true"></span> 자동 전환</button></div>
+      <div class="sliders"><label>회전 속도 <input id="speed" type="range" min="0.2" max="2" step="0.1" value="0.7"><output id="speed-value" for="speed">0.7×</output></label><label>흩어짐 <input id="force" type="range" min="0.4" max="2" step="0.1" value="1"><output id="force-value" for="force">1.0×</output></label></div>
+      <button class="text-button reset" id="reset">처음으로 <span aria-hidden="true">↺</span></button>
+    </footer>
+    <p id="announcement" class="sr-only" aria-live="polite"></p>
+  </div>
+  <noscript><p class="no-script">이 애니메이션을 보려면 JavaScript를 켜 주세요.</p></noscript>
+</body>
+</html>

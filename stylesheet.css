@@ -122,38 +122,52 @@ h2 {
 
 .section-actions {
   display: flex;
-  gap: 10px;
+  gap: 16px;
   flex-wrap: wrap;
 }
 
-.section-toggle-button {
-  border: 1px solid #c7c7c7;
-  background: #f7f7f7;
-  color: #444;
-  border-radius: 12px;
-  padding: 6px 24px;
+/* Shared monochrome text controls: model links and section actions. */
+.section-toggle-button,
+.ga-model-link {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  min-height: 36px;
+  padding: 6px 2px;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  color: #262626;
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
   font-size: 12px;
+  font-weight: 600;
+  line-height: 1.4;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 5px;
+  white-space: nowrap;
   cursor: pointer;
-  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+  transition: color 0.15s ease;
 }
 
-.section-toggle-expand  {
-  background: #f7f7f7;
+.section-toggle-button:hover,
+.ga-model-link:hover {
+  color: #000;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
 }
 
-.section-toggle-collapse {
-  background: #f7f7f7;
+.section-toggle-button:active,
+.ga-model-link:active {
+  color: #666;
 }
 
-.section-toggle-button:hover {
-  background: #ecece3;
-  border-color: #aaa;
-  transform: translateY(-1px);
-}
-
-.section-toggle-button:active {
-  transform: translateY(0);
+.section-toggle-button:focus-visible,
+.ga-model-link:focus-visible {
+  outline: 2px solid #444;
+  outline-offset: 3px;
 }
 
 .papertitle {

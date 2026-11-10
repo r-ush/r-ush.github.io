@@ -1,0 +1,105 @@
+"""Convert the six supplied binary STLs to reproducible surface point clouds.
+
+Run from any directory: python particle-lab/tools/build_points.py
+Requires NumPy and SciPy. The browser never loads the original STL.
+"""
+
+from pathlib import Path
+import base64
+import json
+import numpy as np
+
+ROOT = Path(__file__).resolve().parents[2]
+OUT = ROOT / "particle-lab" / "models.js"
+COUNT = 32000
+SOURCES = [
+    ("01. rotation gripper ver6 base_revised.stl", "Rotation gripper", "Version 06 · revised base", "01", "#a9ddd6", 724),
+    ("02. RGMC Test bed 구축.stl", "RGMC test bed", "Competition workspace", "02", "#edc594", 725),
+    ("03. rotation gripper ver9_colored_ver.stl", "Rotation gripper", "Version 09", "03", "#c6bafa", 726),
+    ("04. Test bed 구축 for rotation gripper ver 9-Laptop-SH.stl", "Gripper test bed", "Rotation gripper · Version 09", "04", "#e4bbab", 728),
+    ("05. 250523_ASSY_Hand_R.stl", "Robotic hand", "Right hand · assembly", "05", "#d6dfa3", 729),
+    ("06. Bi_manipulator inverse_tri_upper.stl", "Bi-manipulator", "Inverse triangle · upper assembly", "06", "#b8d7ef", 727),
+]
+# User-selected poses in original STL axes, degrees; Rz(yaw) Ry(pitch) Rx(roll).
+# All six poses were supplied by the user through the browser editor.
+DEFAULT_POSES = {
+    "01": dict(roll=172.3, pitch=-75.47, yaw=-99.42),
+    "02": dict(roll=88.9, pitch=-2.83, yaw=-83.18),
+    "03": dict(roll=-89.56, pitch=0.04, yaw=161.07),
+    "04": dict(roll=91.97, pitch=-0.69, yaw=-95.59),
+    "05": dict(roll=86.98, pitch=0.44, yaw=-21.06),
+    "06": dict(roll=91.5, pitch=0.65, yaw=-0.51),
+}
+TRIANGLE = np.dtype([("normal", "<f4", 3), ("v", "<f4", (3, 3)), ("attr", "<u2")])
+
+
+def morton_order(points):
+    """Spatially match point indices across shapes for coherent morphing."""
+    q = np.clip((points + 1) * 511.5, 0, 1023).astype(np.uint32)
+    code = np.zeros(len(points), dtype=np.uint32)
+    for bit in range(10):
+        for axis in range(3):
+            code |= ((q[:, axis] >> bit) & 1) << (3 * bit + axis)
+    return np.argsort(code, kind="stable")
+
+
+def sample(filename, seed):
+    path = ROOT / "Robot STL" / filename
+    with path.open("rb") as stream:
+        stream.seek(80)
+        triangles = int.from_bytes(stream.read(4), "little")
+    if path.stat().st_size != 84 + triangles * 50:
+        raise ValueError(f"Expected a binary STL: {filename}")
+    mesh = np.memmap(path, dtype=TRIANGLE, mode="r", offset=84, shape=(triangles,))
+    vertices = mesh["v"].astype(np.float64)
+    if not np.isfinite(vertices).all():
+        raise ValueError(f"Non-finite vertices: {filename}")
+    cross = np.cross(vertices[:, 1] - vertices[:, 0], vertices[:, 2] - vertices[:, 0])
+    areas = np.linalg.norm(cross, axis=1)
+    valid = areas > 1e-10
+    vertices, cross, areas = vertices[valid], cross[valid], areas[valid]
+    normals = cross / areas[:, None]
+    # Retain small machined details as well as the broad surfaces.
+    weights = 0.80 * areas / areas.sum() + 0.20 * np.sqrt(areas) / np.sqrt(areas).sum()
+    rng = np.random.default_rng(seed)
+    selection = rng.choice(len(vertices), COUNT, p=weights)
+    uv = rng.random((COUNT, 2))
+    root_u = np.sqrt(uv[:, 0])
+    bary = np.column_stack((1 - root_u, root_u * (1 - uv[:, 1]), root_u * uv[:, 1]))
+    points = (vertices[selection] * bary[:, :, None]).sum(axis=1)
+    normals = normals[selection]
+    lo, hi = vertices.min(axis=(0, 1)), vertices.max(axis=(0, 1))
+    points = (points - (lo + hi) / 2) / ((hi - lo).max() / 2)
+    # CAD is Z-up; renderer is Y-up. Preserve a right-handed frame.
+    points = points[:, [0, 2, 1]] * [1, 1, -1]
+    normals = normals[:, [0, 2, 1]] * [1, 1, -1]
+    order = morton_order(points)
+    packed = np.concatenate((points[order], normals[order]), axis=1)
+    encoded = np.rint(packed * 32767).astype("<i2")
+    assert encoded.shape == (COUNT, 6)
+    return encoded, triangles, path.stat().st_size, (lo + hi) / 2, (hi - lo).max() / 2
+
+
+def main():
+    models = []
+    for filename, name, detail, number, color, seed in SOURCES:
+        packed, triangles, source_bytes, center, scale = sample(filename, seed)
+        models.append(dict(name=name, detail=detail, number=number, color=color,
+                           source=filename, triangles=triangles, sourceBytes=source_bytes,
+                           center=center.tolist(), scale=float(scale),
+                           defaultPose=DEFAULT_POSES.get(number, dict(roll=0, pitch=0, yaw=0)),
+                           count=COUNT, data=base64.b64encode(packed.tobytes()).decode("ascii")))
+        print(f"{number}: {triangles:,} triangles -> {COUNT:,} points / {packed.nbytes:,} bytes")
+    from link_parts import link
+    from register_parts import load_mesh
+    registrations = json.loads(Path(__file__).with_name("part-transforms.json").read_text(encoding="utf-8"))
+    models = link(models, registrations, load_mesh)
+    OUT.parent.mkdir(parents=True, exist_ok=True)
+    OUT.write_text("// Generated by tools/build_points.py. Coordinates and normals: little-endian int16.\n"
+                   + "window.ROBOT_PARTICLE_MODELS = " + json.dumps(models, ensure_ascii=False, separators=(",", ":"))
+                   + ";\n", encoding="utf-8")
+    print(f"models.js: {OUT.stat().st_size:,} bytes")
+
+
+if __name__ == "__main__":
+    main()

@@ -108,6 +108,7 @@
   const headings = [...document.querySelectorAll('h2[data-section]')];
   const sections = new Map();
   headings.forEach((heading, index) => {
+    const initiallyOpen = heading.dataset.expanded === 'true';
     const next = headings[index + 1];
     const items = [...document.querySelectorAll('.collapsible-item')].filter(item =>
       (heading.compareDocumentPosition(item) & Node.DOCUMENT_POSITION_FOLLOWING) &&
@@ -141,21 +142,21 @@
         container.append(panel);
       }
       container.classList.add('t-acc');
-      container.dataset.open = 'false';
+      container.dataset.open = String(initiallyOpen);
       container.id = `section-${heading.dataset.section}-${itemIndex}`;
-      container.inert = true;
-      container.setAttribute('aria-hidden', 'true');
+      container.inert = !initiallyOpen;
+      container.setAttribute('aria-hidden', String(!initiallyOpen));
       item.classList.add('motion-ready');
       return container;
     });
     const trigger = document.createElement('button');
     trigger.type = 'button';
     trigger.className = 'section-heading-button';
-    trigger.setAttribute('aria-expanded', 'false');
+    trigger.setAttribute('aria-expanded', String(initiallyOpen));
     trigger.setAttribute('aria-controls', containers.map(item => item.id).join(' '));
     while (heading.firstChild) trigger.append(heading.firstChild);
     heading.append(trigger);
-    sections.set(heading.dataset.section, {heading, trigger, containers, open: false});
+    sections.set(heading.dataset.section, {heading, trigger, containers, open: initiallyOpen});
   });
   function setSection(name, open) {
     const section = sections.get(name);
@@ -170,6 +171,7 @@
       container.dataset.open = String(open);
       if (!open) container.querySelectorAll('video').forEach(video => video.pause());
     });
+    section.heading.dispatchEvent(new CustomEvent('sectiontoggle', {detail: {open}}));
   }
   window.toggleSection = name => setSection(name, !sections.get(name).open);
   window.expandAllSections = () => sections.forEach((section, name) => setSection(name, true));
@@ -258,5 +260,6 @@
     }
   });
   // Links straight to the footer visitor map (?visitors=...) skip the automatic CV dialog.
-  if (!['trend', 'history'].includes(new URLSearchParams(location.search).get('visitors'))) requestAnimationFrame(() => requestAnimationFrame(openModal));
+  if (!document.documentElement.hasAttribute('data-local-preview') &&
+      !['trend', 'history'].includes(new URLSearchParams(location.search).get('visitors'))) requestAnimationFrame(() => requestAnimationFrame(openModal));
 })();

@@ -153,8 +153,9 @@ Git; the homepage component and its shared assets are part of the portfolio.
 pairs and 3.2 seconds for the mirrored-hand pair, in both directions. Each view
 uses 16,000 points. `../assets/js/graspical-abstract.js` loads the shared data only
 near the viewport and gives the three views a shared 30 fps schedule. Offscreen
-views and hidden tabs sleep. Reduced-motion preferences pause initial rotation;
-the rotation button and each system button remain independently usable. Static
+views and hidden tabs sleep. Rotation starts enabled, including when reduced
+motion is preferred; the rotation button can pause it at any time. Each system
+button remains independently usable. Static
 posters remain visible if interactive loading fails.
 
 Regenerate the posters and the local preview from the actual homepage section:
@@ -165,7 +166,7 @@ python particle-lab/tools/build_home_preview.py
 
 `node particle-lab/tools/check_homepage.cjs` checks local-file script loading,
 independent buttons, both directions of all three pairs, 1.5× timing, mirrored
-point correspondence, hover, pause, visibility, reduced-motion defaults, loading
+point correspondence, hover, pause, visibility, rotation enabled by default, loading
 failure, and context recovery using DOM/Canvas fixtures. It also checks that the
 preview contains the same markup as the homepage; it is not a browser screenshot
 test. The generated `home-preview.html` is ignored by Git.

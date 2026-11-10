@@ -236,8 +236,13 @@ async function run() {
 
   const reduced = await fixture({reduced: true, isolated: true});
   assert.deepEqual(reduced.errors, []);
+  assert.ok(reduced.views.every((v) => v.spinEnabled));
+  assert.equal(reduced.motion.attributes['aria-pressed'], 'false');
+  assert.equal(reduced.motion.textContent, 'Pause rotation');
+  reduced.motion.handlers.click();
   assert.ok(reduced.views.every((v) => !v.spinEnabled));
   assert.equal(reduced.motion.attributes['aria-pressed'], 'true');
+  assert.equal(reduced.motion.textContent, 'Play rotation');
   reduced.figures[0].querySelector('.ga-switch').handlers.click();
   errors.push(finish(reduced.views[0], 2.4));
   const failed = await fixture({fail: true});
@@ -249,7 +254,7 @@ async function run() {
   for (const match of h.sectionMarkup.matchAll(/src="([^"]+)"/g)) assert.ok(fs.existsSync(path.join(root, match[1])));
   const synchronizedRotation = await checkSynchronization();
   return {pairs: '01↔02, 03↔04, 05↔06', durations: [2.4, 2.4, 3.2], maxEndpointError: Math.max(...errors), mirrorError,
-    independentSwitches: 'OK', localScriptLoading: 'OK', modelLinks: 'OK', modelScalesAndSmoothZoom: 'OK', componentColorsAndBothHands: 'OK', fixedBlueAccent: 'OK', synchronizedRotation, colorFadeAndHover: 'OK', doubledRotation: 'OK', hover: 'OK', pauseAndVisibility: 'OK', sectionCollapseAndResume: 'OK', fullPortfolioPreview: 'OK', reducedMotion: 'OK', fallbackAndContextRecovery: 'OK'};
+    independentSwitches: 'OK', localScriptLoading: 'OK', modelLinks: 'OK', modelScalesAndSmoothZoom: 'OK', componentColorsAndBothHands: 'OK', fixedBlueAccent: 'OK', synchronizedRotation, colorFadeAndHover: 'OK', doubledRotation: 'OK', hover: 'OK', pauseAndVisibility: 'OK', sectionCollapseAndResume: 'OK', fullPortfolioPreview: 'OK', rotationOnByDefault: 'OK', fallbackAndContextRecovery: 'OK'};
 }
 
 async function checkSynchronization() {

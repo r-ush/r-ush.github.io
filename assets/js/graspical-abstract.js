@@ -8,8 +8,7 @@
   const motion = section.querySelector('.ga-motion');
   const heading = section.querySelector('#graspical-title');
   const fallback = section.querySelector('.ga-fallback');
-  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-  let paused = reducedMotion.matches, loading = false, loaded = false, destroyed = false;
+  let paused = false, loading = false, loaded = false, destroyed = false;
   let sectionOpen = heading.dataset.expanded !== 'false';
   let frameId = 0, lastTime = 0;
   let rotationGroups;

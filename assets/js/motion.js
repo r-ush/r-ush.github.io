@@ -174,8 +174,14 @@
     section.heading.dispatchEvent(new CustomEvent('sectiontoggle', {detail: {open}}));
   }
   window.toggleSection = name => setSection(name, !sections.get(name).open);
-  window.expandAllSections = () => sections.forEach((section, name) => setSection(name, true));
-  window.collapseAllSections = () => sections.forEach((section, name) => setSection(name, false));
+  function setAllSections(open) {
+    sections.forEach((section, name) => {
+      // The graphical abstract is controlled only by its own heading.
+      if (name !== 'graspical') setSection(name, open);
+    });
+  }
+  window.expandAllSections = () => setAllSections(true);
+  window.collapseAllSections = () => setAllSections(false);
 
   const name = document.querySelector('.rush-name');
   const short = name.querySelector('.rush-short');

@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { DatabaseSync } from 'node:sqlite';
 import { readFileSync } from 'node:fs';
 import worker, { cleanup } from '../src/worker.mjs';
-import { aggregate, dateParts, liveBucket, normalizePage, persist, report, validateBatch } from '../src/metrics.mjs';
+import { aggregate, dateParts, excludedAddress, liveBucket, normalizePage, persist, report, validateBatch } from '../src/metrics.mjs';
 import { createDatabase } from './database.mjs';
 
 const token = 'test-only-admin-key-never-use-in-production-123456';
@@ -52,6 +52,27 @@ test('geography trusts Cloudflare metadata, not client country or forwarded IP h
   assert.equal(e.DB.sqlite.prepare("SELECT label FROM daily_metrics WHERE dimension = 'country'").get().label, 'Unknown');
   assert.equal(e.DB.sqlite.prepare('SELECT COUNT(*) AS n FROM country_totals').get().n, 0);
   assert.equal(e.DB.sqlite.prepare('SELECT views FROM daily_totals').get().views, 1);
+});
+
+test('owner-excluded addresses and ranges are dropped silently and never stored', async () => {
+  const e = { ...env(), EXCLUDED_IPS: '203.0.113.7, 198.51.100.0/24\n2001:db8:1::/64 not-an-ip 10.0.0.0/99' };
+  const from = ip => visit('KR', [view], { 'CF-Connecting-IP': ip });
+  for (const ip of ['203.0.113.7', '198.51.100.250', '2001:db8:1:0:abcd::1', '2001:DB8:1::9']) assert.equal((await worker.fetch(from(ip), e)).status, 204);
+  for (const table of ['daily_metrics', 'daily_totals', 'live_country', 'country_totals']) assert.equal(e.DB.sqlite.prepare(`SELECT COUNT(*) AS n FROM ${table}`).get().n, 0);
+  // Neighbouring addresses, other families, malformed entries and a missing header still count.
+  for (const ip of ['203.0.113.8', '198.51.101.1', '2001:db8:2::1', '::ffff:203.0.113.7', '10.0.0.1', '']) assert.equal((await worker.fetch(ip ? from(ip) : visit('KR'), e)).status, 204);
+  assert.equal(e.DB.sqlite.prepare('SELECT views FROM daily_totals').get().views, 6);
+  assert.equal(e.DB.sqlite.prepare("SELECT views FROM country_totals WHERE country = 'KR'").get().views, 6);
+  const text = JSON.stringify(e.DB.sqlite.prepare('SELECT * FROM daily_metrics').all());
+  for (const ip of ['203.0.113', '198.51', '2001:db8']) assert.equal(text.includes(ip), false);
+  // Without the secret nothing is excluded.
+  const open = env();
+  assert.equal((await worker.fetch(from('203.0.113.7'), open)).status, 204);
+  assert.equal(open.DB.sqlite.prepare('SELECT views FROM daily_totals').get().views, 1);
+  assert.equal(excludedAddress(from('203.0.113.7'), ''), false);
+  assert.equal(excludedAddress(from('2001:db8::'), '2001:db8::/32'), true);
+  assert.equal(excludedAddress(from('1.2.3.4'), '0.0.0.0/0'), true);
+  assert.equal(excludedAddress(from('1.2.3.4'), '::/0'), false);
 });
 
 test('CORS, bots, privacy signals, oversized bodies and rate limiting are enforced', async () => {

@@ -1,4 +1,4 @@
-import { aggregate, config, dateParts, ignoredRequest, LIVE, liveBucket, liveCounts, liveReport, MAX_BODY_BYTES, persist, report, RETENTION_DAYS, validateBatch } from './metrics.mjs';
+import { aggregate, config, dateParts, excludedAddress, ignoredRequest, LIVE, liveBucket, liveCounts, liveReport, MAX_BODY_BYTES, persist, report, RETENTION_DAYS, validateBatch } from './metrics.mjs';
 
 // Per-isolate memo so polling homepages do not query D1 on every request.
 const LIVE_CACHE_MS = 30000;
@@ -79,7 +79,8 @@ export default {
       const cors = { 'Access-Control-Allow-Origin': origin, 'Vary': 'Origin' };
       if (request.method === 'OPTIONS') return response(null, 204, { ...cors, 'Access-Control-Allow-Methods': 'POST', 'Access-Control-Allow-Headers': 'Content-Type', 'Access-Control-Max-Age': '3600' });
       if (request.method !== 'POST') return response(null, 405, cors);
-      if (ignoredRequest(request)) return response(null, 204, cors);
+      // Excluded owner networks get the same silent 204 as privacy signals.
+      if (ignoredRequest(request) || excludedAddress(request, env.EXCLUDED_IPS)) return response(null, 204, cors);
       if (env.INGEST_LIMIT && !(await env.INGEST_LIMIT.limit({ key: 'aggregate-ingest' })).success) return response(null, 429, cors);
       let events;
       try { events = validateBatch(await readBody(request)); }

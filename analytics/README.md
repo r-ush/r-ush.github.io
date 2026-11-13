@@ -203,7 +203,7 @@ configuration only in local HTTP responses. Production files are not activated.
 Use the explicitly local test key printed by the preview server. Never reuse it
 in production. The dashboard's sample button is another way to inspect charts.
 
-Tests cover sanitization, IP/ID exclusion, authentication, SQL aggregation, bot and
+Tests cover sanitization, IP/ID exclusion, owner-address exclusion, authentication, SQL aggregation, bot and
 privacy-signal filtering, KST date boundaries, retention, hidden/idle time,
 cross-tab opt-out, scroll deduplication and semantic link classification.
 
@@ -247,6 +247,34 @@ npx wrangler deploy --dry-run
 Use a separate admin key for local Wrangler development in ignored `.dev.vars`.
 Never publish `.dev.vars`, `.wrangler`, `node_modules`, or the preview database.
 The whole `analytics/` directory is excluded from the Jekyll Pages build.
+
+## Excluding the owner's own network
+
+The collector drops requests whose Cloudflare connecting address
+(`CF-Connecting-IP`) matches the `EXCLUDED_IPS` Worker secret, before rate
+limiting or any database write, and answers with the same silent 204 as a
+privacy signal. Excluded views therefore never reach the dashboard, the public
+map's country totals and recent list, or the daily totals. The list holds IPv4
+or IPv6 addresses or CIDR ranges separated by commas, spaces or new lines; invalid
+entries are ignored. The address is only compared in memory, never stored,
+returned or logged. The list itself is a secret, not a `vars` entry, so owner IP
+addresses stay out of this public repository and the published configuration.
+
+```powershell
+# From analytics/: replace the whole list (exact address, or e.g. a /24 or IPv6 /64)
+"203.0.113.7, 2001:db8:1::/64" | npx wrangler secret put EXCLUDED_IPS
+npx wrangler secret list              # names only, never values
+npx wrangler secret delete EXCLUDED_IPS
+```
+
+A secret change takes effect without redeploying. Only the collector honours the
+list: MapMyVisitors is a separate client-side image request and still counts
+these visits on its own statistics page (its later views are not added to the
+public map). The browser opt-out on the privacy page excludes both counters, and
+it is the only exclusion that follows a device onto other networks (home, mobile,
+Wi-Fi). A dynamic address can change; update the secret when it does.
+The collector cannot see a client's address on a local preview, so exclusion
+applies only to the deployed Worker.
 
 ## Geolocation review (2026-11-05)
 

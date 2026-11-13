@@ -39,6 +39,44 @@ export function ignoredRequest(request) {
   return request.headers.get('dnt') === '1' || request.headers.get('sec-gpc') === '1' || /bot|crawler|spider|headless|lighthouse|facebookexternalhit|preview|curl|wget/i.test(ua);
 }
 
+// Owner-excluded networks: EXCLUDED_IPS is a Worker secret listing IPv4/IPv6
+// addresses or CIDR ranges (comma/space separated). The connecting address is
+// only compared in memory; it is never stored or returned.
+function parseIp(text) {
+  if (typeof text !== 'string') return null;
+  if (/^\d{1,3}(\.\d{1,3}){3}$/.test(text)) {
+    const parts = text.split('.').map(Number);
+    if (parts.some(n => n > 255)) return null;
+    return { bits: 32, value: parts.reduce((sum, n) => (sum << 8n) + BigInt(n), 0n) };
+  }
+  if (!/^[0-9a-f:]+$/i.test(text) || !text.includes(':')) return null;
+  const halves = text.split('::');
+  if (halves.length > 2) return null;
+  const groups = halves.map(h => (h ? h.split(':') : []));
+  const missing = 8 - groups.reduce((n, g) => n + g.length, 0);
+  if (halves.length === 1 ? missing !== 0 : missing < 1) return null;
+  const all = halves.length === 1 ? groups[0] : [...groups[0], ...Array(missing).fill('0'), ...groups[1]];
+  if (all.some(g => !/^[0-9a-f]{1,4}$/i.test(g))) return null;
+  return { bits: 128, value: all.reduce((sum, g) => (sum << 16n) + BigInt(parseInt(g, 16)), 0n) };
+}
+
+function parseRange(entry) {
+  const [address, prefixText, extra] = entry.split('/');
+  const ip = parseIp(address);
+  if (!ip || extra !== undefined) return null;
+  const prefix = prefixText === undefined ? ip.bits : /^\d{1,3}$/.test(prefixText) ? Number(prefixText) : NaN;
+  if (!(prefix >= 0 && prefix <= ip.bits)) return null;
+  return { bits: ip.bits, prefix, value: ip.value >> BigInt(ip.bits - prefix) };
+}
+
+export function excludedAddress(request, list = '') {
+  if (!list) return false;
+  const ip = parseIp(request.headers.get('cf-connecting-ip') || '');
+  if (!ip) return false;
+  return list.split(/[\s,]+/).filter(Boolean).map(parseRange).some(range =>
+    range && range.bits === ip.bits && ip.value >> BigInt(ip.bits - range.prefix) === range.value);
+}
+
 function number(value, min, max) {
   return typeof value === 'number' && Number.isFinite(value) && value >= min && value <= max;
 }

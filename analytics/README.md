@@ -22,7 +22,8 @@ pages and are not counted.
 
 - Daily/page/hourly view counts in Asia/Seoul time; 1/7/30/90/180-day reports.
 - Independent country/administrative-region, referral-category, device, browser,
-  and operating-system distributions. Region codes, never cities or coordinates.
+  and operating-system distributions. Region codes and Cloudflare's IP-estimated
+  city names (private dashboard only), never coordinates or postal codes.
 - Link, CV/download, outbound and email clicks; section opens; deliberate video
   starts/completions (excluding looped hover previews and autoplay).
 - Scroll milestones at 25/50/75/100 percent of the currently expanded document.
@@ -37,6 +38,10 @@ There are no unique visitors, return rates, sessions, cross-page funnels, identi
 hashes, fingerprints, or per-visitor records. D1 has separate daily totals plus the
 two country-only public map tables described below.
 Country and region buckets below 3 views are combined in reports and exports.
+City buckets (`KR-41/Suwon`, or `SG/Singapore` without a region) are not
+combined, so the owner can see single visits; they are kept only in
+`daily_metrics` (deleted after 180 days) and never reach `/api/live` or the public
+map. City collection started on 2026-11-13; earlier days have no city rows.
 The collector's query/body schema rejects unknown fields, arbitrary URLs and PII.
 IP addresses and full user agents are handled by infrastructure but are not stored
 by this application. Worker application observability is disabled. Up to 180 days
@@ -278,7 +283,7 @@ applies only to the deployed Worker.
 
 ## Geolocation review (2026-11-05)
 
-The collector uses Cloudflare's `request.cf.country` and `regionCode` metadata.
+The collector uses Cloudflare's `request.cf.country`, `regionCode` and `city` metadata.
 It does not infer location from a client-provided country, forwarded-IP header,
 language or time zone. Missing locations remain `Unknown`; their views still
 contribute to the overall total. Tests cover trusted metadata, misleading client

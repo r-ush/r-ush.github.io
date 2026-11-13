@@ -11,8 +11,18 @@ function el(tag, text, className) {
   if (className) node.className = className;
   return node;
 }
+// ISO 3166-2:KR codes as sent by Cloudflare (42/45 are the pre-2023/2024 codes).
+const koreanRegions = { 11: '서울특별시', 26: '부산광역시', 27: '대구광역시', 28: '인천광역시', 29: '광주광역시', 30: '대전광역시', 31: '울산광역시', 50: '세종특별자치시', 41: '경기도', 42: '강원특별자치도', 51: '강원특별자치도', 43: '충청북도', 44: '충청남도', 45: '전북특별자치도', 52: '전북특별자치도', 46: '전라남도', 47: '경상북도', 48: '경상남도', 49: '제주특별자치도' };
+function countryName(code) { try { return countries.of(code); } catch (_) { return code; } }
+// 'KR-41' → '대한민국 경기도', 'US-CA' → '미국 CA', 'KR' → '대한민국'
+function place(code) {
+  const [country, region] = code.split('-');
+  return countryName(country) + (region ? ' ' + (country === 'KR' && koreanRegions[region] || region) : '');
+}
 function name(label, dimension) {
-  if (dimension === 'country' && /^[A-Z]{2}$/.test(label)) { try { return countries.of(label); } catch (_) {} }
+  if (dimension === 'country' && /^[A-Z]{2}$/.test(label)) return countryName(label);
+  if (dimension === 'region' && /^[A-Z]{2}-[A-Z0-9]+$/.test(label)) return place(label);
+  if (dimension === 'city' && /^[A-Z]{2}(-[A-Z0-9]+)?\//.test(label)) { const slash = label.indexOf('/'); return place(label.slice(0, slash)) + ' · ' + label.slice(slash + 1); }
   const page = data?.pages.find(p => p.path === label);
   return page?.name || labels[label] || label;
 }
@@ -70,7 +80,7 @@ function render() {
     link.href = 'https://r-ush.github.io' + page.path; link.target = '_blank'; link.rel = 'noopener noreferrer'; title.append(link);
     row.append(title, el('td', numeric(page.views)), el('td', page.views ? duration((page.active_seconds || 0) / page.views) : '—'), el('td', percent(page.scroll_50, page.views)), el('td', numeric(page.clicks))); $('pages').append(row);
   });
-  ['source', 'country', 'region', 'device', 'browser', 'os', 'link', 'section'].forEach(dimension => rankList(dimension, data.breakdowns[dimension], dimension));
+  ['source', 'country', 'region', 'city', 'device', 'browser', 'os', 'link', 'section'].forEach(dimension => rankList(dimension, data.breakdowns[dimension], dimension));
   rankList('scroll', [25, 50, 75, 100].map(depth => ({ label: depth + '% 지점', value: t['scroll_' + depth] || 0 })), 'scroll', views || 1);
   details('content-metrics', [['다운로드 클릭', numeric(t.downloads)], ['영상 재생', numeric(t.video_plays)], ['영상 끝까지', numeric(t.video_completions)]]);
   const samples = t.performance_samples || 0;

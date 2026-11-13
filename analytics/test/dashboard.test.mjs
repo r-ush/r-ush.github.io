@@ -28,6 +28,10 @@ test('dashboard demo, range selection and exports are functional and visibly lab
   assert.equal(app.document.querySelectorAll('.kpi').length, 4);
   assert.equal(app.document.querySelectorAll('#daily-chart .bar').length, 7);
   assert.equal(app.document.querySelectorAll('#pages tr').length, 4);
+  const places = id => Array.from(app.document.querySelectorAll('#' + id + ' .rank-name'), n => n.textContent);
+  assert.deepEqual(places('region').slice(0, 3), ['대한민국 서울특별시', '미국 CA', '대한민국 경기도']);
+  assert.deepEqual(places('city').slice(0, 3), ['대한민국 서울특별시 · Seoul', '미국 CA · Mountain View', '대한민국 경기도 · Suwon']);
+  assert.equal(places('city').at(-1), '알 수 없음');
   app.document.getElementById('period').value = '30'; app.fire('period', 'change'); await setImmediate();
   assert.equal(app.document.querySelectorAll('#daily-chart .bar').length, 30);
   app.fire('json'); app.fire('csv');

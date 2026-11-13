@@ -13,6 +13,7 @@ export function demoReport(days) {
       source: split([['Google', .41], ['Direct / unknown', .3], ['Internal', .17], ['GitHub', .12]]),
       country: split([['KR', .45], ['US', .28], ['DE', .13], ['JP', .09], ['Other / low volume', .05]]),
       region: split([['KR-11', .28], ['US-CA', .18], ['KR-41', .17], ['Unknown', .37]]),
+      city: split([['KR-11/Seoul', .26], ['US-CA/Mountain View', .14], ['KR-41/Suwon', .11], ['KR-41/Seongnam-si', .06], ['US-CA/San Jose', .04], ['Unknown', .39]]),
       device: split([['Desktop / other', .71], ['Mobile', .26], ['Tablet', .03]]),
       browser: split([['Chrome', .65], ['Safari', .22], ['Firefox', .08], ['Edge', .05]]),
       os: split([['Windows', .42], ['macOS', .28], ['iOS', .16], ['Android', .14]]),

@@ -117,10 +117,13 @@ export function validateBatch(payload) {
 function geography(request) {
   const rawCountry = request.cf?.country || '';
   const country = /^[A-Z]{2}$/.test(rawCountry) && rawCountry !== 'XX' ? rawCountry : 'Unknown';
-  // Administrative region codes only; never store city, coordinates or postal code.
+  // Administrative region code and Cloudflare's IP-estimated city name, for the
+  // private dashboard only; never coordinates, postal code or metro code.
   const regionCode = request.cf?.regionCode || '';
   const region = country !== 'Unknown' && /^[A-Z0-9-]{1,6}$/i.test(regionCode) ? country + '-' + regionCode.toUpperCase() : 'Unknown';
-  return { country, region };
+  const cityName = typeof request.cf?.city === 'string' ? request.cf.city.trim() : '';
+  const city = country !== 'Unknown' && /^[\p{L}\p{M}\p{N}][\p{L}\p{M}\p{N} .,'’()-]{0,79}$/u.test(cityName) ? (region === 'Unknown' ? country : region) + '/' + cityName : 'Unknown';
+  return { country, region, city };
 }
 
 export function liveBucket(now = new Date()) {
@@ -149,7 +152,7 @@ export function aggregate(events, request, now = new Date()) {
   const { day, hour } = dateParts(now);
   const rows = new Map();
   const env = environment(request.headers.get('user-agent') || '');
-  const { country, region } = geography(request);
+  const { country, region, city } = geography(request);
   const add = (dimension, label, metric, value = 1) => {
     if (!value) return;
     const key = [dimension, label, metric].join('|');
@@ -165,7 +168,7 @@ export function aggregate(events, request, now = new Date()) {
       case 'view':
         metric('views');
         add('hour', hour, 'views');
-        for (const [dimension, label] of Object.entries({ country, region, source: event.source, ...env })) add(dimension, label, 'views');
+        for (const [dimension, label] of Object.entries({ country, region, city, source: event.source, ...env })) add(dimension, label, 'views');
         break;
       case 'engagement':
         metric('active_seconds', event.seconds);
@@ -237,7 +240,8 @@ export function report(rows, days, now = new Date()) {
   result.pages = Array.from(pageMap.values()).sort((a, b) => (b.views || 0) - (a.views || 0));
   for (const [dimension, values] of Object.entries(groups)) {
     const items = Array.from(values, ([label, value]) => ({ label, value }));
-    // Suppress very small region/country buckets in reports and exports.
+    // Suppress very small region/country buckets in reports and exports. Cities
+    // stay unmerged so the owner can see single visits in the private dashboard.
     if (dimension === 'country' || dimension === 'region') {
       const small = items.filter(x => x.value < 3 && x.label !== 'Unknown').reduce((sum, x) => sum + x.value, 0);
       result.breakdowns[dimension] = items.filter(x => x.value >= 3 || x.label === 'Unknown');

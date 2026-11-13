@@ -10,7 +10,7 @@ const token = 'test-only-admin-key-never-use-in-production-123456';
 function env() { return { DB: createDatabase(), ADMIN_TOKEN: token, ASSETS: { fetch: async () => new Response('dashboard') } }; }
 function request(events, overrides = {}) {
   const req = new Request('https://metrics.example/collect', { method: 'POST', headers: { Origin: 'https://r-ush.github.io', 'User-Agent': 'Mozilla/5.0 Windows Chrome/130.0', ...overrides.headers }, body: JSON.stringify({ v: 1, events }), ...overrides });
-  Object.defineProperty(req, 'cf', { value: { country: 'KR', regionCode: '11', city: 'Never stored', latitude: '37.5' } });
+  Object.defineProperty(req, 'cf', { value: { country: 'KR', regionCode: '11', city: 'Seoul', latitude: '37.5', longitude: '126.9', postalCode: '04524' } });
   return req;
 }
 const view = { type: 'view', page: '/', source: 'Google' };
@@ -22,10 +22,11 @@ test('requests immediately become independent aggregates, never raw event rows',
   assert.equal(rows.find(r => r.dimension === 'total').value, 3);
   assert.equal(rows.find(r => r.dimension === 'country').label, 'KR');
   assert.equal(rows.find(r => r.dimension === 'region').label, 'KR-11');
+  assert.equal(rows.find(r => r.dimension === 'city').label, 'KR-11/Seoul');
   assert.deepEqual(Object.keys(rows[0]), ['day', 'dimension', 'label', 'metric', 'value']);
   const text = JSON.stringify(rows);
-  for (const forbidden of ['Mozilla', 'Chrome/130', 'Never stored', '37.5', 'visitor_id', 'session_id']) assert.equal(text.includes(forbidden), false);
-  assert.equal(rows.length, 9);
+  for (const forbidden of ['Mozilla', 'Chrome/130', '37.5', '126.9', '04524', 'visitor_id', 'session_id']) assert.equal(text.includes(forbidden), false);
+  assert.equal(rows.length, 10);
 });
 
 test('unknown identifying fields, arbitrary URLs and malformed measurements are rejected', async () => {
@@ -73,6 +74,25 @@ test('owner-excluded addresses and ranges are dropped silently and never stored'
   assert.equal(excludedAddress(from('2001:db8::'), '2001:db8::/32'), true);
   assert.equal(excludedAddress(from('1.2.3.4'), '0.0.0.0/0'), true);
   assert.equal(excludedAddress(from('1.2.3.4'), '::/0'), false);
+});
+
+test('city names are kept privately per day, validated, and never merged or published', async () => {
+  const e = env();
+  const at = (cf, events = [view]) => {
+    const req = new Request('https://metrics.example/collect', { method: 'POST', headers: { Origin: 'https://r-ush.github.io', 'User-Agent': 'Mozilla/5.0' }, body: JSON.stringify({ v: 1, events }) });
+    Object.defineProperty(req, 'cf', { value: cf });
+    return req;
+  };
+  for (const cf of [{ country: 'KR', regionCode: '41', city: 'Suwon' }, { country: 'KR', regionCode: '41', city: 'Suwon' }, { country: 'BR', regionCode: 'SP', city: 'São Paulo' }, { country: 'SG', city: 'Singapore' }, { country: 'US', regionCode: 'CA', city: '<script>' }, { country: 'US', regionCode: 'CA', city: 'x'.repeat(81) }, { country: 'XX', city: 'Nowhere' }, { country: 'DE', regionCode: 'BE' }]) assert.equal((await worker.fetch(at(cf), e)).status, 204);
+  await worker.fetch(at({ country: 'KR', regionCode: '41', city: 'Suwon' }, [{ type: 'scroll', page: '/', depth: 50 }]), e);
+  const cities = Object.fromEntries(e.DB.sqlite.prepare("SELECT label, value FROM daily_metrics WHERE dimension = 'city'").all().map(r => [r.label, r.value]));
+  assert.deepEqual(cities, { 'KR-41/Suwon': 2, 'BR-SP/São Paulo': 1, 'SG/Singapore': 1, Unknown: 4 });
+  // Single-view cities stay visible to the owner while countries/regions below 3 merge.
+  const output = report(e.DB.sqlite.prepare('SELECT * FROM daily_metrics').all(), 7);
+  assert.deepEqual(output.breakdowns.city.map(c => [c.label, c.value]), [['Unknown', 4], ['KR-41/Suwon', 2], ['BR-SP/São Paulo', 1], ['SG/Singapore', 1]]);
+  assert.equal(output.breakdowns.country.some(c => c.label === 'BR'), false);
+  const body = await (await live(e)).text();
+  for (const city of ['Suwon', 'Paulo', 'Singapore']) assert.equal(body.includes(city), false);
 });
 
 test('CORS, bots, privacy signals, oversized bodies and rate limiting are enforced', async () => {
@@ -140,7 +160,7 @@ test('static dashboard gets security headers and collection errors disclose no i
 
 function visit(country, events = [view], headers = {}) {
   const req = new Request('https://metrics.example/collect', { method: 'POST', headers: { Origin: 'https://r-ush.github.io', 'User-Agent': 'Mozilla/5.0 Windows Chrome/130.0', ...headers }, body: JSON.stringify({ v: 1, events }) });
-  Object.defineProperty(req, 'cf', { value: { country, regionCode: 'BY', city: 'Never stored', latitude: '48.1', longitude: '11.6', postalCode: '80331' } });
+  Object.defineProperty(req, 'cf', { value: { country, regionCode: 'BY', city: 'Munich', latitude: '48.1', longitude: '11.6', postalCode: '80331' } });
   return req;
 }
 const live = (e, headers = {}) => worker.fetch(new Request('https://metrics.example/api/live', { headers }), e);
@@ -155,7 +175,7 @@ test('views add country-only live buckets; other events, unknown countries and b
   assert.deepEqual(Object.keys(rows[0]), ['bucket', 'country', 'views']);
   assert.equal(rows[0].bucket % 600, 0);
   const text = JSON.stringify(rows);
-  for (const forbidden of ['BY', 'Never stored', '48.1', '11.6', '80331', 'Mozilla']) assert.equal(text.includes(forbidden), false);
+  for (const forbidden of ['BY', 'Munich', '48.1', '11.6', '80331', 'Mozilla']) assert.equal(text.includes(forbidden), false);
 });
 
 test('public live map lists all-time country totals, including single views, and the last day of visits', async () => {

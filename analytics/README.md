@@ -1,5 +1,42 @@
 # Aggregate website analytics
 
+## Private portfolio records (2026-11-24)
+
+The separately shared `/portfolio/` and `/portfolio/hardware-first/` pages use
+`portfolio/analytics.js`, not the public site's `visitor-map.js`. They send no
+MapMyVisitors requests and never add rows to the homepage's aggregate or public-map
+tables. The following aggregate-only sections apply to the original research pages.
+
+- Dashboard: https://rush-analytics.r-ush.workers.dev/portfolio.html (same admin key).
+- Endpoint: `/collect/portfolio`; authenticated report: `/api/portfolio`.
+- Migration `0004_portfolio_visits.sql` adds two separate tables. They hold the
+  edge-supplied IP, approximate country/region/city, coarse browser/OS/device,
+  first/last request time, and known content IDs with counts/active seconds.
+- A random 128-bit key lives only in document memory; reloads/order changes produce
+  another record. No cookie, persistent ID or fingerprint. This does not identify
+  a person or deduplicate people. No cross-visit matching or enrichment is done.
+- Only known slide/source/video/download IDs are accepted. Client-supplied IP,
+  locations, URLs, queries, free text and arbitrary paths are rejected. GPC, DNT,
+  bots and the existing owner-network secret are honored before database writes.
+- The API returns only the last seven days and up to 500 recent visits; summary
+  totals cover that full seven-day window. Expired rows and their activity are
+  deleted hourly (up to one hour after expiry). The original 180-day aggregate
+  cleanup still runs once daily at 00:15 KST. Public maps never include these rows.
+- Source previews require two seconds. Autoplay is not a manual play; direct
+  play/fullscreen, seeking and 90% watched after a deliberate start are separate
+  metrics. Download counts are clicks, not verified saves. Active time pauses for
+  hidden, unfocused or idle pages. Transmission failures can undercount.
+- The visible footer provides the IP/usage notice and immediate opt-out; the full
+  bilingual notice is at `portfolio/privacy.html`. Main privacy wording scopes
+  aggregate-only claims to ordinary research pages. Cookie-free is a technical
+  description, not a claim that privacy-law obligations disappear.
+
+Apply the new migration before deploying this Worker, then publish the GitHub
+Pages changes. Tests cover private access, separation from public data, request
+validation, owner exclusions, retention, same-visit tampering, transient IDs,
+privacy signals, idle time, downloads, source previews and deliberate video use.
+Never commit a downloaded production report or print IP rows/tokens in deploy logs.
+
 The homepage, seven project pages, the standalone RL study and all 24 recording
 viewers import `/assets/js/visitor-map.js` (33 public content URLs).
 That shared entry sends one image request per visible page load to the existing

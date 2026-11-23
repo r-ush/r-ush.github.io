@@ -1,0 +1,5 @@
+.toolbar{position:relative}
+.portfolio-privacy{position:absolute;left:12px;bottom:8px;display:flex;align-items:center;gap:7px;font:10px/1.4 system-ui,sans-serif;color:#68746e}
+.portfolio-privacy a{text-underline-offset:3px}
+.portfolio-privacy button{padding:2px 4px;font:inherit;text-decoration:underline;text-underline-offset:3px}
+@media(max-width:950px){.toolbar{display:flex;height:62px;flex-direction:column;gap:0;padding:2px 8px}.portfolio-privacy{position:static;justify-content:center;order:2}.pager{flex-shrink:0}}

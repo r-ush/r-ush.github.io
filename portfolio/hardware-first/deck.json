@@ -1,0 +1,1986 @@
+{
+  "width": 841.8897705078125,
+  "height": 595.2755737304688,
+  "pdf_sha256": "83f18afd1261e1818ea008050c0acbb7bd7ee687e142efec866c41fdec96fdc5",
+  "language": "ko",
+  "pdf_file": "portfolio.pdf",
+  "download_name": "엄승환_로봇포트폴리오_하드웨어중심.pdf",
+  "pages": [
+    {
+      "number": 1,
+      "id": "cover",
+      "title": "엄승환 | 로봇 파지와 접촉 조작",
+      "svg": "slides/page-01.svg",
+      "text": "ROBOTICS PORTFOLIO\n로봇 파지와 접촉 조작\n엄승환\nSeunghwan Um\n그리퍼 기구 설계, 순응 제어·원격조작, 모방·강화학습 기반\n실로봇 조작 연구\n학력\n성균관대학교\n기계공학 석박통합과정\n2022.03 - 현재 · 2027.02 졸업 예정\n한양대학교 ERICA\n기계공학 학사 · 우등졸업\n2018.03 - 2022.02\n하드웨어에서 출발한 연구 경험을 바탕으로, 실제 시스템의 응답을 분석하고 제어\n모델과 학습 환경에 반영.\nseunghwanum@gmail.com\nPALM-Gripper · 자율 파지\n물체 인식·파지 계획 기반 자율 피킹\nGrasping with RL\n물체 자세·목표 위치를 표시한 RL 파지·리프트\nSEUNGHWAN UM  /  ROBOTICS\n2026.11\n01 / 11\n",
+      "links": [
+        {
+          "rect": [
+            28.0,
+            535.0,
+            145.2281951904297,
+            22.2099609375
+          ],
+          "href": "mailto:seunghwanum@gmail.com",
+          "label": "seunghwanum@gmail.com"
+        },
+        {
+          "rect": [
+            437.0,
+            514.0,
+            40.0,
+            40.0
+          ],
+          "href": "https://r-ush.github.io/portfolio/hardware-first",
+          "label": ""
+        },
+        {
+          "rect": [
+            494.0,
+            104.99996948242188,
+            320.0,
+            180.0
+          ],
+          "href": "https://r-ush.github.io/portfolio/hardware-first/projects/palm-gripper/",
+          "label": ""
+        },
+        {
+          "rect": [
+            494.0,
+            332.9999694824219,
+            320.0,
+            180.00003051757812
+          ],
+          "href": "https://r-ush.github.io/portfolio/hardware-first/projects/sim-to-real/",
+          "label": ""
+        }
+      ],
+      "media": [
+        {
+          "rect": [
+            494,
+            105,
+            320,
+            180
+          ],
+          "video": "/assets/videos/palm-autonomous-grasping.mp4",
+          "poster": "/assets/palm-autonomous-grasping.jpg",
+          "caption": "PALM-Gripper 자율 피킹 · 물체 인식·파지 계획·바구니 적재"
+        },
+        {
+          "rect": [
+            494,
+            333,
+            320,
+            180
+          ],
+          "video": "/assets/videos/sim-to-real-overlay.mp4",
+          "poster": "/assets/sim-to-real-overlay.jpg",
+          "caption": "실로봇 파지·리프트 · 추정 자세(초록), 목표 자세(노랑)"
+        }
+      ],
+      "extras": [
+        {
+          "video": "/assets/videos/palm-autonomous-grasping.mp4",
+          "poster": "/assets/palm-autonomous-grasping.jpg",
+          "caption": "PALM-Gripper 자율 피킹 · 물체 인식·파지 계획·바구니 적재"
+        },
+        {
+          "video": "/assets/videos/sim-to-real-overlay.mp4",
+          "poster": "/assets/sim-to-real-overlay.jpg",
+          "caption": "실로봇 파지·리프트 · 추정 자세(초록), 목표 자세(노랑)"
+        }
+      ],
+      "evidence": [
+        {
+          "id": "palm-paper",
+          "label": "T-MECH 논문",
+          "kind": "논문 첫 페이지",
+          "title": "PALM-Gripper: Integrated Gripper With Parallel Adaptable Mechanism for Shelf Picking in Logistics",
+          "image": "/assets/evidence/palm-paper-1.png",
+          "url": "https://doi.org/10.1109/TMECH.2025.3649851",
+          "description": "IEEE/ASME Transactions on Mechatronics · 제1저자",
+          "link_label": "논문 원문 열기",
+          "triggers": [
+            "IEEE/ASME T-MECH",
+            "IEEE/ASME Transactions on Mechatronics"
+          ]
+        },
+        {
+          "id": "rec-paper",
+          "label": "RA-L 논문",
+          "kind": "논문 첫 페이지",
+          "title": "ReC-Gripper: A Reconfigurable Combined Suction and Fingered Gripper for Various Logistics Picking and Stowing Tasks",
+          "image": "/assets/evidence/rec-paper-1.png",
+          "url": "https://doi.org/10.1109/LRA.2023.3330051",
+          "description": "IEEE Robotics and Automation Letters · 제1저자",
+          "link_label": "논문 원문 열기",
+          "triggers": [
+            "IEEE RA-L",
+            "IEEE Robotics and Automation Letters"
+          ]
+        },
+        {
+          "id": "iros-paper",
+          "label": "IROS 확장초록",
+          "kind": "논문 첫 페이지",
+          "title": "Overcoming Heavy Clutter: Utilizing the Hybrid Grasping Network and Gripper",
+          "image": "/assets/evidence/iros-paper-1.png",
+          "url": "https://sites.google.com/view/iros2024-workshop-bench-in-rgm/contributions",
+          "description": "IROS 2024 Workshop · 제1저자 확장초록",
+          "link_label": "논문 원문 열기",
+          "triggers": [
+            "IROS 확장초록"
+          ]
+        },
+        {
+          "id": "rap-paper",
+          "label": "RA-P 논문",
+          "kind": "논문 첫 페이지",
+          "title": "Toward Reliable Bin-Picking: Collision-Aware Robotic Design and Control Strategy for Heavily Cluttered Environment",
+          "image": "/assets/evidence/rap-paper-1.png",
+          "url": "https://doi.org/10.1109/RAP.2026.3655333",
+          "description": "IEEE Robotics and Automation Practice · 공동 제1저자",
+          "link_label": "논문 원문 열기",
+          "triggers": [
+            "IEEE RA-P 2026"
+          ]
+        },
+        {
+          "id": "humantech-award",
+          "label": "휴먼테크 동상",
+          "kind": "수상 상장",
+          "title": "삼성휴먼테크논문대상 동상 · Mechanical Engineering",
+          "image": "/assets/evidence/humantech-award-1.png",
+          "url": "https://r-ush.github.io/portfolio/assets/evidence/humantech-award-1.png",
+          "description": "2025.02.12 · Mechanical Engineering 부문 동상 · PALM-Gripper 연구",
+          "link_label": "상장 크게 보기",
+          "triggers": [
+            "삼성휴먼테크논문대상 동상"
+          ]
+        },
+        {
+          "id": "rgmc-award",
+          "label": "RGMC 2위",
+          "kind": "수상 상장",
+          "title": "ICRA 2024 RGMC Picking in Clutter 2위",
+          "image": "/assets/evidence/rgmc-award-1.png",
+          "url": "https://r-ush.github.io/portfolio/assets/evidence/rgmc-award-1.png",
+          "description": "ICRA 2024 RGMC Picking in Clutter · AIDIN-ROBOTORY 팀 2위.",
+          "link_label": "상장 크게 보기",
+          "triggers": [
+            "RGMC Picking in Clutter 2위",
+            "ICRA 2024 RGMC"
+          ]
+        },
+        {
+          "id": "iros-award-program",
+          "label": "IROS 수상",
+          "kind": "수상 · 공식 프로그램",
+          "title": "IROS 2024 Workshop 공식 프로그램 · Best Extended Abstract",
+          "image": "/assets/evidence/iros-award-program.png",
+          "url": "https://sites.google.com/view/iros2024-workshop-bench-in-rgm",
+          "description": "공식 워크숍 프로그램의 Best Extended Abstract 수상 기록.",
+          "link_label": "관련 자료 열기",
+          "triggers": [
+            "IROS 2024 Workshop Best Extended Abstract"
+          ]
+        },
+        {
+          "id": "kroc-award-photo",
+          "label": "KRoC 수상",
+          "kind": "수상 · 시상 사진",
+          "title": "RED Show 일반 부문 최우수상 · 시상 사진",
+          "image": "/assets/evidence/kroc-award-photo.jpg",
+          "url": "https://r-ush.github.io/bilateral_leader_arm/",
+          "description": "KRoC 2026 RED Show 일반 부문 최우수상 · 관련 팀 프로젝트의 시상 사진.",
+          "link_label": "관련 자료 열기",
+          "triggers": [
+            "KRoC 2026 RED Show 1위"
+          ]
+        },
+        {
+          "id": "kscdc-source",
+          "label": "KSCDC",
+          "kind": "수상 관련 프로젝트",
+          "title": "Handling Hand · KSCDC 2026 동상",
+          "url": "https://rachy103.github.io/handling-hand/",
+          "description": "Handling Hand 프로젝트 소개와 시연 영상.",
+          "link_label": "프로젝트 페이지 열기"
+        }
+      ],
+      "evidence_hotspots": []
+    },
+    {
+      "number": 2,
+      "id": "overview",
+      "title": "연구 프로젝트",
+      "svg": "slides/page-02.svg",
+      "text": "RESEARCH\n연구 프로젝트\n하드웨어 설계 · 순응 제어 · 모방학습 · 강화학습\n01\n하드웨어 경험\n그리퍼 기구 설계와 실제 파지·적재 실험\n01\nReC-Gripper\n03\nRECONFIGURABLE GRIPPER\n02\nPALM-Gripper\n04\nPARALLEL ADAPTABLE MECHANISM\n03\nCollision-Aware Bin-Picking\n05\nROBOT DESIGN / BIN-PICKING\n02\n제어\n순응 제어와 양방향 힘 피드백 원격조작\n04\n양방향 힘 피드백 원격조작\n06\nCOMPLIANT CONTROL / TELEOPERATION\n03\nImitation Learning\n시연 학습과 사람의 교정을 반영한 residual\n학습\n05\nGrasping with IL\n07\nFORCE SENSING / IMITATION LEARNING\n06\nResidual Learning\n08\nHUMAN CORRECTIONS / RESIDUAL LEARNING\n04\nReinforcement Learning\n실제 제어 응답의 식별과 학습 정책의 실물\n적용\n07\nGrasping with RL\n09\nSYSTEM ID / SIM-TO-REAL\nSEUNGHWAN UM  /  ROBOTICS\n2026.11\n02 / 11\n",
+      "links": [
+        {
+          "rect": [
+            298.0,
+            133.99996948242188,
+            516.0,
+            39.0
+          ],
+          "href": "https://r-ush.github.io/portfolio/hardware-first/projects/rec-gripper/",
+          "label": "01 ReC-Gripper 03 RECONFIGURABLE GRIPPER"
+        },
+        {
+          "rect": [
+            298.0,
+            169.99996948242188,
+            516.0,
+            39.0
+          ],
+          "href": "https://r-ush.github.io/portfolio/hardware-first/projects/palm-gripper/",
+          "label": "02 PALM-Gripper 04 PARALLEL ADAPTABLE MECHANISM"
+        },
+        {
+          "rect": [
+            298.0,
+            205.99996948242188,
+            516.0,
+            39.0
+          ],
+          "href": "https://r-ush.github.io/portfolio/hardware-first/projects/clutter-bin-picking/",
+          "label": "03 Collision-Aware Bin-Picking 05 ROBOT DESIGN / BIN-PICKING"
+        },
+        {
+          "rect": [
+            298.0,
+            274.9999694824219,
+            516.0,
+            39.0
+          ],
+          "href": "https://r-ush.github.io/portfolio/hardware-first/projects/teleoperation-control/",
+          "label": "04 양방향 힘 피드백 원격조작 06 COMPLIANT CONTROL / TELEOPERATION"
+        },
+        {
+          "rect": [
+            298.0,
+            359.9999694824219,
+            516.0,
+            39.0
+          ],
+          "href": "https://r-ush.github.io/portfolio/hardware-first/projects/scooping-imitation/",
+          "label": "05 Grasping with IL 07 FORCE SENSING / IMITATION LEARNING"
+        },
+        {
+          "rect": [
+            298.0,
+            402.9999694824219,
+            516.0,
+            39.0
+          ],
+          "href": "https://r-ush.github.io/portfolio/hardware-first/projects/human-corrections/",
+          "label": "06 Residual Learning 08 HUMAN CORRECTIONS / RESIDUAL LEARNING"
+        },
+        {
+          "rect": [
+            298.0,
+            474.9999694824219,
+            516.0,
+            39.000030517578125
+          ],
+          "href": "https://r-ush.github.io/portfolio/hardware-first/projects/sim-to-real/",
+          "label": "07 Grasping with RL 09 SYSTEM ID / SIM-TO-REAL"
+        }
+      ],
+      "media": [],
+      "extras": [],
+      "evidence": [
+        {
+          "id": "palm-paper",
+          "label": "T-MECH 논문",
+          "kind": "논문 첫 페이지",
+          "title": "PALM-Gripper: Integrated Gripper With Parallel Adaptable Mechanism for Shelf Picking in Logistics",
+          "image": "/assets/evidence/palm-paper-1.png",
+          "url": "https://doi.org/10.1109/TMECH.2025.3649851",
+          "description": "IEEE/ASME Transactions on Mechatronics · 제1저자",
+          "link_label": "논문 원문 열기",
+          "triggers": [
+            "IEEE/ASME T-MECH",
+            "IEEE/ASME Transactions on Mechatronics"
+          ]
+        },
+        {
+          "id": "rec-paper",
+          "label": "RA-L 논문",
+          "kind": "논문 첫 페이지",
+          "title": "ReC-Gripper: A Reconfigurable Combined Suction and Fingered Gripper for Various Logistics Picking and Stowing Tasks",
+          "image": "/assets/evidence/rec-paper-1.png",
+          "url": "https://doi.org/10.1109/LRA.2023.3330051",
+          "description": "IEEE Robotics and Automation Letters · 제1저자",
+          "link_label": "논문 원문 열기",
+          "triggers": [
+            "IEEE RA-L",
+            "IEEE Robotics and Automation Letters"
+          ]
+        },
+        {
+          "id": "iros-paper",
+          "label": "IROS 확장초록",
+          "kind": "논문 첫 페이지",
+          "title": "Overcoming Heavy Clutter: Utilizing the Hybrid Grasping Network and Gripper",
+          "image": "/assets/evidence/iros-paper-1.png",
+          "url": "https://sites.google.com/view/iros2024-workshop-bench-in-rgm/contributions",
+          "description": "IROS 2024 Workshop · 제1저자 확장초록",
+          "link_label": "논문 원문 열기",
+          "triggers": [
+            "IROS 확장초록"
+          ]
+        },
+        {
+          "id": "rap-paper",
+          "label": "RA-P 논문",
+          "kind": "논문 첫 페이지",
+          "title": "Toward Reliable Bin-Picking: Collision-Aware Robotic Design and Control Strategy for Heavily Cluttered Environment",
+          "image": "/assets/evidence/rap-paper-1.png",
+          "url": "https://doi.org/10.1109/RAP.2026.3655333",
+          "description": "IEEE Robotics and Automation Practice · 공동 제1저자",
+          "link_label": "논문 원문 열기",
+          "triggers": [
+            "IEEE RA-P 2026"
+          ]
+        },
+        {
+          "id": "humantech-award",
+          "label": "휴먼테크 동상",
+          "kind": "수상 상장",
+          "title": "삼성휴먼테크논문대상 동상 · Mechanical Engineering",
+          "image": "/assets/evidence/humantech-award-1.png",
+          "url": "https://r-ush.github.io/portfolio/assets/evidence/humantech-award-1.png",
+          "description": "2025.02.12 · Mechanical Engineering 부문 동상 · PALM-Gripper 연구",
+          "link_label": "상장 크게 보기",
+          "triggers": [
+            "삼성휴먼테크논문대상 동상"
+          ]
+        },
+        {
+          "id": "rgmc-award",
+          "label": "RGMC 2위",
+          "kind": "수상 상장",
+          "title": "ICRA 2024 RGMC Picking in Clutter 2위",
+          "image": "/assets/evidence/rgmc-award-1.png",
+          "url": "https://r-ush.github.io/portfolio/assets/evidence/rgmc-award-1.png",
+          "description": "ICRA 2024 RGMC Picking in Clutter · AIDIN-ROBOTORY 팀 2위.",
+          "link_label": "상장 크게 보기",
+          "triggers": [
+            "RGMC Picking in Clutter 2위",
+            "ICRA 2024 RGMC"
+          ]
+        },
+        {
+          "id": "iros-award-program",
+          "label": "IROS 수상",
+          "kind": "수상 · 공식 프로그램",
+          "title": "IROS 2024 Workshop 공식 프로그램 · Best Extended Abstract",
+          "image": "/assets/evidence/iros-award-program.png",
+          "url": "https://sites.google.com/view/iros2024-workshop-bench-in-rgm",
+          "description": "공식 워크숍 프로그램의 Best Extended Abstract 수상 기록.",
+          "link_label": "관련 자료 열기",
+          "triggers": [
+            "IROS 2024 Workshop Best Extended Abstract"
+          ]
+        },
+        {
+          "id": "kroc-award-photo",
+          "label": "KRoC 수상",
+          "kind": "수상 · 시상 사진",
+          "title": "RED Show 일반 부문 최우수상 · 시상 사진",
+          "image": "/assets/evidence/kroc-award-photo.jpg",
+          "url": "https://r-ush.github.io/bilateral_leader_arm/",
+          "description": "KRoC 2026 RED Show 일반 부문 최우수상 · 관련 팀 프로젝트의 시상 사진.",
+          "link_label": "관련 자료 열기",
+          "triggers": [
+            "KRoC 2026 RED Show 1위"
+          ]
+        },
+        {
+          "id": "kscdc-source",
+          "label": "KSCDC",
+          "kind": "수상 관련 프로젝트",
+          "title": "Handling Hand · KSCDC 2026 동상",
+          "url": "https://rachy103.github.io/handling-hand/",
+          "description": "Handling Hand 프로젝트 소개와 시연 영상.",
+          "link_label": "프로젝트 페이지 열기"
+        }
+      ],
+      "evidence_hotspots": []
+    },
+    {
+      "number": 3,
+      "id": "rec-gripper",
+      "title": "ReC-Gripper",
+      "svg": "slides/page-03.svg",
+      "text": "01  /  RECONFIGURABLE GRIPPER\nReC-Gripper\n흡착·손가락 파지를 결합한 재구성 그리퍼 설계 및 선반 피킹·적재 실험\nReC-Gripper의 선반 적재\nICRA 2024 RGMC 편집본 · Trial 1 (원본 x2 표기 유지)\n기구 설계, 파지·적재 실험, 결과 분석 및 논문 작성(제1저자)\nIEEE Robotics and Automation Letters 게재 · ICRA 2024 발표\n1.\n흡착부와 손가락을 결합한 재구성 메커니즘 설계\n2.\n작업별 그리퍼 구성 전환 및 선반 접근·파지 동작 구현\n3.\n실물 그리퍼를 이용한 선반 피킹·적재 실험\nIEEE RA-L 2024 · ICRA 2024 발표 | 기구 동작과 피킹·적재 실험\n영상·상세\nSEUNGHWAN UM  /  ROBOTICS\n2026.11\n03 / 11\n",
+      "links": [
+        {
+          "rect": [
+            28.0,
+            125.99996948242188,
+            381.0,
+            252.0
+          ],
+          "href": "https://r-ush.github.io/portfolio/hardware-first/projects/rec-gripper/",
+          "label": ""
+        },
+        {
+          "rect": [
+            433.0,
+            125.99996948242188,
+            381.0,
+            252.0
+          ],
+          "href": "https://r-ush.github.io/portfolio/hardware-first/projects/rec-gripper/",
+          "label": ""
+        },
+        {
+          "rect": [
+            709.0,
+            535.0,
+            48.0,
+            17.9599609375
+          ],
+          "href": "https://r-ush.github.io/portfolio/hardware-first/projects/rec-gripper/",
+          "label": "영상·상세"
+        },
+        {
+          "rect": [
+            766.0,
+            514.0,
+            48.0,
+            48.0
+          ],
+          "href": "https://r-ush.github.io/portfolio/hardware-first/projects/rec-gripper/",
+          "label": ""
+        },
+        {
+          "rect": [
+            28.0,
+            536.8017578125,
+            38.97900390625,
+            9.0
+          ],
+          "href": "https://doi.org/10.1109/LRA.2023.3330051",
+          "label": "IEEE RA-L"
+        },
+        {
+          "rect": [
+            28.0,
+            484.30224609375,
+            208.64453125,
+            11.5
+          ],
+          "href": "https://doi.org/10.1109/LRA.2023.3330051",
+          "label": "IEEE Robotics and Automation Letters"
+        },
+        {
+          "rect": [
+            433.0,
+            387.8417663574219,
+            73.09402465820312,
+            9.20001220703125
+          ],
+          "href": "https://r-ush.github.io/portfolio/assets/evidence/rgmc-award-1.png",
+          "label": "ICRA 2024 RGMC"
+        }
+      ],
+      "media": [
+        {
+          "rect": [
+            28,
+            126,
+            381,
+            252
+          ],
+          "video": "/assets/videos/rec-picking-stowing.mp4",
+          "poster": "/assets/rec-picking-stowing.jpg",
+          "caption": "재구성 그리퍼의 선반 적재 · 1×"
+        },
+        {
+          "rect": [
+            433,
+            126,
+            381,
+            252
+          ],
+          "video": "/assets/videos/rec-rgmc-selected.mp4",
+          "poster": "/assets/rec-rgmc-selected.jpg",
+          "caption": "ICRA 2024 RGMC 편집본 · Trial 1 (원본 x2 표기 유지)"
+        }
+      ],
+      "extras": [
+        {
+          "video": "/assets/videos/rec-rgmc-selected.mp4",
+          "poster": "/assets/rec-rgmc-selected.jpg",
+          "caption": "ICRA 2024 RGMC 편집본 · Trial 1 (원본 x2 표기 유지)"
+        },
+        {
+          "video": "/assets/videos/rec-suction-mechanism.mp4",
+          "poster": "/assets/rec-suction-mechanism.jpg",
+          "caption": "틸팅·신축 가능한 흡착부와 손가락을 함께 사용한 파지."
+        },
+        {
+          "video": "/assets/videos/rec-picking-stowing.mp4",
+          "poster": "/assets/rec-picking-stowing.jpg",
+          "caption": "재구성 그리퍼의 선반 적재 · 1×"
+        },
+        {
+          "video": "/assets/videos/rec-grasp-modes.mp4",
+          "poster": "/assets/rec-grasp-modes.jpg",
+          "caption": "Bin picking 모드와 shelf picking 모드의 동작 비교."
+        },
+        {
+          "video": "/assets/videos/rec-rgmc-repeated-grasping.mp4",
+          "poster": "/assets/rec-rgmc-repeated-grasping.jpg",
+          "caption": "ICRA 2024 RGMC 현장 · 연속 파지·이송 시도 (1배속)."
+        }
+      ],
+      "evidence": [
+        {
+          "id": "rec-paper",
+          "label": "RA-L 논문",
+          "kind": "논문 첫 페이지",
+          "title": "ReC-Gripper: A Reconfigurable Combined Suction and Fingered Gripper for Various Logistics Picking and Stowing Tasks",
+          "image": "/assets/evidence/rec-paper-1.png",
+          "url": "https://doi.org/10.1109/LRA.2023.3330051",
+          "description": "IEEE Robotics and Automation Letters · 제1저자",
+          "link_label": "논문 원문 열기",
+          "triggers": [
+            "IEEE RA-L",
+            "IEEE Robotics and Automation Letters"
+          ]
+        },
+        {
+          "id": "rgmc-award",
+          "label": "RGMC 2위",
+          "kind": "수상 상장",
+          "title": "ICRA 2024 RGMC Picking in Clutter 2위",
+          "image": "/assets/evidence/rgmc-award-1.png",
+          "url": "https://r-ush.github.io/portfolio/assets/evidence/rgmc-award-1.png",
+          "description": "ICRA 2024 RGMC Picking in Clutter · AIDIN-ROBOTORY 팀 2위.",
+          "link_label": "상장 크게 보기",
+          "triggers": [
+            "RGMC Picking in Clutter 2위",
+            "ICRA 2024 RGMC"
+          ]
+        }
+      ],
+      "evidence_hotspots": [
+        {
+          "id": "rec-paper",
+          "label": "RA-L 논문",
+          "rect": [
+            28.0,
+            536.8017578125,
+            38.97900390625,
+            9.0
+          ]
+        },
+        {
+          "id": "rec-paper",
+          "label": "RA-L 논문",
+          "rect": [
+            28.0,
+            484.30224609375,
+            208.64453125,
+            11.5
+          ]
+        },
+        {
+          "id": "rgmc-award",
+          "label": "RGMC 2위",
+          "rect": [
+            433.0,
+            387.8417663574219,
+            73.09402465820312,
+            9.20001220703125
+          ]
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "id": "palm-gripper",
+      "title": "PALM-Gripper",
+      "svg": "slides/page-04.svg",
+      "text": "02  /  PARALLEL ADAPTABLE MECHANISM\nPALM-Gripper\n물체 형상과 선반 접근 공간에 대응하는 병렬·적응형 통합 그리퍼 설계\n물체에 적응하는 손가락 기구\nPALM-Gripper 자율 피킹 · 물체 인식·파지 계획·바구니 적재\n메커니즘 설계, 실물 파지 실험·분석 및 논문 작성(제1저자)\nIEEE/ASME T-MECH 게재 · 2025 삼성휴먼테크논문대상 동상\n1.\n선반 피킹용 병렬·적응형 메커니즘 통합 설계\n2.\n물체 접촉에 따른 기구 적응 동작 실험\n3.\n실제 선반 환경에서 접근·파지 동작 평가\nIEEE/ASME T-MECH 2026 | 메커니즘 동작과 실물 파지 실험\n영상·상세\nSEUNGHWAN UM  /  ROBOTICS\n2026.11\n04 / 11\n",
+      "links": [
+        {
+          "rect": [
+            28.0,
+            125.99996948242188,
+            381.0,
+            252.0
+          ],
+          "href": "https://r-ush.github.io/portfolio/hardware-first/projects/palm-gripper/",
+          "label": ""
+        },
+        {
+          "rect": [
+            433.0,
+            125.99996948242188,
+            381.0,
+            252.0
+          ],
+          "href": "https://r-ush.github.io/portfolio/hardware-first/projects/palm-gripper/",
+          "label": ""
+        },
+        {
+          "rect": [
+            709.0,
+            535.0,
+            48.0,
+            17.9599609375
+          ],
+          "href": "https://r-ush.github.io/portfolio/hardware-first/projects/palm-gripper/",
+          "label": "영상·상세"
+        },
+        {
+          "rect": [
+            766.0,
+            514.0,
+            48.0,
+            48.0
+          ],
+          "href": "https://r-ush.github.io/portfolio/hardware-first/projects/palm-gripper/",
+          "label": ""
+        },
+        {
+          "rect": [
+            28.0,
+            484.30224609375,
+            108.10000610351562,
+            11.5
+          ],
+          "href": "https://doi.org/10.1109/TMECH.2025.3649851",
+          "label": "IEEE/ASME T-MECH"
+        },
+        {
+          "rect": [
+            28.0,
+            536.8017578125,
+            80.4780044555664,
+            9.0
+          ],
+          "href": "https://doi.org/10.1109/TMECH.2025.3649851",
+          "label": "IEEE/ASME T-MECH"
+        },
+        {
+          "rect": [
+            204.98501586914062,
+            484.30224609375,
+            142.04800415039062,
+            11.5
+          ],
+          "href": "https://r-ush.github.io/portfolio/assets/evidence/humantech-award-1.png",
+          "label": "삼성휴먼테크논문대상 동상"
+        }
+      ],
+      "media": [
+        {
+          "rect": [
+            28,
+            126,
+            381,
+            252
+          ],
+          "video": "/assets/videos/palm-adaptive-fingers.mp4",
+          "poster": "/assets/palm-adaptive-fingers.jpg",
+          "caption": "물체와 선반에 맞춰 적응하는 PALM-Gripper의 손가락."
+        },
+        {
+          "rect": [
+            433,
+            126,
+            381,
+            252
+          ],
+          "video": "/assets/videos/palm-autonomous-grasping.mp4",
+          "poster": "/assets/palm-autonomous-grasping.jpg",
+          "caption": "PALM-Gripper 자율 피킹 · 물체 인식·파지 계획·바구니 적재"
+        }
+      ],
+      "extras": [
+        {
+          "video": "/assets/videos/palm-autonomous-grasping.mp4",
+          "poster": "/assets/palm-autonomous-grasping.jpg",
+          "caption": "PALM-Gripper 자율 피킹 · 물체 인식·파지 계획·바구니 적재"
+        },
+        {
+          "video": "/assets/videos/palm-adaptive-fingers.mp4",
+          "poster": "/assets/palm-adaptive-fingers.jpg",
+          "caption": "물체와 선반에 맞춰 적응하는 PALM-Gripper의 손가락."
+        },
+        {
+          "video": "/assets/videos/palm-picking-stowing.mp4",
+          "poster": "/assets/palm-picking-stowing.jpg",
+          "caption": "선반 환경에서의 피킹·적재 시연."
+        },
+        {
+          "video": "/assets/videos/palm-kinematics.mp4",
+          "poster": "/assets/palm-kinematics.jpg",
+          "caption": "ArUco 마커를 이용한 기구학 검증."
+        }
+      ],
+      "evidence": [
+        {
+          "id": "palm-paper",
+          "label": "T-MECH 논문",
+          "kind": "논문 첫 페이지",
+          "title": "PALM-Gripper: Integrated Gripper With Parallel Adaptable Mechanism for Shelf Picking in Logistics",
+          "image": "/assets/evidence/palm-paper-1.png",
+          "url": "https://doi.org/10.1109/TMECH.2025.3649851",
+          "description": "IEEE/ASME Transactions on Mechatronics · 제1저자",
+          "link_label": "논문 원문 열기",
+          "triggers": [
+            "IEEE/ASME T-MECH",
+            "IEEE/ASME Transactions on Mechatronics"
+          ]
+        },
+        {
+          "id": "humantech-award",
+          "label": "휴먼테크 동상",
+          "kind": "수상 상장",
+          "title": "삼성휴먼테크논문대상 동상 · Mechanical Engineering",
+          "image": "/assets/evidence/humantech-award-1.png",
+          "url": "https://r-ush.github.io/portfolio/assets/evidence/humantech-award-1.png",
+          "description": "2025.02.12 · Mechanical Engineering 부문 동상 · PALM-Gripper 연구",
+          "link_label": "상장 크게 보기",
+          "triggers": [
+            "삼성휴먼테크논문대상 동상"
+          ]
+        }
+      ],
+      "evidence_hotspots": [
+        {
+          "id": "palm-paper",
+          "label": "T-MECH 논문",
+          "rect": [
+            28.0,
+            484.30224609375,
+            108.10000610351562,
+            11.5
+          ]
+        },
+        {
+          "id": "palm-paper",
+          "label": "T-MECH 논문",
+          "rect": [
+            28.0,
+            536.8017578125,
+            80.4780044555664,
+            9.0
+          ]
+        },
+        {
+          "id": "humantech-award",
+          "label": "휴먼테크 동상",
+          "rect": [
+            204.98501586914062,
+            484.30224609375,
+            142.04800415039062,
+            11.5
+          ]
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "id": "clutter-bin-picking",
+      "title": "Collision-Aware Bin-Picking",
+      "svg": "slides/page-05.svg",
+      "text": "03  /  ROBOT DESIGN / BIN-PICKING\nCollision-Aware Bin-Picking\n밀집 적재 환경의 주변 간섭을 고려한 로봇 설계·제어 및 파지 전략 연구\n주변 간섭을 고려한 설계와 파지\n설계·제어 실험 및 결과 분석 참여, 워크숍\n확장초록(제1저자)·후속 저널 논문(공동 제1저자) 작성\n1.\n밀집 적재 환경의 접근·파지 간섭 분석\n2.\n실물 피킹 실험을 통한 그리퍼·로봇 설계와 제어\n전략 검토\n3.\n대회 실험 결과를 IROS 확장초록과 후속 저널\n논문으로 정리\nICRA 2024 RGMC Picking in Clutter 2위(팀) · IROS 2024 Workshop Best Extended\nAbstract · IEEE RA-P 2026 게재\nBin-Picking · Collision Awareness · Grasp Planning\nRGMC: 팀 성과 | IROS 확장초록·RA-P: 동일 연구의 후속 논문\n영상·상세\nSEUNGHWAN UM  /  ROBOTICS\n2026.11\n05 / 11\n",
+      "links": [
+        {
+          "rect": [
+            28.0,
+            125.99996948242188,
+            491.0,
+            318.0
+          ],
+          "href": "https://r-ush.github.io/portfolio/hardware-first/projects/clutter-bin-picking/",
+          "label": ""
+        },
+        {
+          "rect": [
+            709.0,
+            535.0,
+            48.0,
+            17.9599609375
+          ],
+          "href": "https://r-ush.github.io/portfolio/hardware-first/projects/clutter-bin-picking/",
+          "label": "영상·상세"
+        },
+        {
+          "rect": [
+            766.0,
+            514.0,
+            48.0,
+            48.0
+          ],
+          "href": "https://r-ush.github.io/portfolio/hardware-first/projects/clutter-bin-picking/",
+          "label": ""
+        },
+        {
+          "rect": [
+            87.40000915527344,
+            480.90234375,
+            88.05601501464844,
+            12.0
+          ],
+          "href": "https://doi.org/10.1109/RAP.2026.3655333",
+          "label": "IEEE RA-P 2026"
+        },
+        {
+          "rect": [
+            648.19921875,
+            284.6420593261719,
+            70.0635986328125,
+            10.70001220703125
+          ],
+          "href": "https://sites.google.com/view/iros2024-workshop-bench-in-rgm/contributions",
+          "label": "IROS 확장초록"
+        },
+        {
+          "rect": [
+            97.56999969482422,
+            536.8017578125,
+            58.93199920654297,
+            9.0
+          ],
+          "href": "https://sites.google.com/view/iros2024-workshop-bench-in-rgm/contributions",
+          "label": "IROS 확장초록"
+        },
+        {
+          "rect": [
+            91.97200012207031,
+            462.40234375,
+            162.2519989013672,
+            12.0
+          ],
+          "href": "https://r-ush.github.io/portfolio/assets/evidence/rgmc-award-1.png",
+          "label": "RGMC Picking in Clutter 2위"
+        },
+        {
+          "rect": [
+            28.0,
+            462.40234375,
+            99.72000122070312,
+            12.0
+          ],
+          "href": "https://r-ush.github.io/portfolio/assets/evidence/rgmc-award-1.png",
+          "label": "ICRA 2024 RGMC"
+        },
+        {
+          "rect": [
+            286.40802001953125,
+            462.40234375,
+            208.595947265625,
+            12.0
+          ],
+          "href": "https://sites.google.com/view/iros2024-workshop-bench-in-rgm",
+          "label": "IROS 2024 Workshop Best Extended"
+        },
+        {
+          "rect": [
+            28.0,
+            480.90234375,
+            47.808006286621094,
+            12.0
+          ],
+          "href": "https://sites.google.com/view/iros2024-workshop-bench-in-rgm",
+          "label": "Abstract"
+        }
+      ],
+      "media": [
+        {
+          "rect": [
+            28,
+            126,
+            491,
+            318
+          ],
+          "video": "https://r-ush.github.io/images/clip/RAP.mp4",
+          "poster": "/assets/clutter-bin-picking.jpg",
+          "caption": "주변 물체 간섭을 고려한 bin-picking 시연"
+        }
+      ],
+      "extras": [
+        {
+          "video": "https://r-ush.github.io/images/clip/RAP.mp4",
+          "poster": "/assets/clutter-bin-picking.jpg",
+          "caption": "주변 물체 간섭을 고려한 bin-picking 시연"
+        }
+      ],
+      "evidence": [
+        {
+          "id": "rap-paper",
+          "label": "RA-P 논문",
+          "kind": "논문 첫 페이지",
+          "title": "Toward Reliable Bin-Picking: Collision-Aware Robotic Design and Control Strategy for Heavily Cluttered Environment",
+          "image": "/assets/evidence/rap-paper-1.png",
+          "url": "https://doi.org/10.1109/RAP.2026.3655333",
+          "description": "IEEE Robotics and Automation Practice · 공동 제1저자",
+          "link_label": "논문 원문 열기",
+          "triggers": [
+            "IEEE RA-P 2026"
+          ]
+        },
+        {
+          "id": "iros-paper",
+          "label": "IROS 확장초록",
+          "kind": "논문 첫 페이지",
+          "title": "Overcoming Heavy Clutter: Utilizing the Hybrid Grasping Network and Gripper",
+          "image": "/assets/evidence/iros-paper-1.png",
+          "url": "https://sites.google.com/view/iros2024-workshop-bench-in-rgm/contributions",
+          "description": "IROS 2024 Workshop · 제1저자 확장초록",
+          "link_label": "논문 원문 열기",
+          "triggers": [
+            "IROS 확장초록"
+          ]
+        },
+        {
+          "id": "rgmc-award",
+          "label": "RGMC 2위",
+          "kind": "수상 상장",
+          "title": "ICRA 2024 RGMC Picking in Clutter 2위",
+          "image": "/assets/evidence/rgmc-award-1.png",
+          "url": "https://r-ush.github.io/portfolio/assets/evidence/rgmc-award-1.png",
+          "description": "ICRA 2024 RGMC Picking in Clutter · AIDIN-ROBOTORY 팀 2위.",
+          "link_label": "상장 크게 보기",
+          "triggers": [
+            "RGMC Picking in Clutter 2위",
+            "ICRA 2024 RGMC"
+          ]
+        },
+        {
+          "id": "iros-award-program",
+          "label": "IROS 수상",
+          "kind": "수상 · 공식 프로그램",
+          "title": "IROS 2024 Workshop 공식 프로그램 · Best Extended Abstract",
+          "image": "/assets/evidence/iros-award-program.png",
+          "url": "https://sites.google.com/view/iros2024-workshop-bench-in-rgm",
+          "description": "공식 워크숍 프로그램의 Best Extended Abstract 수상 기록.",
+          "link_label": "관련 자료 열기",
+          "triggers": [
+            "IROS 2024 Workshop Best Extended Abstract"
+          ]
+        }
+      ],
+      "evidence_hotspots": [
+        {
+          "id": "rap-paper",
+          "label": "RA-P 논문",
+          "rect": [
+            87.40000915527344,
+            480.90234375,
+            88.05601501464844,
+            12.0
+          ]
+        },
+        {
+          "id": "iros-paper",
+          "label": "IROS 확장초록",
+          "rect": [
+            648.19921875,
+            284.6420593261719,
+            70.0635986328125,
+            10.70001220703125
+          ]
+        },
+        {
+          "id": "iros-paper",
+          "label": "IROS 확장초록",
+          "rect": [
+            97.56999969482422,
+            536.8017578125,
+            58.93199920654297,
+            9.0
+          ]
+        },
+        {
+          "id": "rgmc-award",
+          "label": "RGMC 2위",
+          "rect": [
+            91.97200012207031,
+            462.40234375,
+            162.2519989013672,
+            12.0
+          ]
+        },
+        {
+          "id": "rgmc-award",
+          "label": "RGMC 2위",
+          "rect": [
+            28.0,
+            462.40234375,
+            99.72000122070312,
+            12.0
+          ]
+        },
+        {
+          "id": "iros-award-program",
+          "label": "IROS 수상",
+          "rect": [
+            286.40802001953125,
+            462.40234375,
+            208.595947265625,
+            12.0
+          ]
+        },
+        {
+          "id": "iros-award-program",
+          "label": "IROS 수상",
+          "rect": [
+            28.0,
+            480.90234375,
+            47.808006286621094,
+            12.0
+          ]
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "id": "teleoperation-control",
+      "title": "Bilateral Teleoperation",
+      "svg": "slides/page-06.svg",
+      "text": "04  /  COMPLIANT CONTROL / TELEOPERATION\nBilateral Teleoperation\n리더암 힘 피드백과 로봇 팔 순응 제어 기반 양팔·로봇 손 원격조작 구현\n원격 접촉 정보를 리더암에 전달\n리더암 중력보상·전류/토크 제어·힘 반사 구현, M0609\n외란 관측 및 중력·도구·마찰 보상 적용\n1.\nJacobian 전치로 원격 wrench를 관절 토크로 변환해\n리더암에 반영\n2.\n운동량 기반 로봇 팔 외란 관측·보상 구현\n3.\n팔·손 원격조작 통합 및 접촉 작업 시연 수집에 적용\n양팔·로봇 손 원격조작 및 힘 피드백 시연 · KRoC 2026 RED Show 1위(관련 팀 프로젝트)\nTorque Control · Force Reflection · Disturbance Observer\n양팔·로봇 손 통합 원격조작 | KRoC RED Show: 관련 팀 프로젝트 수상\n영상·상세\nSEUNGHWAN UM  /  ROBOTICS\n2026.11\n06 / 11\n",
+      "links": [
+        {
+          "rect": [
+            28.0,
+            125.99996948242188,
+            491.0,
+            318.0
+          ],
+          "href": "https://r-ush.github.io/portfolio/hardware-first/projects/teleoperation-control/",
+          "label": ""
+        },
+        {
+          "rect": [
+            709.0,
+            535.0,
+            48.0,
+            17.9599609375
+          ],
+          "href": "https://r-ush.github.io/portfolio/hardware-first/projects/teleoperation-control/",
+          "label": "영상·상세"
+        },
+        {
+          "rect": [
+            766.0,
+            514.0,
+            48.0,
+            48.0
+          ],
+          "href": "https://r-ush.github.io/portfolio/hardware-first/projects/teleoperation-control/",
+          "label": ""
+        },
+        {
+          "rect": [
+            260.0799865722656,
+            462.4023132324219,
+            148.7159423828125,
+            12.0
+          ],
+          "href": "https://r-ush.github.io/bilateral_leader_arm/",
+          "label": "KRoC 2026 RED Show 1위"
+        }
+      ],
+      "media": [
+        {
+          "rect": [
+            28,
+            126,
+            491,
+            318
+          ],
+          "video": "https://r-ush.github.io/bilateral_leader_arm/static/videos/dual-arm-hand-teleoperation.mp4",
+          "poster": "/assets/teleoperation-control.jpg",
+          "caption": "리더암 기반 양팔·로봇 손 원격조작 시연"
+        }
+      ],
+      "extras": [
+        {
+          "video": "https://r-ush.github.io/bilateral_leader_arm/static/videos/dual-arm-hand-teleoperation.mp4",
+          "poster": "/assets/teleoperation-control.jpg",
+          "caption": "리더암 기반 양팔·로봇 손 원격조작 시연"
+        }
+      ],
+      "evidence": [
+        {
+          "id": "kroc-award-photo",
+          "label": "KRoC 수상",
+          "kind": "수상 · 시상 사진",
+          "title": "RED Show 일반 부문 최우수상 · 시상 사진",
+          "image": "/assets/evidence/kroc-award-photo.jpg",
+          "url": "https://r-ush.github.io/bilateral_leader_arm/",
+          "description": "KRoC 2026 RED Show 일반 부문 최우수상 · 관련 팀 프로젝트의 시상 사진.",
+          "link_label": "관련 자료 열기",
+          "triggers": [
+            "KRoC 2026 RED Show 1위"
+          ]
+        },
+        {
+          "id": "teleoperation-control-source",
+          "label": "프로젝트",
+          "kind": "연구 자료",
+          "title": "Bilateral Teleoperation",
+          "url": "https://r-ush.github.io/bilateral_leader_arm/",
+          "description": "리더암 힘 피드백 및 양팔·로봇 손 통합 원격조작",
+          "link_label": "프로젝트 페이지 열기"
+        }
+      ],
+      "evidence_hotspots": [
+        {
+          "id": "kroc-award-photo",
+          "label": "KRoC 수상",
+          "rect": [
+            260.0799865722656,
+            462.4023132324219,
+            148.7159423828125,
+            12.0
+          ]
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "id": "scooping-imitation",
+      "title": "Grasping with IL",
+      "svg": "slides/page-07.svg",
+      "text": "05  /  FORCE SENSING / IMITATION LEARNING\nGrasping with IL\n손끝·손목 힘 기반 순응 제어와 Diffusion Policy를 결합한 scooping·파지\n힘 정보를 이용한 접촉 제어와 학습\n손끝 wrench 좌표 변환, 손목 힘 피드백 결합, 순응\n제어, 시연 수집·정책 학습·실로봇 실행\n1.\n손끝 힘·토크를 손목 좌표계로 변환\n2.\n변환한 손끝 신호와 손목 F/T 피드백을 결합해 순응\n제어에 적용\n3.\n시연 데이터로 Diffusion Policy 학습 및 다양한 크기\n물체의 scooping 시연\n지지면 접촉을 이용한 scooping·리프트 시연 및 순응 제어 적용 전후 동작 비교\nForce / Torque · ROS TF · Diffusion Policy\n손끝·손목 힘 기반 순응 제어 | 정책 실행 및 제어 적용 전후 비교 영상 제공\n영상·상세\nSEUNGHWAN UM  /  ROBOTICS\n2026.11\n07 / 11\n",
+      "links": [
+        {
+          "rect": [
+            28.0,
+            125.99996948242188,
+            491.0,
+            318.0
+          ],
+          "href": "https://r-ush.github.io/portfolio/hardware-first/projects/scooping-imitation/",
+          "label": ""
+        },
+        {
+          "rect": [
+            709.0,
+            535.0,
+            48.0,
+            17.9599609375
+          ],
+          "href": "https://r-ush.github.io/portfolio/hardware-first/projects/scooping-imitation/",
+          "label": "영상·상세"
+        },
+        {
+          "rect": [
+            766.0,
+            514.0,
+            48.0,
+            48.0
+          ],
+          "href": "https://r-ush.github.io/portfolio/hardware-first/projects/scooping-imitation/",
+          "label": ""
+        }
+      ],
+      "media": [
+        {
+          "rect": [
+            28,
+            126,
+            491,
+            318
+          ],
+          "video": "https://r-ush.github.io/scooping_robotic_hand/static/videos/black_object_grasping_rollout_final.mp4",
+          "poster": "/assets/scooping-imitation.jpg",
+          "caption": "Diffusion Policy 기반 scooping·파지 · 다중 장면·카메라 뷰 편집본"
+        }
+      ],
+      "extras": [
+        {
+          "video": "https://r-ush.github.io/scooping_robotic_hand/static/videos/black_object_grasping_rollout_final.mp4",
+          "poster": "/assets/scooping-imitation.jpg",
+          "caption": "Diffusion Policy 기반 scooping·파지 · 다중 장면·카메라 뷰 편집본"
+        },
+        {
+          "video": "https://r-ush.github.io/scooping_robotic_hand/static/videos/comparison_w_wo_impedance.mp4",
+          "poster": "",
+          "caption": "순응 제어 적용 전후 scooping 동작 비교 · 원본 조건 표기 유지"
+        }
+      ],
+      "evidence": [
+        {
+          "id": "scooping-imitation-source",
+          "label": "프로젝트",
+          "kind": "연구 자료",
+          "title": "Grasping with IL",
+          "url": "https://r-ush.github.io/scooping_robotic_hand/",
+          "description": "힘 기반 순응 제어, Diffusion Policy 및 scooping 실험 영상",
+          "link_label": "프로젝트 페이지 열기"
+        }
+      ],
+      "evidence_hotspots": []
+    },
+    {
+      "number": 8,
+      "id": "human-corrections",
+      "title": "Learning from Human Corrections",
+      "svg": "slides/page-08.svg",
+      "text": "06  /  HUMAN CORRECTIONS / RESIDUAL LEARNING\nLearning from Human Corrections\n삽입 작업 중 사람의 물리적 교정을 반영하는 온라인 residual 학습 구현\n사람이 교정한 동작을 학습에 반영\n고정된 기본 정책 위에 residual 모델 구성 및 물리적\n교정 데이터 기반 온라인 학습·실행 루프 구현\n1.\n기본 정책 출력에 residual head의 Δpose를 더하는\n구조 적용\n2.\n사람이 교정한 로봇 위치를 학습 타깃으로 사용\n3.\nActor-learner 비동기 처리·출력 제한 적용 및 삽입\n작업 평가\n기존 목표 및 뒤쪽 3 cm 이동 조건에서 base + residual의 box insertion 평가\nResidual Policy · Online DAgger · PyTorch\n기존 목표·뒤쪽 3 cm 이동 조건 평가 | 이동 조건은 base 학습 위치 밖, residual zero-shot은 미검증\n영상·상세\nSEUNGHWAN UM  /  ROBOTICS\n2026.11\n08 / 11\n",
+      "links": [
+        {
+          "rect": [
+            28.0,
+            125.99996948242188,
+            491.0,
+            318.0
+          ],
+          "href": "https://r-ush.github.io/portfolio/hardware-first/projects/human-corrections/",
+          "label": ""
+        },
+        {
+          "rect": [
+            709.0,
+            535.0,
+            48.0,
+            17.9599609375
+          ],
+          "href": "https://r-ush.github.io/portfolio/hardware-first/projects/human-corrections/",
+          "label": "영상·상세"
+        },
+        {
+          "rect": [
+            766.0,
+            514.0,
+            48.0,
+            48.0
+          ],
+          "href": "https://r-ush.github.io/portfolio/hardware-first/projects/human-corrections/",
+          "label": ""
+        }
+      ],
+      "media": [
+        {
+          "rect": [
+            28,
+            126,
+            491,
+            318
+          ],
+          "video": "https://r-ush.github.io/contact_residual_learning/static/videos/human_guidance_raw.mp4",
+          "poster": "/assets/human-corrections.jpg",
+          "caption": "사람의 물리적 교정 · 청록색 화살표: 교정 벡터"
+        }
+      ],
+      "extras": [
+        {
+          "video": "https://r-ush.github.io/contact_residual_learning/static/videos/human_guidance_raw.mp4",
+          "poster": "/assets/human-corrections.jpg",
+          "caption": "사람의 물리적 교정 · 청록색 화살표: 교정 벡터"
+        },
+        {
+          "video": "https://r-ush.github.io/contact_residual_learning/static/videos/evaluation_back_raw.mp4",
+          "poster": "",
+          "caption": "목표를 뒤로 3 cm 이동한 base + residual 실행 · base 학습 위치 밖의 평가, residual의 zero-shot 일반화는 미검증"
+        }
+      ],
+      "evidence": [
+        {
+          "id": "human-corrections-source",
+          "label": "프로젝트",
+          "kind": "연구 자료",
+          "title": "Learning from Human Corrections",
+          "url": "https://r-ush.github.io/contact_residual_learning/",
+          "description": "물리적 교정 데이터 기반 residual 학습 구성 및 삽입 실험",
+          "link_label": "프로젝트 페이지 열기"
+        }
+      ],
+      "evidence_hotspots": []
+    },
+    {
+      "number": 9,
+      "id": "sim-to-real",
+      "title": "Grasping with RL",
+      "svg": "slides/page-09.svg",
+      "text": "07  /  SYSTEM ID / SIM-TO-REAL\nGrasping with RL\n실제 팔·제어기의 순응 응답을 반영한 RL 학습 환경 구축 및 실로봇 파지·리프트 구현\n물체 자세·목표 위치를 표시한 파지·리프트\n접촉 중 순응 응답 (리프트 미완료)\n팔·제어기 응답 식별, 임피던스 제어 모델의 시뮬레이션 통합, RL 학습·실로봇\n실행 구현\nDoosan M0609·AIDIN 로봇 손의 물체 파지·테이블 리프트 시연\n1.\n팔·하중·마찰·지연을 포함한 폐루프 응답 식별\n2.\n접촉 충격 완화를 위한 임피던스 제어 응답을 Isaac Sim 학습 환경에 반영\n3.\n정책과 로봇 간 관측·명령 연동 및 손끝 관측 순서 대조\n왼쪽: 실물 파지·리프트 | 오른쪽: 별도 RL 실행의 접촉 응답 관찰 (해당 시도는 리프트 미완료)\n영상·상세\nSEUNGHWAN UM  /  ROBOTICS\n2026.11\n09 / 11\n",
+      "links": [
+        {
+          "rect": [
+            28.0,
+            125.99996948242188,
+            381.0,
+            214.0
+          ],
+          "href": "https://r-ush.github.io/portfolio/hardware-first/projects/sim-to-real/",
+          "label": ""
+        },
+        {
+          "rect": [
+            433.0,
+            125.99996948242188,
+            381.0,
+            214.0
+          ],
+          "href": "https://r-ush.github.io/portfolio/hardware-first/projects/sim-to-real/",
+          "label": ""
+        },
+        {
+          "rect": [
+            709.0,
+            535.0,
+            48.0,
+            17.9599609375
+          ],
+          "href": "https://r-ush.github.io/portfolio/hardware-first/projects/sim-to-real/",
+          "label": "영상·상세"
+        },
+        {
+          "rect": [
+            766.0,
+            514.0,
+            48.0,
+            48.0
+          ],
+          "href": "https://r-ush.github.io/portfolio/hardware-first/projects/sim-to-real/",
+          "label": ""
+        }
+      ],
+      "media": [
+        {
+          "rect": [
+            28,
+            126,
+            381,
+            214
+          ],
+          "video": "/assets/videos/sim-to-real-overlay.mp4",
+          "poster": "/assets/sim-to-real-overlay.jpg",
+          "caption": "실로봇 파지·리프트 · 추정 자세(초록), 목표 자세(노랑)"
+        },
+        {
+          "rect": [
+            433,
+            126,
+            381,
+            214
+          ],
+          "video": "/assets/videos/rl-impact-grasping.mp4",
+          "poster": "/assets/rl-impact-grasping.jpg",
+          "caption": "물체·테이블 접촉 중 팔의 구속·해제 응답 · 별도 RL 실행, 리프트 미완료"
+        }
+      ],
+      "extras": [
+        {
+          "video": "/assets/videos/sim-to-real-overlay.mp4",
+          "poster": "/assets/sim-to-real-overlay.jpg",
+          "caption": "실로봇 파지·리프트 · 추정 자세(초록), 목표 자세(노랑)"
+        },
+        {
+          "video": "/assets/videos/rl-impact-grasping.mp4",
+          "poster": "/assets/rl-impact-grasping.jpg",
+          "caption": "물체·테이블 접촉 중 팔의 구속·해제 응답 · 별도 RL 실행, 리프트 미완료"
+        }
+      ],
+      "evidence": [
+        {
+          "id": "sim-to-real-source",
+          "label": "프로젝트",
+          "kind": "연구 자료",
+          "title": "Grasping with RL",
+          "url": "https://r-ush.github.io/scooping_robotic_hand/rl/",
+          "description": "팔·제어기 응답 식별, RL 학습 환경 및 실로봇 파지 영상",
+          "link_label": "프로젝트 페이지 열기"
+        }
+      ],
+      "evidence_hotspots": []
+    },
+    {
+      "number": 10,
+      "id": "results",
+      "title": "주요 논문과 수상",
+      "svg": "slides/page-10.svg",
+      "text": "PUBLICATIONS & AWARDS\n주요 논문과 수상\n제1저자·공동 제1저자 논문 및 주요 수상 실적\n논문\nIEEE/ASME Transactions on Mechatronics · 2026\nPALM-Gripper\n제1저자\n논문\nIEEE Robotics and Automation Letters · 2024\nReC-Gripper\n제1저자 · ICRA 2024 발표\n논문\nIROS 2024 Workshop\nOvercoming Heavy Clutter\n제1저자 · Best Extended Abstract\n논문\nIEEE Robotics and Automation Practice · 2026\nToward Reliable Bin-Picking\n공동 제1저자 · 초청 게재\n논문\n수상\n2025\n삼성휴먼테크논문대상 동상\nSamsung Humantech Paper Award\n2024\nICRA RGMC Picking in Clutter 2위\n팀 성과\n2024\nIROS Workshop Best Extended Abstract\nOvercoming Heavy Clutter · 제1저자 확장초록\n2026\nKRoC RED Show 1위\n팀 성과\n2026\nKSCDC 동상 · Handling Hand\n팀 성과\n논문·특허 전체 목록: 연구 홈페이지\nSEUNGHWAN UM  /  ROBOTICS\n2026.11\n10 / 11\n",
+      "links": [
+        {
+          "rect": [
+            379.0,
+            213.99996948242188,
+            19.399993896484375,
+            19.489990234375
+          ],
+          "href": "https://doi.org/10.1109/TMECH.2025.3649851",
+          "label": "논문"
+        },
+        {
+          "rect": [
+            379.0,
+            307.9999694824219,
+            19.399993896484375,
+            19.489990234375
+          ],
+          "href": "https://doi.org/10.1109/LRA.2023.3330051",
+          "label": "논문"
+        },
+        {
+          "rect": [
+            379.0,
+            401.9999694824219,
+            19.399993896484375,
+            19.490020751953125
+          ],
+          "href": "https://sites.google.com/view/iros2024-workshop-bench-in-rgm/contributions",
+          "label": "논문"
+        },
+        {
+          "rect": [
+            379.0,
+            496.0,
+            19.399993896484375,
+            19.489990234375
+          ],
+          "href": "https://doi.org/10.1109/RAP.2026.3655333",
+          "label": "논문"
+        },
+        {
+          "rect": [
+            441.0,
+            154.99996948242188,
+            373.0,
+            68.0
+          ],
+          "href": "https://r-ush.github.io/portfolio/assets/evidence/humantech-award-1.png",
+          "label": "2025 삼성휴먼테크논문대상 동상 Samsung Humantech Paper Award"
+        },
+        {
+          "rect": [
+            441.0,
+            228.99996948242188,
+            373.0,
+            68.0
+          ],
+          "href": "https://r-ush.github.io/portfolio/assets/evidence/rgmc-award-1.png",
+          "label": "2024 ICRA RGMC Picking in Clutter 2위 팀 성과"
+        },
+        {
+          "rect": [
+            441.0,
+            302.9999694824219,
+            373.0,
+            68.0
+          ],
+          "href": "https://sites.google.com/view/iros2024-workshop-bench-in-rgm",
+          "label": "2024 IROS Workshop Best Extended Abstract Overcoming Heavy Clutter · 제1저자 확장초록"
+        },
+        {
+          "rect": [
+            441.0,
+            376.9999694824219,
+            373.0,
+            68.0
+          ],
+          "href": "https://r-ush.github.io/bilateral_leader_arm/",
+          "label": "2026 KRoC RED Show 1위 팀 성과"
+        },
+        {
+          "rect": [
+            441.0,
+            450.9999694824219,
+            373.0,
+            68.00003051757812
+          ],
+          "href": "https://rachy103.github.io/handling-hand/",
+          "label": "2026 KSCDC 동상 · Handling Hand 팀 성과"
+        },
+        {
+          "rect": [
+            28.0,
+            541.0,
+            151.33200073242188,
+            19.14996337890625
+          ],
+          "href": "https://r-ush.github.io/",
+          "label": "논문·특허 전체 목록: 연구 홈페이지"
+        },
+        {
+          "rect": [
+            40.0,
+            189.12301635742188,
+            106.00201416015625,
+            15.600006103515625
+          ],
+          "href": "https://doi.org/10.1109/TMECH.2025.3649851",
+          "label": "PALM-Gripper"
+        },
+        {
+          "rect": [
+            40.0,
+            283.1230163574219,
+            91.15081787109375,
+            15.600006103515625
+          ],
+          "href": "https://doi.org/10.1109/LRA.2023.3330051",
+          "label": "ReC-Gripper"
+        },
+        {
+          "rect": [
+            40.0,
+            377.1230163574219,
+            197.62081909179688,
+            15.600006103515625
+          ],
+          "href": "https://sites.google.com/view/iros2024-workshop-bench-in-rgm/contributions",
+          "label": "Overcoming Heavy Clutter"
+        },
+        {
+          "rect": [
+            499.0,
+            350.7817077636719,
+            107.05804443359375,
+            8.899993896484375
+          ],
+          "href": "https://sites.google.com/view/iros2024-workshop-bench-in-rgm/contributions",
+          "label": "Overcoming Heavy Clutter"
+        },
+        {
+          "rect": [
+            40.0,
+            471.1230163574219,
+            208.75921630859375,
+            15.600006103515625
+          ],
+          "href": "https://doi.org/10.1109/RAP.2026.3655333",
+          "label": "Toward Reliable Bin-Picking"
+        }
+      ],
+      "media": [],
+      "extras": [],
+      "evidence": [
+        {
+          "id": "palm-paper",
+          "label": "T-MECH 논문",
+          "kind": "논문 첫 페이지",
+          "title": "PALM-Gripper: Integrated Gripper With Parallel Adaptable Mechanism for Shelf Picking in Logistics",
+          "image": "/assets/evidence/palm-paper-1.png",
+          "url": "https://doi.org/10.1109/TMECH.2025.3649851",
+          "description": "IEEE/ASME Transactions on Mechatronics · 제1저자",
+          "link_label": "논문 원문 열기",
+          "triggers": [
+            "IEEE/ASME T-MECH",
+            "IEEE/ASME Transactions on Mechatronics"
+          ]
+        },
+        {
+          "id": "rec-paper",
+          "label": "RA-L 논문",
+          "kind": "논문 첫 페이지",
+          "title": "ReC-Gripper: A Reconfigurable Combined Suction and Fingered Gripper for Various Logistics Picking and Stowing Tasks",
+          "image": "/assets/evidence/rec-paper-1.png",
+          "url": "https://doi.org/10.1109/LRA.2023.3330051",
+          "description": "IEEE Robotics and Automation Letters · 제1저자",
+          "link_label": "논문 원문 열기",
+          "triggers": [
+            "IEEE RA-L",
+            "IEEE Robotics and Automation Letters"
+          ]
+        },
+        {
+          "id": "iros-paper",
+          "label": "IROS 확장초록",
+          "kind": "논문 첫 페이지",
+          "title": "Overcoming Heavy Clutter: Utilizing the Hybrid Grasping Network and Gripper",
+          "image": "/assets/evidence/iros-paper-1.png",
+          "url": "https://sites.google.com/view/iros2024-workshop-bench-in-rgm/contributions",
+          "description": "IROS 2024 Workshop · 제1저자 확장초록",
+          "link_label": "논문 원문 열기",
+          "triggers": [
+            "IROS 확장초록"
+          ]
+        },
+        {
+          "id": "rap-paper",
+          "label": "RA-P 논문",
+          "kind": "논문 첫 페이지",
+          "title": "Toward Reliable Bin-Picking: Collision-Aware Robotic Design and Control Strategy for Heavily Cluttered Environment",
+          "image": "/assets/evidence/rap-paper-1.png",
+          "url": "https://doi.org/10.1109/RAP.2026.3655333",
+          "description": "IEEE Robotics and Automation Practice · 공동 제1저자",
+          "link_label": "논문 원문 열기",
+          "triggers": [
+            "IEEE RA-P 2026"
+          ]
+        },
+        {
+          "id": "humantech-award",
+          "label": "휴먼테크 동상",
+          "kind": "수상 상장",
+          "title": "삼성휴먼테크논문대상 동상 · Mechanical Engineering",
+          "image": "/assets/evidence/humantech-award-1.png",
+          "url": "https://r-ush.github.io/portfolio/assets/evidence/humantech-award-1.png",
+          "description": "2025.02.12 · Mechanical Engineering 부문 동상 · PALM-Gripper 연구",
+          "link_label": "상장 크게 보기",
+          "triggers": [
+            "삼성휴먼테크논문대상 동상"
+          ]
+        },
+        {
+          "id": "rgmc-award",
+          "label": "RGMC 2위",
+          "kind": "수상 상장",
+          "title": "ICRA 2024 RGMC Picking in Clutter 2위",
+          "image": "/assets/evidence/rgmc-award-1.png",
+          "url": "https://r-ush.github.io/portfolio/assets/evidence/rgmc-award-1.png",
+          "description": "ICRA 2024 RGMC Picking in Clutter · AIDIN-ROBOTORY 팀 2위.",
+          "link_label": "상장 크게 보기",
+          "triggers": [
+            "RGMC Picking in Clutter 2위",
+            "ICRA 2024 RGMC"
+          ]
+        },
+        {
+          "id": "iros-award-program",
+          "label": "IROS 수상",
+          "kind": "수상 · 공식 프로그램",
+          "title": "IROS 2024 Workshop 공식 프로그램 · Best Extended Abstract",
+          "image": "/assets/evidence/iros-award-program.png",
+          "url": "https://sites.google.com/view/iros2024-workshop-bench-in-rgm",
+          "description": "공식 워크숍 프로그램의 Best Extended Abstract 수상 기록.",
+          "link_label": "관련 자료 열기",
+          "triggers": [
+            "IROS 2024 Workshop Best Extended Abstract"
+          ]
+        },
+        {
+          "id": "kroc-award-photo",
+          "label": "KRoC 수상",
+          "kind": "수상 · 시상 사진",
+          "title": "RED Show 일반 부문 최우수상 · 시상 사진",
+          "image": "/assets/evidence/kroc-award-photo.jpg",
+          "url": "https://r-ush.github.io/bilateral_leader_arm/",
+          "description": "KRoC 2026 RED Show 일반 부문 최우수상 · 관련 팀 프로젝트의 시상 사진.",
+          "link_label": "관련 자료 열기",
+          "triggers": [
+            "KRoC 2026 RED Show 1위"
+          ]
+        },
+        {
+          "id": "kscdc-source",
+          "label": "KSCDC",
+          "kind": "수상 관련 프로젝트",
+          "title": "Handling Hand · KSCDC 2026 동상",
+          "url": "https://rachy103.github.io/handling-hand/",
+          "description": "Handling Hand 프로젝트 소개와 시연 영상.",
+          "link_label": "프로젝트 페이지 열기"
+        }
+      ],
+      "evidence_hotspots": [
+        {
+          "id": "palm-paper",
+          "label": "T-MECH 논문",
+          "rect": [
+            40.0,
+            189.12301635742188,
+            106.00201416015625,
+            15.600006103515625
+          ]
+        },
+        {
+          "id": "rec-paper",
+          "label": "RA-L 논문",
+          "rect": [
+            40.0,
+            283.1230163574219,
+            91.15081787109375,
+            15.600006103515625
+          ]
+        },
+        {
+          "id": "iros-paper",
+          "label": "IROS 확장초록",
+          "rect": [
+            40.0,
+            377.1230163574219,
+            197.62081909179688,
+            15.600006103515625
+          ]
+        },
+        {
+          "id": "iros-paper",
+          "label": "IROS 확장초록",
+          "rect": [
+            499.0,
+            350.7817077636719,
+            107.05804443359375,
+            8.899993896484375
+          ]
+        },
+        {
+          "id": "rap-paper",
+          "label": "RA-P 논문",
+          "rect": [
+            40.0,
+            471.1230163574219,
+            208.75921630859375,
+            15.600006103515625
+          ]
+        },
+        {
+          "id": "humantech-award",
+          "label": "휴먼테크 동상",
+          "rect": [
+            499.0,
+            166.44235229492188,
+            150.69439697265625,
+            12.199996948242188
+          ]
+        },
+        {
+          "id": "rgmc-award",
+          "label": "RGMC 2위",
+          "rect": [
+            499.0,
+            240.44235229492188,
+            197.39605712890625,
+            12.199996948242188
+          ]
+        },
+        {
+          "id": "iros-award-program",
+          "label": "IROS 수상",
+          "rect": [
+            499.0,
+            314.4423522949219,
+            232.37347412109375,
+            12.20001220703125
+          ]
+        },
+        {
+          "id": "kroc-award-photo",
+          "label": "KRoC 수상",
+          "rect": [
+            499.0,
+            388.4423522949219,
+            118.59625244140625,
+            12.20001220703125
+          ]
+        },
+        {
+          "id": "kscdc-source",
+          "label": "KSCDC",
+          "rect": [
+            499.0,
+            462.4423522949219,
+            168.12823486328125,
+            12.20001220703125
+          ]
+        }
+      ]
+    },
+    {
+      "number": 11,
+      "id": "experience",
+      "title": "연구와 개발 경험",
+      "svg": "slides/page-11.svg",
+      "text": "EXPERIENCE & SKILLS\n연구와 개발 경험\n산학협력 연구 · 장치 설계 · 비전 개발 · 로봇 제어\nAIDIN ROBOTICS · 성균관대학교\n2022.05-\n산학협력 연구\n물류 선반 피킹용 그리퍼·파지 전략 연구. 양팔·로봇 손 원격조작, 힘 정보를\n포함한 시연 수집 및 학습 구현 참여.\n기구 설계 · 순응 제어 · ROS/ROS2 · 시연 수집 · 실로봇 학습\nPRIMETECH\n2026.05-08\n계약 비전 개발\nRGB-D 기반 팔레트·박스 적재 상태·빈 슬롯 판정, 박스 자세·QR 면 방향 추정용\nWindows 모듈 개발.\nPython · OpenCV · PyTorch · Orbbec RGB-D SDK · Windows\nCarbonSix\n2024.10-11 / 2026.06-07\n장치 설계\n중력보상 직접교시 장치 및 카메라 캘리브레이션 장치 설계.\n기구 설계 · 중력보상 · 카메라 캘리브레이션\n한국생산기술연구원 (KITECH)\n2021.10-12\n연구학생\n2자유도 매니퓰레이터 제어 시스템 설계·개발.\n매니퓰레이터 제어 · 시스템 구현\n기술\n기구 설계\nInventor · CATIA · Adaptive / Reconfigurable Mechanisms\n제어·센싱\nC++ · ROS / ROS2 · Impedance / Admittance · F/T\n로봇 학습\nPython · PyTorch · Diffusion Policy · Residual Learning\n시뮬레이션·실물 적용\nIsaac Sim / PhysX · MuJoCo · System ID\n관심 분야: 기구 설계·순응 제어·로봇 학습을 결합한\n실제 작업 자동화\nseunghwanum@gmail.com\n웹 포트폴리오\nSEUNGHWAN UM  /  ROBOTICS\n2026.11\n11 / 11\n",
+      "links": [
+        {
+          "rect": [
+            548.0,
+            158.99996948242188,
+            266.0,
+            60.0
+          ],
+          "href": "https://r-ush.github.io/portfolio/hardware-first/projects/rec-gripper/",
+          "label": "기구 설계 Inventor · CATIA · Adaptive / Reconfigurable Mechanisms"
+        },
+        {
+          "rect": [
+            548.0,
+            228.99996948242188,
+            266.0,
+            60.0
+          ],
+          "href": "https://r-ush.github.io/portfolio/hardware-first/projects/teleoperation-control/",
+          "label": "제어·센싱 C++ · ROS / ROS2 · Impedance / Admittance · F/T"
+        },
+        {
+          "rect": [
+            548.0,
+            298.9999694824219,
+            266.0,
+            60.0
+          ],
+          "href": "https://r-ush.github.io/portfolio/hardware-first/projects/human-corrections/",
+          "label": "로봇 학습 Python · PyTorch · Diffusion Policy · Residual Learning"
+        },
+        {
+          "rect": [
+            548.0,
+            368.9999694824219,
+            266.0,
+            60.0
+          ],
+          "href": "https://r-ush.github.io/portfolio/hardware-first/projects/sim-to-real/",
+          "label": "시뮬레이션·실물 적용 Isaac Sim / PhysX · MuJoCo · System ID"
+        },
+        {
+          "rect": [
+            28.0,
+            537.0,
+            190.2104034423828,
+            28.15997314453125
+          ],
+          "href": "mailto:seunghwanum@gmail.com",
+          "label": "seunghwanum@gmail.com"
+        },
+        {
+          "rect": [
+            560.0,
+            540.0,
+            62.8804931640625,
+            19.8299560546875
+          ],
+          "href": "https://r-ush.github.io/portfolio/hardware-first",
+          "label": "웹 포트폴리오"
+        },
+        {
+          "rect": [
+            766.0,
+            514.0,
+            48.0,
+            48.0
+          ],
+          "href": "https://r-ush.github.io/portfolio/hardware-first",
+          "label": ""
+        }
+      ],
+      "media": [],
+      "extras": [],
+      "evidence": [
+        {
+          "id": "palm-paper",
+          "label": "T-MECH 논문",
+          "kind": "논문 첫 페이지",
+          "title": "PALM-Gripper: Integrated Gripper With Parallel Adaptable Mechanism for Shelf Picking in Logistics",
+          "image": "/assets/evidence/palm-paper-1.png",
+          "url": "https://doi.org/10.1109/TMECH.2025.3649851",
+          "description": "IEEE/ASME Transactions on Mechatronics · 제1저자",
+          "link_label": "논문 원문 열기",
+          "triggers": [
+            "IEEE/ASME T-MECH",
+            "IEEE/ASME Transactions on Mechatronics"
+          ]
+        },
+        {
+          "id": "rec-paper",
+          "label": "RA-L 논문",
+          "kind": "논문 첫 페이지",
+          "title": "ReC-Gripper: A Reconfigurable Combined Suction and Fingered Gripper for Various Logistics Picking and Stowing Tasks",
+          "image": "/assets/evidence/rec-paper-1.png",
+          "url": "https://doi.org/10.1109/LRA.2023.3330051",
+          "description": "IEEE Robotics and Automation Letters · 제1저자",
+          "link_label": "논문 원문 열기",
+          "triggers": [
+            "IEEE RA-L",
+            "IEEE Robotics and Automation Letters"
+          ]
+        },
+        {
+          "id": "iros-paper",
+          "label": "IROS 확장초록",
+          "kind": "논문 첫 페이지",
+          "title": "Overcoming Heavy Clutter: Utilizing the Hybrid Grasping Network and Gripper",
+          "image": "/assets/evidence/iros-paper-1.png",
+          "url": "https://sites.google.com/view/iros2024-workshop-bench-in-rgm/contributions",
+          "description": "IROS 2024 Workshop · 제1저자 확장초록",
+          "link_label": "논문 원문 열기",
+          "triggers": [
+            "IROS 확장초록"
+          ]
+        },
+        {
+          "id": "rap-paper",
+          "label": "RA-P 논문",
+          "kind": "논문 첫 페이지",
+          "title": "Toward Reliable Bin-Picking: Collision-Aware Robotic Design and Control Strategy for Heavily Cluttered Environment",
+          "image": "/assets/evidence/rap-paper-1.png",
+          "url": "https://doi.org/10.1109/RAP.2026.3655333",
+          "description": "IEEE Robotics and Automation Practice · 공동 제1저자",
+          "link_label": "논문 원문 열기",
+          "triggers": [
+            "IEEE RA-P 2026"
+          ]
+        },
+        {
+          "id": "humantech-award",
+          "label": "휴먼테크 동상",
+          "kind": "수상 상장",
+          "title": "삼성휴먼테크논문대상 동상 · Mechanical Engineering",
+          "image": "/assets/evidence/humantech-award-1.png",
+          "url": "https://r-ush.github.io/portfolio/assets/evidence/humantech-award-1.png",
+          "description": "2025.02.12 · Mechanical Engineering 부문 동상 · PALM-Gripper 연구",
+          "link_label": "상장 크게 보기",
+          "triggers": [
+            "삼성휴먼테크논문대상 동상"
+          ]
+        },
+        {
+          "id": "rgmc-award",
+          "label": "RGMC 2위",
+          "kind": "수상 상장",
+          "title": "ICRA 2024 RGMC Picking in Clutter 2위",
+          "image": "/assets/evidence/rgmc-award-1.png",
+          "url": "https://r-ush.github.io/portfolio/assets/evidence/rgmc-award-1.png",
+          "description": "ICRA 2024 RGMC Picking in Clutter · AIDIN-ROBOTORY 팀 2위.",
+          "link_label": "상장 크게 보기",
+          "triggers": [
+            "RGMC Picking in Clutter 2위",
+            "ICRA 2024 RGMC"
+          ]
+        },
+        {
+          "id": "iros-award-program",
+          "label": "IROS 수상",
+          "kind": "수상 · 공식 프로그램",
+          "title": "IROS 2024 Workshop 공식 프로그램 · Best Extended Abstract",
+          "image": "/assets/evidence/iros-award-program.png",
+          "url": "https://sites.google.com/view/iros2024-workshop-bench-in-rgm",
+          "description": "공식 워크숍 프로그램의 Best Extended Abstract 수상 기록.",
+          "link_label": "관련 자료 열기",
+          "triggers": [
+            "IROS 2024 Workshop Best Extended Abstract"
+          ]
+        },
+        {
+          "id": "kroc-award-photo",
+          "label": "KRoC 수상",
+          "kind": "수상 · 시상 사진",
+          "title": "RED Show 일반 부문 최우수상 · 시상 사진",
+          "image": "/assets/evidence/kroc-award-photo.jpg",
+          "url": "https://r-ush.github.io/bilateral_leader_arm/",
+          "description": "KRoC 2026 RED Show 일반 부문 최우수상 · 관련 팀 프로젝트의 시상 사진.",
+          "link_label": "관련 자료 열기",
+          "triggers": [
+            "KRoC 2026 RED Show 1위"
+          ]
+        },
+        {
+          "id": "kscdc-source",
+          "label": "KSCDC",
+          "kind": "수상 관련 프로젝트",
+          "title": "Handling Hand · KSCDC 2026 동상",
+          "url": "https://rachy103.github.io/handling-hand/",
+          "description": "Handling Hand 프로젝트 소개와 시연 영상.",
+          "link_label": "프로젝트 페이지 열기"
+        }
+      ],
+      "evidence_hotspots": []
+    }
+  ],
+  "asset_prefix": "../",
+  "variant": "hardware-first",
+  "variant_label": "하드웨어 → 제어 → IL → RL"
+}

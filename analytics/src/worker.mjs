@@ -1,4 +1,5 @@
 import { aggregate, config, dateParts, excludedAddress, ignoredRequest, LIVE, liveBucket, liveCounts, liveReport, MAX_BODY_BYTES, persist, report, RETENTION_DAYS, validateBatch } from './metrics.mjs';
+import { cleanupPortfolio, persistPortfolio, portfolioReport, validatePortfolio } from './portfolio.mjs';
 
 // Per-isolate memo so polling homepages do not query D1 on every request.
 const LIVE_CACHE_MS = 30000;
@@ -51,6 +52,7 @@ async function readBody(request) {
   return JSON.parse(new TextDecoder().decode(bytes));
 }
 export async function cleanup(env, now = new Date()) {
+  await cleanupPortfolio(env.DB, now);
   const retention = Math.min(RETENTION_DAYS, Math.max(1, Number(env.RETENTION_DAYS) || RETENTION_DAYS));
   const cutoff = dateParts(new Date(now.getTime() - (retention - 1) * 86400000)).day;
   await env.DB.prepare('DELETE FROM daily_metrics WHERE day < ?').bind(cutoff).run();
@@ -73,7 +75,8 @@ async function liveMap(env, now = new Date()) {
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
-    if (url.pathname === '/collect') {
+    if (url.pathname === '/collect' || url.pathname === '/collect/portfolio') {
+      const portfolio = url.pathname === '/collect/portfolio';
       const origin = request.headers.get('origin');
       if (!permittedOrigin(origin, env)) return response(null, 403);
       const cors = { 'Access-Control-Allow-Origin': origin, 'Vary': 'Origin' };
@@ -83,12 +86,12 @@ export default {
       if (ignoredRequest(request) || excludedAddress(request, env.EXCLUDED_IPS)) return response(null, 204, cors);
       if (env.INGEST_LIMIT && !(await env.INGEST_LIMIT.limit({ key: 'aggregate-ingest' })).success) return response(null, 429, cors);
       let events;
-      try { events = validateBatch(await readBody(request)); }
+      try { const body = await readBody(request); events = portfolio ? validatePortfolio(body) : validateBatch(body); }
       catch { return json({ error: 'Invalid aggregate event' }, 400, cors); }
       try {
         const now = new Date();
-        await persist(env.DB, aggregate(events, request, now), liveCounts(events, request, now));
-        liveCache.delete(env.DB);
+        if (portfolio) await persistPortfolio(env.DB, events, request, now);
+        else { await persist(env.DB, aggregate(events, request, now), liveCounts(events, request, now)); liveCache.delete(env.DB); }
         return response(null, 204, cors);
       } catch {
         // Do not log request headers, bodies, tokens, IPs or database values.
@@ -103,11 +106,15 @@ export default {
       try { return response(await liveMap(env), 200, { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'public, max-age=30', ...cors }); }
       catch { return json({ error: 'Live map unavailable' }, 503, cors); }
     }
-    if (url.pathname === '/api/stats') {
+    if (url.pathname === '/api/stats' || url.pathname === '/api/portfolio') {
       if (request.method !== 'GET') return response(null, 405);
       if (!(await authorized(request, env))) {
         if (env.AUTH_LIMIT && !(await env.AUTH_LIMIT.limit({ key: 'admin-failures' })).success) return response(null, 429);
         return json({ error: 'Authentication required' }, 401);
+      }
+      if (url.pathname === '/api/portfolio') {
+        try { return json(await portfolioReport(env.DB)); }
+        catch { return json({ error: 'Portfolio statistics unavailable' }, 503); }
       }
       const days = Number(url.searchParams.get('days') || 7);
       if (!Number.isInteger(days) || days < 1 || days > RETENTION_DAYS) return json({ error: 'Invalid range' }, 400);
@@ -119,7 +126,7 @@ export default {
         return json(report(data.results || [], days, now));
       } catch { return json({ error: 'Statistics unavailable' }, 503); }
     }
-    if (url.pathname === '/health') return json({ ok: true, mode: 'aggregate-only' });
+    if (url.pathname === '/health') return json({ ok: true, mode: 'aggregates-and-private-portfolio' });
     if (url.pathname.startsWith('/api/')) return response(null, 404);
     if (!['GET', 'HEAD'].includes(request.method)) return response(null, 405);
     const asset = await env.ASSETS.fetch(request);
@@ -127,5 +134,9 @@ export default {
     for (const [key, value] of Object.entries(security)) secured.headers.set(key, value);
     return secured;
   },
-  async scheduled(controller, env) { await cleanup(env); }
+  async scheduled(controller, env) {
+    const now = new Date(controller.scheduledTime || Date.now());
+    if (now.getUTCHours() === 15) await cleanup(env, now);
+    else await cleanupPortfolio(env.DB, now);
+  }
 };

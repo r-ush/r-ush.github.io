@@ -34,3 +34,10 @@ include:
   - robots.txt
   - llms.txt
   - rb10_admittance_control/
+
+# Shared directly; kept out of generated sitemaps. HTML also carries noindex.
+defaults:
+  - scope:
+      path: "portfolio"
+    values:
+      sitemap: false

@@ -1,0 +1,79 @@
+{
+  "endpoint": "https://rush-analytics.r-ush.workers.dev/collect/portfolio",
+  "paths": [
+    "/portfolio/",
+    "/portfolio/hardware-first/"
+  ],
+  "slides": {
+    "cover": "엄승환 | 로봇 파지와 접촉 조작",
+    "overview": "연구 프로젝트",
+    "sim-to-real": "Grasping with RL",
+    "scooping-imitation": "Grasping with IL",
+    "rec-gripper": "ReC-Gripper",
+    "palm-gripper": "PALM-Gripper",
+    "clutter-bin-picking": "Collision-Aware Bin-Picking",
+    "human-corrections": "Learning from Human Corrections",
+    "teleoperation-control": "Bilateral Teleoperation",
+    "results": "주요 논문과 수상",
+    "experience": "연구와 개발 경험"
+  },
+  "sources": {
+    "palm-paper": "T-MECH 논문",
+    "rec-paper": "RA-L 논문",
+    "iros-paper": "IROS 확장초록",
+    "rap-paper": "RA-P 논문",
+    "humantech-award": "휴먼테크 동상",
+    "rgmc-award": "RGMC 2위",
+    "iros-award-program": "IROS 수상",
+    "kroc-award-photo": "KRoC 수상",
+    "kscdc-source": "KSCDC",
+    "sim-to-real-source": "프로젝트",
+    "scooping-imitation-source": "프로젝트",
+    "human-corrections-source": "프로젝트",
+    "teleoperation-control-source": "프로젝트"
+  },
+  "videos": {
+    "video-01": "/assets/videos/palm-adaptive-fingers.mp4",
+    "video-02": "/assets/videos/palm-autonomous-grasping.mp4",
+    "video-03": "/assets/videos/palm-kinematics.mp4",
+    "video-04": "/assets/videos/palm-picking-stowing.mp4",
+    "video-05": "/assets/videos/rec-grasp-modes.mp4",
+    "video-06": "/assets/videos/rec-picking-stowing.mp4",
+    "video-07": "/assets/videos/rec-rgmc-repeated-grasping.mp4",
+    "video-08": "/assets/videos/rec-rgmc-selected.mp4",
+    "video-09": "/assets/videos/rec-suction-mechanism.mp4",
+    "video-10": "/assets/videos/rl-impact-grasping.mp4",
+    "video-11": "/assets/videos/sim-to-real-overlay.mp4",
+    "video-12": "https://r-ush.github.io/bilateral_leader_arm/static/videos/dual-arm-hand-teleoperation.mp4",
+    "video-13": "https://r-ush.github.io/contact_residual_learning/static/videos/evaluation_back_raw.mp4",
+    "video-14": "https://r-ush.github.io/contact_residual_learning/static/videos/human_guidance_raw.mp4",
+    "video-15": "https://r-ush.github.io/images/clip/RAP.mp4",
+    "video-16": "https://r-ush.github.io/scooping_robotic_hand/static/videos/black_object_grasping_rollout_final.mp4",
+    "video-17": "https://r-ush.github.io/scooping_robotic_hand/static/videos/comparison_w_wo_impedance.mp4"
+  },
+  "videoLabels": {
+    "video-01": "물체와 선반에 맞춰 적응하는 PALM-Gripper의 손가락.",
+    "video-02": "PALM-Gripper 자율 피킹 · 물체 인식·파지 계획·바구니 적재",
+    "video-03": "ArUco 마커를 이용한 기구학 검증.",
+    "video-04": "선반 환경에서의 피킹·적재 시연.",
+    "video-05": "Bin picking 모드와 shelf picking 모드의 동작 비교.",
+    "video-06": "재구성 그리퍼의 선반 적재 · 1×",
+    "video-07": "ICRA 2024 RGMC 현장 · 연속 파지·이송 시도 (1배속).",
+    "video-08": "ICRA 2024 RGMC 편집본 · Trial 1 (원본 x2 표기 유지)",
+    "video-09": "틸팅·신축 가능한 흡착부와 손가락을 함께 사용한 파지.",
+    "video-10": "물체·테이블 접촉 중 팔의 구속·해제 응답 · 별도 RL 실행, 리프트 미완료",
+    "video-11": "실로봇 파지·리프트 · 추정 자세(초록), 목표 자세(노랑)",
+    "video-12": "리더암 기반 양팔·로봇 손 원격조작 시연",
+    "video-13": "목표를 뒤로 3 cm 이동한 base + residual 실행 · base 학습 위치 밖의 평가, residual의 zero-shot 일반화는 미검증",
+    "video-14": "사람의 물리적 교정 · 청록색 화살표: 교정 벡터",
+    "video-15": "주변 물체 간섭을 고려한 bin-picking 시연",
+    "video-16": "Diffusion Policy 기반 scooping·파지 · 다중 장면·카메라 뷰 편집본",
+    "video-17": "순응 제어 적용 전후 scooping 동작 비교 · 원본 조건 표기 유지"
+  },
+  "downloads": {
+    "cv-ko": "국문 CV",
+    "cv-en": "English CV",
+    "portfolio-ko": "국문 포트폴리오",
+    "portfolio-en": "English portfolio"
+  }
+}

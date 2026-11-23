@@ -59,6 +59,7 @@ function parseIp(text) {
   if (all.some(g => !/^[0-9a-f]{1,4}$/i.test(g))) return null;
   return { bits: 128, value: all.reduce((sum, g) => (sum << 16n) + BigInt(parseInt(g, 16)), 0n) };
 }
+export const validAddress = text => !!parseIp(text);
 
 function parseRange(entry) {
   const [address, prefixText, extra] = entry.split('/');
@@ -114,7 +115,7 @@ export function validateBatch(payload) {
   });
 }
 
-function geography(request) {
+export function geography(request) {
   const rawCountry = request.cf?.country || '';
   const country = /^[A-Z]{2}$/.test(rawCountry) && rawCountry !== 'XX' ? rawCountry : 'Unknown';
   // Administrative region code and Cloudflare's IP-estimated city name, for the

@@ -1,0 +1,2006 @@
+{
+  "width": 841.8897705078125,
+  "height": 595.2755737304688,
+  "pdf_sha256": "4b969ef6b621ec61d75de362aee92acc5009cc39ff809af8ccc7f7cc8a76487a",
+  "language": "en",
+  "pdf_file": "portfolio-en.pdf",
+  "download_name": "Seunghwan_Um_Robotics_Portfolio_Hardware_First.pdf",
+  "pages": [
+    {
+      "number": 1,
+      "id": "cover",
+      "title": "Seunghwan Um | Robotic Grasping & Contact-Rich Manipulation",
+      "svg": "slides-en/page-01.svg",
+      "text": "ROBOTICS PORTFOLIO\nRobotic Grasping & Contact-Rich Manipulation\nSeunghwan Um\nMechanical Engineering\nGripper design, compliant control, teleoperation, and\nlearning-based manipulation on real robots.\nEDUCATION\nSungkyunkwan University\nIntegrated M.S./Ph.D., Mechanical Engineering\nMar. 2022 - Present · Expected Feb. 2027\nHanyang University ERICA\nB.S., Mechanical Engineering · Cum Laude\nMar. 2018 - Feb. 2022\nA hardware-based approach to manipulation: analyzing real system responses and\nincorporating them into control models and learning environments.\nseunghwanum@gmail.com\nPALM-Gripper · Autonomous Picking\nObject perception, grasp planning, and bin placement\nGrasping with RL\nGrasp and lift with pose and target overlays\nSEUNGHWAN UM  /  ROBOTICS\n2026.11\n01 / 11\n",
+      "links": [
+        {
+          "rect": [
+            28.0,
+            535.0,
+            145.2281951904297,
+            22.2099609375
+          ],
+          "href": "mailto:seunghwanum@gmail.com",
+          "label": "seunghwanum@gmail.com"
+        },
+        {
+          "rect": [
+            437.0,
+            514.0,
+            40.0,
+            40.0
+          ],
+          "href": "https://r-ush.github.io/portfolio/hardware-first",
+          "label": ""
+        },
+        {
+          "rect": [
+            494.0,
+            104.99996948242188,
+            320.0,
+            180.0
+          ],
+          "href": "https://r-ush.github.io/portfolio/hardware-first/projects/palm-gripper/",
+          "label": ""
+        },
+        {
+          "rect": [
+            494.0,
+            332.9999694824219,
+            320.0,
+            180.00003051757812
+          ],
+          "href": "https://r-ush.github.io/portfolio/hardware-first/projects/sim-to-real/",
+          "label": ""
+        }
+      ],
+      "media": [
+        {
+          "rect": [
+            494,
+            105,
+            320,
+            180
+          ],
+          "video": "/assets/videos/palm-autonomous-grasping.mp4",
+          "poster": "/assets/palm-autonomous-grasping.jpg",
+          "caption": "PALM autonomous picking · Perception, planning, and bin placement"
+        },
+        {
+          "rect": [
+            494,
+            333,
+            320,
+            180
+          ],
+          "video": "/assets/videos/sim-to-real-overlay.mp4",
+          "poster": "/assets/sim-to-real-overlay.jpg",
+          "caption": "Real-robot grasp and lift · Estimated pose (green), target pose (yellow)"
+        }
+      ],
+      "extras": [
+        {
+          "video": "/assets/videos/palm-autonomous-grasping.mp4",
+          "poster": "/assets/palm-autonomous-grasping.jpg",
+          "caption": "PALM autonomous picking · Perception, planning, and bin placement"
+        },
+        {
+          "video": "/assets/videos/sim-to-real-overlay.mp4",
+          "poster": "/assets/sim-to-real-overlay.jpg",
+          "caption": "Real-robot grasp and lift · Estimated pose (green), target pose (yellow)"
+        }
+      ],
+      "evidence": [
+        {
+          "id": "palm-paper",
+          "label": "T-MECH paper",
+          "kind": "Paper: first page",
+          "title": "PALM-Gripper: Integrated Gripper With Parallel Adaptable Mechanism for Shelf Picking in Logistics",
+          "image": "/assets/evidence/palm-paper-1.png",
+          "url": "https://doi.org/10.1109/TMECH.2025.3649851",
+          "description": "IEEE/ASME Transactions on Mechatronics · First author",
+          "link_label": "Read paper",
+          "triggers": [
+            "IEEE/ASME T-MECH",
+            "IEEE/ASME Transactions on Mechatronics"
+          ]
+        },
+        {
+          "id": "rec-paper",
+          "label": "RA-L paper",
+          "kind": "Paper: first page",
+          "title": "ReC-Gripper: A Reconfigurable Combined Suction and Fingered Gripper for Various Logistics Picking and Stowing Tasks",
+          "image": "/assets/evidence/rec-paper-1.png",
+          "url": "https://doi.org/10.1109/LRA.2023.3330051",
+          "description": "IEEE Robotics and Automation Letters · First author",
+          "link_label": "Read paper",
+          "triggers": [
+            "IEEE RA-L",
+            "IEEE Robotics and Automation Letters"
+          ]
+        },
+        {
+          "id": "iros-paper",
+          "label": "IROS abstract",
+          "kind": "Paper: first page",
+          "title": "Overcoming Heavy Clutter: Utilizing the Hybrid Grasping Network and Gripper",
+          "image": "/assets/evidence/iros-paper-1.png",
+          "url": "https://sites.google.com/view/iros2024-workshop-bench-in-rgm/contributions",
+          "description": "IROS 2024 Workshop · First-author extended abstract",
+          "link_label": "Read paper",
+          "triggers": [
+            "IROS extended abstract"
+          ]
+        },
+        {
+          "id": "rap-paper",
+          "label": "RA-P paper",
+          "kind": "Paper: first page",
+          "title": "Toward Reliable Bin-Picking: Collision-Aware Robotic Design and Control Strategy for Heavily Cluttered Environment",
+          "image": "/assets/evidence/rap-paper-1.png",
+          "url": "https://doi.org/10.1109/RAP.2026.3655333",
+          "description": "IEEE Robotics and Automation Practice · Co-first author",
+          "link_label": "Read paper",
+          "triggers": [
+            "IEEE RA-P 2026"
+          ]
+        },
+        {
+          "id": "humantech-award",
+          "label": "Humantech Bronze",
+          "kind": "Award certificate",
+          "title": "Samsung Humantech Paper Award, Bronze · Mechanical Engineering",
+          "image": "/assets/evidence/humantech-award-1.png",
+          "url": "https://r-ush.github.io/portfolio/assets/evidence/humantech-award-1.png",
+          "description": "Feb. 12, 2025 · Mechanical Engineering Bronze · PALM-Gripper research",
+          "link_label": "View certificate",
+          "triggers": [
+            "Samsung Humantech Paper Award, Bronze"
+          ]
+        },
+        {
+          "id": "rgmc-award",
+          "label": "RGMC 2nd",
+          "kind": "Award certificate",
+          "title": "ICRA 2024 RGMC Picking in Clutter, 2nd",
+          "image": "/assets/evidence/rgmc-award-1.png",
+          "url": "https://r-ush.github.io/portfolio/assets/evidence/rgmc-award-1.png",
+          "description": "ICRA 2024 RGMC Picking in Clutter · AIDIN-ROBOTORY team, 2nd",
+          "link_label": "View certificate",
+          "triggers": [
+            "RGMC Picking in Clutter, 2nd",
+            "ICRA 2024 RGMC"
+          ]
+        },
+        {
+          "id": "iros-award-program",
+          "label": "IROS award",
+          "kind": "Award: official program",
+          "title": "IROS 2024 Workshop · Best Extended Abstract",
+          "image": "/assets/evidence/iros-award-program.png",
+          "url": "https://sites.google.com/view/iros2024-workshop-bench-in-rgm",
+          "description": "Award recorded in the official workshop program.",
+          "link_label": "Open official program",
+          "triggers": [
+            "IROS 2024 Workshop Best Extended Abstract"
+          ]
+        },
+        {
+          "id": "kroc-award-photo",
+          "label": "KRoC award",
+          "kind": "Award ceremony photo",
+          "title": "RED Show: top prize, general category",
+          "image": "/assets/evidence/kroc-award-photo.jpg",
+          "url": "https://r-ush.github.io/bilateral_leader_arm/",
+          "description": "KRoC 2026 RED Show · Ceremony photo for the related team project",
+          "link_label": "Open project page",
+          "triggers": [
+            "KRoC 2026 RED Show, 1st"
+          ]
+        },
+        {
+          "id": "kscdc-source",
+          "label": "KSCDC",
+          "kind": "Project materials",
+          "title": "Handling Hand · KSCDC 2026 Bronze",
+          "url": "https://rachy103.github.io/handling-hand/",
+          "description": "Handling Hand project and demonstration videos",
+          "link_label": "Open project page"
+        }
+      ],
+      "evidence_hotspots": []
+    },
+    {
+      "number": 2,
+      "id": "overview",
+      "title": "Research Projects",
+      "svg": "slides-en/page-02.svg",
+      "text": "RESEARCH\nResearch Projects\nHardware design · Compliant control · Imitation learning · Reinforcement learning\n01\nHardware\nGripper mechanisms and physical\npicking/stowing experiments\n01\nReC-Gripper\n03\nRECONFIGURABLE GRIPPER\n02\nPALM-Gripper\n04\nPARALLEL ADAPTABLE MECHANISM\n03\nCollision-Aware Bin-Picking\n05\nROBOT DESIGN / BIN-PICKING\n02\nControl\nCompliant control and bilateral\nforce-feedback teleoperation\n04\nBilateral Force-Feedback Teleoperation\n06\nCOMPLIANT CONTROL / TELEOPERATION\n03\nImitation Learning\nLearning from demonstrations and physical\nhuman corrections\n05\nGrasping with IL\n07\nFORCE SENSING / IMITATION LEARNING\n06\nResidual Learning\n08\nHUMAN CORRECTIONS / RESIDUAL LEARNING\n04\nReinforcement Learning\nResponse identification and policy\ndeployment on hardware\n07\nGrasping with RL\n09\nSYSTEM ID / SIM-TO-REAL\nSEUNGHWAN UM  /  ROBOTICS\n2026.11\n02 / 11\n",
+      "links": [
+        {
+          "rect": [
+            298.0,
+            133.99996948242188,
+            516.0,
+            39.0
+          ],
+          "href": "https://r-ush.github.io/portfolio/hardware-first/projects/rec-gripper/",
+          "label": "01 ReC-Gripper 03 RECONFIGURABLE GRIPPER"
+        },
+        {
+          "rect": [
+            298.0,
+            169.99996948242188,
+            516.0,
+            39.0
+          ],
+          "href": "https://r-ush.github.io/portfolio/hardware-first/projects/palm-gripper/",
+          "label": "02 PALM-Gripper 04 PARALLEL ADAPTABLE MECHANISM"
+        },
+        {
+          "rect": [
+            298.0,
+            205.99996948242188,
+            516.0,
+            39.0
+          ],
+          "href": "https://r-ush.github.io/portfolio/hardware-first/projects/clutter-bin-picking/",
+          "label": "03 Collision-Aware Bin-Picking 05 ROBOT DESIGN / BIN-PICKING"
+        },
+        {
+          "rect": [
+            298.0,
+            274.9999694824219,
+            516.0,
+            39.0
+          ],
+          "href": "https://r-ush.github.io/portfolio/hardware-first/projects/teleoperation-control/",
+          "label": "04 Bilateral Force-Feedback Teleoperation 06 COMPLIANT CONTROL / TELEOPERATION"
+        },
+        {
+          "rect": [
+            298.0,
+            359.9999694824219,
+            516.0,
+            39.0
+          ],
+          "href": "https://r-ush.github.io/portfolio/hardware-first/projects/scooping-imitation/",
+          "label": "05 Grasping with IL 07 FORCE SENSING / IMITATION LEARNING"
+        },
+        {
+          "rect": [
+            298.0,
+            402.9999694824219,
+            516.0,
+            39.0
+          ],
+          "href": "https://r-ush.github.io/portfolio/hardware-first/projects/human-corrections/",
+          "label": "06 Residual Learning 08 HUMAN CORRECTIONS / RESIDUAL LEARNING"
+        },
+        {
+          "rect": [
+            298.0,
+            474.9999694824219,
+            516.0,
+            39.000030517578125
+          ],
+          "href": "https://r-ush.github.io/portfolio/hardware-first/projects/sim-to-real/",
+          "label": "07 Grasping with RL 09 SYSTEM ID / SIM-TO-REAL"
+        }
+      ],
+      "media": [],
+      "extras": [],
+      "evidence": [
+        {
+          "id": "palm-paper",
+          "label": "T-MECH paper",
+          "kind": "Paper: first page",
+          "title": "PALM-Gripper: Integrated Gripper With Parallel Adaptable Mechanism for Shelf Picking in Logistics",
+          "image": "/assets/evidence/palm-paper-1.png",
+          "url": "https://doi.org/10.1109/TMECH.2025.3649851",
+          "description": "IEEE/ASME Transactions on Mechatronics · First author",
+          "link_label": "Read paper",
+          "triggers": [
+            "IEEE/ASME T-MECH",
+            "IEEE/ASME Transactions on Mechatronics"
+          ]
+        },
+        {
+          "id": "rec-paper",
+          "label": "RA-L paper",
+          "kind": "Paper: first page",
+          "title": "ReC-Gripper: A Reconfigurable Combined Suction and Fingered Gripper for Various Logistics Picking and Stowing Tasks",
+          "image": "/assets/evidence/rec-paper-1.png",
+          "url": "https://doi.org/10.1109/LRA.2023.3330051",
+          "description": "IEEE Robotics and Automation Letters · First author",
+          "link_label": "Read paper",
+          "triggers": [
+            "IEEE RA-L",
+            "IEEE Robotics and Automation Letters"
+          ]
+        },
+        {
+          "id": "iros-paper",
+          "label": "IROS abstract",
+          "kind": "Paper: first page",
+          "title": "Overcoming Heavy Clutter: Utilizing the Hybrid Grasping Network and Gripper",
+          "image": "/assets/evidence/iros-paper-1.png",
+          "url": "https://sites.google.com/view/iros2024-workshop-bench-in-rgm/contributions",
+          "description": "IROS 2024 Workshop · First-author extended abstract",
+          "link_label": "Read paper",
+          "triggers": [
+            "IROS extended abstract"
+          ]
+        },
+        {
+          "id": "rap-paper",
+          "label": "RA-P paper",
+          "kind": "Paper: first page",
+          "title": "Toward Reliable Bin-Picking: Collision-Aware Robotic Design and Control Strategy for Heavily Cluttered Environment",
+          "image": "/assets/evidence/rap-paper-1.png",
+          "url": "https://doi.org/10.1109/RAP.2026.3655333",
+          "description": "IEEE Robotics and Automation Practice · Co-first author",
+          "link_label": "Read paper",
+          "triggers": [
+            "IEEE RA-P 2026"
+          ]
+        },
+        {
+          "id": "humantech-award",
+          "label": "Humantech Bronze",
+          "kind": "Award certificate",
+          "title": "Samsung Humantech Paper Award, Bronze · Mechanical Engineering",
+          "image": "/assets/evidence/humantech-award-1.png",
+          "url": "https://r-ush.github.io/portfolio/assets/evidence/humantech-award-1.png",
+          "description": "Feb. 12, 2025 · Mechanical Engineering Bronze · PALM-Gripper research",
+          "link_label": "View certificate",
+          "triggers": [
+            "Samsung Humantech Paper Award, Bronze"
+          ]
+        },
+        {
+          "id": "rgmc-award",
+          "label": "RGMC 2nd",
+          "kind": "Award certificate",
+          "title": "ICRA 2024 RGMC Picking in Clutter, 2nd",
+          "image": "/assets/evidence/rgmc-award-1.png",
+          "url": "https://r-ush.github.io/portfolio/assets/evidence/rgmc-award-1.png",
+          "description": "ICRA 2024 RGMC Picking in Clutter · AIDIN-ROBOTORY team, 2nd",
+          "link_label": "View certificate",
+          "triggers": [
+            "RGMC Picking in Clutter, 2nd",
+            "ICRA 2024 RGMC"
+          ]
+        },
+        {
+          "id": "iros-award-program",
+          "label": "IROS award",
+          "kind": "Award: official program",
+          "title": "IROS 2024 Workshop · Best Extended Abstract",
+          "image": "/assets/evidence/iros-award-program.png",
+          "url": "https://sites.google.com/view/iros2024-workshop-bench-in-rgm",
+          "description": "Award recorded in the official workshop program.",
+          "link_label": "Open official program",
+          "triggers": [
+            "IROS 2024 Workshop Best Extended Abstract"
+          ]
+        },
+        {
+          "id": "kroc-award-photo",
+          "label": "KRoC award",
+          "kind": "Award ceremony photo",
+          "title": "RED Show: top prize, general category",
+          "image": "/assets/evidence/kroc-award-photo.jpg",
+          "url": "https://r-ush.github.io/bilateral_leader_arm/",
+          "description": "KRoC 2026 RED Show · Ceremony photo for the related team project",
+          "link_label": "Open project page",
+          "triggers": [
+            "KRoC 2026 RED Show, 1st"
+          ]
+        },
+        {
+          "id": "kscdc-source",
+          "label": "KSCDC",
+          "kind": "Project materials",
+          "title": "Handling Hand · KSCDC 2026 Bronze",
+          "url": "https://rachy103.github.io/handling-hand/",
+          "description": "Handling Hand project and demonstration videos",
+          "link_label": "Open project page"
+        }
+      ],
+      "evidence_hotspots": []
+    },
+    {
+      "number": 3,
+      "id": "rec-gripper",
+      "title": "ReC-Gripper",
+      "svg": "slides-en/page-03.svg",
+      "text": "01  /  RECONFIGURABLE GRIPPER\nReC-Gripper\nA reconfigurable suction-and-finger gripper for shelf picking and stowing.\nReC-Gripper shelf stowing\nICRA 2024 RGMC · Trial 1 (original x2 label retained)\nMechanism design, picking/stowing experiments, analysis, and\nfirst-author paper preparation.\nIEEE Robotics and Automation Letters · Presented at ICRA 2024\n1.\nDesigned a reconfigurable mechanism combining suction and fingers.\n2.\nImplemented configuration changes for shelf approach and grasping.\n3.\nEvaluated shelf picking and stowing with the physical gripper.\nIEEE RA-L 2024 · ICRA 2024 presentation | Mechanism, picking, and stowing experiments\nDetails\nSEUNGHWAN UM  /  ROBOTICS\n2026.11\n03 / 11\n",
+      "links": [
+        {
+          "rect": [
+            28.0,
+            125.99996948242188,
+            381.0,
+            252.0
+          ],
+          "href": "https://r-ush.github.io/portfolio/hardware-first/projects/rec-gripper/",
+          "label": ""
+        },
+        {
+          "rect": [
+            433.0,
+            125.99996948242188,
+            381.0,
+            252.0
+          ],
+          "href": "https://r-ush.github.io/portfolio/hardware-first/projects/rec-gripper/",
+          "label": ""
+        },
+        {
+          "rect": [
+            709.0,
+            535.0,
+            48.0,
+            17.9599609375
+          ],
+          "href": "https://r-ush.github.io/portfolio/hardware-first/projects/rec-gripper/",
+          "label": "Details"
+        },
+        {
+          "rect": [
+            766.0,
+            514.0,
+            48.0,
+            48.0
+          ],
+          "href": "https://r-ush.github.io/portfolio/hardware-first/projects/rec-gripper/",
+          "label": ""
+        },
+        {
+          "rect": [
+            28.0,
+            536.8017578125,
+            38.97900390625,
+            9.0
+          ],
+          "href": "https://doi.org/10.1109/LRA.2023.3330051",
+          "label": "IEEE RA-L"
+        },
+        {
+          "rect": [
+            28.0,
+            484.30224609375,
+            208.64453125,
+            11.5
+          ],
+          "href": "https://doi.org/10.1109/LRA.2023.3330051",
+          "label": "IEEE Robotics and Automation Letters"
+        },
+        {
+          "rect": [
+            433.0,
+            387.8417663574219,
+            73.09402465820312,
+            9.20001220703125
+          ],
+          "href": "https://r-ush.github.io/portfolio/assets/evidence/rgmc-award-1.png",
+          "label": "ICRA 2024 RGMC"
+        }
+      ],
+      "media": [
+        {
+          "rect": [
+            28,
+            126,
+            381,
+            252
+          ],
+          "video": "/assets/videos/rec-picking-stowing.mp4",
+          "poster": "/assets/rec-picking-stowing.jpg",
+          "caption": "Reconfigurable shelf stowing · 1x"
+        },
+        {
+          "rect": [
+            433,
+            126,
+            381,
+            252
+          ],
+          "video": "/assets/videos/rec-rgmc-selected.mp4",
+          "poster": "/assets/rec-rgmc-selected.jpg",
+          "caption": "ICRA 2024 RGMC · Trial 1 (original x2 label retained)"
+        }
+      ],
+      "extras": [
+        {
+          "video": "/assets/videos/rec-rgmc-selected.mp4",
+          "poster": "/assets/rec-rgmc-selected.jpg",
+          "caption": "ICRA 2024 RGMC · Trial 1 (original x2 label retained)"
+        },
+        {
+          "video": "/assets/videos/rec-suction-mechanism.mp4",
+          "poster": "/assets/rec-suction-mechanism.jpg",
+          "caption": "Grasping with tilting/extending suction and fingers"
+        },
+        {
+          "video": "/assets/videos/rec-picking-stowing.mp4",
+          "poster": "/assets/rec-picking-stowing.jpg",
+          "caption": "Reconfigurable shelf stowing · 1x"
+        },
+        {
+          "video": "/assets/videos/rec-grasp-modes.mp4",
+          "poster": "/assets/rec-grasp-modes.jpg",
+          "caption": "Comparison of bin-picking and shelf-picking modes"
+        },
+        {
+          "video": "/assets/videos/rec-rgmc-repeated-grasping.mp4",
+          "poster": "/assets/rec-rgmc-repeated-grasping.jpg",
+          "caption": "ICRA 2024 RGMC · Repeated grasp/transfer attempts (1x)"
+        }
+      ],
+      "evidence": [
+        {
+          "id": "rec-paper",
+          "label": "RA-L paper",
+          "kind": "Paper: first page",
+          "title": "ReC-Gripper: A Reconfigurable Combined Suction and Fingered Gripper for Various Logistics Picking and Stowing Tasks",
+          "image": "/assets/evidence/rec-paper-1.png",
+          "url": "https://doi.org/10.1109/LRA.2023.3330051",
+          "description": "IEEE Robotics and Automation Letters · First author",
+          "link_label": "Read paper",
+          "triggers": [
+            "IEEE RA-L",
+            "IEEE Robotics and Automation Letters"
+          ]
+        },
+        {
+          "id": "rgmc-award",
+          "label": "RGMC 2nd",
+          "kind": "Award certificate",
+          "title": "ICRA 2024 RGMC Picking in Clutter, 2nd",
+          "image": "/assets/evidence/rgmc-award-1.png",
+          "url": "https://r-ush.github.io/portfolio/assets/evidence/rgmc-award-1.png",
+          "description": "ICRA 2024 RGMC Picking in Clutter · AIDIN-ROBOTORY team, 2nd",
+          "link_label": "View certificate",
+          "triggers": [
+            "RGMC Picking in Clutter, 2nd",
+            "ICRA 2024 RGMC"
+          ]
+        }
+      ],
+      "evidence_hotspots": [
+        {
+          "id": "rec-paper",
+          "label": "RA-L paper",
+          "rect": [
+            28.0,
+            536.8017578125,
+            38.97900390625,
+            9.0
+          ]
+        },
+        {
+          "id": "rec-paper",
+          "label": "RA-L paper",
+          "rect": [
+            28.0,
+            484.30224609375,
+            208.64453125,
+            11.5
+          ]
+        },
+        {
+          "id": "rgmc-award",
+          "label": "RGMC 2nd",
+          "rect": [
+            433.0,
+            387.8417663574219,
+            73.09402465820312,
+            9.20001220703125
+          ]
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "id": "palm-gripper",
+      "title": "PALM-Gripper",
+      "svg": "slides-en/page-04.svg",
+      "text": "02  /  PARALLEL ADAPTABLE MECHANISM\nPALM-Gripper\nAn integrated parallel-adaptable gripper for varied object shapes and confined shelf access.\nAdaptive finger mechanism\nPALM autonomous picking · Perception, planning, and bin placement\nMechanism design, physical grasping experiments, analysis, and\nfirst-author paper preparation.\nIEEE/ASME T-MECH\n2025 Samsung Humantech Paper Award, Bronze\n1.\nIntegrated parallel and adaptable mechanisms for shelf picking.\n2.\nTested mechanism adaptation during object contact.\n3.\nEvaluated approach and grasping in a physical shelf environment.\nIEEE/ASME T-MECH 2026 | Mechanism and physical grasping experiments\nDetails\nSEUNGHWAN UM  /  ROBOTICS\n2026.11\n04 / 11\n",
+      "links": [
+        {
+          "rect": [
+            28.0,
+            125.99996948242188,
+            381.0,
+            252.0
+          ],
+          "href": "https://r-ush.github.io/portfolio/hardware-first/projects/palm-gripper/",
+          "label": ""
+        },
+        {
+          "rect": [
+            433.0,
+            125.99996948242188,
+            381.0,
+            252.0
+          ],
+          "href": "https://r-ush.github.io/portfolio/hardware-first/projects/palm-gripper/",
+          "label": ""
+        },
+        {
+          "rect": [
+            709.0,
+            535.0,
+            48.0,
+            17.9599609375
+          ],
+          "href": "https://r-ush.github.io/portfolio/hardware-first/projects/palm-gripper/",
+          "label": "Details"
+        },
+        {
+          "rect": [
+            766.0,
+            514.0,
+            48.0,
+            48.0
+          ],
+          "href": "https://r-ush.github.io/portfolio/hardware-first/projects/palm-gripper/",
+          "label": ""
+        },
+        {
+          "rect": [
+            28.0,
+            484.30224609375,
+            108.10000610351562,
+            11.5
+          ],
+          "href": "https://doi.org/10.1109/TMECH.2025.3649851",
+          "label": "IEEE/ASME T-MECH"
+        },
+        {
+          "rect": [
+            28.0,
+            536.8017578125,
+            80.4780044555664,
+            9.0
+          ],
+          "href": "https://doi.org/10.1109/TMECH.2025.3649851",
+          "label": "IEEE/ASME T-MECH"
+        },
+        {
+          "rect": [
+            58.728004455566406,
+            501.80224609375,
+            236.53203582763672,
+            11.5
+          ],
+          "href": "https://r-ush.github.io/portfolio/assets/evidence/humantech-award-1.png",
+          "label": "Samsung Humantech Paper Award, Bronze"
+        }
+      ],
+      "media": [
+        {
+          "rect": [
+            28,
+            126,
+            381,
+            252
+          ],
+          "video": "/assets/videos/palm-adaptive-fingers.mp4",
+          "poster": "/assets/palm-adaptive-fingers.jpg",
+          "caption": "PALM fingers adapting to objects and shelves"
+        },
+        {
+          "rect": [
+            433,
+            126,
+            381,
+            252
+          ],
+          "video": "/assets/videos/palm-autonomous-grasping.mp4",
+          "poster": "/assets/palm-autonomous-grasping.jpg",
+          "caption": "PALM autonomous picking · Perception, planning, and bin placement"
+        }
+      ],
+      "extras": [
+        {
+          "video": "/assets/videos/palm-autonomous-grasping.mp4",
+          "poster": "/assets/palm-autonomous-grasping.jpg",
+          "caption": "PALM autonomous picking · Perception, planning, and bin placement"
+        },
+        {
+          "video": "/assets/videos/palm-adaptive-fingers.mp4",
+          "poster": "/assets/palm-adaptive-fingers.jpg",
+          "caption": "PALM fingers adapting to objects and shelves"
+        },
+        {
+          "video": "/assets/videos/palm-picking-stowing.mp4",
+          "poster": "/assets/palm-picking-stowing.jpg",
+          "caption": "Picking and stowing in a shelf environment"
+        },
+        {
+          "video": "/assets/videos/palm-kinematics.mp4",
+          "poster": "/assets/palm-kinematics.jpg",
+          "caption": "Kinematic validation using ArUco markers"
+        }
+      ],
+      "evidence": [
+        {
+          "id": "palm-paper",
+          "label": "T-MECH paper",
+          "kind": "Paper: first page",
+          "title": "PALM-Gripper: Integrated Gripper With Parallel Adaptable Mechanism for Shelf Picking in Logistics",
+          "image": "/assets/evidence/palm-paper-1.png",
+          "url": "https://doi.org/10.1109/TMECH.2025.3649851",
+          "description": "IEEE/ASME Transactions on Mechatronics · First author",
+          "link_label": "Read paper",
+          "triggers": [
+            "IEEE/ASME T-MECH",
+            "IEEE/ASME Transactions on Mechatronics"
+          ]
+        },
+        {
+          "id": "humantech-award",
+          "label": "Humantech Bronze",
+          "kind": "Award certificate",
+          "title": "Samsung Humantech Paper Award, Bronze · Mechanical Engineering",
+          "image": "/assets/evidence/humantech-award-1.png",
+          "url": "https://r-ush.github.io/portfolio/assets/evidence/humantech-award-1.png",
+          "description": "Feb. 12, 2025 · Mechanical Engineering Bronze · PALM-Gripper research",
+          "link_label": "View certificate",
+          "triggers": [
+            "Samsung Humantech Paper Award, Bronze"
+          ]
+        }
+      ],
+      "evidence_hotspots": [
+        {
+          "id": "palm-paper",
+          "label": "T-MECH paper",
+          "rect": [
+            28.0,
+            484.30224609375,
+            108.10000610351562,
+            11.5
+          ]
+        },
+        {
+          "id": "palm-paper",
+          "label": "T-MECH paper",
+          "rect": [
+            28.0,
+            536.8017578125,
+            80.4780044555664,
+            9.0
+          ]
+        },
+        {
+          "id": "humantech-award",
+          "label": "Humantech Bronze",
+          "rect": [
+            58.728004455566406,
+            501.80224609375,
+            236.53203582763672,
+            11.5
+          ]
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "id": "clutter-bin-picking",
+      "title": "Collision-Aware Bin-Picking",
+      "svg": "slides-en/page-05.svg",
+      "text": "03  /  ROBOT DESIGN / BIN-PICKING\nCollision-Aware Bin-Picking\nRobot design, control, and grasp strategies that account for interference in heavily cluttered scenes.\nDesign and grasping under interference\nDesign/control experiments and analysis; first-author\nworkshop abstract and co-first-author journal paper.\n1.\nAnalyzed approach and grasp interference in\nheavily cluttered scenes.\n2.\nTested gripper/robot design and control strategies\nin physical picking experiments.\n3.\nDocumented competition experiments in an IROS\nextended abstract and a follow-up journal paper.\nICRA 2024 RGMC Picking in Clutter, 2nd (team) · IROS 2024 Workshop Best\nExtended Abstract · IEEE RA-P 2026\nBin-Picking · Collision Awareness · Grasp Planning\nRGMC: team result | IROS extended abstract and RA-P: follow-up papers from the same research\nDetails\nSEUNGHWAN UM  /  ROBOTICS\n2026.11\n05 / 11\n",
+      "links": [
+        {
+          "rect": [
+            28.0,
+            125.99996948242188,
+            491.0,
+            318.0
+          ],
+          "href": "https://r-ush.github.io/portfolio/hardware-first/projects/clutter-bin-picking/",
+          "label": ""
+        },
+        {
+          "rect": [
+            709.0,
+            535.0,
+            48.0,
+            17.9599609375
+          ],
+          "href": "https://r-ush.github.io/portfolio/hardware-first/projects/clutter-bin-picking/",
+          "label": "Details"
+        },
+        {
+          "rect": [
+            766.0,
+            514.0,
+            48.0,
+            48.0
+          ],
+          "href": "https://r-ush.github.io/portfolio/hardware-first/projects/clutter-bin-picking/",
+          "label": ""
+        },
+        {
+          "rect": [
+            144.68798828125,
+            480.90234375,
+            88.05604553222656,
+            12.0
+          ],
+          "href": "https://doi.org/10.1109/RAP.2026.3655333",
+          "label": "IEEE RA-P 2026"
+        },
+        {
+          "rect": [
+            781.1146240234375,
+            301.1420593261719,
+            23.4971923828125,
+            10.70001220703125
+          ],
+          "href": "https://sites.google.com/view/iros2024-workshop-bench-in-rgm/contributions",
+          "label": "IROS"
+        },
+        {
+          "rect": [
+            562.0,
+            317.6420593261719,
+            87.0980224609375,
+            10.70001220703125
+          ],
+          "href": "https://sites.google.com/view/iros2024-workshop-bench-in-rgm/contributions",
+          "label": "extended abstract"
+        },
+        {
+          "rect": [
+            113.50900268554688,
+            536.8017578125,
+            96.1920166015625,
+            9.0
+          ],
+          "href": "https://sites.google.com/view/iros2024-workshop-bench-in-rgm/contributions",
+          "label": "IROS extended abstract"
+        },
+        {
+          "rect": [
+            91.97200012207031,
+            462.40234375,
+            168.20399475097656,
+            12.0
+          ],
+          "href": "https://r-ush.github.io/portfolio/assets/evidence/rgmc-award-1.png",
+          "label": "RGMC Picking in Clutter, 2nd"
+        },
+        {
+          "rect": [
+            28.0,
+            462.40234375,
+            99.72000122070312,
+            12.0
+          ],
+          "href": "https://r-ush.github.io/portfolio/assets/evidence/rgmc-award-1.png",
+          "label": "ICRA 2024 RGMC"
+        },
+        {
+          "rect": [
+            313.3840026855469,
+            462.40234375,
+            151.3079833984375,
+            12.0
+          ],
+          "href": "https://sites.google.com/view/iros2024-workshop-bench-in-rgm",
+          "label": "IROS 2024 Workshop Best"
+        },
+        {
+          "rect": [
+            28.0,
+            480.90234375,
+            105.09600830078125,
+            12.0
+          ],
+          "href": "https://sites.google.com/view/iros2024-workshop-bench-in-rgm",
+          "label": "Extended Abstract"
+        }
+      ],
+      "media": [
+        {
+          "rect": [
+            28,
+            126,
+            491,
+            318
+          ],
+          "video": "https://r-ush.github.io/images/clip/RAP.mp4",
+          "poster": "/assets/clutter-bin-picking.jpg",
+          "caption": "Bin-picking with surrounding-object interference"
+        }
+      ],
+      "extras": [
+        {
+          "video": "https://r-ush.github.io/images/clip/RAP.mp4",
+          "poster": "/assets/clutter-bin-picking.jpg",
+          "caption": "Bin-picking with surrounding-object interference"
+        }
+      ],
+      "evidence": [
+        {
+          "id": "rap-paper",
+          "label": "RA-P paper",
+          "kind": "Paper: first page",
+          "title": "Toward Reliable Bin-Picking: Collision-Aware Robotic Design and Control Strategy for Heavily Cluttered Environment",
+          "image": "/assets/evidence/rap-paper-1.png",
+          "url": "https://doi.org/10.1109/RAP.2026.3655333",
+          "description": "IEEE Robotics and Automation Practice · Co-first author",
+          "link_label": "Read paper",
+          "triggers": [
+            "IEEE RA-P 2026"
+          ]
+        },
+        {
+          "id": "iros-paper",
+          "label": "IROS abstract",
+          "kind": "Paper: first page",
+          "title": "Overcoming Heavy Clutter: Utilizing the Hybrid Grasping Network and Gripper",
+          "image": "/assets/evidence/iros-paper-1.png",
+          "url": "https://sites.google.com/view/iros2024-workshop-bench-in-rgm/contributions",
+          "description": "IROS 2024 Workshop · First-author extended abstract",
+          "link_label": "Read paper",
+          "triggers": [
+            "IROS extended abstract"
+          ]
+        },
+        {
+          "id": "rgmc-award",
+          "label": "RGMC 2nd",
+          "kind": "Award certificate",
+          "title": "ICRA 2024 RGMC Picking in Clutter, 2nd",
+          "image": "/assets/evidence/rgmc-award-1.png",
+          "url": "https://r-ush.github.io/portfolio/assets/evidence/rgmc-award-1.png",
+          "description": "ICRA 2024 RGMC Picking in Clutter · AIDIN-ROBOTORY team, 2nd",
+          "link_label": "View certificate",
+          "triggers": [
+            "RGMC Picking in Clutter, 2nd",
+            "ICRA 2024 RGMC"
+          ]
+        },
+        {
+          "id": "iros-award-program",
+          "label": "IROS award",
+          "kind": "Award: official program",
+          "title": "IROS 2024 Workshop · Best Extended Abstract",
+          "image": "/assets/evidence/iros-award-program.png",
+          "url": "https://sites.google.com/view/iros2024-workshop-bench-in-rgm",
+          "description": "Award recorded in the official workshop program.",
+          "link_label": "Open official program",
+          "triggers": [
+            "IROS 2024 Workshop Best Extended Abstract"
+          ]
+        }
+      ],
+      "evidence_hotspots": [
+        {
+          "id": "rap-paper",
+          "label": "RA-P paper",
+          "rect": [
+            144.68798828125,
+            480.90234375,
+            88.05604553222656,
+            12.0
+          ]
+        },
+        {
+          "id": "iros-paper",
+          "label": "IROS abstract",
+          "rect": [
+            781.1146240234375,
+            301.1420593261719,
+            23.4971923828125,
+            10.70001220703125
+          ]
+        },
+        {
+          "id": "iros-paper",
+          "label": "IROS abstract",
+          "rect": [
+            562.0,
+            317.6420593261719,
+            87.0980224609375,
+            10.70001220703125
+          ]
+        },
+        {
+          "id": "iros-paper",
+          "label": "IROS abstract",
+          "rect": [
+            113.50900268554688,
+            536.8017578125,
+            96.1920166015625,
+            9.0
+          ]
+        },
+        {
+          "id": "rgmc-award",
+          "label": "RGMC 2nd",
+          "rect": [
+            91.97200012207031,
+            462.40234375,
+            168.20399475097656,
+            12.0
+          ]
+        },
+        {
+          "id": "rgmc-award",
+          "label": "RGMC 2nd",
+          "rect": [
+            28.0,
+            462.40234375,
+            99.72000122070312,
+            12.0
+          ]
+        },
+        {
+          "id": "iros-award-program",
+          "label": "IROS award",
+          "rect": [
+            313.3840026855469,
+            462.40234375,
+            151.3079833984375,
+            12.0
+          ]
+        },
+        {
+          "id": "iros-award-program",
+          "label": "IROS award",
+          "rect": [
+            28.0,
+            480.90234375,
+            105.09600830078125,
+            12.0
+          ]
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "id": "teleoperation-control",
+      "title": "Bilateral Teleoperation",
+      "svg": "slides-en/page-06.svg",
+      "text": "04  /  COMPLIANT CONTROL / TELEOPERATION\nBilateral Teleoperation\nBilateral arm-and-hand teleoperation with leader-arm force feedback and compliant robot control.\nRemote contact feedback to the leader\nLeader gravity compensation, current/torque control,\nand force reflection; M0609 disturbance, gravity,\ntool, and friction compensation.\n1.\nMapped remote wrench to leader joint torque\nusing the Jacobian transpose.\n2.\nImplemented a momentum-based disturbance\nobserver and compensation.\n3.\nIntegrated arm-and-hand teleoperation for\ncontact-task demonstrations.\nDual-arm/hand teleoperation with force feedback · KRoC 2026 RED Show, 1st\n(related team project)\nTorque Control · Force Reflection · Disturbance Observer\nIntegrated dual-arm/hand teleoperation | KRoC RED Show: related team project\nDetails\nSEUNGHWAN UM  /  ROBOTICS\n2026.11\n06 / 11\n",
+      "links": [
+        {
+          "rect": [
+            28.0,
+            125.99996948242188,
+            491.0,
+            318.0
+          ],
+          "href": "https://r-ush.github.io/portfolio/hardware-first/projects/teleoperation-control/",
+          "label": ""
+        },
+        {
+          "rect": [
+            709.0,
+            535.0,
+            48.0,
+            17.9599609375
+          ],
+          "href": "https://r-ush.github.io/portfolio/hardware-first/projects/teleoperation-control/",
+          "label": "Details"
+        },
+        {
+          "rect": [
+            766.0,
+            514.0,
+            48.0,
+            48.0
+          ],
+          "href": "https://r-ush.github.io/portfolio/hardware-first/projects/teleoperation-control/",
+          "label": ""
+        },
+        {
+          "rect": [
+            325.7560119628906,
+            462.40234375,
+            150.01193237304688,
+            12.0
+          ],
+          "href": "https://r-ush.github.io/bilateral_leader_arm/",
+          "label": "KRoC 2026 RED Show, 1st"
+        }
+      ],
+      "media": [
+        {
+          "rect": [
+            28,
+            126,
+            491,
+            318
+          ],
+          "video": "https://r-ush.github.io/bilateral_leader_arm/static/videos/dual-arm-hand-teleoperation.mp4",
+          "poster": "/assets/teleoperation-control.jpg",
+          "caption": "Leader-based dual-arm and robotic-hand teleoperation"
+        }
+      ],
+      "extras": [
+        {
+          "video": "https://r-ush.github.io/bilateral_leader_arm/static/videos/dual-arm-hand-teleoperation.mp4",
+          "poster": "/assets/teleoperation-control.jpg",
+          "caption": "Leader-based dual-arm and robotic-hand teleoperation"
+        }
+      ],
+      "evidence": [
+        {
+          "id": "kroc-award-photo",
+          "label": "KRoC award",
+          "kind": "Award ceremony photo",
+          "title": "RED Show: top prize, general category",
+          "image": "/assets/evidence/kroc-award-photo.jpg",
+          "url": "https://r-ush.github.io/bilateral_leader_arm/",
+          "description": "KRoC 2026 RED Show · Ceremony photo for the related team project",
+          "link_label": "Open project page",
+          "triggers": [
+            "KRoC 2026 RED Show, 1st"
+          ]
+        },
+        {
+          "id": "teleoperation-control-source",
+          "label": "Project",
+          "kind": "Project materials",
+          "title": "Bilateral Teleoperation",
+          "url": "https://r-ush.github.io/bilateral_leader_arm/",
+          "description": "Leader force feedback and integrated dual-arm/hand teleoperation",
+          "link_label": "Open project page"
+        }
+      ],
+      "evidence_hotspots": [
+        {
+          "id": "kroc-award-photo",
+          "label": "KRoC award",
+          "rect": [
+            325.7560119628906,
+            462.40234375,
+            150.01193237304688,
+            12.0
+          ]
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "id": "scooping-imitation",
+      "title": "Grasping with IL",
+      "svg": "slides-en/page-07.svg",
+      "text": "05  /  FORCE SENSING / IMITATION LEARNING\nGrasping with IL\nForce-based compliant control and Diffusion Policy for scooping and grasping.\nForce-based contact control and learning\nFingertip wrench transforms, wrist force fusion,\ncompliant control, demonstration collection, policy\ntraining, and deployment.\n1.\nTransformed fingertip forces and torques into the\nwrist frame.\n2.\nCombined fingertip signals with wrist F/T feedback\nfor compliant control.\n3.\nTrained Diffusion Policy from demonstrations and\ntested scooping with objects of different sizes.\nSurface-assisted scooping and lifting; motion comparison with and without\ncompliant control.\nForce / Torque · ROS TF · Diffusion Policy\nFingertip/wrist forces for compliant control | Policy rollouts and control comparison available online\nDetails\nSEUNGHWAN UM  /  ROBOTICS\n2026.11\n07 / 11\n",
+      "links": [
+        {
+          "rect": [
+            28.0,
+            125.99996948242188,
+            491.0,
+            318.0
+          ],
+          "href": "https://r-ush.github.io/portfolio/hardware-first/projects/scooping-imitation/",
+          "label": ""
+        },
+        {
+          "rect": [
+            709.0,
+            535.0,
+            48.0,
+            17.9599609375
+          ],
+          "href": "https://r-ush.github.io/portfolio/hardware-first/projects/scooping-imitation/",
+          "label": "Details"
+        },
+        {
+          "rect": [
+            766.0,
+            514.0,
+            48.0,
+            48.0
+          ],
+          "href": "https://r-ush.github.io/portfolio/hardware-first/projects/scooping-imitation/",
+          "label": ""
+        }
+      ],
+      "media": [
+        {
+          "rect": [
+            28,
+            126,
+            491,
+            318
+          ],
+          "video": "https://r-ush.github.io/scooping_robotic_hand/static/videos/black_object_grasping_rollout_final.mp4",
+          "poster": "/assets/scooping-imitation.jpg",
+          "caption": "Diffusion Policy scooping and grasping · Edited multi-view footage"
+        }
+      ],
+      "extras": [
+        {
+          "video": "https://r-ush.github.io/scooping_robotic_hand/static/videos/black_object_grasping_rollout_final.mp4",
+          "poster": "/assets/scooping-imitation.jpg",
+          "caption": "Diffusion Policy scooping and grasping · Edited multi-view footage"
+        },
+        {
+          "video": "https://r-ush.github.io/scooping_robotic_hand/static/videos/comparison_w_wo_impedance.mp4",
+          "poster": "",
+          "caption": "Scooping with and without compliant control · Original condition labels retained"
+        }
+      ],
+      "evidence": [
+        {
+          "id": "scooping-imitation-source",
+          "label": "Project",
+          "kind": "Project materials",
+          "title": "Grasping with IL",
+          "url": "https://r-ush.github.io/scooping_robotic_hand/",
+          "description": "Force-based compliance, Diffusion Policy, and scooping experiments",
+          "link_label": "Open project page"
+        }
+      ],
+      "evidence_hotspots": []
+    },
+    {
+      "number": 8,
+      "id": "human-corrections",
+      "title": "Learning from Human Corrections",
+      "svg": "slides-en/page-08.svg",
+      "text": "06  /  HUMAN CORRECTIONS / RESIDUAL LEARNING\nLearning from Human Corrections\nOnline residual learning from physical human corrections during insertion.\nLearning from physical corrections\nResidual model on a frozen base policy; online\nlearning and execution loop using physical\ncorrection data.\n1.\nAdded a residual head predicting Δpose to the\nbase policy output.\n2.\nUsed human-corrected robot poses as supervised\ntargets.\n3.\nImplemented asynchronous actor-learner updates\nand output limits; evaluated insertion.\nBase + residual box-insertion evaluation at the original target and a target shifted 3\ncm backward.\nResidual Policy · Online DAgger · PyTorch\nOriginal target and 3 cm backward shift | Outside base-training positions; residual zero-shot not established\nDetails\nSEUNGHWAN UM  /  ROBOTICS\n2026.11\n08 / 11\n",
+      "links": [
+        {
+          "rect": [
+            28.0,
+            125.99996948242188,
+            491.0,
+            318.0
+          ],
+          "href": "https://r-ush.github.io/portfolio/hardware-first/projects/human-corrections/",
+          "label": ""
+        },
+        {
+          "rect": [
+            709.0,
+            535.0,
+            48.0,
+            17.9599609375
+          ],
+          "href": "https://r-ush.github.io/portfolio/hardware-first/projects/human-corrections/",
+          "label": "Details"
+        },
+        {
+          "rect": [
+            766.0,
+            514.0,
+            48.0,
+            48.0
+          ],
+          "href": "https://r-ush.github.io/portfolio/hardware-first/projects/human-corrections/",
+          "label": ""
+        }
+      ],
+      "media": [
+        {
+          "rect": [
+            28,
+            126,
+            491,
+            318
+          ],
+          "video": "https://r-ush.github.io/contact_residual_learning/static/videos/human_guidance_raw.mp4",
+          "poster": "/assets/human-corrections.jpg",
+          "caption": "Physical human corrections · Cyan arrow: correction vector"
+        }
+      ],
+      "extras": [
+        {
+          "video": "https://r-ush.github.io/contact_residual_learning/static/videos/human_guidance_raw.mp4",
+          "poster": "/assets/human-corrections.jpg",
+          "caption": "Physical human corrections · Cyan arrow: correction vector"
+        },
+        {
+          "video": "https://r-ush.github.io/contact_residual_learning/static/videos/evaluation_back_raw.mp4",
+          "poster": "",
+          "caption": "Base + residual at a target shifted 3 cm backward · Outside base-training positions; residual zero-shot generalization not established"
+        }
+      ],
+      "evidence": [
+        {
+          "id": "human-corrections-source",
+          "label": "Project",
+          "kind": "Project materials",
+          "title": "Learning from Human Corrections",
+          "url": "https://r-ush.github.io/contact_residual_learning/",
+          "description": "Residual learning from physical corrections and insertion experiments",
+          "link_label": "Open project page"
+        }
+      ],
+      "evidence_hotspots": []
+    },
+    {
+      "number": 9,
+      "id": "sim-to-real",
+      "title": "Grasping with RL",
+      "svg": "slides-en/page-09.svg",
+      "text": "07  /  SYSTEM ID / SIM-TO-REAL\nGrasping with RL\nRL training with identified arm and controller responses, followed by real-robot grasping and lifting.\nGrasp and lift with object-pose and target overlays\nCompliant contact response (lift incomplete)\nArm/controller response identification, impedance model integration, RL\ntraining, and real-robot deployment.\nObject grasping and tabletop lifting with a Doosan M0609 and\nAIDIN robotic hand.\n1.\nIdentified closed-loop responses including arm dynamics, payload, friction,\nand delay.\n2.\nIntegrated impedance responses for contact-impact mitigation into the\nIsaac Sim training environment.\n3.\nConnected policy observations and commands to the robot; checked\nfingertip observation ordering.\nLeft: grasp and lift | Right: contact response in a separate RL trial (lift incomplete)\nDetails\nSEUNGHWAN UM  /  ROBOTICS\n2026.11\n09 / 11\n",
+      "links": [
+        {
+          "rect": [
+            28.0,
+            125.99996948242188,
+            381.0,
+            214.0
+          ],
+          "href": "https://r-ush.github.io/portfolio/hardware-first/projects/sim-to-real/",
+          "label": ""
+        },
+        {
+          "rect": [
+            433.0,
+            125.99996948242188,
+            381.0,
+            214.0
+          ],
+          "href": "https://r-ush.github.io/portfolio/hardware-first/projects/sim-to-real/",
+          "label": ""
+        },
+        {
+          "rect": [
+            709.0,
+            535.0,
+            48.0,
+            17.9599609375
+          ],
+          "href": "https://r-ush.github.io/portfolio/hardware-first/projects/sim-to-real/",
+          "label": "Details"
+        },
+        {
+          "rect": [
+            766.0,
+            514.0,
+            48.0,
+            48.0
+          ],
+          "href": "https://r-ush.github.io/portfolio/hardware-first/projects/sim-to-real/",
+          "label": ""
+        }
+      ],
+      "media": [
+        {
+          "rect": [
+            28,
+            126,
+            381,
+            214
+          ],
+          "video": "/assets/videos/sim-to-real-overlay.mp4",
+          "poster": "/assets/sim-to-real-overlay.jpg",
+          "caption": "Real-robot grasp and lift · Estimated pose (green), target pose (yellow)"
+        },
+        {
+          "rect": [
+            433,
+            126,
+            381,
+            214
+          ],
+          "video": "/assets/videos/rl-impact-grasping.mp4",
+          "poster": "/assets/rl-impact-grasping.jpg",
+          "caption": "Arm constraint/release response during object/table contact · Separate RL trial, lift incomplete"
+        }
+      ],
+      "extras": [
+        {
+          "video": "/assets/videos/sim-to-real-overlay.mp4",
+          "poster": "/assets/sim-to-real-overlay.jpg",
+          "caption": "Real-robot grasp and lift · Estimated pose (green), target pose (yellow)"
+        },
+        {
+          "video": "/assets/videos/rl-impact-grasping.mp4",
+          "poster": "/assets/rl-impact-grasping.jpg",
+          "caption": "Arm constraint/release response during object/table contact · Separate RL trial, lift incomplete"
+        }
+      ],
+      "evidence": [
+        {
+          "id": "sim-to-real-source",
+          "label": "Project",
+          "kind": "Project materials",
+          "title": "Grasping with RL",
+          "url": "https://r-ush.github.io/scooping_robotic_hand/rl/",
+          "description": "Arm/controller identification, RL environment, and real-robot grasping videos",
+          "link_label": "Open project page"
+        }
+      ],
+      "evidence_hotspots": []
+    },
+    {
+      "number": 10,
+      "id": "results",
+      "title": "Publications & Awards",
+      "svg": "slides-en/page-10.svg",
+      "text": "PUBLICATIONS & AWARDS\nSelected Publications & Awards\nFirst- and co-first-author papers and selected awards\nPUBLICATIONS\nIEEE/ASME Transactions on Mechatronics · 2026\nPALM-Gripper\nFirst author\nPaper\nIEEE Robotics and Automation Letters · 2024\nReC-Gripper\nFirst author · ICRA 2024 presentation\nPaper\nIROS 2024 Workshop\nOvercoming Heavy Clutter\nFirst author · Best Extended Abstract\nPaper\nIEEE Robotics and Automation Practice · 2026\nToward Reliable Bin-Picking\nCo-first author · Invited paper\nPaper\nAWARDS\n2025\nSamsung Humantech Paper Award, Bronze\nMechanical Engineering category\n2024\nICRA RGMC Picking in Clutter, 2nd\nTeam award\n2024\nIROS Workshop Best Extended Abstract\nOvercoming Heavy Clutter · First author\n2026\nKRoC RED Show, 1st\nTeam award\n2026\nKSCDC Bronze · Handling Hand\nTeam award\nComplete publication and patent list: research website\nSEUNGHWAN UM  /  ROBOTICS\n2026.11\n10 / 11\n",
+      "links": [
+        {
+          "rect": [
+            379.0,
+            213.99996948242188,
+            26.45709228515625,
+            19.489990234375
+          ],
+          "href": "https://doi.org/10.1109/TMECH.2025.3649851",
+          "label": "Paper"
+        },
+        {
+          "rect": [
+            379.0,
+            307.9999694824219,
+            26.45709228515625,
+            19.489990234375
+          ],
+          "href": "https://doi.org/10.1109/LRA.2023.3330051",
+          "label": "Paper"
+        },
+        {
+          "rect": [
+            379.0,
+            401.9999694824219,
+            26.45709228515625,
+            19.490020751953125
+          ],
+          "href": "https://sites.google.com/view/iros2024-workshop-bench-in-rgm/contributions",
+          "label": "Paper"
+        },
+        {
+          "rect": [
+            379.0,
+            496.0,
+            26.45709228515625,
+            19.489990234375
+          ],
+          "href": "https://doi.org/10.1109/RAP.2026.3655333",
+          "label": "Paper"
+        },
+        {
+          "rect": [
+            441.0,
+            154.99996948242188,
+            373.0,
+            68.0
+          ],
+          "href": "https://r-ush.github.io/portfolio/assets/evidence/humantech-award-1.png",
+          "label": "2025 Samsung Humantech Paper Award, Bronze Mechanical Engineering category"
+        },
+        {
+          "rect": [
+            441.0,
+            228.99996948242188,
+            373.0,
+            68.0
+          ],
+          "href": "https://r-ush.github.io/portfolio/assets/evidence/rgmc-award-1.png",
+          "label": "2024 ICRA RGMC Picking in Clutter, 2nd Team award"
+        },
+        {
+          "rect": [
+            441.0,
+            302.9999694824219,
+            373.0,
+            68.0
+          ],
+          "href": "https://sites.google.com/view/iros2024-workshop-bench-in-rgm",
+          "label": "2024 IROS Workshop Best Extended Abstract Overcoming Heavy Clutter · First author"
+        },
+        {
+          "rect": [
+            441.0,
+            376.9999694824219,
+            373.0,
+            68.0
+          ],
+          "href": "https://r-ush.github.io/bilateral_leader_arm/",
+          "label": "2026 KRoC RED Show, 1st Team award"
+        },
+        {
+          "rect": [
+            441.0,
+            450.9999694824219,
+            373.0,
+            68.00003051757812
+          ],
+          "href": "https://rachy103.github.io/handling-hand/",
+          "label": "2026 KSCDC Bronze · Handling Hand Team award"
+        },
+        {
+          "rect": [
+            28.0,
+            541.0,
+            248.53079223632812,
+            19.14996337890625
+          ],
+          "href": "https://r-ush.github.io/",
+          "label": "Complete publication and patent list: research website"
+        },
+        {
+          "rect": [
+            40.0,
+            189.12301635742188,
+            106.00201416015625,
+            15.600006103515625
+          ],
+          "href": "https://doi.org/10.1109/TMECH.2025.3649851",
+          "label": "PALM-Gripper"
+        },
+        {
+          "rect": [
+            40.0,
+            283.1230163574219,
+            91.15081787109375,
+            15.600006103515625
+          ],
+          "href": "https://doi.org/10.1109/LRA.2023.3330051",
+          "label": "ReC-Gripper"
+        },
+        {
+          "rect": [
+            40.0,
+            377.1230163574219,
+            197.62081909179688,
+            15.600006103515625
+          ],
+          "href": "https://sites.google.com/view/iros2024-workshop-bench-in-rgm/contributions",
+          "label": "Overcoming Heavy Clutter"
+        },
+        {
+          "rect": [
+            499.0,
+            350.7817077636719,
+            107.05804443359375,
+            8.899993896484375
+          ],
+          "href": "https://sites.google.com/view/iros2024-workshop-bench-in-rgm/contributions",
+          "label": "Overcoming Heavy Clutter"
+        },
+        {
+          "rect": [
+            40.0,
+            471.1230163574219,
+            208.75921630859375,
+            15.600006103515625
+          ],
+          "href": "https://doi.org/10.1109/RAP.2026.3655333",
+          "label": "Toward Reliable Bin-Picking"
+        }
+      ],
+      "media": [],
+      "extras": [],
+      "evidence": [
+        {
+          "id": "palm-paper",
+          "label": "T-MECH paper",
+          "kind": "Paper: first page",
+          "title": "PALM-Gripper: Integrated Gripper With Parallel Adaptable Mechanism for Shelf Picking in Logistics",
+          "image": "/assets/evidence/palm-paper-1.png",
+          "url": "https://doi.org/10.1109/TMECH.2025.3649851",
+          "description": "IEEE/ASME Transactions on Mechatronics · First author",
+          "link_label": "Read paper",
+          "triggers": [
+            "IEEE/ASME T-MECH",
+            "IEEE/ASME Transactions on Mechatronics"
+          ]
+        },
+        {
+          "id": "rec-paper",
+          "label": "RA-L paper",
+          "kind": "Paper: first page",
+          "title": "ReC-Gripper: A Reconfigurable Combined Suction and Fingered Gripper for Various Logistics Picking and Stowing Tasks",
+          "image": "/assets/evidence/rec-paper-1.png",
+          "url": "https://doi.org/10.1109/LRA.2023.3330051",
+          "description": "IEEE Robotics and Automation Letters · First author",
+          "link_label": "Read paper",
+          "triggers": [
+            "IEEE RA-L",
+            "IEEE Robotics and Automation Letters"
+          ]
+        },
+        {
+          "id": "iros-paper",
+          "label": "IROS abstract",
+          "kind": "Paper: first page",
+          "title": "Overcoming Heavy Clutter: Utilizing the Hybrid Grasping Network and Gripper",
+          "image": "/assets/evidence/iros-paper-1.png",
+          "url": "https://sites.google.com/view/iros2024-workshop-bench-in-rgm/contributions",
+          "description": "IROS 2024 Workshop · First-author extended abstract",
+          "link_label": "Read paper",
+          "triggers": [
+            "IROS extended abstract"
+          ]
+        },
+        {
+          "id": "rap-paper",
+          "label": "RA-P paper",
+          "kind": "Paper: first page",
+          "title": "Toward Reliable Bin-Picking: Collision-Aware Robotic Design and Control Strategy for Heavily Cluttered Environment",
+          "image": "/assets/evidence/rap-paper-1.png",
+          "url": "https://doi.org/10.1109/RAP.2026.3655333",
+          "description": "IEEE Robotics and Automation Practice · Co-first author",
+          "link_label": "Read paper",
+          "triggers": [
+            "IEEE RA-P 2026"
+          ]
+        },
+        {
+          "id": "humantech-award",
+          "label": "Humantech Bronze",
+          "kind": "Award certificate",
+          "title": "Samsung Humantech Paper Award, Bronze · Mechanical Engineering",
+          "image": "/assets/evidence/humantech-award-1.png",
+          "url": "https://r-ush.github.io/portfolio/assets/evidence/humantech-award-1.png",
+          "description": "Feb. 12, 2025 · Mechanical Engineering Bronze · PALM-Gripper research",
+          "link_label": "View certificate",
+          "triggers": [
+            "Samsung Humantech Paper Award, Bronze"
+          ]
+        },
+        {
+          "id": "rgmc-award",
+          "label": "RGMC 2nd",
+          "kind": "Award certificate",
+          "title": "ICRA 2024 RGMC Picking in Clutter, 2nd",
+          "image": "/assets/evidence/rgmc-award-1.png",
+          "url": "https://r-ush.github.io/portfolio/assets/evidence/rgmc-award-1.png",
+          "description": "ICRA 2024 RGMC Picking in Clutter · AIDIN-ROBOTORY team, 2nd",
+          "link_label": "View certificate",
+          "triggers": [
+            "RGMC Picking in Clutter, 2nd",
+            "ICRA 2024 RGMC"
+          ]
+        },
+        {
+          "id": "iros-award-program",
+          "label": "IROS award",
+          "kind": "Award: official program",
+          "title": "IROS 2024 Workshop · Best Extended Abstract",
+          "image": "/assets/evidence/iros-award-program.png",
+          "url": "https://sites.google.com/view/iros2024-workshop-bench-in-rgm",
+          "description": "Award recorded in the official workshop program.",
+          "link_label": "Open official program",
+          "triggers": [
+            "IROS 2024 Workshop Best Extended Abstract"
+          ]
+        },
+        {
+          "id": "kroc-award-photo",
+          "label": "KRoC award",
+          "kind": "Award ceremony photo",
+          "title": "RED Show: top prize, general category",
+          "image": "/assets/evidence/kroc-award-photo.jpg",
+          "url": "https://r-ush.github.io/bilateral_leader_arm/",
+          "description": "KRoC 2026 RED Show · Ceremony photo for the related team project",
+          "link_label": "Open project page",
+          "triggers": [
+            "KRoC 2026 RED Show, 1st"
+          ]
+        },
+        {
+          "id": "kscdc-source",
+          "label": "KSCDC",
+          "kind": "Project materials",
+          "title": "Handling Hand · KSCDC 2026 Bronze",
+          "url": "https://rachy103.github.io/handling-hand/",
+          "description": "Handling Hand project and demonstration videos",
+          "link_label": "Open project page"
+        }
+      ],
+      "evidence_hotspots": [
+        {
+          "id": "palm-paper",
+          "label": "T-MECH paper",
+          "rect": [
+            40.0,
+            189.12301635742188,
+            106.00201416015625,
+            15.600006103515625
+          ]
+        },
+        {
+          "id": "rec-paper",
+          "label": "RA-L paper",
+          "rect": [
+            40.0,
+            283.1230163574219,
+            91.15081787109375,
+            15.600006103515625
+          ]
+        },
+        {
+          "id": "iros-paper",
+          "label": "IROS abstract",
+          "rect": [
+            40.0,
+            377.1230163574219,
+            197.62081909179688,
+            15.600006103515625
+          ]
+        },
+        {
+          "id": "iros-paper",
+          "label": "IROS abstract",
+          "rect": [
+            499.0,
+            350.7817077636719,
+            107.05804443359375,
+            8.899993896484375
+          ]
+        },
+        {
+          "id": "rap-paper",
+          "label": "RA-P paper",
+          "rect": [
+            40.0,
+            471.1230163574219,
+            208.75921630859375,
+            15.600006103515625
+          ]
+        },
+        {
+          "id": "humantech-award",
+          "label": "Humantech Bronze",
+          "rect": [
+            499.0,
+            166.44235229492188,
+            250.92962646484375,
+            12.199996948242188
+          ]
+        },
+        {
+          "id": "rgmc-award",
+          "label": "RGMC 2nd",
+          "rect": [
+            499.0,
+            240.44235229492188,
+            203.447265625,
+            12.199996948242188
+          ]
+        },
+        {
+          "id": "iros-award-program",
+          "label": "IROS award",
+          "rect": [
+            499.0,
+            314.4423522949219,
+            232.37347412109375,
+            12.20001220703125
+          ]
+        },
+        {
+          "id": "kroc-award-photo",
+          "label": "KRoC award",
+          "rect": [
+            499.0,
+            388.4423522949219,
+            119.913818359375,
+            12.20001220703125
+          ]
+        },
+        {
+          "id": "kscdc-source",
+          "label": "KSCDC",
+          "rect": [
+            499.0,
+            462.4423522949219,
+            183.890625,
+            12.20001220703125
+          ]
+        }
+      ]
+    },
+    {
+      "number": 11,
+      "id": "experience",
+      "title": "Experience & Skills",
+      "svg": "slides-en/page-11.svg",
+      "text": "EXPERIENCE & SKILLS\nResearch & Development Experience\nCollaborative research · Device design · Computer vision · Robot control\nAIDIN ROBOTICS · SKKU\n2022.05-\nCollaborative\nresearch\nGripper and grasp-strategy research for logistics shelves. Contributed to\narm/hand teleoperation, force-informed demonstration collection, and learning\nimplementation.\nMechanism design · Compliant control · ROS/ROS2 · Robot learning\nPRIMETECH\n2026.05-08\nContract vision R&D\nDeveloped a Windows RGB-D module for pallet/box occupancy, empty-slot\ndetection, box pose, and QR-face orientation.\nPython · OpenCV · PyTorch · Orbbec RGB-D SDK · Windows\nCarbonSix\n2024.10-11 / 2026.06-07\nDevice design\nDesigned a gravity-compensated direct-teaching device and a\ncamera-calibration device.\nMechanism design · Gravity compensation · Camera calibration\nKITECH\n2021.10-12\nStudent researcher\nDesigned and developed the control system for a 2-DoF manipulator.\nManipulator control · System implementation\nSKILLS\nMechanism Design\nInventor · CATIA · Adaptive / Reconfigurable Mechanisms\nControl & Sensing\nC++ · ROS / ROS2 · Impedance / Admittance · F/T\nRobot Learning\nPython · PyTorch · Diffusion Policy · Residual Learning\nSimulation & Deployment\nIsaac Sim / PhysX · MuJoCo · System ID\nResearch interests: practical task automation through\nmechanism design, compliant control, and robot\nlearning.\nseunghwanum@gmail.com\nWeb portfolio\nSEUNGHWAN UM  /  ROBOTICS\n2026.11\n11 / 11\n",
+      "links": [
+        {
+          "rect": [
+            548.0,
+            158.99996948242188,
+            266.0,
+            60.0
+          ],
+          "href": "https://r-ush.github.io/portfolio/hardware-first/projects/rec-gripper/",
+          "label": "Mechanism Design Inventor · CATIA · Adaptive / Reconfigurable Mechanisms"
+        },
+        {
+          "rect": [
+            548.0,
+            228.99996948242188,
+            266.0,
+            60.0
+          ],
+          "href": "https://r-ush.github.io/portfolio/hardware-first/projects/teleoperation-control/",
+          "label": "Control & Sensing C++ · ROS / ROS2 · Impedance / Admittance · F/T"
+        },
+        {
+          "rect": [
+            548.0,
+            298.9999694824219,
+            266.0,
+            60.0
+          ],
+          "href": "https://r-ush.github.io/portfolio/hardware-first/projects/human-corrections/",
+          "label": "Robot Learning Python · PyTorch · Diffusion Policy · Residual Learning"
+        },
+        {
+          "rect": [
+            548.0,
+            368.9999694824219,
+            266.0,
+            60.0
+          ],
+          "href": "https://r-ush.github.io/portfolio/hardware-first/projects/sim-to-real/",
+          "label": "Simulation & Deployment Isaac Sim / PhysX · MuJoCo · System ID"
+        },
+        {
+          "rect": [
+            28.0,
+            537.0,
+            190.2104034423828,
+            28.15997314453125
+          ],
+          "href": "mailto:seunghwanum@gmail.com",
+          "label": "seunghwanum@gmail.com"
+        },
+        {
+          "rect": [
+            560.0,
+            540.0,
+            66.54949951171875,
+            19.8299560546875
+          ],
+          "href": "https://r-ush.github.io/portfolio/hardware-first",
+          "label": "Web portfolio"
+        },
+        {
+          "rect": [
+            766.0,
+            514.0,
+            48.0,
+            48.0
+          ],
+          "href": "https://r-ush.github.io/portfolio/hardware-first",
+          "label": ""
+        }
+      ],
+      "media": [],
+      "extras": [],
+      "evidence": [
+        {
+          "id": "palm-paper",
+          "label": "T-MECH paper",
+          "kind": "Paper: first page",
+          "title": "PALM-Gripper: Integrated Gripper With Parallel Adaptable Mechanism for Shelf Picking in Logistics",
+          "image": "/assets/evidence/palm-paper-1.png",
+          "url": "https://doi.org/10.1109/TMECH.2025.3649851",
+          "description": "IEEE/ASME Transactions on Mechatronics · First author",
+          "link_label": "Read paper",
+          "triggers": [
+            "IEEE/ASME T-MECH",
+            "IEEE/ASME Transactions on Mechatronics"
+          ]
+        },
+        {
+          "id": "rec-paper",
+          "label": "RA-L paper",
+          "kind": "Paper: first page",
+          "title": "ReC-Gripper: A Reconfigurable Combined Suction and Fingered Gripper for Various Logistics Picking and Stowing Tasks",
+          "image": "/assets/evidence/rec-paper-1.png",
+          "url": "https://doi.org/10.1109/LRA.2023.3330051",
+          "description": "IEEE Robotics and Automation Letters · First author",
+          "link_label": "Read paper",
+          "triggers": [
+            "IEEE RA-L",
+            "IEEE Robotics and Automation Letters"
+          ]
+        },
+        {
+          "id": "iros-paper",
+          "label": "IROS abstract",
+          "kind": "Paper: first page",
+          "title": "Overcoming Heavy Clutter: Utilizing the Hybrid Grasping Network and Gripper",
+          "image": "/assets/evidence/iros-paper-1.png",
+          "url": "https://sites.google.com/view/iros2024-workshop-bench-in-rgm/contributions",
+          "description": "IROS 2024 Workshop · First-author extended abstract",
+          "link_label": "Read paper",
+          "triggers": [
+            "IROS extended abstract"
+          ]
+        },
+        {
+          "id": "rap-paper",
+          "label": "RA-P paper",
+          "kind": "Paper: first page",
+          "title": "Toward Reliable Bin-Picking: Collision-Aware Robotic Design and Control Strategy for Heavily Cluttered Environment",
+          "image": "/assets/evidence/rap-paper-1.png",
+          "url": "https://doi.org/10.1109/RAP.2026.3655333",
+          "description": "IEEE Robotics and Automation Practice · Co-first author",
+          "link_label": "Read paper",
+          "triggers": [
+            "IEEE RA-P 2026"
+          ]
+        },
+        {
+          "id": "humantech-award",
+          "label": "Humantech Bronze",
+          "kind": "Award certificate",
+          "title": "Samsung Humantech Paper Award, Bronze · Mechanical Engineering",
+          "image": "/assets/evidence/humantech-award-1.png",
+          "url": "https://r-ush.github.io/portfolio/assets/evidence/humantech-award-1.png",
+          "description": "Feb. 12, 2025 · Mechanical Engineering Bronze · PALM-Gripper research",
+          "link_label": "View certificate",
+          "triggers": [
+            "Samsung Humantech Paper Award, Bronze"
+          ]
+        },
+        {
+          "id": "rgmc-award",
+          "label": "RGMC 2nd",
+          "kind": "Award certificate",
+          "title": "ICRA 2024 RGMC Picking in Clutter, 2nd",
+          "image": "/assets/evidence/rgmc-award-1.png",
+          "url": "https://r-ush.github.io/portfolio/assets/evidence/rgmc-award-1.png",
+          "description": "ICRA 2024 RGMC Picking in Clutter · AIDIN-ROBOTORY team, 2nd",
+          "link_label": "View certificate",
+          "triggers": [
+            "RGMC Picking in Clutter, 2nd",
+            "ICRA 2024 RGMC"
+          ]
+        },
+        {
+          "id": "iros-award-program",
+          "label": "IROS award",
+          "kind": "Award: official program",
+          "title": "IROS 2024 Workshop · Best Extended Abstract",
+          "image": "/assets/evidence/iros-award-program.png",
+          "url": "https://sites.google.com/view/iros2024-workshop-bench-in-rgm",
+          "description": "Award recorded in the official workshop program.",
+          "link_label": "Open official program",
+          "triggers": [
+            "IROS 2024 Workshop Best Extended Abstract"
+          ]
+        },
+        {
+          "id": "kroc-award-photo",
+          "label": "KRoC award",
+          "kind": "Award ceremony photo",
+          "title": "RED Show: top prize, general category",
+          "image": "/assets/evidence/kroc-award-photo.jpg",
+          "url": "https://r-ush.github.io/bilateral_leader_arm/",
+          "description": "KRoC 2026 RED Show · Ceremony photo for the related team project",
+          "link_label": "Open project page",
+          "triggers": [
+            "KRoC 2026 RED Show, 1st"
+          ]
+        },
+        {
+          "id": "kscdc-source",
+          "label": "KSCDC",
+          "kind": "Project materials",
+          "title": "Handling Hand · KSCDC 2026 Bronze",
+          "url": "https://rachy103.github.io/handling-hand/",
+          "description": "Handling Hand project and demonstration videos",
+          "link_label": "Open project page"
+        }
+      ],
+      "evidence_hotspots": []
+    }
+  ],
+  "asset_prefix": "../",
+  "variant": "hardware-first",
+  "variant_label": "Hardware / Control / IL / RL"
+}

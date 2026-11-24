@@ -73,7 +73,8 @@
     const img=document.createElement('img');img.className='page-image';img.src=pageImage(page);img.alt='';img.draggable=false;img.loading=index===0?'eager':'lazy';
     slide.append(img);
     const text=document.createElement('p');text.className='sr-only';text.textContent=page.text;slide.append(text);
-    page.links.forEach(item => {
+    const pageLinks=new Map();
+    page.links.forEach((item,linkIndex) => {
       if (page.media.some(m => core.overlaps(m.rect,item.rect))) return;
       const link=document.createElement('a');link.className='page-link';link.style.cssText=position(item.rect);
       const route=core.routeLink(item.href,pages,siteURL);
@@ -85,11 +86,18 @@
       const proof=(page.evidence||[]).find(e=>e.url===item.href);
       if(proof){link.className+=' evidence-trigger';link.setAttribute('aria-label',proof.label+t(' 미리보기',' preview'));evidence.wire(link,proof.id);}
       slide.append(link);
+      pageLinks.set(linkIndex,link);
     });
     (page.evidence_hotspots||[]).forEach(item=>{
       if(page.links.some(l=>core.overlaps(l.rect,item.rect)))return;
       const b=document.createElement('button');b.type='button';b.className='evidence-trigger evidence-hotspot';b.style.cssText=position(item.rect);b.setAttribute('aria-label',item.label+t(' 미리보기',' preview'));evidence.wire(b,item.id);slide.append(b);
     });
+    if(page.text_runs?.length)slide.append(window.PortfolioText.create(page,width,height,(element,linkIndex)=>{
+      const link=pageLinks.get(linkIndex);if(!link)return;
+      const proof=(page.evidence||[]).find(item=>item.url===page.links[linkIndex].href);
+      if(proof)evidence.wire(element,proof.id);
+      else element.addEventListener('click',event=>{if(!window.PortfolioText.hasSelection()){event.preventDefault();link.click();}});
+    }));
     const videos=page.media.map(media => {
       const box=document.createElement('div');box.className='media-slot';box.style.cssText=position(media.rect);
       const video=makeVideo(media);box.append(video.playerElement);slide.append(box);return video;
@@ -119,7 +127,7 @@
   }
   function go(index,updateHash=true) {
     const next=core.clamp(index,pages.length);if(next===current)return;
-    const old=current;allVideos().forEach(stop);
+    const old=current;window.PortfolioText?.clear();allVideos().forEach(stop);
     if(old>=0){slides[old].hidden=true;slides[old].inert=true;videoGroups[old].forEach(v=>manuallyPaused.delete(v));}
     current=next;const page=pages[current],slide=slides[current];
     evidence.setPage(page);
@@ -197,7 +205,7 @@
     if(next!==null){event.preventDefault();go(next);}
   });
   let swipe=null;
-  stage.addEventListener('pointerdown',event=>{if(event.pointerType==='touch'&&zoom===1&&!event.target.closest('video,button,a,input'))swipe={x:event.clientX,y:event.clientY};});
+  stage.addEventListener('pointerdown',event=>{if(event.pointerType==='touch'&&zoom===1&&!event.target.closest('video,button,a,input,svg'))swipe={x:event.clientX,y:event.clientY};});
   stage.addEventListener('pointerup',event=>{if(!swipe)return;const dx=event.clientX-swipe.x,dy=event.clientY-swipe.y;swipe=null;if(Math.abs(dx)>60&&Math.abs(dx)>Math.abs(dy)*1.5)go(current+(dx<0?1:-1));});
   stage.addEventListener('pointercancel',()=>{swipe=null;});
   window.addEventListener('hashchange',()=>{dialogs.forEach(d=>{if(d.open)d.close();});go(core.indexFromHash(location.hash,pages),false);});

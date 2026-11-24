@@ -55,10 +55,10 @@
     }
     function wire(element,id){
       element.setAttribute('aria-controls','evidence-panel');
-      element.addEventListener('pointerenter',event=>{if(event.pointerType!=='touch'&&!pinned){clearTimeout(hoverTimer);hoverTimer=setTimeout(()=>open(id),180);}});
+      element.addEventListener('pointerenter',event=>{if(event.pointerType!=='touch'&&!pinned){clearTimeout(hoverTimer);hoverTimer=setTimeout(()=>{if(!window.PortfolioText?.isSelecting())open(id);},180);}});
       element.addEventListener('pointerleave',()=>{clearTimeout(hoverTimer);hoverTimer=null;});
-      if(element!==button)element.addEventListener('focus',()=>{if(!pinned)open(id);});
-      element.addEventListener('click',event=>{event.preventDefault();open(id,true);});
+      if(element!==button)element.addEventListener('focus',()=>{if(!pinned&&!window.PortfolioText?.isSelecting())open(id);});
+      element.addEventListener('click',event=>{event.preventDefault();if(!window.PortfolioText?.hasSelection())open(id,true);});
     }
     button.addEventListener('click',()=>{if(opened)close();else open(null,true);});
     byId('evidence-close').addEventListener('click',()=>{close();button.focus({preventScroll:true});});

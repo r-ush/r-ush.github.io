@@ -6,6 +6,13 @@ The alternate research order is https://r-ush.github.io/portfolio/.
 KR / EN changes the current document without a separate English route.
 Both original CVs are downloadable from either order.
 
+Page text is selectable directly over the unchanged PDF artwork in both languages.
+`text-layer.js` uses native SVG text at the PDF's character positions; copying
+preserves original text and line breaks. Dragging a selection does not open source
+previews or trigger touch page navigation. Video controls remain above the text.
+The authoring build generates `text_runs` automatically. To refresh only the text
+metadata from the unchanged PDFs here, use `python scripts/portfolio_text.py --dist portfolio`.
+
 These pages are intentionally absent from the homepage menu and sitemap.
 Every HTML route has `noindex,nofollow`. This is unlisted sharing, not authentication;
 anyone with the address can open the page and assets, and this repository is public.

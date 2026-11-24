@@ -1,7 +1,7 @@
 {
   "width": 841.8897705078125,
   "height": 595.2755737304688,
-  "pdf_sha256": "b95d955e7baadcc4a74b11db9daa3000da1eaf2db77ec47b1b7dbeb6becf4509",
+  "pdf_sha256": "d68f5705d1acfc6dfc685579ebde8d1980cb20be7564a8bcd564bd0ef6c4e608",
   "language": "en",
   "pdf_file": "portfolio-en.pdf",
   "download_name": "Seunghwan_Um_Robotics_Portfolio.pdf",
@@ -12,203 +12,6 @@
       "title": "Seunghwan Um | Robotic Grasping & Contact-Rich Manipulation",
       "svg": "/slides-en/page-01.svg",
       "text": "ROBOTICS PORTFOLIO\nRobotic Grasping & Contact-Rich Manipulation\nSeunghwan Um\nMechanical Engineering\nGripper design, compliant control, teleoperation, and\nlearning-based manipulation on real robots.\nEDUCATION\nSungkyunkwan University\nIntegrated M.S./Ph.D., Mechanical Engineering\nMar. 2022 - Present · Expected Feb. 2027\nHanyang University ERICA\nB.S., Mechanical Engineering · Cum Laude\nMar. 2018 - Feb. 2022\nA hardware-based approach to manipulation: analyzing real system responses and\nincorporating them into control models and learning environments.\nseunghwanum@gmail.com\nPALM-Gripper · Autonomous Picking\nObject perception, grasp planning, and bin placement\nGrasping with RL\nGrasp and lift with pose and target overlays\nSEUNGHWAN UM  /  ROBOTICS\n2026.11\n01 / 11\n",
-      "links": [
-        {
-          "rect": [
-            28.0,
-            535.0,
-            145.2281951904297,
-            22.2099609375
-          ],
-          "href": "mailto:seunghwanum@gmail.com",
-          "label": "seunghwanum@gmail.com"
-        },
-        {
-          "rect": [
-            437.0,
-            514.0,
-            40.0,
-            40.0
-          ],
-          "href": "https://r-ush.github.io/portfolio",
-          "label": ""
-        },
-        {
-          "rect": [
-            494.0,
-            104.99996948242188,
-            320.0,
-            180.0
-          ],
-          "href": "https://r-ush.github.io/portfolio/projects/palm-gripper/",
-          "label": ""
-        },
-        {
-          "rect": [
-            494.0,
-            332.9999694824219,
-            320.0,
-            180.00003051757812
-          ],
-          "href": "https://r-ush.github.io/portfolio/projects/sim-to-real/",
-          "label": ""
-        }
-      ],
-      "media": [
-        {
-          "rect": [
-            494,
-            105,
-            320,
-            180
-          ],
-          "video": "/assets/videos/palm-autonomous-grasping.mp4",
-          "poster": "/assets/palm-autonomous-grasping.jpg",
-          "caption": "PALM autonomous picking · Perception, planning, and bin placement"
-        },
-        {
-          "rect": [
-            494,
-            333,
-            320,
-            180
-          ],
-          "video": "/assets/videos/sim-to-real-overlay.mp4",
-          "poster": "/assets/sim-to-real-overlay.jpg",
-          "caption": "Real-robot grasp and lift · Estimated pose (green), target pose (yellow)"
-        }
-      ],
-      "extras": [
-        {
-          "video": "/assets/videos/palm-autonomous-grasping.mp4",
-          "poster": "/assets/palm-autonomous-grasping.jpg",
-          "caption": "PALM autonomous picking · Perception, planning, and bin placement"
-        },
-        {
-          "video": "/assets/videos/sim-to-real-overlay.mp4",
-          "poster": "/assets/sim-to-real-overlay.jpg",
-          "caption": "Real-robot grasp and lift · Estimated pose (green), target pose (yellow)"
-        }
-      ],
-      "evidence": [
-        {
-          "id": "palm-paper",
-          "label": "T-MECH paper",
-          "kind": "Paper: first page",
-          "title": "PALM-Gripper: Integrated Gripper With Parallel Adaptable Mechanism for Shelf Picking in Logistics",
-          "image": "/assets/evidence/palm-paper-1.png",
-          "url": "https://doi.org/10.1109/TMECH.2025.3649851",
-          "description": "IEEE/ASME Transactions on Mechatronics · First author",
-          "link_label": "Read paper",
-          "triggers": [
-            "IEEE/ASME T-MECH",
-            "IEEE/ASME Transactions on Mechatronics"
-          ]
-        },
-        {
-          "id": "rec-paper",
-          "label": "RA-L paper",
-          "kind": "Paper: first page",
-          "title": "ReC-Gripper: A Reconfigurable Combined Suction and Fingered Gripper for Various Logistics Picking and Stowing Tasks",
-          "image": "/assets/evidence/rec-paper-1.png",
-          "url": "https://doi.org/10.1109/LRA.2023.3330051",
-          "description": "IEEE Robotics and Automation Letters · First author",
-          "link_label": "Read paper",
-          "triggers": [
-            "IEEE RA-L",
-            "IEEE Robotics and Automation Letters"
-          ]
-        },
-        {
-          "id": "iros-paper",
-          "label": "IROS abstract",
-          "kind": "Paper: first page",
-          "title": "Overcoming Heavy Clutter: Utilizing the Hybrid Grasping Network and Gripper",
-          "image": "/assets/evidence/iros-paper-1.png",
-          "url": "https://sites.google.com/view/iros2024-workshop-bench-in-rgm/contributions",
-          "description": "IROS 2024 Workshop · First-author extended abstract",
-          "link_label": "Read paper",
-          "triggers": [
-            "IROS extended abstract"
-          ]
-        },
-        {
-          "id": "rap-paper",
-          "label": "RA-P paper",
-          "kind": "Paper: first page",
-          "title": "Toward Reliable Bin-Picking: Collision-Aware Robotic Design and Control Strategy for Heavily Cluttered Environment",
-          "image": "/assets/evidence/rap-paper-1.png",
-          "url": "https://doi.org/10.1109/RAP.2026.3655333",
-          "description": "IEEE Robotics and Automation Practice · Co-first author",
-          "link_label": "Read paper",
-          "triggers": [
-            "IEEE RA-P 2026"
-          ]
-        },
-        {
-          "id": "humantech-award",
-          "label": "Humantech Bronze",
-          "kind": "Award certificate",
-          "title": "Samsung Humantech Paper Award, Bronze · Mechanical Engineering",
-          "image": "/assets/evidence/humantech-award-1.png",
-          "url": "https://r-ush.github.io/portfolio/assets/evidence/humantech-award-1.png",
-          "description": "Feb. 12, 2025 · Mechanical Engineering Bronze · PALM-Gripper research",
-          "link_label": "View certificate",
-          "triggers": [
-            "Samsung Humantech Paper Award, Bronze"
-          ]
-        },
-        {
-          "id": "rgmc-award",
-          "label": "RGMC 2nd",
-          "kind": "Award certificate",
-          "title": "ICRA 2024 RGMC Picking in Clutter, 2nd",
-          "image": "/assets/evidence/rgmc-award-1.png",
-          "url": "https://r-ush.github.io/portfolio/assets/evidence/rgmc-award-1.png",
-          "description": "ICRA 2024 RGMC Picking in Clutter · AIDIN-ROBOTORY team, 2nd",
-          "link_label": "View certificate",
-          "triggers": [
-            "RGMC Picking in Clutter, 2nd",
-            "ICRA 2024 RGMC"
-          ]
-        },
-        {
-          "id": "iros-award-program",
-          "label": "IROS award",
-          "kind": "Award: official program",
-          "title": "IROS 2024 Workshop · Best Extended Abstract",
-          "image": "/assets/evidence/iros-award-program.png",
-          "url": "https://sites.google.com/view/iros2024-workshop-bench-in-rgm",
-          "description": "Award recorded in the official workshop program.",
-          "link_label": "Open official program",
-          "triggers": [
-            "IROS 2024 Workshop Best Extended Abstract"
-          ]
-        },
-        {
-          "id": "kroc-award-photo",
-          "label": "KRoC award",
-          "kind": "Award ceremony photo",
-          "title": "RED Show: top prize, general category",
-          "image": "/assets/evidence/kroc-award-photo.jpg",
-          "url": "https://r-ush.github.io/bilateral_leader_arm/",
-          "description": "KRoC 2026 RED Show · Ceremony photo for the related team project",
-          "link_label": "Open project page",
-          "triggers": [
-            "KRoC 2026 RED Show, 1st"
-          ]
-        },
-        {
-          "id": "kscdc-source",
-          "label": "KSCDC",
-          "kind": "Project materials",
-          "title": "Handling Hand · KSCDC 2026 Bronze",
-          "url": "https://rachy103.github.io/handling-hand/",
-          "description": "Handling Hand project and demonstration videos",
-          "link_label": "Open project page"
-        }
-      ],
-      "evidence_hotspots": [],
       "text_runs": [
         {
           "line": 0,
@@ -1343,88 +1146,85 @@
           ],
           "end": 798.3218
         }
-      ]
-    },
-    {
-      "number": 2,
-      "id": "overview",
-      "title": "Research Projects",
-      "svg": "/slides-en/page-02.svg",
-      "text": "RESEARCH\nResearch Projects\nFrom gripper mechanisms to contact control and robot learning\nGrasping with RL & IL\nRL with measured control responses;\nforce-based contact control and imitation\nlearning.\n01\nGrasping with RL\n03\nSYSTEM ID / SIM-TO-REAL\n02\nGrasping with IL\n04\nFORCE SENSING / IMITATION LEARNING\nReC · PALM · Collision\nMechanism design and grasp strategies for\nshelf access and object handling.\n03\nReC-Gripper\n05\nRECONFIGURABLE GRIPPER\n04\nPALM-Gripper\n06\nPARALLEL ADAPTABLE MECHANISM\n05\nCollision-Aware Bin-Picking\n07\nROBOT DESIGN / BIN-PICKING\nResidual · Bilateral\nHuman-correction residual learning and\nbilateral force feedback.\n06\nResidual Learning\n08\nHUMAN CORRECTIONS / RESIDUAL LEARNING\n07\nBilateral Force-Feedback\nTeleoperation\n09\nCOMPLIANT CONTROL / TELEOPERATION\nSEUNGHWAN UM  /  ROBOTICS\n2026.11\n02 / 11\n",
+      ],
       "links": [
         {
           "rect": [
             28.0,
-            267.9999694824219,
-            252.0,
-            76.0
+            535.0,
+            145.2281951904297,
+            22.2099609375
           ],
-          "href": "https://r-ush.github.io/portfolio/projects/sim-to-real/",
-          "label": "01 Grasping with RL 03 SYSTEM ID / SIM-TO-REAL"
+          "href": "mailto:seunghwanum@gmail.com",
+          "label": "seunghwanum@gmail.com"
         },
         {
           "rect": [
-            28.0,
-            355.9999694824219,
-            252.0,
-            76.0
+            437.0,
+            514.0,
+            40.0,
+            40.0
           ],
-          "href": "https://r-ush.github.io/portfolio/projects/scooping-imitation/",
-          "label": "02 Grasping with IL 04 FORCE SENSING / IMITATION LEARNING"
+          "href": "https://r-ush.github.io/portfolio",
+          "label": ""
         },
         {
           "rect": [
-            295.0,
-            267.9999694824219,
-            252.0,
-            76.0
-          ],
-          "href": "https://r-ush.github.io/portfolio/projects/rec-gripper/",
-          "label": "03 ReC-Gripper 05 RECONFIGURABLE GRIPPER"
-        },
-        {
-          "rect": [
-            295.0,
-            355.9999694824219,
-            252.0,
-            76.0
+            494.0,
+            104.99996948242188,
+            320.0,
+            180.0
           ],
           "href": "https://r-ush.github.io/portfolio/projects/palm-gripper/",
-          "label": "04 PALM-Gripper 06 PARALLEL ADAPTABLE MECHANISM"
+          "label": ""
         },
         {
           "rect": [
-            295.0,
-            443.9999694824219,
-            252.0,
-            76.00003051757812
+            494.0,
+            332.9999694824219,
+            320.0,
+            180.00003051757812
           ],
-          "href": "https://r-ush.github.io/portfolio/projects/clutter-bin-picking/",
-          "label": "05 Collision-Aware Bin-Picking 07 ROBOT DESIGN / BIN-PICKING"
-        },
-        {
-          "rect": [
-            562.0,
-            267.9999694824219,
-            252.0,
-            76.0
-          ],
-          "href": "https://r-ush.github.io/portfolio/projects/human-corrections/",
-          "label": "06 Residual Learning 08 HUMAN CORRECTIONS / RESIDUAL LEARNING"
-        },
-        {
-          "rect": [
-            562.0,
-            355.9999694824219,
-            252.0,
-            76.0
-          ],
-          "href": "https://r-ush.github.io/portfolio/projects/teleoperation-control/",
-          "label": "07 Bilateral Force-Feedback Teleoperation 09 COMPLIANT CONTROL / TELEOPERATION"
+          "href": "https://r-ush.github.io/portfolio/projects/sim-to-real/",
+          "label": ""
         }
       ],
-      "media": [],
-      "extras": [],
+      "media": [
+        {
+          "rect": [
+            494,
+            105,
+            320,
+            180
+          ],
+          "video": "/assets/videos/palm-autonomous-grasping.mp4",
+          "poster": "/assets/palm-autonomous-grasping.jpg",
+          "caption": "PALM autonomous picking · Perception, planning, and bin placement"
+        },
+        {
+          "rect": [
+            494,
+            333,
+            320,
+            180
+          ],
+          "video": "/assets/videos/sim-to-real-overlay.mp4",
+          "poster": "/assets/sim-to-real-overlay.jpg",
+          "caption": "Real-robot grasp and lift · Estimated pose (green), target pose (yellow)"
+        }
+      ],
+      "extras": [
+        {
+          "video": "/assets/videos/palm-autonomous-grasping.mp4",
+          "poster": "/assets/palm-autonomous-grasping.jpg",
+          "caption": "PALM autonomous picking · Perception, planning, and bin placement"
+        },
+        {
+          "video": "/assets/videos/sim-to-real-overlay.mp4",
+          "poster": "/assets/sim-to-real-overlay.jpg",
+          "caption": "Real-robot grasp and lift · Estimated pose (green), target pose (yellow)"
+        }
+      ],
       "evidence": [
         {
           "id": "palm-paper",
@@ -1543,7 +1343,14 @@
           "link_label": "Open project page"
         }
       ],
-      "evidence_hotspots": [],
+      "evidence_hotspots": []
+    },
+    {
+      "number": 2,
+      "id": "overview",
+      "title": "Research Projects",
+      "svg": "/slides-en/page-02.svg",
+      "text": "RESEARCH\nResearch Projects\nFrom gripper mechanisms to contact control and robot learning\nGrasping with RL & IL\nRL with measured control responses;\nforce-based contact control and imitation\nlearning.\n01\nGrasping with RL\n03\nSYSTEM ID / SIM-TO-REAL\n02\nGrasping with IL\n04\nFORCE SENSING / IMITATION LEARNING\nReC · PALM · Collision\nMechanism design and grasp strategies for\nshelf access and object handling.\n03\nReC-Gripper\n05\nRECONFIGURABLE GRIPPER\n04\nPALM-Gripper\n06\nPARALLEL ADAPTABLE MECHANISM\n05\nCollision-Aware Bin-Picking\n07\nROBOT DESIGN / BIN-PICKING\nResidual · Bilateral\nHuman-correction residual learning and\nbilateral force feedback.\n06\nResidual Learning\n08\nHUMAN CORRECTIONS / RESIDUAL LEARNING\n07\nBilateral Force-Feedback\nTeleoperation\n09\nCOMPLIANT CONTROL / TELEOPERATION\nSEUNGHWAN UM  /  ROBOTICS\n2026.11\n02 / 11\n",
       "text_runs": [
         {
           "line": 0,
@@ -3087,7 +2894,200 @@
           ],
           "end": 798.3218
         }
-      ]
+      ],
+      "links": [
+        {
+          "rect": [
+            28.0,
+            267.9999694824219,
+            252.0,
+            76.0
+          ],
+          "href": "https://r-ush.github.io/portfolio/projects/sim-to-real/",
+          "label": "01 Grasping with RL 03 SYSTEM ID / SIM-TO-REAL"
+        },
+        {
+          "rect": [
+            28.0,
+            355.9999694824219,
+            252.0,
+            76.0
+          ],
+          "href": "https://r-ush.github.io/portfolio/projects/scooping-imitation/",
+          "label": "02 Grasping with IL 04 FORCE SENSING / IMITATION LEARNING"
+        },
+        {
+          "rect": [
+            295.0,
+            267.9999694824219,
+            252.0,
+            76.0
+          ],
+          "href": "https://r-ush.github.io/portfolio/projects/rec-gripper/",
+          "label": "03 ReC-Gripper 05 RECONFIGURABLE GRIPPER"
+        },
+        {
+          "rect": [
+            295.0,
+            355.9999694824219,
+            252.0,
+            76.0
+          ],
+          "href": "https://r-ush.github.io/portfolio/projects/palm-gripper/",
+          "label": "04 PALM-Gripper 06 PARALLEL ADAPTABLE MECHANISM"
+        },
+        {
+          "rect": [
+            295.0,
+            443.9999694824219,
+            252.0,
+            76.00003051757812
+          ],
+          "href": "https://r-ush.github.io/portfolio/projects/clutter-bin-picking/",
+          "label": "05 Collision-Aware Bin-Picking 07 ROBOT DESIGN / BIN-PICKING"
+        },
+        {
+          "rect": [
+            562.0,
+            267.9999694824219,
+            252.0,
+            76.0
+          ],
+          "href": "https://r-ush.github.io/portfolio/projects/human-corrections/",
+          "label": "06 Residual Learning 08 HUMAN CORRECTIONS / RESIDUAL LEARNING"
+        },
+        {
+          "rect": [
+            562.0,
+            355.9999694824219,
+            252.0,
+            76.0
+          ],
+          "href": "https://r-ush.github.io/portfolio/projects/teleoperation-control/",
+          "label": "07 Bilateral Force-Feedback Teleoperation 09 COMPLIANT CONTROL / TELEOPERATION"
+        }
+      ],
+      "media": [],
+      "extras": [],
+      "evidence": [
+        {
+          "id": "palm-paper",
+          "label": "T-MECH paper",
+          "kind": "Paper: first page",
+          "title": "PALM-Gripper: Integrated Gripper With Parallel Adaptable Mechanism for Shelf Picking in Logistics",
+          "image": "/assets/evidence/palm-paper-1.png",
+          "url": "https://doi.org/10.1109/TMECH.2025.3649851",
+          "description": "IEEE/ASME Transactions on Mechatronics · First author",
+          "link_label": "Read paper",
+          "triggers": [
+            "IEEE/ASME T-MECH",
+            "IEEE/ASME Transactions on Mechatronics"
+          ]
+        },
+        {
+          "id": "rec-paper",
+          "label": "RA-L paper",
+          "kind": "Paper: first page",
+          "title": "ReC-Gripper: A Reconfigurable Combined Suction and Fingered Gripper for Various Logistics Picking and Stowing Tasks",
+          "image": "/assets/evidence/rec-paper-1.png",
+          "url": "https://doi.org/10.1109/LRA.2023.3330051",
+          "description": "IEEE Robotics and Automation Letters · First author",
+          "link_label": "Read paper",
+          "triggers": [
+            "IEEE RA-L",
+            "IEEE Robotics and Automation Letters"
+          ]
+        },
+        {
+          "id": "iros-paper",
+          "label": "IROS abstract",
+          "kind": "Paper: first page",
+          "title": "Overcoming Heavy Clutter: Utilizing the Hybrid Grasping Network and Gripper",
+          "image": "/assets/evidence/iros-paper-1.png",
+          "url": "https://sites.google.com/view/iros2024-workshop-bench-in-rgm/contributions",
+          "description": "IROS 2024 Workshop · First-author extended abstract",
+          "link_label": "Read paper",
+          "triggers": [
+            "IROS extended abstract"
+          ]
+        },
+        {
+          "id": "rap-paper",
+          "label": "RA-P paper",
+          "kind": "Paper: first page",
+          "title": "Toward Reliable Bin-Picking: Collision-Aware Robotic Design and Control Strategy for Heavily Cluttered Environment",
+          "image": "/assets/evidence/rap-paper-1.png",
+          "url": "https://doi.org/10.1109/RAP.2026.3655333",
+          "description": "IEEE Robotics and Automation Practice · Co-first author",
+          "link_label": "Read paper",
+          "triggers": [
+            "IEEE RA-P 2026"
+          ]
+        },
+        {
+          "id": "humantech-award",
+          "label": "Humantech Bronze",
+          "kind": "Award certificate",
+          "title": "Samsung Humantech Paper Award, Bronze · Mechanical Engineering",
+          "image": "/assets/evidence/humantech-award-1.png",
+          "url": "https://r-ush.github.io/portfolio/assets/evidence/humantech-award-1.png",
+          "description": "Feb. 12, 2025 · Mechanical Engineering Bronze · PALM-Gripper research",
+          "link_label": "View certificate",
+          "triggers": [
+            "Samsung Humantech Paper Award, Bronze"
+          ]
+        },
+        {
+          "id": "rgmc-award",
+          "label": "RGMC 2nd",
+          "kind": "Award certificate",
+          "title": "ICRA 2024 RGMC Picking in Clutter, 2nd",
+          "image": "/assets/evidence/rgmc-award-1.png",
+          "url": "https://r-ush.github.io/portfolio/assets/evidence/rgmc-award-1.png",
+          "description": "ICRA 2024 RGMC Picking in Clutter · AIDIN-ROBOTORY team, 2nd",
+          "link_label": "View certificate",
+          "triggers": [
+            "RGMC Picking in Clutter, 2nd",
+            "ICRA 2024 RGMC"
+          ]
+        },
+        {
+          "id": "iros-award-program",
+          "label": "IROS award",
+          "kind": "Award: official program",
+          "title": "IROS 2024 Workshop · Best Extended Abstract",
+          "image": "/assets/evidence/iros-award-program.png",
+          "url": "https://sites.google.com/view/iros2024-workshop-bench-in-rgm",
+          "description": "Award recorded in the official workshop program.",
+          "link_label": "Open official program",
+          "triggers": [
+            "IROS 2024 Workshop Best Extended Abstract"
+          ]
+        },
+        {
+          "id": "kroc-award-photo",
+          "label": "KRoC award",
+          "kind": "Award ceremony photo",
+          "title": "RED Show: top prize, general category",
+          "image": "/assets/evidence/kroc-award-photo.jpg",
+          "url": "https://r-ush.github.io/bilateral_leader_arm/",
+          "description": "KRoC 2026 RED Show · Ceremony photo for the related team project",
+          "link_label": "Open project page",
+          "triggers": [
+            "KRoC 2026 RED Show, 1st"
+          ]
+        },
+        {
+          "id": "kscdc-source",
+          "label": "KSCDC",
+          "kind": "Project materials",
+          "title": "Handling Hand · KSCDC 2026 Bronze",
+          "url": "https://rachy103.github.io/handling-hand/",
+          "description": "Handling Hand project and demonstration videos",
+          "link_label": "Open project page"
+        }
+      ],
+      "evidence_hotspots": []
     },
     {
       "number": 3,
@@ -3095,96 +3095,6 @@
       "title": "Grasping with RL",
       "svg": "/slides-en/page-03.svg",
       "text": "01  /  SYSTEM ID / SIM-TO-REAL\nGrasping with RL\nRL training with identified arm and controller responses, followed by real-robot grasping and lifting.\nGrasp and lift with object-pose and target overlays\nCompliant contact response (lift incomplete)\nArm/controller response identification, impedance model integration, RL\ntraining, and real-robot deployment.\nObject grasping and tabletop lifting with a Doosan M0609 and\nAIDIN robotic hand.\n1.\nIdentified closed-loop responses including arm dynamics, payload, friction,\nand delay.\n2.\nIntegrated impedance responses for contact-impact mitigation into the\nIsaac Sim training environment.\n3.\nConnected policy observations and commands to the robot; checked\nfingertip observation ordering.\nLeft: grasp and lift | Right: contact response in a separate RL trial (lift incomplete)\nDetails\nSEUNGHWAN UM  /  ROBOTICS\n2026.11\n03 / 11\n",
-      "links": [
-        {
-          "rect": [
-            28.0,
-            125.99996948242188,
-            381.0,
-            214.0
-          ],
-          "href": "https://r-ush.github.io/portfolio/projects/sim-to-real/",
-          "label": ""
-        },
-        {
-          "rect": [
-            433.0,
-            125.99996948242188,
-            381.0,
-            214.0
-          ],
-          "href": "https://r-ush.github.io/portfolio/projects/sim-to-real/",
-          "label": ""
-        },
-        {
-          "rect": [
-            709.0,
-            535.0,
-            48.0,
-            17.9599609375
-          ],
-          "href": "https://r-ush.github.io/portfolio/projects/sim-to-real/",
-          "label": "Details"
-        },
-        {
-          "rect": [
-            766.0,
-            514.0,
-            48.0,
-            48.0
-          ],
-          "href": "https://r-ush.github.io/portfolio/projects/sim-to-real/",
-          "label": ""
-        }
-      ],
-      "media": [
-        {
-          "rect": [
-            28,
-            126,
-            381,
-            214
-          ],
-          "video": "/assets/videos/sim-to-real-overlay.mp4",
-          "poster": "/assets/sim-to-real-overlay.jpg",
-          "caption": "Real-robot grasp and lift · Estimated pose (green), target pose (yellow)"
-        },
-        {
-          "rect": [
-            433,
-            126,
-            381,
-            214
-          ],
-          "video": "/assets/videos/rl-impact-grasping.mp4",
-          "poster": "/assets/rl-impact-grasping.jpg",
-          "caption": "Arm constraint/release response during object/table contact · Separate RL trial, lift incomplete"
-        }
-      ],
-      "extras": [
-        {
-          "video": "/assets/videos/sim-to-real-overlay.mp4",
-          "poster": "/assets/sim-to-real-overlay.jpg",
-          "caption": "Real-robot grasp and lift · Estimated pose (green), target pose (yellow)"
-        },
-        {
-          "video": "/assets/videos/rl-impact-grasping.mp4",
-          "poster": "/assets/rl-impact-grasping.jpg",
-          "caption": "Arm constraint/release response during object/table contact · Separate RL trial, lift incomplete"
-        }
-      ],
-      "evidence": [
-        {
-          "id": "sim-to-real-source",
-          "label": "Project",
-          "kind": "Project materials",
-          "title": "Grasping with RL",
-          "url": "https://r-ush.github.io/scooping_robotic_hand/rl/",
-          "description": "Arm/controller identification, RL environment, and real-robot grasping videos",
-          "link_label": "Open project page"
-        }
-      ],
-      "evidence_hotspots": [],
       "text_runs": [
         {
           "line": 0,
@@ -4425,23 +4335,26 @@
           ],
           "end": 798.3218
         }
-      ]
-    },
-    {
-      "number": 4,
-      "id": "scooping-imitation",
-      "title": "Grasping with IL",
-      "svg": "/slides-en/page-04.svg",
-      "text": "02  /  FORCE SENSING / IMITATION LEARNING\nGrasping with IL\nForce-based compliant control and Diffusion Policy for scooping and grasping.\nForce-based contact control and learning\nFingertip wrench transforms, wrist force fusion,\ncompliant control, demonstration collection, policy\ntraining, and deployment.\n1.\nTransformed fingertip forces and torques into the\nwrist frame.\n2.\nCombined fingertip signals with wrist F/T feedback\nfor compliant control.\n3.\nTrained Diffusion Policy from demonstrations and\ntested scooping with objects of different sizes.\nSurface-assisted scooping and lifting; motion comparison with and without\ncompliant control.\nForce / Torque · ROS TF · Diffusion Policy\nFingertip/wrist forces for compliant control | Policy rollouts and control comparison available online\nDetails\nSEUNGHWAN UM  /  ROBOTICS\n2026.11\n04 / 11\n",
+      ],
       "links": [
         {
           "rect": [
             28.0,
             125.99996948242188,
-            491.0,
-            318.0
+            381.0,
+            214.0
           ],
-          "href": "https://r-ush.github.io/portfolio/projects/scooping-imitation/",
+          "href": "https://r-ush.github.io/portfolio/projects/sim-to-real/",
+          "label": ""
+        },
+        {
+          "rect": [
+            433.0,
+            125.99996948242188,
+            381.0,
+            214.0
+          ],
+          "href": "https://r-ush.github.io/portfolio/projects/sim-to-real/",
           "label": ""
         },
         {
@@ -4451,7 +4364,7 @@
             48.0,
             17.9599609375
           ],
-          "href": "https://r-ush.github.io/portfolio/projects/scooping-imitation/",
+          "href": "https://r-ush.github.io/portfolio/projects/sim-to-real/",
           "label": "Details"
         },
         {
@@ -4461,7 +4374,7 @@
             48.0,
             48.0
           ],
-          "href": "https://r-ush.github.io/portfolio/projects/scooping-imitation/",
+          "href": "https://r-ush.github.io/portfolio/projects/sim-to-real/",
           "label": ""
         }
       ],
@@ -4470,38 +4383,56 @@
           "rect": [
             28,
             126,
-            491,
-            318
+            381,
+            214
           ],
-          "video": "https://r-ush.github.io/scooping_robotic_hand/static/videos/black_object_grasping_rollout_final.mp4",
-          "poster": "/assets/scooping-imitation.jpg",
-          "caption": "Diffusion Policy scooping and grasping · Edited multi-view footage"
+          "video": "/assets/videos/sim-to-real-overlay.mp4",
+          "poster": "/assets/sim-to-real-overlay.jpg",
+          "caption": "Real-robot grasp and lift · Estimated pose (green), target pose (yellow)"
+        },
+        {
+          "rect": [
+            433,
+            126,
+            381,
+            214
+          ],
+          "video": "/assets/videos/rl-impact-grasping.mp4",
+          "poster": "/assets/rl-impact-grasping.jpg",
+          "caption": "Arm constraint/release response during object/table contact · Separate RL trial, lift incomplete"
         }
       ],
       "extras": [
         {
-          "video": "https://r-ush.github.io/scooping_robotic_hand/static/videos/black_object_grasping_rollout_final.mp4",
-          "poster": "/assets/scooping-imitation.jpg",
-          "caption": "Diffusion Policy scooping and grasping · Edited multi-view footage"
+          "video": "/assets/videos/sim-to-real-overlay.mp4",
+          "poster": "/assets/sim-to-real-overlay.jpg",
+          "caption": "Real-robot grasp and lift · Estimated pose (green), target pose (yellow)"
         },
         {
-          "video": "https://r-ush.github.io/scooping_robotic_hand/static/videos/comparison_w_wo_impedance.mp4",
-          "poster": "",
-          "caption": "Scooping with and without compliant control · Original condition labels retained"
+          "video": "/assets/videos/rl-impact-grasping.mp4",
+          "poster": "/assets/rl-impact-grasping.jpg",
+          "caption": "Arm constraint/release response during object/table contact · Separate RL trial, lift incomplete"
         }
       ],
       "evidence": [
         {
-          "id": "scooping-imitation-source",
+          "id": "sim-to-real-source",
           "label": "Project",
           "kind": "Project materials",
-          "title": "Grasping with IL",
-          "url": "https://r-ush.github.io/scooping_robotic_hand/",
-          "description": "Force-based compliance, Diffusion Policy, and scooping experiments",
+          "title": "Grasping with RL",
+          "url": "https://r-ush.github.io/scooping_robotic_hand/rl/",
+          "description": "Arm/controller identification, RL environment, and real-robot grasping videos",
           "link_label": "Open project page"
         }
       ],
-      "evidence_hotspots": [],
+      "evidence_hotspots": []
+    },
+    {
+      "number": 4,
+      "id": "scooping-imitation",
+      "title": "Grasping with IL",
+      "svg": "/slides-en/page-04.svg",
+      "text": "02  /  FORCE SENSING / IMITATION LEARNING\nGrasping with IL\nForce-based compliant control and Diffusion Policy for scooping and grasping.\nForce-based contact control and learning\nFingertip wrench transforms, wrist force fusion,\ncompliant control, demonstration collection, policy\ntraining, and deployment.\n1.\nTransformed fingertip forces and torques into the\nwrist frame.\n2.\nCombined fingertip signals with wrist F/T feedback\nfor compliant control.\n3.\nTrained Diffusion Policy from demonstrations and\ntested scooping with objects of different sizes.\nSurface-assisted scooping and lifting; motion comparison with and without\ncompliant control.\nForce / Torque · ROS TF · Diffusion Policy\nFingertip/wrist forces for compliant control | Policy rollouts and control comparison available online\nDetails\nSEUNGHWAN UM  /  ROBOTICS\n2026.11\n04 / 11\n",
       "text_runs": [
         {
           "line": 0,
@@ -5725,33 +5656,16 @@
           ],
           "end": 798.3218
         }
-      ]
-    },
-    {
-      "number": 5,
-      "id": "rec-gripper",
-      "title": "ReC-Gripper",
-      "svg": "/slides-en/page-05.svg",
-      "text": "03  /  RECONFIGURABLE GRIPPER\nReC-Gripper\nA reconfigurable suction-and-finger gripper for shelf picking and stowing.\nReC-Gripper shelf stowing\nICRA 2024 RGMC · Trial 1 (original x2 label retained)\nMechanism design, picking/stowing experiments, analysis, and\nfirst-author paper preparation.\nIEEE Robotics and Automation Letters · Presented at ICRA 2024\n1.\nDesigned a reconfigurable mechanism combining suction and fingers.\n2.\nImplemented configuration changes for shelf approach and grasping.\n3.\nEvaluated shelf picking and stowing with the physical gripper.\nIEEE RA-L 2024 · ICRA 2024 presentation | Mechanism, picking, and stowing experiments\nDetails\nSEUNGHWAN UM  /  ROBOTICS\n2026.11\n05 / 11\n",
+      ],
       "links": [
         {
           "rect": [
             28.0,
             125.99996948242188,
-            381.0,
-            252.0
+            491.0,
+            318.0
           ],
-          "href": "https://r-ush.github.io/portfolio/projects/rec-gripper/",
-          "label": ""
-        },
-        {
-          "rect": [
-            433.0,
-            125.99996948242188,
-            381.0,
-            252.0
-          ],
-          "href": "https://r-ush.github.io/portfolio/projects/rec-gripper/",
+          "href": "https://r-ush.github.io/portfolio/projects/scooping-imitation/",
           "label": ""
         },
         {
@@ -5761,7 +5675,7 @@
             48.0,
             17.9599609375
           ],
-          "href": "https://r-ush.github.io/portfolio/projects/rec-gripper/",
+          "href": "https://r-ush.github.io/portfolio/projects/scooping-imitation/",
           "label": "Details"
         },
         {
@@ -5771,38 +5685,8 @@
             48.0,
             48.0
           ],
-          "href": "https://r-ush.github.io/portfolio/projects/rec-gripper/",
+          "href": "https://r-ush.github.io/portfolio/projects/scooping-imitation/",
           "label": ""
-        },
-        {
-          "rect": [
-            28.0,
-            536.8017578125,
-            38.97900390625,
-            9.0
-          ],
-          "href": "https://doi.org/10.1109/LRA.2023.3330051",
-          "label": "IEEE RA-L"
-        },
-        {
-          "rect": [
-            28.0,
-            484.30224609375,
-            208.64453125,
-            11.5
-          ],
-          "href": "https://doi.org/10.1109/LRA.2023.3330051",
-          "label": "IEEE Robotics and Automation Letters"
-        },
-        {
-          "rect": [
-            433.0,
-            387.8417663574219,
-            73.09402465820312,
-            9.20001220703125
-          ],
-          "href": "https://r-ush.github.io/portfolio/assets/evidence/rgmc-award-1.png",
-          "label": "ICRA 2024 RGMC"
         }
       ],
       "media": [
@@ -5810,114 +5694,45 @@
           "rect": [
             28,
             126,
-            381,
-            252
+            491,
+            318
           ],
-          "video": "/assets/videos/rec-picking-stowing.mp4",
-          "poster": "/assets/rec-picking-stowing.jpg",
-          "caption": "Reconfigurable shelf stowing · 1x"
-        },
-        {
-          "rect": [
-            433,
-            126,
-            381,
-            252
-          ],
-          "video": "/assets/videos/rec-rgmc-selected.mp4",
-          "poster": "/assets/rec-rgmc-selected.jpg",
-          "caption": "ICRA 2024 RGMC · Trial 1 (original x2 label retained)"
+          "video": "https://r-ush.github.io/scooping_robotic_hand/static/videos/black_object_grasping_rollout_final.mp4",
+          "poster": "/assets/scooping-imitation.jpg",
+          "caption": "Diffusion Policy scooping and grasping · Edited multi-view footage"
         }
       ],
       "extras": [
         {
-          "video": "/assets/videos/rec-rgmc-selected.mp4",
-          "poster": "/assets/rec-rgmc-selected.jpg",
-          "caption": "ICRA 2024 RGMC · Trial 1 (original x2 label retained)"
+          "video": "https://r-ush.github.io/scooping_robotic_hand/static/videos/black_object_grasping_rollout_final.mp4",
+          "poster": "/assets/scooping-imitation.jpg",
+          "caption": "Diffusion Policy scooping and grasping · Edited multi-view footage"
         },
         {
-          "video": "/assets/videos/rec-suction-mechanism.mp4",
-          "poster": "/assets/rec-suction-mechanism.jpg",
-          "caption": "Grasping with tilting/extending suction and fingers"
-        },
-        {
-          "video": "/assets/videos/rec-picking-stowing.mp4",
-          "poster": "/assets/rec-picking-stowing.jpg",
-          "caption": "Reconfigurable shelf stowing · 1x"
-        },
-        {
-          "video": "/assets/videos/rec-grasp-modes.mp4",
-          "poster": "/assets/rec-grasp-modes.jpg",
-          "caption": "Comparison of bin-picking and shelf-picking modes"
-        },
-        {
-          "video": "/assets/videos/rec-rgmc-repeated-grasping.mp4",
-          "poster": "/assets/rec-rgmc-repeated-grasping.jpg",
-          "caption": "ICRA 2024 RGMC · Repeated grasp/transfer attempts (1x)"
+          "video": "https://r-ush.github.io/scooping_robotic_hand/static/videos/comparison_w_wo_impedance.mp4",
+          "poster": "",
+          "caption": "Scooping with and without compliant control · Original condition labels retained"
         }
       ],
       "evidence": [
         {
-          "id": "rec-paper",
-          "label": "RA-L paper",
-          "kind": "Paper: first page",
-          "title": "ReC-Gripper: A Reconfigurable Combined Suction and Fingered Gripper for Various Logistics Picking and Stowing Tasks",
-          "image": "/assets/evidence/rec-paper-1.png",
-          "url": "https://doi.org/10.1109/LRA.2023.3330051",
-          "description": "IEEE Robotics and Automation Letters · First author",
-          "link_label": "Read paper",
-          "triggers": [
-            "IEEE RA-L",
-            "IEEE Robotics and Automation Letters"
-          ]
-        },
-        {
-          "id": "rgmc-award",
-          "label": "RGMC 2nd",
-          "kind": "Award certificate",
-          "title": "ICRA 2024 RGMC Picking in Clutter, 2nd",
-          "image": "/assets/evidence/rgmc-award-1.png",
-          "url": "https://r-ush.github.io/portfolio/assets/evidence/rgmc-award-1.png",
-          "description": "ICRA 2024 RGMC Picking in Clutter · AIDIN-ROBOTORY team, 2nd",
-          "link_label": "View certificate",
-          "triggers": [
-            "RGMC Picking in Clutter, 2nd",
-            "ICRA 2024 RGMC"
-          ]
+          "id": "scooping-imitation-source",
+          "label": "Project",
+          "kind": "Project materials",
+          "title": "Grasping with IL",
+          "url": "https://r-ush.github.io/scooping_robotic_hand/",
+          "description": "Force-based compliance, Diffusion Policy, and scooping experiments",
+          "link_label": "Open project page"
         }
       ],
-      "evidence_hotspots": [
-        {
-          "id": "rec-paper",
-          "label": "RA-L paper",
-          "rect": [
-            28.0,
-            536.8017578125,
-            38.97900390625,
-            9.0
-          ]
-        },
-        {
-          "id": "rec-paper",
-          "label": "RA-L paper",
-          "rect": [
-            28.0,
-            484.30224609375,
-            208.64453125,
-            11.5
-          ]
-        },
-        {
-          "id": "rgmc-award",
-          "label": "RGMC 2nd",
-          "rect": [
-            433.0,
-            387.8417663574219,
-            73.09402465820312,
-            9.20001220703125
-          ]
-        }
-      ],
+      "evidence_hotspots": []
+    },
+    {
+      "number": 5,
+      "id": "rec-gripper",
+      "title": "ReC-Gripper",
+      "svg": "/slides-en/page-05.svg",
+      "text": "03  /  RECONFIGURABLE GRIPPER\nReC-Gripper\nA reconfigurable suction-and-finger gripper for shelf picking and stowing.\nReC-Gripper shelf stowing\nICRA 2024 RGMC · Trial 1 (original x2 label retained)\nMechanism design, picking/stowing experiments, analysis, and\nfirst-author paper preparation.\nIEEE Robotics and Automation Letters · Presented at ICRA 2024\n1.\nDesigned a reconfigurable mechanism combining suction and fingers.\n2.\nImplemented configuration changes for shelf approach and grasping.\n3.\nEvaluated shelf picking and stowing with the physical gripper.\n[2] Um, S., et al. \"ReC-Gripper: A Reconfigurable Combined Suction and Fingered Gripper for Various Logistics Picking and Stowing Tasks\" IEEE Robotics and Automation Letters (2024).\nDetails\nSEUNGHWAN UM  /  ROBOTICS\n2026.11\n05 / 11\n",
       "text_runs": [
         {
           "line": 0,
@@ -6737,122 +6552,235 @@
         },
         {
           "line": 14,
-          "text": "IEEE RA-L",
+          "text": "[2] Um, S., et al. \"",
           "x": [
             28.0,
-            30.43,
-            35.083,
-            39.736,
-            44.389,
-            47.557,
-            53.047,
-            58.969,
-            62.659
+            30.2875,
+            34.42,
+            36.7075,
+            39.3475,
+            44.62,
+            51.22,
+            52.8625,
+            55.5025,
+            59.575,
+            61.2175,
+            62.86,
+            65.5,
+            69.5125,
+            72.1,
+            74.74,
+            78.64,
+            80.485,
+            82.1275,
+            84.7675
           ],
-          "y": 544.0,
-          "size": 9.0,
-          "bold": false,
-          "link": 4,
-          "rect": [
-            28.0,
-            536.8018,
-            38.979,
-            9.0
-          ],
-          "end": 66.979
-        },
-        {
-          "line": 14,
-          "text": " 2024 · ICRA 2024 presentation | Mechanism, picking, and stowing experiments",
-          "x": [
-            66.979,
-            70.147,
-            75.106,
-            80.065,
-            85.024,
-            89.983,
-            93.151,
-            95.122,
-            98.29,
-            100.72,
-            106.435,
-            111.925,
-            117.847,
-            121.015,
-            125.974,
-            130.933,
-            135.892,
-            140.851,
-            144.019,
-            149.428,
-            152.614,
-            157.429,
-            161.326,
-            166.141,
-            171.343,
-            174.448,
-            179.128,
-            182.233,
-            184.447,
-            189.838,
-            195.04,
-            198.208,
-            200.359,
-            203.527,
-            211.78,
-            216.595,
-            220.852,
-            226.063,
-            230.743,
-            235.945,
-            238.159,
-            242.056,
-            249.976,
-            251.947,
-            255.115,
-            260.524,
-            262.738,
-            266.995,
-            271.549,
-            273.763,
-            278.965,
-            284.383,
-            286.354,
-            289.522,
-            294.202,
-            299.404,
-            304.822,
-            307.99,
-            311.887,
-            314.992,
-            320.383,
-            327.007,
-            329.221,
-            334.423,
-            339.841,
-            343.009,
-            347.824,
-            352.009,
-            357.418,
-            362.233,
-            365.419,
-            367.633,
-            375.553,
-            380.368,
-            385.57,
-            388.675
-          ],
-          "y": 544.0,
-          "size": 9.0,
+          "y": 560.0,
+          "size": 7.5,
           "bold": false,
           "link": null,
           "rect": [
-            66.979,
-            536.8018,
-            325.593,
-            9.0
+            28.0,
+            554.0015,
+            59.73,
+            7.5
           ],
-          "end": 392.572
+          "end": 87.73
+        },
+        {
+          "line": 14,
+          "text": "ReC-Gripper: A Reconfigurable Combined Suction and Fingered Gripper for Various Logistics Picking and Stowing Tasks",
+          "x": [
+            87.73,
+            92.305,
+            96.3175,
+            101.08,
+            104.155,
+            109.42,
+            112.075,
+            113.92,
+            118.4275,
+            122.935,
+            126.9475,
+            129.6025,
+            131.245,
+            133.885,
+            138.82,
+            141.46,
+            146.035,
+            150.0475,
+            153.595,
+            158.0875,
+            162.4225,
+            164.7925,
+            166.6375,
+            171.1525,
+            175.4875,
+            178.1425,
+            182.0425,
+            186.55,
+            188.395,
+            192.4075,
+            195.0475,
+            199.81,
+            204.3025,
+            210.9025,
+            215.41,
+            217.255,
+            221.59,
+            225.6025,
+            230.1175,
+            232.7575,
+            236.83,
+            241.165,
+            244.7125,
+            247.3,
+            249.145,
+            253.6375,
+            257.9725,
+            260.6125,
+            264.5125,
+            268.8475,
+            273.3625,
+            276.0025,
+            279.745,
+            281.59,
+            285.925,
+            290.44,
+            294.4525,
+            297.1075,
+            301.1201,
+            305.6351,
+            308.2751,
+            313.5401,
+            316.1951,
+            318.0401,
+            322.5476,
+            327.0551,
+            331.0676,
+            333.7226,
+            336.3626,
+            338.7326,
+            343.2251,
+            345.8801,
+            348.5201,
+            353.2751,
+            357.1751,
+            359.8301,
+            361.6751,
+            366.1676,
+            370.5026,
+            373.7501,
+            376.3901,
+            379.9901,
+            384.4826,
+            388.9977,
+            390.8427,
+            394.0901,
+            396.6776,
+            398.5226,
+            402.0701,
+            405.3176,
+            407.9576,
+            412.2401,
+            414.0851,
+            417.6326,
+            421.4276,
+            423.2726,
+            427.6076,
+            432.1227,
+            434.7627,
+            438.6627,
+            442.9977,
+            447.5127,
+            450.1527,
+            454.2252,
+            456.8127,
+            461.3052,
+            466.8252,
+            468.6702,
+            473.0052,
+            477.5202,
+            480.1602,
+            484.1652,
+            488.0652,
+            491.3127,
+            495.1077
+          ],
+          "y": 560.0,
+          "size": 7.5,
+          "bold": false,
+          "link": 2,
+          "rect": [
+            87.73,
+            554.0015,
+            410.6252,
+            7.5
+          ],
+          "end": 498.3552
+        },
+        {
+          "line": 14,
+          "text": "\" IEEE Robotics and Automation Letters (2024).",
+          "x": [
+            498.3552,
+            501.3177,
+            503.9577,
+            505.9827,
+            509.8602,
+            513.7377,
+            517.6152,
+            520.2552,
+            524.8302,
+            529.3228,
+            533.8302,
+            538.3228,
+            540.9102,
+            542.7552,
+            546.3027,
+            549.5502,
+            552.1902,
+            556.0902,
+            560.4252,
+            564.9402,
+            567.5803,
+            572.5153,
+            576.8503,
+            579.4378,
+            583.9303,
+            590.5303,
+            594.4303,
+            597.0178,
+            598.8628,
+            603.3553,
+            607.6903,
+            610.3303,
+            613.9303,
+            617.9428,
+            620.5303,
+            623.1179,
+            627.1304,
+            629.7854,
+            633.0329,
+            635.6729,
+            637.9604,
+            642.0929,
+            646.2254,
+            650.3579,
+            654.4904,
+            656.7779
+          ],
+          "y": 560.0,
+          "size": 7.5,
+          "bold": false,
+          "link": null,
+          "rect": [
+            498.3552,
+            554.0015,
+            160.0652,
+            7.5
+          ],
+          "end": 658.4204
         },
         {
           "line": 15,
@@ -6869,7 +6797,7 @@
           "y": 545.48,
           "size": 8.8,
           "bold": true,
-          "link": 2,
+          "link": 3,
           "rect": [
             709.0,
             538.4417,
@@ -6968,14 +6896,7 @@
           ],
           "end": 798.3218
         }
-      ]
-    },
-    {
-      "number": 6,
-      "id": "palm-gripper",
-      "title": "PALM-Gripper",
-      "svg": "/slides-en/page-06.svg",
-      "text": "04  /  PARALLEL ADAPTABLE MECHANISM\nPALM-Gripper\nAn integrated parallel-adaptable gripper for varied object shapes and confined shelf access.\nAdaptive finger mechanism\nPALM autonomous picking · Perception, planning, and bin placement\nMechanism design, physical grasping experiments, analysis, and\nfirst-author paper preparation.\nIEEE/ASME T-MECH\n2025 Samsung Humantech Paper Award, Bronze\n1.\nIntegrated parallel and adaptable mechanisms for shelf picking.\n2.\nTested mechanism adaptation during object contact.\n3.\nEvaluated approach and grasping in a physical shelf environment.\nIEEE/ASME T-MECH 2026 | Mechanism and physical grasping experiments\nDetails\nSEUNGHWAN UM  /  ROBOTICS\n2026.11\n06 / 11\n",
+      ],
       "links": [
         {
           "rect": [
@@ -6984,7 +6905,7 @@
             381.0,
             252.0
           ],
-          "href": "https://r-ush.github.io/portfolio/projects/palm-gripper/",
+          "href": "https://r-ush.github.io/portfolio/projects/rec-gripper/",
           "label": ""
         },
         {
@@ -6994,8 +6915,18 @@
             381.0,
             252.0
           ],
-          "href": "https://r-ush.github.io/portfolio/projects/palm-gripper/",
+          "href": "https://r-ush.github.io/portfolio/projects/rec-gripper/",
           "label": ""
+        },
+        {
+          "rect": [
+            87.69603729248047,
+            552.5,
+            410.5480728149414,
+            9.0
+          ],
+          "href": "https://doi.org/10.1109/LRA.2023.3330051",
+          "label": "\"ReC-Gripper: A Reconfigurable Combined Suction and Fingered Gripper for Various Logistics Picking and Stowing Tasks"
         },
         {
           "rect": [
@@ -7004,7 +6935,7 @@
             48.0,
             17.9599609375
           ],
-          "href": "https://r-ush.github.io/portfolio/projects/palm-gripper/",
+          "href": "https://r-ush.github.io/portfolio/projects/rec-gripper/",
           "label": "Details"
         },
         {
@@ -7014,38 +6945,28 @@
             48.0,
             48.0
           ],
-          "href": "https://r-ush.github.io/portfolio/projects/palm-gripper/",
+          "href": "https://r-ush.github.io/portfolio/projects/rec-gripper/",
           "label": ""
         },
         {
           "rect": [
             28.0,
             484.30224609375,
-            108.10000610351562,
+            208.64453125,
             11.5
           ],
-          "href": "https://doi.org/10.1109/TMECH.2025.3649851",
-          "label": "IEEE/ASME T-MECH"
+          "href": "https://doi.org/10.1109/LRA.2023.3330051",
+          "label": "IEEE Robotics and Automation Letters"
         },
         {
           "rect": [
-            28.0,
-            536.8017578125,
-            80.4780044555664,
-            9.0
+            433.0,
+            387.8417663574219,
+            73.09402465820312,
+            9.20001220703125
           ],
-          "href": "https://doi.org/10.1109/TMECH.2025.3649851",
-          "label": "IEEE/ASME T-MECH"
-        },
-        {
-          "rect": [
-            58.728004455566406,
-            501.80224609375,
-            236.53203582763672,
-            11.5
-          ],
-          "href": "https://r-ush.github.io/portfolio/assets/evidence/humantech-award-1.png",
-          "label": "Samsung Humantech Paper Award, Bronze"
+          "href": "https://r-ush.github.io/portfolio/assets/evidence/rgmc-award-1.png",
+          "label": "ICRA 2024 RGMC"
         }
       ],
       "media": [
@@ -7056,9 +6977,9 @@
             381,
             252
           ],
-          "video": "/assets/videos/palm-adaptive-fingers.mp4",
-          "poster": "/assets/palm-adaptive-fingers.jpg",
-          "caption": "PALM fingers adapting to objects and shelves"
+          "video": "/assets/videos/rec-picking-stowing.mp4",
+          "poster": "/assets/rec-picking-stowing.jpg",
+          "caption": "Reconfigurable shelf stowing · 1x"
         },
         {
           "rect": [
@@ -7067,94 +6988,107 @@
             381,
             252
           ],
-          "video": "/assets/videos/palm-autonomous-grasping.mp4",
-          "poster": "/assets/palm-autonomous-grasping.jpg",
-          "caption": "PALM autonomous picking · Perception, planning, and bin placement"
+          "video": "/assets/videos/rec-rgmc-selected.mp4",
+          "poster": "/assets/rec-rgmc-selected.jpg",
+          "caption": "ICRA 2024 RGMC · Trial 1 (original x2 label retained)"
         }
       ],
       "extras": [
         {
-          "video": "/assets/videos/palm-autonomous-grasping.mp4",
-          "poster": "/assets/palm-autonomous-grasping.jpg",
-          "caption": "PALM autonomous picking · Perception, planning, and bin placement"
+          "video": "/assets/videos/rec-rgmc-selected.mp4",
+          "poster": "/assets/rec-rgmc-selected.jpg",
+          "caption": "ICRA 2024 RGMC · Trial 1 (original x2 label retained)"
         },
         {
-          "video": "/assets/videos/palm-adaptive-fingers.mp4",
-          "poster": "/assets/palm-adaptive-fingers.jpg",
-          "caption": "PALM fingers adapting to objects and shelves"
+          "video": "/assets/videos/rec-suction-mechanism.mp4",
+          "poster": "/assets/rec-suction-mechanism.jpg",
+          "caption": "Grasping with tilting/extending suction and fingers"
         },
         {
-          "video": "/assets/videos/palm-picking-stowing.mp4",
-          "poster": "/assets/palm-picking-stowing.jpg",
-          "caption": "Picking and stowing in a shelf environment"
+          "video": "/assets/videos/rec-picking-stowing.mp4",
+          "poster": "/assets/rec-picking-stowing.jpg",
+          "caption": "Reconfigurable shelf stowing · 1x"
         },
         {
-          "video": "/assets/videos/palm-kinematics.mp4",
-          "poster": "/assets/palm-kinematics.jpg",
-          "caption": "Kinematic validation using ArUco markers"
+          "video": "/assets/videos/rec-grasp-modes.mp4",
+          "poster": "/assets/rec-grasp-modes.jpg",
+          "caption": "Comparison of bin-picking and shelf-picking modes"
+        },
+        {
+          "video": "/assets/videos/rec-rgmc-repeated-grasping.mp4",
+          "poster": "/assets/rec-rgmc-repeated-grasping.jpg",
+          "caption": "ICRA 2024 RGMC · Repeated grasp/transfer attempts (1x)"
         }
       ],
       "evidence": [
         {
-          "id": "palm-paper",
-          "label": "T-MECH paper",
+          "id": "rec-paper",
+          "label": "RA-L paper",
           "kind": "Paper: first page",
-          "title": "PALM-Gripper: Integrated Gripper With Parallel Adaptable Mechanism for Shelf Picking in Logistics",
-          "image": "/assets/evidence/palm-paper-1.png",
-          "url": "https://doi.org/10.1109/TMECH.2025.3649851",
-          "description": "IEEE/ASME Transactions on Mechatronics · First author",
+          "title": "ReC-Gripper: A Reconfigurable Combined Suction and Fingered Gripper for Various Logistics Picking and Stowing Tasks",
+          "image": "/assets/evidence/rec-paper-1.png",
+          "url": "https://doi.org/10.1109/LRA.2023.3330051",
+          "description": "IEEE Robotics and Automation Letters · First author",
           "link_label": "Read paper",
           "triggers": [
-            "IEEE/ASME T-MECH",
-            "IEEE/ASME Transactions on Mechatronics"
+            "IEEE RA-L",
+            "IEEE Robotics and Automation Letters"
           ]
         },
         {
-          "id": "humantech-award",
-          "label": "Humantech Bronze",
+          "id": "rgmc-award",
+          "label": "RGMC 2nd",
           "kind": "Award certificate",
-          "title": "Samsung Humantech Paper Award, Bronze · Mechanical Engineering",
-          "image": "/assets/evidence/humantech-award-1.png",
-          "url": "https://r-ush.github.io/portfolio/assets/evidence/humantech-award-1.png",
-          "description": "Feb. 12, 2025 · Mechanical Engineering Bronze · PALM-Gripper research",
+          "title": "ICRA 2024 RGMC Picking in Clutter, 2nd",
+          "image": "/assets/evidence/rgmc-award-1.png",
+          "url": "https://r-ush.github.io/portfolio/assets/evidence/rgmc-award-1.png",
+          "description": "ICRA 2024 RGMC Picking in Clutter · AIDIN-ROBOTORY team, 2nd",
           "link_label": "View certificate",
           "triggers": [
-            "Samsung Humantech Paper Award, Bronze"
+            "RGMC Picking in Clutter, 2nd",
+            "ICRA 2024 RGMC"
           ]
         }
       ],
       "evidence_hotspots": [
         {
-          "id": "palm-paper",
-          "label": "T-MECH paper",
+          "id": "rec-paper",
+          "label": "RA-L paper",
           "rect": [
             28.0,
             484.30224609375,
-            108.10000610351562,
+            208.64453125,
             11.5
           ]
         },
         {
-          "id": "palm-paper",
-          "label": "T-MECH paper",
+          "id": "rec-paper",
+          "label": "RA-L paper",
           "rect": [
-            28.0,
-            536.8017578125,
-            80.4780044555664,
-            9.0
+            503.95770263671875,
+            554.00146484375,
+            129.0751953125,
+            7.5
           ]
         },
         {
-          "id": "humantech-award",
-          "label": "Humantech Bronze",
+          "id": "rgmc-award",
+          "label": "RGMC 2nd",
           "rect": [
-            58.728004455566406,
-            501.80224609375,
-            236.53203582763672,
-            11.5
+            433.0,
+            387.8417663574219,
+            73.09402465820312,
+            9.20001220703125
           ]
         }
-      ],
+      ]
+    },
+    {
+      "number": 6,
+      "id": "palm-gripper",
+      "title": "PALM-Gripper",
+      "svg": "/slides-en/page-06.svg",
+      "text": "04  /  PARALLEL ADAPTABLE MECHANISM\nPALM-Gripper\nAn integrated parallel-adaptable gripper for varied object shapes and confined shelf access.\nAdaptive finger mechanism\nPALM autonomous picking · Perception, planning, and bin placement\nMechanism design, physical grasping experiments, analysis, and\nfirst-author paper preparation.\nIEEE/ASME T-MECH\n2025 Samsung Humantech Paper Award, Bronze\n1.\nIntegrated parallel and adaptable mechanisms for shelf picking.\n2.\nTested mechanism adaptation during object contact.\n3.\nEvaluated approach and grasping in a physical shelf environment.\n[1] Um, S., et al. \"PALM-Gripper: Integrated Gripper With Parallel Adaptable Mechanism for Shelf Picking in Logistics\" IEEE/ASME Transactions on Mechatronics (2026).\nDetails\nSEUNGHWAN UM  /  ROBOTICS\n2026.11\n06 / 11\n",
       "text_runs": [
         {
           "line": 0,
@@ -7621,7 +7555,7 @@
           "y": 493.5,
           "size": 11.5,
           "bold": true,
-          "link": 4,
+          "link": 5,
           "rect": [
             28.0,
             484.3022,
@@ -7993,104 +7927,219 @@
         },
         {
           "line": 15,
-          "text": "IEEE/ASME T-MECH",
+          "text": "[1] Um, S., et al. \"",
           "x": [
             28.0,
-            30.43,
-            35.083,
-            39.736,
-            44.389,
-            47.953,
-            53.875,
-            58.762,
-            67.015,
-            71.668,
-            74.836,
-            79.642,
-            83.332,
-            91.585,
-            96.238,
-            101.953
+            30.2875,
+            34.42,
+            36.7075,
+            39.3475,
+            44.62,
+            51.22,
+            52.8625,
+            55.5025,
+            59.575,
+            61.2175,
+            62.86,
+            65.5,
+            69.5125,
+            72.1,
+            74.74,
+            78.64,
+            80.485,
+            82.1275,
+            84.7675
           ],
-          "y": 544.0,
-          "size": 9.0,
-          "bold": false,
-          "link": 5,
-          "rect": [
-            28.0,
-            536.8018,
-            80.478,
-            9.0
-          ],
-          "end": 108.478
-        },
-        {
-          "line": 15,
-          "text": " 2026 | Mechanism and physical grasping experiments",
-          "x": [
-            108.478,
-            111.646,
-            116.605,
-            121.564,
-            126.523,
-            131.482,
-            134.65,
-            136.801,
-            139.969,
-            148.222,
-            153.037,
-            157.294,
-            162.505,
-            167.185,
-            172.387,
-            174.601,
-            178.498,
-            186.418,
-            189.586,
-            194.266,
-            199.468,
-            204.886,
-            208.054,
-            213.463,
-            218.674,
-            223.111,
-            227.008,
-            229.222,
-            233.479,
-            238.159,
-            240.373,
-            243.541,
-            248.959,
-            252.145,
-            256.825,
-            260.722,
-            266.131,
-            268.345,
-            273.547,
-            278.965,
-            282.133,
-            286.948,
-            291.133,
-            296.542,
-            301.357,
-            304.543,
-            306.757,
-            314.677,
-            319.492,
-            324.694,
-            327.799
-          ],
-          "y": 544.0,
-          "size": 9.0,
+          "y": 560.0,
+          "size": 7.5,
           "bold": false,
           "link": null,
           "rect": [
-            108.478,
-            536.8018,
-            223.218,
-            9.0
+            28.0,
+            554.0015,
+            59.73,
+            7.5
           ],
-          "end": 331.696
+          "end": 87.73
+        },
+        {
+          "line": 15,
+          "text": "PALM-Gripper: Integrated Gripper With Parallel Adaptable Mechanism for Shelf Picking in Logistics",
+          "x": [
+            87.73,
+            92.0125,
+            96.9475,
+            100.5475,
+            107.425,
+            110.5,
+            115.765,
+            118.42,
+            120.265,
+            124.7725,
+            129.28,
+            133.2925,
+            135.9475,
+            137.59,
+            140.23,
+            142.255,
+            146.59,
+            149.1775,
+            153.19,
+            157.705,
+            160.36,
+            164.26,
+            166.8475,
+            170.86,
+            175.375,
+            178.015,
+            183.28,
+            185.935,
+            187.78,
+            192.2875,
+            196.795,
+            200.8075,
+            203.4625,
+            206.1025,
+            213.2575,
+            215.1025,
+            217.69,
+            222.0325,
+            224.6725,
+            228.955,
+            232.855,
+            235.51,
+            239.41,
+            241.255,
+            243.1,
+            247.1125,
+            248.9575,
+            251.5975,
+            256.5325,
+            261.0475,
+            264.9474,
+            269.455,
+            272.0425,
+            275.9424,
+            280.45,
+            282.295,
+            286.3075,
+            288.9475,
+            295.825,
+            299.8375,
+            303.385,
+            307.7275,
+            311.6275,
+            315.9625,
+            317.8075,
+            321.055,
+            327.655,
+            330.295,
+            332.665,
+            337.1575,
+            339.8125,
+            342.4525,
+            346.525,
+            350.8675,
+            354.88,
+            356.725,
+            359.095,
+            361.735,
+            366.0175,
+            367.8625,
+            371.41,
+            375.205,
+            377.05,
+            381.385,
+            385.9,
+            388.54,
+            390.385,
+            394.72,
+            397.36,
+            400.9601,
+            405.4525,
+            409.9676,
+            411.8126,
+            415.0601,
+            417.6476,
+            419.4926,
+            423.04
+          ],
+          "y": 560.0,
+          "size": 7.5,
+          "bold": false,
+          "link": 2,
+          "rect": [
+            87.73,
+            554.0015,
+            338.5575,
+            7.5
+          ],
+          "end": 426.2875
+        },
+        {
+          "line": 15,
+          "text": "\" IEEE/ASME Transactions on Mechatronics (2026).",
+          "x": [
+            426.2875,
+            429.25,
+            431.89,
+            433.915,
+            437.7925,
+            441.67,
+            445.5475,
+            448.5175,
+            453.4525,
+            457.5251,
+            464.4026,
+            468.2801,
+            470.9201,
+            474.9251,
+            477.5801,
+            481.4801,
+            485.8151,
+            489.0626,
+            492.9626,
+            496.51,
+            499.0975,
+            500.9425,
+            505.435,
+            509.77,
+            513.0175,
+            515.6575,
+            520.15,
+            524.485,
+            527.125,
+            534.0026,
+            538.015,
+            541.5626,
+            545.9051,
+            549.8051,
+            552.3926,
+            555.0477,
+            559.5402,
+            563.8752,
+            565.7202,
+            569.2676,
+            572.5151,
+            575.1552,
+            577.4426,
+            581.5751,
+            585.7076,
+            589.8401,
+            593.9727,
+            596.2601
+          ],
+          "y": 560.0,
+          "size": 7.5,
+          "bold": false,
+          "link": null,
+          "rect": [
+            426.2875,
+            554.0015,
+            171.6151,
+            7.5
+          ],
+          "end": 597.9026
         },
         {
           "line": 16,
@@ -8107,7 +8156,7 @@
           "y": 545.48,
           "size": 8.8,
           "bold": true,
-          "link": 2,
+          "link": 3,
           "rect": [
             709.0,
             538.4417,
@@ -8206,24 +8255,37 @@
           ],
           "end": 798.3218
         }
-      ]
-    },
-    {
-      "number": 7,
-      "id": "clutter-bin-picking",
-      "title": "Collision-Aware Bin-Picking",
-      "svg": "/slides-en/page-07.svg",
-      "text": "05  /  ROBOT DESIGN / BIN-PICKING\nCollision-Aware Bin-Picking\nRobot design, control, and grasp strategies that account for interference in heavily cluttered scenes.\nDesign and grasping under interference\nDesign/control experiments and analysis; first-author\nworkshop abstract and co-first-author journal paper.\n1.\nAnalyzed approach and grasp interference in\nheavily cluttered scenes.\n2.\nTested gripper/robot design and control strategies\nin physical picking experiments.\n3.\nDocumented competition experiments in an IROS\nextended abstract and a follow-up journal paper.\nICRA 2024 RGMC Picking in Clutter, 2nd (team) · IROS 2024 Workshop Best\nExtended Abstract · IEEE RA-P 2026\nBin-Picking · Collision Awareness · Grasp Planning\nRGMC: team result | IROS extended abstract and RA-P: follow-up papers from the same research\nDetails\nSEUNGHWAN UM  /  ROBOTICS\n2026.11\n07 / 11\n",
+      ],
       "links": [
         {
           "rect": [
             28.0,
             125.99996948242188,
-            491.0,
-            318.0
+            381.0,
+            252.0
           ],
-          "href": "https://r-ush.github.io/portfolio/projects/clutter-bin-picking/",
+          "href": "https://r-ush.github.io/portfolio/projects/palm-gripper/",
           "label": ""
+        },
+        {
+          "rect": [
+            433.0,
+            125.99996948242188,
+            381.0,
+            252.0
+          ],
+          "href": "https://r-ush.github.io/portfolio/projects/palm-gripper/",
+          "label": ""
+        },
+        {
+          "rect": [
+            87.69603729248047,
+            552.5,
+            338.47415924072266,
+            9.0
+          ],
+          "href": "https://doi.org/10.1109/TMECH.2025.3649851",
+          "label": "\"PALM-Gripper: Integrated Gripper With Parallel Adaptable Mechanism for Shelf Picking in Logistics"
         },
         {
           "rect": [
@@ -8232,7 +8294,7 @@
             48.0,
             17.9599609375
           ],
-          "href": "https://r-ush.github.io/portfolio/projects/clutter-bin-picking/",
+          "href": "https://r-ush.github.io/portfolio/projects/palm-gripper/",
           "label": "Details"
         },
         {
@@ -8242,88 +8304,28 @@
             48.0,
             48.0
           ],
-          "href": "https://r-ush.github.io/portfolio/projects/clutter-bin-picking/",
+          "href": "https://r-ush.github.io/portfolio/projects/palm-gripper/",
           "label": ""
         },
         {
           "rect": [
-            144.68798828125,
-            480.90234375,
-            88.05604553222656,
-            12.0
-          ],
-          "href": "https://doi.org/10.1109/RAP.2026.3655333",
-          "label": "IEEE RA-P 2026"
-        },
-        {
-          "rect": [
-            781.1146240234375,
-            301.1420593261719,
-            23.4971923828125,
-            10.70001220703125
-          ],
-          "href": "https://sites.google.com/view/iros2024-workshop-bench-in-rgm/contributions",
-          "label": "IROS"
-        },
-        {
-          "rect": [
-            562.0,
-            317.6420593261719,
-            87.0980224609375,
-            10.70001220703125
-          ],
-          "href": "https://sites.google.com/view/iros2024-workshop-bench-in-rgm/contributions",
-          "label": "extended abstract"
-        },
-        {
-          "rect": [
-            113.50900268554688,
-            536.8017578125,
-            96.1920166015625,
-            9.0
-          ],
-          "href": "https://sites.google.com/view/iros2024-workshop-bench-in-rgm/contributions",
-          "label": "IROS extended abstract"
-        },
-        {
-          "rect": [
-            91.97200012207031,
-            462.40234375,
-            168.20399475097656,
-            12.0
-          ],
-          "href": "https://r-ush.github.io/portfolio/assets/evidence/rgmc-award-1.png",
-          "label": "RGMC Picking in Clutter, 2nd"
-        },
-        {
-          "rect": [
             28.0,
-            462.40234375,
-            99.72000122070312,
-            12.0
+            484.30224609375,
+            108.10000610351562,
+            11.5
           ],
-          "href": "https://r-ush.github.io/portfolio/assets/evidence/rgmc-award-1.png",
-          "label": "ICRA 2024 RGMC"
+          "href": "https://doi.org/10.1109/TMECH.2025.3649851",
+          "label": "IEEE/ASME T-MECH"
         },
         {
           "rect": [
-            313.3840026855469,
-            462.40234375,
-            151.3079833984375,
-            12.0
+            58.728004455566406,
+            501.80224609375,
+            236.53203582763672,
+            11.5
           ],
-          "href": "https://sites.google.com/view/iros2024-workshop-bench-in-rgm",
-          "label": "IROS 2024 Workshop Best"
-        },
-        {
-          "rect": [
-            28.0,
-            480.90234375,
-            105.09600830078125,
-            12.0
-          ],
-          "href": "https://sites.google.com/view/iros2024-workshop-bench-in-rgm",
-          "label": "Extended Abstract"
+          "href": "https://r-ush.github.io/portfolio/assets/evidence/humantech-award-1.png",
+          "label": "Samsung Humantech Paper Award, Bronze"
         }
       ],
       "media": [
@@ -8331,158 +8333,115 @@
           "rect": [
             28,
             126,
-            491,
-            318
+            381,
+            252
           ],
-          "video": "https://r-ush.github.io/images/clip/RAP.mp4",
-          "poster": "/assets/clutter-bin-picking.jpg",
-          "caption": "Bin-picking with surrounding-object interference"
+          "video": "/assets/videos/palm-adaptive-fingers.mp4",
+          "poster": "/assets/palm-adaptive-fingers.jpg",
+          "caption": "PALM fingers adapting to objects and shelves"
+        },
+        {
+          "rect": [
+            433,
+            126,
+            381,
+            252
+          ],
+          "video": "/assets/videos/palm-autonomous-grasping.mp4",
+          "poster": "/assets/palm-autonomous-grasping.jpg",
+          "caption": "PALM autonomous picking · Perception, planning, and bin placement"
         }
       ],
       "extras": [
         {
-          "video": "https://r-ush.github.io/images/clip/RAP.mp4",
-          "poster": "/assets/clutter-bin-picking.jpg",
-          "caption": "Bin-picking with surrounding-object interference"
+          "video": "/assets/videos/palm-autonomous-grasping.mp4",
+          "poster": "/assets/palm-autonomous-grasping.jpg",
+          "caption": "PALM autonomous picking · Perception, planning, and bin placement"
+        },
+        {
+          "video": "/assets/videos/palm-adaptive-fingers.mp4",
+          "poster": "/assets/palm-adaptive-fingers.jpg",
+          "caption": "PALM fingers adapting to objects and shelves"
+        },
+        {
+          "video": "/assets/videos/palm-picking-stowing.mp4",
+          "poster": "/assets/palm-picking-stowing.jpg",
+          "caption": "Picking and stowing in a shelf environment"
+        },
+        {
+          "video": "/assets/videos/palm-kinematics.mp4",
+          "poster": "/assets/palm-kinematics.jpg",
+          "caption": "Kinematic validation using ArUco markers"
         }
       ],
       "evidence": [
         {
-          "id": "rap-paper",
-          "label": "RA-P paper",
+          "id": "palm-paper",
+          "label": "T-MECH paper",
           "kind": "Paper: first page",
-          "title": "Toward Reliable Bin-Picking: Collision-Aware Robotic Design and Control Strategy for Heavily Cluttered Environment",
-          "image": "/assets/evidence/rap-paper-1.png",
-          "url": "https://doi.org/10.1109/RAP.2026.3655333",
-          "description": "IEEE Robotics and Automation Practice · Co-first author",
+          "title": "PALM-Gripper: Integrated Gripper With Parallel Adaptable Mechanism for Shelf Picking in Logistics",
+          "image": "/assets/evidence/palm-paper-1.png",
+          "url": "https://doi.org/10.1109/TMECH.2025.3649851",
+          "description": "IEEE/ASME Transactions on Mechatronics · First author",
           "link_label": "Read paper",
           "triggers": [
-            "IEEE RA-P 2026"
+            "IEEE/ASME T-MECH",
+            "IEEE/ASME Transactions on Mechatronics"
           ]
         },
         {
-          "id": "iros-paper",
-          "label": "IROS abstract",
-          "kind": "Paper: first page",
-          "title": "Overcoming Heavy Clutter: Utilizing the Hybrid Grasping Network and Gripper",
-          "image": "/assets/evidence/iros-paper-1.png",
-          "url": "https://sites.google.com/view/iros2024-workshop-bench-in-rgm/contributions",
-          "description": "IROS 2024 Workshop · First-author extended abstract",
-          "link_label": "Read paper",
-          "triggers": [
-            "IROS extended abstract"
-          ]
-        },
-        {
-          "id": "rgmc-award",
-          "label": "RGMC 2nd",
+          "id": "humantech-award",
+          "label": "Humantech Bronze",
           "kind": "Award certificate",
-          "title": "ICRA 2024 RGMC Picking in Clutter, 2nd",
-          "image": "/assets/evidence/rgmc-award-1.png",
-          "url": "https://r-ush.github.io/portfolio/assets/evidence/rgmc-award-1.png",
-          "description": "ICRA 2024 RGMC Picking in Clutter · AIDIN-ROBOTORY team, 2nd",
+          "title": "Samsung Humantech Paper Award, Bronze · Mechanical Engineering",
+          "image": "/assets/evidence/humantech-award-1.png",
+          "url": "https://r-ush.github.io/portfolio/assets/evidence/humantech-award-1.png",
+          "description": "Feb. 12, 2025 · Mechanical Engineering Bronze · PALM-Gripper research",
           "link_label": "View certificate",
           "triggers": [
-            "RGMC Picking in Clutter, 2nd",
-            "ICRA 2024 RGMC"
-          ]
-        },
-        {
-          "id": "iros-award-program",
-          "label": "IROS award",
-          "kind": "Award: official program",
-          "title": "IROS 2024 Workshop · Best Extended Abstract",
-          "image": "/assets/evidence/iros-award-program.png",
-          "url": "https://sites.google.com/view/iros2024-workshop-bench-in-rgm",
-          "description": "Award recorded in the official workshop program.",
-          "link_label": "Open official program",
-          "triggers": [
-            "IROS 2024 Workshop Best Extended Abstract"
+            "Samsung Humantech Paper Award, Bronze"
           ]
         }
       ],
       "evidence_hotspots": [
         {
-          "id": "rap-paper",
-          "label": "RA-P paper",
-          "rect": [
-            144.68798828125,
-            480.90234375,
-            88.05604553222656,
-            12.0
-          ]
-        },
-        {
-          "id": "iros-paper",
-          "label": "IROS abstract",
-          "rect": [
-            781.1146240234375,
-            301.1420593261719,
-            23.4971923828125,
-            10.70001220703125
-          ]
-        },
-        {
-          "id": "iros-paper",
-          "label": "IROS abstract",
-          "rect": [
-            562.0,
-            317.6420593261719,
-            87.0980224609375,
-            10.70001220703125
-          ]
-        },
-        {
-          "id": "iros-paper",
-          "label": "IROS abstract",
-          "rect": [
-            113.50900268554688,
-            536.8017578125,
-            96.1920166015625,
-            9.0
-          ]
-        },
-        {
-          "id": "rgmc-award",
-          "label": "RGMC 2nd",
-          "rect": [
-            91.97200012207031,
-            462.40234375,
-            168.20399475097656,
-            12.0
-          ]
-        },
-        {
-          "id": "rgmc-award",
-          "label": "RGMC 2nd",
+          "id": "palm-paper",
+          "label": "T-MECH paper",
           "rect": [
             28.0,
-            462.40234375,
-            99.72000122070312,
-            12.0
+            484.30224609375,
+            108.10000610351562,
+            11.5
           ]
         },
         {
-          "id": "iros-award-program",
-          "label": "IROS award",
+          "id": "palm-paper",
+          "label": "T-MECH paper",
           "rect": [
-            313.3840026855469,
-            462.40234375,
-            151.3079833984375,
-            12.0
+            431.8900451660156,
+            554.00146484375,
+            140.62509155273438,
+            7.5
           ]
         },
         {
-          "id": "iros-award-program",
-          "label": "IROS award",
+          "id": "humantech-award",
+          "label": "Humantech Bronze",
           "rect": [
-            28.0,
-            480.90234375,
-            105.09600830078125,
-            12.0
+            58.728004455566406,
+            501.80224609375,
+            236.53203582763672,
+            11.5
           ]
         }
-      ],
+      ]
+    },
+    {
+      "number": 7,
+      "id": "clutter-bin-picking",
+      "title": "Collision-Aware Bin-Picking",
+      "svg": "/slides-en/page-07.svg",
+      "text": "05  /  ROBOT DESIGN / BIN-PICKING\nCollision-Aware Bin-Picking\nRobot design, control, and grasp strategies that account for interference in heavily cluttered scenes.\nDesign and grasping under interference\nDesign/control experiments and analysis; first-author\nworkshop abstract and co-first-author journal paper.\n1.\nAnalyzed approach and grasp interference in\nheavily cluttered scenes.\n2.\nTested gripper/robot design and control strategies\nin physical picking experiments.\n3.\nDocumented competition experiments in an IROS\nextended abstract and a follow-up journal paper.\nICRA 2024 RGMC Picking in Clutter, 2nd (team) · IROS 2024 Workshop Best\nExtended Abstract · IEEE RA-P 2026\nBin-Picking · Collision Awareness · Grasp Planning\n[3] Um, S., et al. \"Overcoming Heavy Clutter: Utilizing the Hybrid Grasping Network and Gripper\" IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), Workshop on\nBenchmarking via Competitions in Robotic Grasping and Manipulation (2024).\n[4] Um, S., et al. \"Toward Reliable Bin-Picking: Collision-Aware Robotic Design and Control Strategy for Heavily Cluttered Environment\" IEEE Robotics and Automation Practice (2026).\nDetails\nSEUNGHWAN UM  /  ROBOTICS\n2026.11\n07 / 11\n",
       "text_runs": [
         {
           "line": 0,
@@ -9236,7 +9195,7 @@
           "y": 309.7,
           "size": 10.7,
           "bold": false,
-          "link": 4,
+          "link": 6,
           "rect": [
             781.1146,
             301.1421,
@@ -9270,7 +9229,7 @@
           "y": 326.2,
           "size": 10.7,
           "bold": false,
-          "link": 5,
+          "link": 7,
           "rect": [
             562.0,
             317.6421,
@@ -9349,7 +9308,7 @@
           "y": 472.0,
           "size": 12.0,
           "bold": true,
-          "link": 8,
+          "link": 9,
           "rect": [
             28.0,
             462.4023,
@@ -9390,7 +9349,7 @@
           "y": 472.0,
           "size": 12.0,
           "bold": true,
-          "link": 7,
+          "link": 8,
           "rect": [
             127.72,
             462.4023,
@@ -9457,7 +9416,7 @@
           "y": 472.0,
           "size": 12.0,
           "bold": true,
-          "link": 9,
+          "link": 10,
           "rect": [
             313.384,
             462.4023,
@@ -9491,7 +9450,7 @@
           "y": 490.5,
           "size": 12.0,
           "bold": true,
-          "link": 10,
+          "link": 11,
           "rect": [
             28.0,
             480.9023,
@@ -9542,7 +9501,7 @@
           "y": 490.5,
           "size": 12.0,
           "bold": true,
-          "link": 3,
+          "link": 5,
           "rect": [
             144.688,
             480.9023,
@@ -9620,149 +9579,564 @@
         },
         {
           "line": 18,
-          "text": "RGMC: team result | ",
+          "text": "[3] Um, S., et al. \"",
           "x": [
             28.0,
-            33.49,
-            39.808,
-            48.061,
-            53.776,
-            55.747,
-            58.915,
-            62.02,
-            66.835,
-            71.515,
-            79.435,
-            82.603,
-            85.789,
-            90.604,
-            94.501,
-            99.703,
-            101.917,
-            105.022,
-            108.19,
-            110.341
+            30.2875,
+            34.42,
+            36.7075,
+            39.3475,
+            44.62,
+            51.22,
+            52.8625,
+            55.5025,
+            59.575,
+            61.2175,
+            62.86,
+            65.5,
+            69.5125,
+            72.1,
+            74.74,
+            78.64,
+            80.485,
+            82.1275,
+            84.7675
           ],
-          "y": 544.0,
-          "size": 9.0,
+          "y": 539.0,
+          "size": 7.5,
           "bold": false,
           "link": null,
           "rect": [
             28.0,
-            536.8018,
-            85.509,
-            9.0
+            533.0015,
+            59.73,
+            7.5
           ],
-          "end": 113.509
+          "end": 87.73
         },
         {
           "line": 18,
-          "text": "IROS extended abstract",
+          "text": "Overcoming Heavy Clutter: Utilizing the Hybrid Grasping Network and Gripper",
           "x": [
-            113.509,
-            115.939,
-            121.429,
-            128.386,
-            133.273,
-            136.441,
-            141.256,
-            145.441,
-            148.546,
-            153.361,
-            158.563,
-            163.981,
-            168.796,
-            174.214,
-            177.382,
-            182.062,
-            187.471,
-            191.368,
-            194.473,
-            197.659,
-            202.339,
-            206.596
+            87.73,
+            93.5275,
+            97.18,
+            101.1925,
+            103.8475,
+            107.395,
+            111.8875,
+            118.4875,
+            120.3325,
+            124.6675,
+            129.1825,
+            131.8225,
+            137.26,
+            141.2725,
+            145.1725,
+            148.825,
+            152.5225,
+            155.1625,
+            159.925,
+            161.77,
+            166.105,
+            168.6925,
+            171.28,
+            175.2925,
+            177.9475,
+            179.59,
+            182.23,
+            187.5025,
+            190.09,
+            191.935,
+            193.78,
+            195.625,
+            199.09,
+            200.935,
+            205.27,
+            209.785,
+            212.425,
+            215.0125,
+            219.355,
+            223.3675,
+            226.0075,
+            231.445,
+            235.1425,
+            239.65,
+            242.305,
+            244.15,
+            248.665,
+            251.305,
+            256.57,
+            259.225,
+            263.125,
+            266.3725,
+            270.88,
+            272.725,
+            277.06,
+            281.575,
+            284.215,
+            289.9525,
+            293.965,
+            296.5525,
+            302.0725,
+            306.565,
+            309.22,
+            313.015,
+            315.655,
+            319.555,
+            323.89,
+            328.405,
+            331.045,
+            336.31,
+            338.965,
+            340.81,
+            345.3175,
+            349.825,
+            353.8376
           ],
-          "y": 544.0,
-          "size": 9.0,
+          "y": 539.0,
+          "size": 7.5,
           "bold": false,
-          "link": 6,
+          "link": 1,
           "rect": [
-            113.509,
-            536.8018,
-            96.192,
-            9.0
+            87.73,
+            533.0015,
+            268.7626,
+            7.5
           ],
-          "end": 209.701
+          "end": 356.4926
         },
         {
           "line": 18,
-          "text": " and RA-P: follow-up papers from the same research",
+          "text": "\" IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), Workshop on",
           "x": [
-            209.701,
-            212.869,
-            217.549,
-            222.751,
-            228.169,
-            231.337,
-            236.827,
-            242.749,
-            246.439,
-            251.578,
-            253.549,
-            256.717,
-            259.561,
-            264.952,
-            267.166,
-            269.38,
-            274.771,
-            281.395,
-            285.085,
-            290.287,
-            295.696,
-            298.864,
-            304.273,
-            308.953,
-            314.362,
-            319.177,
-            322.363,
-            326.26,
-            329.428,
-            332.272,
-            335.458,
-            340.849,
-            348.769,
-            351.937,
-            355.042,
-            360.253,
-            365.068,
-            368.236,
-            372.133,
-            376.813,
-            384.733,
-            389.548,
-            392.716,
-            395.902,
-            400.717,
-            404.614,
-            409.429,
-            414.109,
-            417.295,
-            421.552
+            356.4926,
+            359.455,
+            362.0951,
+            364.1201,
+            367.9976,
+            371.8751,
+            375.7526,
+            378.7226,
+            383.2976,
+            387.3701,
+            390.0701,
+            392.7101,
+            394.7351,
+            399.0701,
+            401.6576,
+            405.6701,
+            408.3251,
+            412.6601,
+            416.5601,
+            419.1476,
+            420.9926,
+            425.4851,
+            429.8201,
+            433.7201,
+            435.5651,
+            438.2051,
+            442.9676,
+            447.4601,
+            451.7951,
+            454.1651,
+            458.1776,
+            460.8326,
+            464.8451,
+            469.1801,
+            472.7276,
+            476.7401,
+            479.3801,
+            483.8726,
+            488.2076,
+            490.8476,
+            492.8726,
+            497.2076,
+            499.7951,
+            503.8076,
+            505.6526,
+            507.4976,
+            509.3426,
+            513.8576,
+            517.8701,
+            522.2051,
+            524.7926,
+            527.4326,
+            532.0076,
+            536.5001,
+            541.0076,
+            545.5001,
+            548.0876,
+            551.3351,
+            553.9752,
+            557.8752,
+            562.2102,
+            566.7252,
+            569.3652,
+            573.4377,
+            577.1353,
+            580.3828,
+            582.9703,
+            586.9828,
+            593.5828,
+            596.8303,
+            599.4703,
+            601.7578,
+            603.7828,
+            608.3578,
+            614.1553,
+            618.2278,
+            620.5153,
+            622.1578,
+            624.7978,
+            631.9528,
+            636.4453,
+            639.1003,
+            642.8953,
+            646.1428,
+            650.4854,
+            654.9778,
+            659.4854,
+            662.1254,
+            666.6179
           ],
-          "y": 544.0,
-          "size": 9.0,
+          "y": 539.0,
+          "size": 7.5,
           "bold": false,
           "link": null,
           "rect": [
-            209.701,
-            536.8018,
-            217.062,
-            9.0
+            356.4926,
+            533.0015,
+            314.4603,
+            7.5
           ],
-          "end": 426.763
+          "end": 670.9529
         },
         {
           "line": 19,
+          "text": "Benchmarking via Competitions in Robotic Grasping and Manipulation (2024).",
+          "x": [
+            42.0,
+            46.3725,
+            50.385,
+            54.72,
+            58.2675,
+            62.61,
+            69.21,
+            73.11,
+            75.765,
+            79.56,
+            81.405,
+            85.74,
+            90.255,
+            92.895,
+            96.5475,
+            98.3925,
+            102.2925,
+            104.9325,
+            109.695,
+            114.1875,
+            120.7875,
+            125.295,
+            129.3075,
+            131.895,
+            133.74,
+            136.3275,
+            138.1725,
+            142.665,
+            147.0,
+            150.2475,
+            152.8875,
+            154.7325,
+            159.0675,
+            161.7075,
+            166.2825,
+            170.775,
+            175.2825,
+            179.775,
+            182.3625,
+            184.2075,
+            187.755,
+            190.395,
+            195.66,
+            198.315,
+            202.215,
+            205.4625,
+            209.97,
+            211.815,
+            216.15,
+            220.665,
+            223.305,
+            227.205,
+            231.54,
+            236.055,
+            238.695,
+            245.5725,
+            249.4725,
+            253.8075,
+            255.6525,
+            260.16,
+            264.495,
+            266.34,
+            270.24,
+            272.8275,
+            274.6725,
+            279.165,
+            283.5,
+            286.14,
+            288.4275,
+            292.56,
+            296.6925,
+            300.825,
+            304.9576,
+            307.2451
+          ],
+          "y": 548.5,
+          "size": 7.5,
+          "bold": false,
+          "link": null,
+          "rect": [
+            42.0,
+            542.5015,
+            266.8875,
+            7.5
+          ],
+          "end": 308.8875
+        },
+        {
+          "line": 20,
+          "text": "[4] Um, S., et al. \"",
+          "x": [
+            28.0,
+            30.2875,
+            34.42,
+            36.7075,
+            39.3475,
+            44.62,
+            51.22,
+            52.8625,
+            55.5025,
+            59.575,
+            61.2175,
+            62.86,
+            65.5,
+            69.5125,
+            72.1,
+            74.74,
+            78.64,
+            80.485,
+            82.1275,
+            84.7675
+          ],
+          "y": 560.0,
+          "size": 7.5,
+          "bold": false,
+          "link": null,
+          "rect": [
+            28.0,
+            554.0015,
+            59.73,
+            7.5
+          ],
+          "end": 87.73
+        },
+        {
+          "line": 20,
+          "text": "Toward Reliable Bin-Picking: Collision-Aware Robotic Design and Control Strategy for Heavily Cluttered Environment",
+          "x": [
+            87.73,
+            91.735,
+            96.2275,
+            101.7475,
+            105.6475,
+            108.3025,
+            112.8175,
+            115.4575,
+            120.0325,
+            124.045,
+            125.89,
+            127.735,
+            131.635,
+            136.1425,
+            137.9875,
+            142.0,
+            144.64,
+            149.0125,
+            150.8575,
+            155.1925,
+            158.2675,
+            162.55,
+            164.395,
+            167.9425,
+            171.7375,
+            173.5825,
+            177.9175,
+            182.4325,
+            184.075,
+            186.715,
+            191.4775,
+            195.97,
+            197.815,
+            199.66,
+            201.505,
+            204.7525,
+            206.5975,
+            211.09,
+            215.425,
+            218.5,
+            223.435,
+            228.955,
+            232.855,
+            235.51,
+            239.5225,
+            242.1625,
+            246.7375,
+            251.23,
+            255.7375,
+            260.23,
+            262.8175,
+            264.6625,
+            268.21,
+            270.85,
+            276.2275,
+            280.24,
+            283.4875,
+            285.3325,
+            289.8475,
+            294.1825,
+            296.8225,
+            300.7225,
+            305.0575,
+            309.5725,
+            312.2125,
+            316.975,
+            321.4675,
+            325.8025,
+            328.39,
+            331.045,
+            335.5375,
+            337.3825,
+            340.0225,
+            344.095,
+            346.6825,
+            349.3375,
+            353.2375,
+            355.825,
+            359.8375,
+            364.3525,
+            368.05,
+            370.69,
+            373.06,
+            377.5525,
+            380.2075,
+            382.8475,
+            388.285,
+            392.2975,
+            396.1975,
+            399.85,
+            401.695,
+            403.54,
+            407.2375,
+            409.8776,
+            414.6401,
+            416.4851,
+            420.8201,
+            423.4076,
+            425.9951,
+            430.0076,
+            432.6626,
+            436.6751,
+            441.1901,
+            443.8301,
+            447.7076,
+            452.0426,
+            455.6951,
+            457.5401,
+            460.1951,
+            464.6876,
+            469.0226,
+            475.6226,
+            479.6351,
+            483.9701
+          ],
+          "y": 560.0,
+          "size": 7.5,
+          "bold": false,
+          "link": 2,
+          "rect": [
+            87.73,
+            554.0015,
+            398.8276,
+            7.5
+          ],
+          "end": 486.5576
+        },
+        {
+          "line": 20,
+          "text": "\" IEEE Robotics and Automation Practice (2026).",
+          "x": [
+            486.5576,
+            489.5201,
+            492.1601,
+            494.1851,
+            498.0626,
+            501.9401,
+            505.8176,
+            508.4576,
+            513.0326,
+            517.5251,
+            522.0326,
+            526.5251,
+            529.1126,
+            530.9576,
+            534.5051,
+            537.7526,
+            540.3926,
+            544.2926,
+            548.6276,
+            553.1426,
+            555.7827,
+            560.7177,
+            565.0527,
+            567.6402,
+            572.1327,
+            578.7327,
+            582.6327,
+            585.2202,
+            587.0652,
+            591.5577,
+            595.8927,
+            598.5327,
+            602.8152,
+            605.4702,
+            609.3702,
+            612.9177,
+            615.5052,
+            617.3502,
+            620.8977,
+            624.9102,
+            627.5502,
+            629.8377,
+            633.9702,
+            638.1027,
+            642.2352,
+            646.3677,
+            648.6552
+          ],
+          "y": 560.0,
+          "size": 7.5,
+          "bold": false,
+          "link": null,
+          "rect": [
+            486.5576,
+            554.0015,
+            163.7401,
+            7.5
+          ],
+          "end": 650.2977
+        },
+        {
+          "line": 21,
           "text": "Details",
           "x": [
             709.0,
@@ -9776,7 +10150,7 @@
           "y": 545.48,
           "size": 8.8,
           "bold": true,
-          "link": 1,
+          "link": 3,
           "rect": [
             709.0,
             538.4417,
@@ -9786,7 +10160,7 @@
           "end": 737.4504
         },
         {
-          "line": 20,
+          "line": 22,
           "text": "SEUNGHWAN UM  /  ROBOTICS",
           "x": [
             28.0,
@@ -9828,7 +10202,7 @@
           "end": 146.632
         },
         {
-          "line": 21,
+          "line": 23,
           "text": "2026.11",
           "x": [
             711.8898,
@@ -9852,7 +10226,7 @@
           "end": 740.0899
         },
         {
-          "line": 22,
+          "line": 24,
           "text": "07 / 11",
           "x": [
             771.8898,
@@ -9875,14 +10249,7 @@
           ],
           "end": 798.3218
         }
-      ]
-    },
-    {
-      "number": 8,
-      "id": "human-corrections",
-      "title": "Learning from Human Corrections",
-      "svg": "/slides-en/page-08.svg",
-      "text": "06  /  HUMAN CORRECTIONS / RESIDUAL LEARNING\nLearning from Human Corrections\nOnline residual learning from physical human corrections during insertion.\nLearning from physical corrections\nResidual model on a frozen base policy; online\nlearning and execution loop using physical\ncorrection data.\n1.\nAdded a residual head predicting Δpose to the\nbase policy output.\n2.\nUsed human-corrected robot poses as supervised\ntargets.\n3.\nImplemented asynchronous actor-learner updates\nand output limits; evaluated insertion.\nBase + residual box-insertion evaluation at the original target and a target shifted 3\ncm backward.\nResidual Policy · Online DAgger · PyTorch\nOriginal target and 3 cm backward shift | Outside base-training positions; residual zero-shot not established\nDetails\nSEUNGHWAN UM  /  ROBOTICS\n2026.11\n08 / 11\n",
+      ],
       "links": [
         {
           "rect": [
@@ -9891,8 +10258,28 @@
             491.0,
             318.0
           ],
-          "href": "https://r-ush.github.io/portfolio/projects/human-corrections/",
+          "href": "https://r-ush.github.io/portfolio/projects/clutter-bin-picking/",
           "label": ""
+        },
+        {
+          "rect": [
+            87.69603729248047,
+            531.5,
+            268.68897247314453,
+            9.0
+          ],
+          "href": "https://sites.google.com/view/iros2024-workshop-bench-in-rgm/contributions",
+          "label": "\"Overcoming Heavy Clutter: Utilizing the Hybrid Grasping Network and Gripper"
+        },
+        {
+          "rect": [
+            87.69603729248047,
+            552.5,
+            398.78177642822266,
+            9.0
+          ],
+          "href": "https://doi.org/10.1109/RAP.2026.3655333",
+          "label": "\"Toward Reliable Bin-Picking: Collision-Aware Robotic Design and Control Strategy for Heavily Cluttered Environment"
         },
         {
           "rect": [
@@ -9901,7 +10288,7 @@
             48.0,
             17.9599609375
           ],
-          "href": "https://r-ush.github.io/portfolio/projects/human-corrections/",
+          "href": "https://r-ush.github.io/portfolio/projects/clutter-bin-picking/",
           "label": "Details"
         },
         {
@@ -9911,8 +10298,78 @@
             48.0,
             48.0
           ],
-          "href": "https://r-ush.github.io/portfolio/projects/human-corrections/",
+          "href": "https://r-ush.github.io/portfolio/projects/clutter-bin-picking/",
           "label": ""
+        },
+        {
+          "rect": [
+            144.68798828125,
+            480.90234375,
+            88.05604553222656,
+            12.0
+          ],
+          "href": "https://doi.org/10.1109/RAP.2026.3655333",
+          "label": "IEEE RA-P 2026"
+        },
+        {
+          "rect": [
+            781.1146240234375,
+            301.1420593261719,
+            23.4971923828125,
+            10.70001220703125
+          ],
+          "href": "https://sites.google.com/view/iros2024-workshop-bench-in-rgm/contributions",
+          "label": "IROS"
+        },
+        {
+          "rect": [
+            562.0,
+            317.6420593261719,
+            87.0980224609375,
+            10.70001220703125
+          ],
+          "href": "https://sites.google.com/view/iros2024-workshop-bench-in-rgm/contributions",
+          "label": "extended abstract"
+        },
+        {
+          "rect": [
+            91.97200012207031,
+            462.40234375,
+            168.20399475097656,
+            12.0
+          ],
+          "href": "https://r-ush.github.io/portfolio/assets/evidence/rgmc-award-1.png",
+          "label": "RGMC Picking in Clutter, 2nd"
+        },
+        {
+          "rect": [
+            28.0,
+            462.40234375,
+            99.72000122070312,
+            12.0
+          ],
+          "href": "https://r-ush.github.io/portfolio/assets/evidence/rgmc-award-1.png",
+          "label": "ICRA 2024 RGMC"
+        },
+        {
+          "rect": [
+            313.3840026855469,
+            462.40234375,
+            151.3079833984375,
+            12.0
+          ],
+          "href": "https://sites.google.com/view/iros2024-workshop-bench-in-rgm",
+          "label": "IROS 2024 Workshop Best"
+        },
+        {
+          "rect": [
+            28.0,
+            480.90234375,
+            105.09600830078125,
+            12.0
+          ],
+          "href": "https://sites.google.com/view/iros2024-workshop-bench-in-rgm",
+          "label": "Extended Abstract"
         }
       ],
       "media": [
@@ -9923,35 +10380,152 @@
             491,
             318
           ],
-          "video": "https://r-ush.github.io/contact_residual_learning/static/videos/human_guidance_raw.mp4",
-          "poster": "/assets/human-corrections.jpg",
-          "caption": "Physical human corrections · Cyan arrow: correction vector"
+          "video": "https://r-ush.github.io/images/clip/RAP.mp4",
+          "poster": "/assets/clutter-bin-picking.jpg",
+          "caption": "Bin-picking with surrounding-object interference"
         }
       ],
       "extras": [
         {
-          "video": "https://r-ush.github.io/contact_residual_learning/static/videos/human_guidance_raw.mp4",
-          "poster": "/assets/human-corrections.jpg",
-          "caption": "Physical human corrections · Cyan arrow: correction vector"
-        },
-        {
-          "video": "https://r-ush.github.io/contact_residual_learning/static/videos/evaluation_back_raw.mp4",
-          "poster": "",
-          "caption": "Base + residual at a target shifted 3 cm backward · Outside base-training positions; residual zero-shot generalization not established"
+          "video": "https://r-ush.github.io/images/clip/RAP.mp4",
+          "poster": "/assets/clutter-bin-picking.jpg",
+          "caption": "Bin-picking with surrounding-object interference"
         }
       ],
       "evidence": [
         {
-          "id": "human-corrections-source",
-          "label": "Project",
-          "kind": "Project materials",
-          "title": "Learning from Human Corrections",
-          "url": "https://r-ush.github.io/contact_residual_learning/",
-          "description": "Residual learning from physical corrections and insertion experiments",
-          "link_label": "Open project page"
+          "id": "rap-paper",
+          "label": "RA-P paper",
+          "kind": "Paper: first page",
+          "title": "Toward Reliable Bin-Picking: Collision-Aware Robotic Design and Control Strategy for Heavily Cluttered Environment",
+          "image": "/assets/evidence/rap-paper-1.png",
+          "url": "https://doi.org/10.1109/RAP.2026.3655333",
+          "description": "IEEE Robotics and Automation Practice · Co-first author",
+          "link_label": "Read paper",
+          "triggers": [
+            "IEEE RA-P 2026"
+          ]
+        },
+        {
+          "id": "iros-paper",
+          "label": "IROS abstract",
+          "kind": "Paper: first page",
+          "title": "Overcoming Heavy Clutter: Utilizing the Hybrid Grasping Network and Gripper",
+          "image": "/assets/evidence/iros-paper-1.png",
+          "url": "https://sites.google.com/view/iros2024-workshop-bench-in-rgm/contributions",
+          "description": "IROS 2024 Workshop · First-author extended abstract",
+          "link_label": "Read paper",
+          "triggers": [
+            "IROS extended abstract"
+          ]
+        },
+        {
+          "id": "rgmc-award",
+          "label": "RGMC 2nd",
+          "kind": "Award certificate",
+          "title": "ICRA 2024 RGMC Picking in Clutter, 2nd",
+          "image": "/assets/evidence/rgmc-award-1.png",
+          "url": "https://r-ush.github.io/portfolio/assets/evidence/rgmc-award-1.png",
+          "description": "ICRA 2024 RGMC Picking in Clutter · AIDIN-ROBOTORY team, 2nd",
+          "link_label": "View certificate",
+          "triggers": [
+            "RGMC Picking in Clutter, 2nd",
+            "ICRA 2024 RGMC"
+          ]
+        },
+        {
+          "id": "iros-award-program",
+          "label": "IROS award",
+          "kind": "Award: official program",
+          "title": "IROS 2024 Workshop · Best Extended Abstract",
+          "image": "/assets/evidence/iros-award-program.png",
+          "url": "https://sites.google.com/view/iros2024-workshop-bench-in-rgm",
+          "description": "Award recorded in the official workshop program.",
+          "link_label": "Open official program",
+          "triggers": [
+            "IROS 2024 Workshop Best Extended Abstract"
+          ]
         }
       ],
-      "evidence_hotspots": [],
+      "evidence_hotspots": [
+        {
+          "id": "rap-paper",
+          "label": "RA-P paper",
+          "rect": [
+            144.68798828125,
+            480.90234375,
+            88.05604553222656,
+            12.0
+          ]
+        },
+        {
+          "id": "iros-paper",
+          "label": "IROS abstract",
+          "rect": [
+            781.1146240234375,
+            301.1420593261719,
+            23.4971923828125,
+            10.70001220703125
+          ]
+        },
+        {
+          "id": "iros-paper",
+          "label": "IROS abstract",
+          "rect": [
+            562.0,
+            317.6420593261719,
+            87.0980224609375,
+            10.70001220703125
+          ]
+        },
+        {
+          "id": "rgmc-award",
+          "label": "RGMC 2nd",
+          "rect": [
+            91.97200012207031,
+            462.40234375,
+            168.20399475097656,
+            12.0
+          ]
+        },
+        {
+          "id": "rgmc-award",
+          "label": "RGMC 2nd",
+          "rect": [
+            28.0,
+            462.40234375,
+            99.72000122070312,
+            12.0
+          ]
+        },
+        {
+          "id": "iros-award-program",
+          "label": "IROS award",
+          "rect": [
+            313.3840026855469,
+            462.40234375,
+            151.3079833984375,
+            12.0
+          ]
+        },
+        {
+          "id": "iros-award-program",
+          "label": "IROS award",
+          "rect": [
+            28.0,
+            480.90234375,
+            105.09600830078125,
+            12.0
+          ]
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "id": "human-corrections",
+      "title": "Learning from Human Corrections",
+      "svg": "/slides-en/page-08.svg",
+      "text": "06  /  HUMAN CORRECTIONS / RESIDUAL LEARNING\nLearning from Human Corrections\nOnline residual learning from physical human corrections during insertion.\nLearning from physical corrections\nResidual model on a frozen base policy; online\nlearning and execution loop using physical\ncorrection data.\n1.\nAdded a residual head predicting Δpose to the\nbase policy output.\n2.\nUsed human-corrected robot poses as supervised\ntargets.\n3.\nImplemented asynchronous actor-learner updates\nand output limits; evaluated insertion.\nBase + residual box-insertion evaluation at the original target and a target shifted 3\ncm backward.\nResidual Policy · Online DAgger · PyTorch\nOriginal target and 3 cm backward shift | Outside base-training positions; residual zero-shot not established\nDetails\nSEUNGHWAN UM  /  ROBOTICS\n2026.11\n08 / 11\n",
       "text_runs": [
         {
           "line": 0,
@@ -11151,14 +11725,7 @@
           ],
           "end": 798.3218
         }
-      ]
-    },
-    {
-      "number": 9,
-      "id": "teleoperation-control",
-      "title": "Bilateral Teleoperation",
-      "svg": "/slides-en/page-09.svg",
-      "text": "07  /  COMPLIANT CONTROL / TELEOPERATION\nBilateral Teleoperation\nBilateral arm-and-hand teleoperation with leader-arm force feedback and compliant robot control.\nRemote contact feedback to the leader\nLeader gravity compensation, current/torque control,\nand force reflection; M0609 disturbance, gravity,\ntool, and friction compensation.\n1.\nMapped remote wrench to leader joint torque\nusing the Jacobian transpose.\n2.\nImplemented a momentum-based disturbance\nobserver and compensation.\n3.\nIntegrated arm-and-hand teleoperation for\ncontact-task demonstrations.\nDual-arm/hand teleoperation with force feedback · KRoC 2026 RED Show, 1st\n(related team project)\nTorque Control · Force Reflection · Disturbance Observer\nIntegrated dual-arm/hand teleoperation | KRoC RED Show: related team project\nDetails\nSEUNGHWAN UM  /  ROBOTICS\n2026.11\n09 / 11\n",
+      ],
       "links": [
         {
           "rect": [
@@ -11167,7 +11734,7 @@
             491.0,
             318.0
           ],
-          "href": "https://r-ush.github.io/portfolio/projects/teleoperation-control/",
+          "href": "https://r-ush.github.io/portfolio/projects/human-corrections/",
           "label": ""
         },
         {
@@ -11177,7 +11744,7 @@
             48.0,
             17.9599609375
           ],
-          "href": "https://r-ush.github.io/portfolio/projects/teleoperation-control/",
+          "href": "https://r-ush.github.io/portfolio/projects/human-corrections/",
           "label": "Details"
         },
         {
@@ -11187,18 +11754,8 @@
             48.0,
             48.0
           ],
-          "href": "https://r-ush.github.io/portfolio/projects/teleoperation-control/",
+          "href": "https://r-ush.github.io/portfolio/projects/human-corrections/",
           "label": ""
-        },
-        {
-          "rect": [
-            325.7560119628906,
-            462.40234375,
-            150.01193237304688,
-            12.0
-          ],
-          "href": "https://r-ush.github.io/bilateral_leader_arm/",
-          "label": "KRoC 2026 RED Show, 1st"
         }
       ],
       "media": [
@@ -11209,54 +11766,42 @@
             491,
             318
           ],
-          "video": "https://r-ush.github.io/bilateral_leader_arm/static/videos/dual-arm-hand-teleoperation.mp4",
-          "poster": "/assets/teleoperation-control.jpg",
-          "caption": "Leader-based dual-arm and robotic-hand teleoperation"
+          "video": "https://r-ush.github.io/contact_residual_learning/static/videos/human_guidance_raw.mp4",
+          "poster": "/assets/human-corrections.jpg",
+          "caption": "Physical human corrections · Cyan arrow: correction vector"
         }
       ],
       "extras": [
         {
-          "video": "https://r-ush.github.io/bilateral_leader_arm/static/videos/dual-arm-hand-teleoperation.mp4",
-          "poster": "/assets/teleoperation-control.jpg",
-          "caption": "Leader-based dual-arm and robotic-hand teleoperation"
+          "video": "https://r-ush.github.io/contact_residual_learning/static/videos/human_guidance_raw.mp4",
+          "poster": "/assets/human-corrections.jpg",
+          "caption": "Physical human corrections · Cyan arrow: correction vector"
+        },
+        {
+          "video": "https://r-ush.github.io/contact_residual_learning/static/videos/evaluation_back_raw.mp4",
+          "poster": "",
+          "caption": "Base + residual at a target shifted 3 cm backward · Outside base-training positions; residual zero-shot generalization not established"
         }
       ],
       "evidence": [
         {
-          "id": "kroc-award-photo",
-          "label": "KRoC award",
-          "kind": "Award ceremony photo",
-          "title": "RED Show: top prize, general category",
-          "image": "/assets/evidence/kroc-award-photo.jpg",
-          "url": "https://r-ush.github.io/bilateral_leader_arm/",
-          "description": "KRoC 2026 RED Show · Ceremony photo for the related team project",
-          "link_label": "Open project page",
-          "triggers": [
-            "KRoC 2026 RED Show, 1st"
-          ]
-        },
-        {
-          "id": "teleoperation-control-source",
+          "id": "human-corrections-source",
           "label": "Project",
           "kind": "Project materials",
-          "title": "Bilateral Teleoperation",
-          "url": "https://r-ush.github.io/bilateral_leader_arm/",
-          "description": "Leader force feedback and integrated dual-arm/hand teleoperation",
+          "title": "Learning from Human Corrections",
+          "url": "https://r-ush.github.io/contact_residual_learning/",
+          "description": "Residual learning from physical corrections and insertion experiments",
           "link_label": "Open project page"
         }
       ],
-      "evidence_hotspots": [
-        {
-          "id": "kroc-award-photo",
-          "label": "KRoC award",
-          "rect": [
-            325.7560119628906,
-            462.40234375,
-            150.01193237304688,
-            12.0
-          ]
-        }
-      ],
+      "evidence_hotspots": []
+    },
+    {
+      "number": 9,
+      "id": "teleoperation-control",
+      "title": "Bilateral Teleoperation",
+      "svg": "/slides-en/page-09.svg",
+      "text": "07  /  COMPLIANT CONTROL / TELEOPERATION\nBilateral Teleoperation\nBilateral arm-and-hand teleoperation with leader-arm force feedback and compliant robot control.\nRemote contact feedback to the leader\nLeader gravity compensation, current/torque control,\nand force reflection; M0609 disturbance, gravity,\ntool, and friction compensation.\n1.\nMapped remote wrench to leader joint torque\nusing the Jacobian transpose.\n2.\nImplemented a momentum-based disturbance\nobserver and compensation.\n3.\nIntegrated arm-and-hand teleoperation for\ncontact-task demonstrations.\nDual-arm/hand teleoperation with force feedback · KRoC 2026 RED Show, 1st\n(related team project)\nTorque Control · Force Reflection · Disturbance Observer\nIntegrated dual-arm/hand teleoperation | KRoC RED Show: related team project\nDetails\nSEUNGHWAN UM  /  ROBOTICS\n2026.11\n09 / 11\n",
       "text_runs": [
         {
           "line": 0,
@@ -12498,263 +13043,70 @@
           ],
           "end": 798.3218
         }
-      ]
-    },
-    {
-      "number": 10,
-      "id": "results",
-      "title": "Publications & Awards",
-      "svg": "/slides-en/page-10.svg",
-      "text": "PUBLICATIONS & AWARDS\nSelected Publications & Awards\nFirst- and co-first-author papers and selected awards\nPUBLICATIONS\nIEEE/ASME Transactions on Mechatronics · 2026\nPALM-Gripper\nFirst author\nPaper\nIEEE Robotics and Automation Letters · 2024\nReC-Gripper\nFirst author · ICRA 2024 presentation\nPaper\nIROS 2024 Workshop\nOvercoming Heavy Clutter\nFirst author · Best Extended Abstract\nPaper\nIEEE Robotics and Automation Practice · 2026\nToward Reliable Bin-Picking\nCo-first author · Invited paper\nPaper\nAWARDS\n2025\nSamsung Humantech Paper Award, Bronze\nMechanical Engineering category\n2024\nICRA RGMC Picking in Clutter, 2nd\nTeam award\n2024\nIROS Workshop Best Extended Abstract\nOvercoming Heavy Clutter · First author\n2026\nKRoC RED Show, 1st\nTeam award\n2026\nKSCDC Bronze · Handling Hand\nTeam award\nComplete publication and patent list: research website\nSEUNGHWAN UM  /  ROBOTICS\n2026.11\n10 / 11\n",
+      ],
       "links": [
         {
           "rect": [
-            379.0,
-            213.99996948242188,
-            26.45709228515625,
-            19.489990234375
+            28.0,
+            125.99996948242188,
+            491.0,
+            318.0
           ],
-          "href": "https://doi.org/10.1109/TMECH.2025.3649851",
-          "label": "Paper"
+          "href": "https://r-ush.github.io/portfolio/projects/teleoperation-control/",
+          "label": ""
         },
         {
           "rect": [
-            379.0,
-            307.9999694824219,
-            26.45709228515625,
-            19.489990234375
+            709.0,
+            535.0,
+            48.0,
+            17.9599609375
           ],
-          "href": "https://doi.org/10.1109/LRA.2023.3330051",
-          "label": "Paper"
+          "href": "https://r-ush.github.io/portfolio/projects/teleoperation-control/",
+          "label": "Details"
         },
         {
           "rect": [
-            379.0,
-            401.9999694824219,
-            26.45709228515625,
-            19.490020751953125
+            766.0,
+            514.0,
+            48.0,
+            48.0
           ],
-          "href": "https://sites.google.com/view/iros2024-workshop-bench-in-rgm/contributions",
-          "label": "Paper"
+          "href": "https://r-ush.github.io/portfolio/projects/teleoperation-control/",
+          "label": ""
         },
         {
           "rect": [
-            379.0,
-            496.0,
-            26.45709228515625,
-            19.489990234375
-          ],
-          "href": "https://doi.org/10.1109/RAP.2026.3655333",
-          "label": "Paper"
-        },
-        {
-          "rect": [
-            441.0,
-            154.99996948242188,
-            373.0,
-            68.0
-          ],
-          "href": "https://r-ush.github.io/portfolio/assets/evidence/humantech-award-1.png",
-          "label": "2025 Samsung Humantech Paper Award, Bronze Mechanical Engineering category"
-        },
-        {
-          "rect": [
-            441.0,
-            228.99996948242188,
-            373.0,
-            68.0
-          ],
-          "href": "https://r-ush.github.io/portfolio/assets/evidence/rgmc-award-1.png",
-          "label": "2024 ICRA RGMC Picking in Clutter, 2nd Team award"
-        },
-        {
-          "rect": [
-            441.0,
-            302.9999694824219,
-            373.0,
-            68.0
-          ],
-          "href": "https://sites.google.com/view/iros2024-workshop-bench-in-rgm",
-          "label": "2024 IROS Workshop Best Extended Abstract Overcoming Heavy Clutter · First author"
-        },
-        {
-          "rect": [
-            441.0,
-            376.9999694824219,
-            373.0,
-            68.0
+            325.7560119628906,
+            462.40234375,
+            150.01193237304688,
+            12.0
           ],
           "href": "https://r-ush.github.io/bilateral_leader_arm/",
-          "label": "2026 KRoC RED Show, 1st Team award"
-        },
-        {
-          "rect": [
-            441.0,
-            450.9999694824219,
-            373.0,
-            68.00003051757812
-          ],
-          "href": "https://rachy103.github.io/handling-hand/",
-          "label": "2026 KSCDC Bronze · Handling Hand Team award"
-        },
-        {
-          "rect": [
-            28.0,
-            541.0,
-            248.53079223632812,
-            19.14996337890625
-          ],
-          "href": "https://r-ush.github.io/",
-          "label": "Complete publication and patent list: research website"
-        },
-        {
-          "rect": [
-            40.0,
-            189.12301635742188,
-            106.00201416015625,
-            15.600006103515625
-          ],
-          "href": "https://doi.org/10.1109/TMECH.2025.3649851",
-          "label": "PALM-Gripper"
-        },
-        {
-          "rect": [
-            40.0,
-            283.1230163574219,
-            91.15081787109375,
-            15.600006103515625
-          ],
-          "href": "https://doi.org/10.1109/LRA.2023.3330051",
-          "label": "ReC-Gripper"
-        },
-        {
-          "rect": [
-            40.0,
-            377.1230163574219,
-            197.62081909179688,
-            15.600006103515625
-          ],
-          "href": "https://sites.google.com/view/iros2024-workshop-bench-in-rgm/contributions",
-          "label": "Overcoming Heavy Clutter"
-        },
-        {
-          "rect": [
-            499.0,
-            350.7817077636719,
-            107.05804443359375,
-            8.899993896484375
-          ],
-          "href": "https://sites.google.com/view/iros2024-workshop-bench-in-rgm/contributions",
-          "label": "Overcoming Heavy Clutter"
-        },
-        {
-          "rect": [
-            40.0,
-            471.1230163574219,
-            208.75921630859375,
-            15.600006103515625
-          ],
-          "href": "https://doi.org/10.1109/RAP.2026.3655333",
-          "label": "Toward Reliable Bin-Picking"
+          "label": "KRoC 2026 RED Show, 1st"
         }
       ],
-      "media": [],
-      "extras": [],
+      "media": [
+        {
+          "rect": [
+            28,
+            126,
+            491,
+            318
+          ],
+          "video": "https://r-ush.github.io/bilateral_leader_arm/static/videos/dual-arm-hand-teleoperation.mp4",
+          "poster": "/assets/teleoperation-control.jpg",
+          "caption": "Leader-based dual-arm and robotic-hand teleoperation"
+        }
+      ],
+      "extras": [
+        {
+          "video": "https://r-ush.github.io/bilateral_leader_arm/static/videos/dual-arm-hand-teleoperation.mp4",
+          "poster": "/assets/teleoperation-control.jpg",
+          "caption": "Leader-based dual-arm and robotic-hand teleoperation"
+        }
+      ],
       "evidence": [
-        {
-          "id": "palm-paper",
-          "label": "T-MECH paper",
-          "kind": "Paper: first page",
-          "title": "PALM-Gripper: Integrated Gripper With Parallel Adaptable Mechanism for Shelf Picking in Logistics",
-          "image": "/assets/evidence/palm-paper-1.png",
-          "url": "https://doi.org/10.1109/TMECH.2025.3649851",
-          "description": "IEEE/ASME Transactions on Mechatronics · First author",
-          "link_label": "Read paper",
-          "triggers": [
-            "IEEE/ASME T-MECH",
-            "IEEE/ASME Transactions on Mechatronics"
-          ]
-        },
-        {
-          "id": "rec-paper",
-          "label": "RA-L paper",
-          "kind": "Paper: first page",
-          "title": "ReC-Gripper: A Reconfigurable Combined Suction and Fingered Gripper for Various Logistics Picking and Stowing Tasks",
-          "image": "/assets/evidence/rec-paper-1.png",
-          "url": "https://doi.org/10.1109/LRA.2023.3330051",
-          "description": "IEEE Robotics and Automation Letters · First author",
-          "link_label": "Read paper",
-          "triggers": [
-            "IEEE RA-L",
-            "IEEE Robotics and Automation Letters"
-          ]
-        },
-        {
-          "id": "iros-paper",
-          "label": "IROS abstract",
-          "kind": "Paper: first page",
-          "title": "Overcoming Heavy Clutter: Utilizing the Hybrid Grasping Network and Gripper",
-          "image": "/assets/evidence/iros-paper-1.png",
-          "url": "https://sites.google.com/view/iros2024-workshop-bench-in-rgm/contributions",
-          "description": "IROS 2024 Workshop · First-author extended abstract",
-          "link_label": "Read paper",
-          "triggers": [
-            "IROS extended abstract"
-          ]
-        },
-        {
-          "id": "rap-paper",
-          "label": "RA-P paper",
-          "kind": "Paper: first page",
-          "title": "Toward Reliable Bin-Picking: Collision-Aware Robotic Design and Control Strategy for Heavily Cluttered Environment",
-          "image": "/assets/evidence/rap-paper-1.png",
-          "url": "https://doi.org/10.1109/RAP.2026.3655333",
-          "description": "IEEE Robotics and Automation Practice · Co-first author",
-          "link_label": "Read paper",
-          "triggers": [
-            "IEEE RA-P 2026"
-          ]
-        },
-        {
-          "id": "humantech-award",
-          "label": "Humantech Bronze",
-          "kind": "Award certificate",
-          "title": "Samsung Humantech Paper Award, Bronze · Mechanical Engineering",
-          "image": "/assets/evidence/humantech-award-1.png",
-          "url": "https://r-ush.github.io/portfolio/assets/evidence/humantech-award-1.png",
-          "description": "Feb. 12, 2025 · Mechanical Engineering Bronze · PALM-Gripper research",
-          "link_label": "View certificate",
-          "triggers": [
-            "Samsung Humantech Paper Award, Bronze"
-          ]
-        },
-        {
-          "id": "rgmc-award",
-          "label": "RGMC 2nd",
-          "kind": "Award certificate",
-          "title": "ICRA 2024 RGMC Picking in Clutter, 2nd",
-          "image": "/assets/evidence/rgmc-award-1.png",
-          "url": "https://r-ush.github.io/portfolio/assets/evidence/rgmc-award-1.png",
-          "description": "ICRA 2024 RGMC Picking in Clutter · AIDIN-ROBOTORY team, 2nd",
-          "link_label": "View certificate",
-          "triggers": [
-            "RGMC Picking in Clutter, 2nd",
-            "ICRA 2024 RGMC"
-          ]
-        },
-        {
-          "id": "iros-award-program",
-          "label": "IROS award",
-          "kind": "Award: official program",
-          "title": "IROS 2024 Workshop · Best Extended Abstract",
-          "image": "/assets/evidence/iros-award-program.png",
-          "url": "https://sites.google.com/view/iros2024-workshop-bench-in-rgm",
-          "description": "Award recorded in the official workshop program.",
-          "link_label": "Open official program",
-          "triggers": [
-            "IROS 2024 Workshop Best Extended Abstract"
-          ]
-        },
         {
           "id": "kroc-award-photo",
           "label": "KRoC award",
@@ -12769,117 +13121,34 @@
           ]
         },
         {
-          "id": "kscdc-source",
-          "label": "KSCDC",
+          "id": "teleoperation-control-source",
+          "label": "Project",
           "kind": "Project materials",
-          "title": "Handling Hand · KSCDC 2026 Bronze",
-          "url": "https://rachy103.github.io/handling-hand/",
-          "description": "Handling Hand project and demonstration videos",
+          "title": "Bilateral Teleoperation",
+          "url": "https://r-ush.github.io/bilateral_leader_arm/",
+          "description": "Leader force feedback and integrated dual-arm/hand teleoperation",
           "link_label": "Open project page"
         }
       ],
       "evidence_hotspots": [
         {
-          "id": "palm-paper",
-          "label": "T-MECH paper",
-          "rect": [
-            40.0,
-            189.12301635742188,
-            106.00201416015625,
-            15.600006103515625
-          ]
-        },
-        {
-          "id": "rec-paper",
-          "label": "RA-L paper",
-          "rect": [
-            40.0,
-            283.1230163574219,
-            91.15081787109375,
-            15.600006103515625
-          ]
-        },
-        {
-          "id": "iros-paper",
-          "label": "IROS abstract",
-          "rect": [
-            40.0,
-            377.1230163574219,
-            197.62081909179688,
-            15.600006103515625
-          ]
-        },
-        {
-          "id": "iros-paper",
-          "label": "IROS abstract",
-          "rect": [
-            499.0,
-            350.7817077636719,
-            107.05804443359375,
-            8.899993896484375
-          ]
-        },
-        {
-          "id": "rap-paper",
-          "label": "RA-P paper",
-          "rect": [
-            40.0,
-            471.1230163574219,
-            208.75921630859375,
-            15.600006103515625
-          ]
-        },
-        {
-          "id": "humantech-award",
-          "label": "Humantech Bronze",
-          "rect": [
-            499.0,
-            166.44235229492188,
-            250.92962646484375,
-            12.199996948242188
-          ]
-        },
-        {
-          "id": "rgmc-award",
-          "label": "RGMC 2nd",
-          "rect": [
-            499.0,
-            240.44235229492188,
-            203.447265625,
-            12.199996948242188
-          ]
-        },
-        {
-          "id": "iros-award-program",
-          "label": "IROS award",
-          "rect": [
-            499.0,
-            314.4423522949219,
-            232.37347412109375,
-            12.20001220703125
-          ]
-        },
-        {
           "id": "kroc-award-photo",
           "label": "KRoC award",
           "rect": [
-            499.0,
-            388.4423522949219,
-            119.913818359375,
-            12.20001220703125
-          ]
-        },
-        {
-          "id": "kscdc-source",
-          "label": "KSCDC",
-          "rect": [
-            499.0,
-            462.4423522949219,
-            183.890625,
-            12.20001220703125
+            325.7560119628906,
+            462.40234375,
+            150.01193237304688,
+            12.0
           ]
         }
-      ],
+      ]
+    },
+    {
+      "number": 10,
+      "id": "results",
+      "title": "Publications & Awards",
+      "svg": "/slides-en/page-10.svg",
+      "text": "PUBLICATIONS & AWARDS\nSelected Publications & Awards\nFirst- and co-first-author papers and selected awards\nPUBLICATIONS\nIEEE/ASME Transactions on Mechatronics · 2026\nPALM-Gripper\nFirst author\nPaper\nIEEE Robotics and Automation Letters · 2024\nReC-Gripper\nFirst author · ICRA 2024 presentation\nPaper\nIROS 2024 Workshop\nOvercoming Heavy Clutter\nFirst author · Best Extended Abstract\nPaper\nIEEE Robotics and Automation Practice · 2026\nToward Reliable Bin-Picking\nCo-first author · Invited paper\nPaper\nAWARDS\n2025\nSamsung Humantech Paper Award, Bronze\nMechanical Engineering category\n2024\nICRA RGMC Picking in Clutter, 2nd\nTeam award\n2024\nIROS Workshop Best Extended Abstract\nOvercoming Heavy Clutter · First author\n2026\nKRoC RED Show, 1st\nTeam award\n2026\nKSCDC Bronze · Handling Hand\nTeam award\nAll papers and patents\n[1] Um, S., et al. \"PALM-Gripper: Integrated Gripper With Parallel Adaptable Mechanism for Shelf Picking in Logistics\" IEEE/ASME Transactions on Mechatronics (2026).\n[2] Um, S., et al. \"ReC-Gripper: A Reconfigurable Combined Suction and Fingered Gripper for Various Logistics Picking and Stowing Tasks\" IEEE Robotics and Automation Letters (2024).\n[3] Um, S., et al. \"Overcoming Heavy Clutter: Utilizing the Hybrid Grasping Network and Gripper\" IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), Workshop on Benchmarking via Competitions in\nRobotic Grasping and Manipulation (2024).\n[4] Um, S., et al. \"Toward Reliable Bin-Picking: Collision-Aware Robotic Design and Control Strategy for Heavily Cluttered Environment\" IEEE Robotics and Automation Practice (2026).\nSEUNGHWAN UM  /  ROBOTICS\n2026.11\n10 / 11\n",
       "text_runs": [
         {
           "line": 0,
@@ -13147,7 +13416,7 @@
           "y": 201.6,
           "size": 15.6,
           "bold": true,
-          "link": 10,
+          "link": 14,
           "rect": [
             40.0,
             189.123,
@@ -13173,13 +13442,13 @@
             81.2347,
             87.045
           ],
-          "y": 225.7,
+          "y": 219.7,
           "size": 9.7,
           "bold": false,
           "link": null,
           "rect": [
             40.0,
-            217.9419,
+            211.9419,
             50.4788,
             9.7
           ],
@@ -13195,13 +13464,13 @@
             396.3048,
             401.6398
           ],
-          "y": 225.245,
+          "y": 219.245,
           "size": 9.7,
           "bold": true,
           "link": 0,
           "rect": [
             379.0,
-            217.4869,
+            211.4869,
             26.4616,
             9.7
           ],
@@ -13255,13 +13524,13 @@
             216.962,
             222.0312
           ],
-          "y": 266.2,
+          "y": 260.2,
           "size": 9.2,
           "bold": false,
           "link": null,
           "rect": [
             40.0,
-            258.8418,
+            252.8418,
             187.1004,
             9.2
           ],
@@ -13283,13 +13552,13 @@
             116.4244,
             125.0044
           ],
-          "y": 295.6,
+          "y": 289.6,
           "size": 15.6,
           "bold": true,
-          "link": 11,
+          "link": 15,
           "rect": [
             40.0,
-            283.123,
+            277.123,
             91.1508,
             15.6
           ],
@@ -13337,13 +13606,13 @@
             192.29,
             198.1003
           ],
-          "y": 319.7,
+          "y": 307.7,
           "size": 9.7,
           "bold": false,
           "link": null,
           "rect": [
             40.0,
-            311.9419,
+            299.9419,
             163.7069,
             9.7
           ],
@@ -13359,13 +13628,13 @@
             396.3048,
             401.6398
           ],
-          "y": 319.245,
+          "y": 307.245,
           "size": 9.7,
           "bold": true,
           "link": 1,
           "rect": [
             379.0,
-            311.4868,
+            299.4868,
             26.4616,
             9.7
           ],
@@ -13394,13 +13663,13 @@
             118.4668,
             123.9776
           ],
-          "y": 360.2,
+          "y": 348.2,
           "size": 9.2,
           "bold": false,
           "link": null,
           "rect": [
             40.0,
-            352.8418,
+            340.8418,
             89.5068,
             9.2
           ],
@@ -13435,13 +13704,13 @@
             222.8944,
             231.4744
           ],
-          "y": 389.6,
+          "y": 377.6,
           "size": 15.6,
           "bold": true,
-          "link": 12,
+          "link": 16,
           "rect": [
             40.0,
-            377.123,
+            365.123,
             197.6208,
             15.6
           ],
@@ -13489,13 +13758,13 @@
             193.4249,
             198.013
           ],
-          "y": 413.7,
+          "y": 395.7,
           "size": 9.7,
           "bold": false,
           "link": null,
           "rect": [
             40.0,
-            405.9419,
+            387.9419,
             161.3595,
             9.7
           ],
@@ -13511,13 +13780,13 @@
             396.3048,
             401.6398
           ],
-          "y": 413.245,
+          "y": 395.245,
           "size": 9.7,
           "bold": true,
           "link": 2,
           "rect": [
             379.0,
-            405.4869,
+            387.4869,
             26.4616,
             9.7
           ],
@@ -13572,13 +13841,13 @@
             221.47,
             226.5392
           ],
-          "y": 454.2,
+          "y": 436.2,
           "size": 9.2,
           "bold": false,
           "link": null,
           "rect": [
             40.0,
-            446.8418,
+            428.8418,
             191.6084,
             9.2
           ],
@@ -13616,13 +13885,13 @@
             229.5088,
             238.9936
           ],
-          "y": 483.6,
+          "y": 465.6,
           "size": 15.6,
           "bold": true,
-          "link": 14,
+          "link": 18,
           "rect": [
             40.0,
-            471.123,
+            453.123,
             208.7592,
             15.6
           ],
@@ -13664,13 +13933,13 @@
             163.4325,
             168.622
           ],
-          "y": 507.7,
+          "y": 483.7,
           "size": 9.7,
           "bold": false,
           "link": null,
           "rect": [
             40.0,
-            499.9419,
+            475.9419,
             132.0558,
             9.7
           ],
@@ -13686,13 +13955,13 @@
             396.3048,
             401.6398
           ],
-          "y": 507.245,
+          "y": 483.245,
           "size": 9.7,
           "bold": true,
           "link": 3,
           "rect": [
             379.0,
-            499.4869,
+            475.4868,
             26.4616,
             9.7
           ],
@@ -13853,13 +14122,13 @@
             463.788,
             469.182
           ],
-          "y": 247.905,
+          "y": 241.905,
           "size": 9.3,
           "bold": true,
           "link": 5,
           "rect": [
             453.0,
-            240.4668,
+            234.4668,
             21.576,
             9.3
           ],
@@ -13903,13 +14172,13 @@
             687.3925,
             694.8101
           ],
-          "y": 250.2,
+          "y": 244.2,
           "size": 12.2,
           "bold": true,
           "link": 5,
           "rect": [
             499.0,
-            240.4424,
+            234.4424,
             203.4473,
             12.2
           ],
@@ -13930,13 +14199,13 @@
             539.9133,
             543.0639
           ],
-          "y": 283.9,
+          "y": 277.9,
           "size": 8.9,
           "bold": false,
           "link": 5,
           "rect": [
             499.0,
-            276.7817,
+            270.7817,
             49.4217,
             8.9
           ],
@@ -13951,13 +14220,13 @@
             463.788,
             469.182
           ],
-          "y": 321.905,
+          "y": 309.905,
           "size": 9.3,
           "bold": true,
           "link": 6,
           "rect": [
             453.0,
-            314.4668,
+            302.4668,
             21.576,
             9.3
           ],
@@ -14004,13 +14273,13 @@
             720.7473,
             726.6887
           ],
-          "y": 324.2,
+          "y": 312.2,
           "size": 12.2,
           "bold": true,
           "link": 6,
           "rect": [
             499.0,
-            314.4424,
+            302.4424,
             232.3735,
             12.2
           ],
@@ -14045,13 +14314,13 @@
             598.146,
             602.9075
           ],
-          "y": 357.9,
+          "y": 345.9,
           "size": 8.9,
           "bold": false,
-          "link": 13,
+          "link": 17,
           "rect": [
             499.0,
-            350.7817,
+            338.7817,
             107.058,
             8.9
           ],
@@ -14077,13 +14346,13 @@
             652.1067,
             657.4378
           ],
-          "y": 357.9,
+          "y": 345.9,
           "size": 8.9,
           "bold": false,
           "link": 6,
           "rect": [
             606.0581,
-            350.7817,
+            338.7817,
             54.5303,
             8.9
           ],
@@ -14098,13 +14367,13 @@
             463.788,
             469.182
           ],
-          "y": 395.905,
+          "y": 377.905,
           "size": 9.3,
           "bold": true,
           "link": 7,
           "rect": [
             453.0,
-            388.4668,
+            370.4668,
             21.576,
             9.3
           ],
@@ -14133,13 +14402,13 @@
             608.5927,
             614.229
           ],
-          "y": 398.2,
+          "y": 380.2,
           "size": 12.2,
           "bold": true,
           "link": 7,
           "rect": [
             499.0,
-            388.4424,
+            370.4424,
             119.9138,
             12.2
           ],
@@ -14160,13 +14429,13 @@
             539.9133,
             543.0639
           ],
-          "y": 431.9,
+          "y": 413.9,
           "size": 8.9,
           "bold": false,
           "link": 7,
           "rect": [
             499.0,
-            424.7817,
+            406.7817,
             49.4217,
             8.9
           ],
@@ -14181,13 +14450,13 @@
             463.788,
             469.182
           ],
-          "y": 469.905,
+          "y": 445.905,
           "size": 9.3,
           "bold": true,
           "link": 8,
           "rect": [
             453.0,
-            462.4668,
+            438.4668,
             21.576,
             9.3
           ],
@@ -14226,13 +14495,13 @@
             667.8358,
             675.2534
           ],
-          "y": 472.2,
+          "y": 448.2,
           "size": 12.2,
           "bold": true,
           "link": 8,
           "rect": [
             499.0,
-            462.4424,
+            438.4424,
             183.8906,
             12.2
           ],
@@ -14253,13 +14522,13 @@
             539.9133,
             543.0639
           ],
-          "y": 505.9,
+          "y": 481.9,
           "size": 8.9,
           "bold": false,
           "link": 8,
           "rect": [
             499.0,
-            498.7817,
+            474.7817,
             49.4217,
             8.9
           ],
@@ -14267,77 +14536,1051 @@
         },
         {
           "line": 36,
-          "text": "Complete publication and patent list: research website",
+          "text": "All papers and patents",
           "x": [
-            28.0,
-            34.0705,
-            39.9605,
-            48.729,
-            54.676,
-            57.279,
-            62.504,
-            66.152,
-            71.377,
-            74.721,
-            80.668,
-            86.444,
-            92.391,
-            94.994,
-            97.597,
-            102.2235,
-            107.382,
-            111.03,
-            113.633,
-            119.523,
-            125.299,
-            128.643,
-            133.8015,
-            139.5775,
-            145.5245,
-            148.8685,
-            154.8155,
-            159.974,
-            163.622,
-            168.847,
-            174.623,
-            178.271,
-            181.615,
-            184.218,
-            186.821,
-            191.21,
-            194.858,
-            197.347,
-            200.6909,
-            204.4339,
-            209.659,
-            214.0479,
-            219.2729,
-            224.4314,
-            228.1744,
-            232.8009,
-            238.5674,
-            241.9114,
-            249.4639,
-            254.6889,
-            260.6359,
-            265.0249,
-            267.6279,
-            271.2759
+            697.0,
+            702.984,
+            705.313,
+            707.642,
+            710.634,
+            715.955,
+            720.5704,
+            725.8914,
+            730.5664,
+            733.9154,
+            737.8424,
+            740.8344,
+            745.4499,
+            750.6179,
+            755.9389,
+            758.9309,
+            764.2519,
+            768.8674,
+            772.1313,
+            776.8063,
+            781.9744,
+            785.2383
           ],
-          "y": 552.075,
-          "size": 9.5,
+          "y": 141.225,
+          "size": 8.5,
           "bold": true,
           "link": 9,
           "rect": [
-            28.0,
-            544.4769,
-            248.5009,
-            9.5
+            697.0,
+            134.4266,
+            92.1653,
+            8.5
           ],
-          "end": 276.5009
+          "end": 789.1653
         },
         {
           "line": 37,
+          "text": "[1] Um, S., et al. \"",
+          "x": [
+            28.0,
+            30.2875,
+            34.42,
+            36.7075,
+            39.3475,
+            44.62,
+            51.22,
+            52.8625,
+            55.5025,
+            59.575,
+            61.2175,
+            62.86,
+            65.5,
+            69.5125,
+            72.1,
+            74.74,
+            78.64,
+            80.485,
+            82.1275,
+            84.7675
+          ],
+          "y": 516.0,
+          "size": 7.5,
+          "bold": false,
+          "link": null,
+          "rect": [
+            28.0,
+            510.0015,
+            59.73,
+            7.5
+          ],
+          "end": 87.73
+        },
+        {
+          "line": 37,
+          "text": "PALM-Gripper: Integrated Gripper With Parallel Adaptable Mechanism for Shelf Picking in Logistics",
+          "x": [
+            87.73,
+            92.0125,
+            96.9475,
+            100.5475,
+            107.425,
+            110.5,
+            115.765,
+            118.42,
+            120.265,
+            124.7725,
+            129.28,
+            133.2925,
+            135.9475,
+            137.59,
+            140.23,
+            142.255,
+            146.59,
+            149.1775,
+            153.19,
+            157.705,
+            160.36,
+            164.26,
+            166.8475,
+            170.86,
+            175.375,
+            178.015,
+            183.28,
+            185.935,
+            187.78,
+            192.2875,
+            196.795,
+            200.8075,
+            203.4625,
+            206.1025,
+            213.2575,
+            215.1025,
+            217.69,
+            222.0325,
+            224.6725,
+            228.955,
+            232.855,
+            235.51,
+            239.41,
+            241.255,
+            243.1,
+            247.1125,
+            248.9575,
+            251.5975,
+            256.5325,
+            261.0475,
+            264.9474,
+            269.455,
+            272.0425,
+            275.9424,
+            280.45,
+            282.295,
+            286.3075,
+            288.9475,
+            295.825,
+            299.8375,
+            303.385,
+            307.7275,
+            311.6275,
+            315.9625,
+            317.8075,
+            321.055,
+            327.655,
+            330.295,
+            332.665,
+            337.1575,
+            339.8125,
+            342.4525,
+            346.525,
+            350.8675,
+            354.88,
+            356.725,
+            359.095,
+            361.735,
+            366.0175,
+            367.8625,
+            371.41,
+            375.205,
+            377.05,
+            381.385,
+            385.9,
+            388.54,
+            390.385,
+            394.72,
+            397.36,
+            400.9601,
+            405.4525,
+            409.9676,
+            411.8126,
+            415.0601,
+            417.6476,
+            419.4926,
+            423.04
+          ],
+          "y": 516.0,
+          "size": 7.5,
+          "bold": false,
+          "link": 10,
+          "rect": [
+            87.73,
+            510.0015,
+            338.5575,
+            7.5
+          ],
+          "end": 426.2875
+        },
+        {
+          "line": 37,
+          "text": "\" IEEE/ASME Transactions on Mechatronics (2026).",
+          "x": [
+            426.2875,
+            429.25,
+            431.89,
+            433.915,
+            437.7925,
+            441.67,
+            445.5475,
+            448.5175,
+            453.4525,
+            457.5251,
+            464.4026,
+            468.2801,
+            470.9201,
+            474.9251,
+            477.5801,
+            481.4801,
+            485.8151,
+            489.0626,
+            492.9626,
+            496.51,
+            499.0975,
+            500.9425,
+            505.435,
+            509.77,
+            513.0175,
+            515.6575,
+            520.15,
+            524.485,
+            527.125,
+            534.0026,
+            538.015,
+            541.5626,
+            545.9051,
+            549.8051,
+            552.3926,
+            555.0477,
+            559.5402,
+            563.8752,
+            565.7202,
+            569.2676,
+            572.5151,
+            575.1552,
+            577.4426,
+            581.5751,
+            585.7076,
+            589.8401,
+            593.9727,
+            596.2601
+          ],
+          "y": 516.0,
+          "size": 7.5,
+          "bold": false,
+          "link": null,
+          "rect": [
+            426.2875,
+            510.0015,
+            171.6151,
+            7.5
+          ],
+          "end": 597.9026
+        },
+        {
+          "line": 38,
+          "text": "[2] Um, S., et al. \"",
+          "x": [
+            28.0,
+            30.2875,
+            34.42,
+            36.7075,
+            39.3475,
+            44.62,
+            51.22,
+            52.8625,
+            55.5025,
+            59.575,
+            61.2175,
+            62.86,
+            65.5,
+            69.5125,
+            72.1,
+            74.74,
+            78.64,
+            80.485,
+            82.1275,
+            84.7675
+          ],
+          "y": 527.5,
+          "size": 7.5,
+          "bold": false,
+          "link": null,
+          "rect": [
+            28.0,
+            521.5015,
+            59.73,
+            7.5
+          ],
+          "end": 87.73
+        },
+        {
+          "line": 38,
+          "text": "ReC-Gripper: A Reconfigurable Combined Suction and Fingered Gripper for Various Logistics Picking and Stowing Tasks",
+          "x": [
+            87.73,
+            92.305,
+            96.3175,
+            101.08,
+            104.155,
+            109.42,
+            112.075,
+            113.92,
+            118.4275,
+            122.935,
+            126.9475,
+            129.6025,
+            131.245,
+            133.885,
+            138.82,
+            141.46,
+            146.035,
+            150.0475,
+            153.595,
+            158.0875,
+            162.4225,
+            164.7925,
+            166.6375,
+            171.1525,
+            175.4875,
+            178.1425,
+            182.0425,
+            186.55,
+            188.395,
+            192.4075,
+            195.0475,
+            199.81,
+            204.3025,
+            210.9025,
+            215.41,
+            217.255,
+            221.59,
+            225.6025,
+            230.1175,
+            232.7575,
+            236.83,
+            241.165,
+            244.7125,
+            247.3,
+            249.145,
+            253.6375,
+            257.9725,
+            260.6125,
+            264.5125,
+            268.8475,
+            273.3625,
+            276.0025,
+            279.745,
+            281.59,
+            285.925,
+            290.44,
+            294.4525,
+            297.1075,
+            301.1201,
+            305.6351,
+            308.2751,
+            313.5401,
+            316.1951,
+            318.0401,
+            322.5476,
+            327.0551,
+            331.0676,
+            333.7226,
+            336.3626,
+            338.7326,
+            343.2251,
+            345.8801,
+            348.5201,
+            353.2751,
+            357.1751,
+            359.8301,
+            361.6751,
+            366.1676,
+            370.5026,
+            373.7501,
+            376.3901,
+            379.9901,
+            384.4826,
+            388.9977,
+            390.8427,
+            394.0901,
+            396.6776,
+            398.5226,
+            402.0701,
+            405.3176,
+            407.9576,
+            412.2401,
+            414.0851,
+            417.6326,
+            421.4276,
+            423.2726,
+            427.6076,
+            432.1227,
+            434.7627,
+            438.6627,
+            442.9977,
+            447.5127,
+            450.1527,
+            454.2252,
+            456.8127,
+            461.3052,
+            466.8252,
+            468.6702,
+            473.0052,
+            477.5202,
+            480.1602,
+            484.1652,
+            488.0652,
+            491.3127,
+            495.1077
+          ],
+          "y": 527.5,
+          "size": 7.5,
+          "bold": false,
+          "link": 11,
+          "rect": [
+            87.73,
+            521.5015,
+            410.6252,
+            7.5
+          ],
+          "end": 498.3552
+        },
+        {
+          "line": 38,
+          "text": "\" IEEE Robotics and Automation Letters (2024).",
+          "x": [
+            498.3552,
+            501.3177,
+            503.9577,
+            505.9827,
+            509.8602,
+            513.7377,
+            517.6152,
+            520.2552,
+            524.8302,
+            529.3228,
+            533.8302,
+            538.3228,
+            540.9102,
+            542.7552,
+            546.3027,
+            549.5502,
+            552.1902,
+            556.0902,
+            560.4252,
+            564.9402,
+            567.5803,
+            572.5153,
+            576.8503,
+            579.4378,
+            583.9303,
+            590.5303,
+            594.4303,
+            597.0178,
+            598.8628,
+            603.3553,
+            607.6903,
+            610.3303,
+            613.9303,
+            617.9428,
+            620.5303,
+            623.1179,
+            627.1304,
+            629.7854,
+            633.0329,
+            635.6729,
+            637.9604,
+            642.0929,
+            646.2254,
+            650.3579,
+            654.4904,
+            656.7779
+          ],
+          "y": 527.5,
+          "size": 7.5,
+          "bold": false,
+          "link": null,
+          "rect": [
+            498.3552,
+            521.5015,
+            160.0652,
+            7.5
+          ],
+          "end": 658.4204
+        },
+        {
+          "line": 39,
+          "text": "[3] Um, S., et al. \"",
+          "x": [
+            28.0,
+            30.2875,
+            34.42,
+            36.7075,
+            39.3475,
+            44.62,
+            51.22,
+            52.8625,
+            55.5025,
+            59.575,
+            61.2175,
+            62.86,
+            65.5,
+            69.5125,
+            72.1,
+            74.74,
+            78.64,
+            80.485,
+            82.1275,
+            84.7675
+          ],
+          "y": 539.0,
+          "size": 7.5,
+          "bold": false,
+          "link": null,
+          "rect": [
+            28.0,
+            533.0015,
+            59.73,
+            7.5
+          ],
+          "end": 87.73
+        },
+        {
+          "line": 39,
+          "text": "Overcoming Heavy Clutter: Utilizing the Hybrid Grasping Network and Gripper",
+          "x": [
+            87.73,
+            93.5275,
+            97.18,
+            101.1925,
+            103.8475,
+            107.395,
+            111.8875,
+            118.4875,
+            120.3325,
+            124.6675,
+            129.1825,
+            131.8225,
+            137.26,
+            141.2725,
+            145.1725,
+            148.825,
+            152.5225,
+            155.1625,
+            159.925,
+            161.77,
+            166.105,
+            168.6925,
+            171.28,
+            175.2925,
+            177.9475,
+            179.59,
+            182.23,
+            187.5025,
+            190.09,
+            191.935,
+            193.78,
+            195.625,
+            199.09,
+            200.935,
+            205.27,
+            209.785,
+            212.425,
+            215.0125,
+            219.355,
+            223.3675,
+            226.0075,
+            231.445,
+            235.1425,
+            239.65,
+            242.305,
+            244.15,
+            248.665,
+            251.305,
+            256.57,
+            259.225,
+            263.125,
+            266.3725,
+            270.88,
+            272.725,
+            277.06,
+            281.575,
+            284.215,
+            289.9525,
+            293.965,
+            296.5525,
+            302.0725,
+            306.565,
+            309.22,
+            313.015,
+            315.655,
+            319.555,
+            323.89,
+            328.405,
+            331.045,
+            336.31,
+            338.965,
+            340.81,
+            345.3175,
+            349.825,
+            353.8376
+          ],
+          "y": 539.0,
+          "size": 7.5,
+          "bold": false,
+          "link": 12,
+          "rect": [
+            87.73,
+            533.0015,
+            268.7626,
+            7.5
+          ],
+          "end": 356.4926
+        },
+        {
+          "line": 39,
+          "text": "\" IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), Workshop on Benchmarking via Competitions in",
+          "x": [
+            356.4926,
+            359.455,
+            362.0951,
+            364.1201,
+            367.9976,
+            371.8751,
+            375.7526,
+            378.7226,
+            383.2976,
+            387.3701,
+            390.0701,
+            392.7101,
+            394.7351,
+            399.0701,
+            401.6576,
+            405.6701,
+            408.3251,
+            412.6601,
+            416.5601,
+            419.1476,
+            420.9926,
+            425.4851,
+            429.8201,
+            433.7201,
+            435.5651,
+            438.2051,
+            442.9676,
+            447.4601,
+            451.7951,
+            454.1651,
+            458.1776,
+            460.8326,
+            464.8451,
+            469.1801,
+            472.7276,
+            476.7401,
+            479.3801,
+            483.8726,
+            488.2076,
+            490.8476,
+            492.8726,
+            497.2076,
+            499.7951,
+            503.8076,
+            505.6526,
+            507.4976,
+            509.3426,
+            513.8576,
+            517.8701,
+            522.2051,
+            524.7926,
+            527.4326,
+            532.0076,
+            536.5001,
+            541.0076,
+            545.5001,
+            548.0876,
+            551.3351,
+            553.9752,
+            557.8752,
+            562.2102,
+            566.7252,
+            569.3652,
+            573.4377,
+            577.1353,
+            580.3828,
+            582.9703,
+            586.9828,
+            593.5828,
+            596.8303,
+            599.4703,
+            601.7578,
+            603.7828,
+            608.3578,
+            614.1553,
+            618.2278,
+            620.5153,
+            622.1578,
+            624.7978,
+            631.9528,
+            636.4453,
+            639.1003,
+            642.8953,
+            646.1428,
+            650.4854,
+            654.9778,
+            659.4854,
+            662.1254,
+            666.6179,
+            670.9529,
+            673.5929,
+            677.9654,
+            681.9779,
+            686.3129,
+            689.8604,
+            694.2029,
+            700.8029,
+            704.7029,
+            707.358,
+            711.153,
+            712.9979,
+            717.3329,
+            721.848,
+            724.488,
+            728.1405,
+            729.9855,
+            733.8855,
+            736.5255,
+            741.288,
+            745.7805,
+            752.3805,
+            756.888,
+            760.9005,
+            763.488,
+            765.333,
+            767.9205,
+            769.7655,
+            774.258,
+            778.593,
+            781.8405,
+            784.4805,
+            786.3255
+          ],
+          "y": 539.0,
+          "size": 7.5,
+          "bold": false,
+          "link": null,
+          "rect": [
+            356.4926,
+            533.0015,
+            434.1679,
+            7.5
+          ],
+          "end": 790.6605
+        },
+        {
+          "line": 40,
+          "text": "Robotic Grasping and Manipulation (2024).",
+          "x": [
+            42.0,
+            46.575,
+            51.0675,
+            55.575,
+            60.0675,
+            62.655,
+            64.5,
+            68.0475,
+            70.6875,
+            75.9525,
+            78.6075,
+            82.5075,
+            85.755,
+            90.2625,
+            92.1075,
+            96.4425,
+            100.9575,
+            103.5975,
+            107.4975,
+            111.8325,
+            116.3475,
+            118.9875,
+            125.865,
+            129.765,
+            134.1,
+            135.945,
+            140.4525,
+            144.7875,
+            146.6325,
+            150.5325,
+            153.12,
+            154.965,
+            159.4575,
+            163.7925,
+            166.4325,
+            168.72,
+            172.8525,
+            176.985,
+            181.1176,
+            185.2501,
+            187.5376
+          ],
+          "y": 548.5,
+          "size": 7.5,
+          "bold": false,
+          "link": null,
+          "rect": [
+            42.0,
+            542.5015,
+            147.1801,
+            7.5
+          ],
+          "end": 189.1801
+        },
+        {
+          "line": 41,
+          "text": "[4] Um, S., et al. \"",
+          "x": [
+            28.0,
+            30.2875,
+            34.42,
+            36.7075,
+            39.3475,
+            44.62,
+            51.22,
+            52.8625,
+            55.5025,
+            59.575,
+            61.2175,
+            62.86,
+            65.5,
+            69.5125,
+            72.1,
+            74.74,
+            78.64,
+            80.485,
+            82.1275,
+            84.7675
+          ],
+          "y": 560.0,
+          "size": 7.5,
+          "bold": false,
+          "link": null,
+          "rect": [
+            28.0,
+            554.0015,
+            59.73,
+            7.5
+          ],
+          "end": 87.73
+        },
+        {
+          "line": 41,
+          "text": "Toward Reliable Bin-Picking: Collision-Aware Robotic Design and Control Strategy for Heavily Cluttered Environment",
+          "x": [
+            87.73,
+            91.735,
+            96.2275,
+            101.7475,
+            105.6475,
+            108.3025,
+            112.8175,
+            115.4575,
+            120.0325,
+            124.045,
+            125.89,
+            127.735,
+            131.635,
+            136.1425,
+            137.9875,
+            142.0,
+            144.64,
+            149.0125,
+            150.8575,
+            155.1925,
+            158.2675,
+            162.55,
+            164.395,
+            167.9425,
+            171.7375,
+            173.5825,
+            177.9175,
+            182.4325,
+            184.075,
+            186.715,
+            191.4775,
+            195.97,
+            197.815,
+            199.66,
+            201.505,
+            204.7525,
+            206.5975,
+            211.09,
+            215.425,
+            218.5,
+            223.435,
+            228.955,
+            232.855,
+            235.51,
+            239.5225,
+            242.1625,
+            246.7375,
+            251.23,
+            255.7375,
+            260.23,
+            262.8175,
+            264.6625,
+            268.21,
+            270.85,
+            276.2275,
+            280.24,
+            283.4875,
+            285.3325,
+            289.8475,
+            294.1825,
+            296.8225,
+            300.7225,
+            305.0575,
+            309.5725,
+            312.2125,
+            316.975,
+            321.4675,
+            325.8025,
+            328.39,
+            331.045,
+            335.5375,
+            337.3825,
+            340.0225,
+            344.095,
+            346.6825,
+            349.3375,
+            353.2375,
+            355.825,
+            359.8375,
+            364.3525,
+            368.05,
+            370.69,
+            373.06,
+            377.5525,
+            380.2075,
+            382.8475,
+            388.285,
+            392.2975,
+            396.1975,
+            399.85,
+            401.695,
+            403.54,
+            407.2375,
+            409.8776,
+            414.6401,
+            416.4851,
+            420.8201,
+            423.4076,
+            425.9951,
+            430.0076,
+            432.6626,
+            436.6751,
+            441.1901,
+            443.8301,
+            447.7076,
+            452.0426,
+            455.6951,
+            457.5401,
+            460.1951,
+            464.6876,
+            469.0226,
+            475.6226,
+            479.6351,
+            483.9701
+          ],
+          "y": 560.0,
+          "size": 7.5,
+          "bold": false,
+          "link": 13,
+          "rect": [
+            87.73,
+            554.0015,
+            398.8276,
+            7.5
+          ],
+          "end": 486.5576
+        },
+        {
+          "line": 41,
+          "text": "\" IEEE Robotics and Automation Practice (2026).",
+          "x": [
+            486.5576,
+            489.5201,
+            492.1601,
+            494.1851,
+            498.0626,
+            501.9401,
+            505.8176,
+            508.4576,
+            513.0326,
+            517.5251,
+            522.0326,
+            526.5251,
+            529.1126,
+            530.9576,
+            534.5051,
+            537.7526,
+            540.3926,
+            544.2926,
+            548.6276,
+            553.1426,
+            555.7827,
+            560.7177,
+            565.0527,
+            567.6402,
+            572.1327,
+            578.7327,
+            582.6327,
+            585.2202,
+            587.0652,
+            591.5577,
+            595.8927,
+            598.5327,
+            602.8152,
+            605.4702,
+            609.3702,
+            612.9177,
+            615.5052,
+            617.3502,
+            620.8977,
+            624.9102,
+            627.5502,
+            629.8377,
+            633.9702,
+            638.1027,
+            642.2352,
+            646.3677,
+            648.6552
+          ],
+          "y": 560.0,
+          "size": 7.5,
+          "bold": false,
+          "link": null,
+          "rect": [
+            486.5576,
+            554.0015,
+            163.7401,
+            7.5
+          ],
+          "end": 650.2977
+        },
+        {
+          "line": 42,
           "text": "SEUNGHWAN UM  /  ROBOTICS",
           "x": [
             28.0,
@@ -14379,7 +15622,7 @@
           "end": 146.632
         },
         {
-          "line": 38,
+          "line": 43,
           "text": "2026.11",
           "x": [
             711.8898,
@@ -14403,7 +15646,7 @@
           "end": 740.0899
         },
         {
-          "line": 39,
+          "line": 44,
           "text": "10 / 11",
           "x": [
             771.8898,
@@ -14426,84 +15669,197 @@
           ],
           "end": 798.3218
         }
-      ]
-    },
-    {
-      "number": 11,
-      "id": "experience",
-      "title": "Experience & Skills",
-      "svg": "/slides-en/page-11.svg",
-      "text": "EXPERIENCE & SKILLS\nResearch & Development Experience\nCollaborative research · Device design · Computer vision · Robot control\nAIDIN ROBOTICS · SKKU\n2022.05-\nCollaborative\nresearch\nGripper and grasp-strategy research for logistics shelves. Contributed to\narm/hand teleoperation, force-informed demonstration collection, and learning\nimplementation.\nMechanism design · Compliant control · ROS/ROS2 · Robot learning\nPRIMETECH\n2026.05-08\nContract vision R&D\nDeveloped a Windows RGB-D module for pallet/box occupancy, empty-slot\ndetection, box pose, and QR-face orientation.\nPython · OpenCV · PyTorch · Orbbec RGB-D SDK · Windows\nCarbonSix\n2024.10-11 / 2026.06-07\nDevice design\nDesigned a gravity-compensated direct-teaching device and a\ncamera-calibration device.\nMechanism design · Gravity compensation · Camera calibration\nKITECH\n2021.10-12\nStudent researcher\nDesigned and developed the control system for a 2-DoF manipulator.\nManipulator control · System implementation\nSKILLS\nMechanism Design\nInventor · CATIA · Adaptive / Reconfigurable Mechanisms\nControl & Sensing\nC++ · ROS / ROS2 · Impedance / Admittance · F/T\nRobot Learning\nPython · PyTorch · Diffusion Policy · Residual Learning\nSimulation & Deployment\nIsaac Sim / PhysX · MuJoCo · System ID\nResearch interests: practical task automation through\nmechanism design, compliant control, and robot\nlearning.\nseunghwanum@gmail.com\nWeb portfolio\nSEUNGHWAN UM  /  ROBOTICS\n2026.11\n11 / 11\n",
+      ],
       "links": [
         {
           "rect": [
-            548.0,
-            158.99996948242188,
-            266.0,
-            60.0
+            379.0,
+            207.99996948242188,
+            26.45709228515625,
+            19.489990234375
           ],
-          "href": "https://r-ush.github.io/portfolio/projects/rec-gripper/",
-          "label": "Mechanism Design Inventor · CATIA · Adaptive / Reconfigurable Mechanisms"
+          "href": "https://doi.org/10.1109/TMECH.2025.3649851",
+          "label": "Paper"
         },
         {
           "rect": [
-            548.0,
-            228.99996948242188,
-            266.0,
-            60.0
+            379.0,
+            295.9999694824219,
+            26.45709228515625,
+            19.489990234375
           ],
-          "href": "https://r-ush.github.io/portfolio/projects/teleoperation-control/",
-          "label": "Control & Sensing C++ · ROS / ROS2 · Impedance / Admittance · F/T"
+          "href": "https://doi.org/10.1109/LRA.2023.3330051",
+          "label": "Paper"
         },
         {
           "rect": [
-            548.0,
-            298.9999694824219,
-            266.0,
-            60.0
+            379.0,
+            383.9999694824219,
+            26.45709228515625,
+            19.490020751953125
           ],
-          "href": "https://r-ush.github.io/portfolio/projects/human-corrections/",
-          "label": "Robot Learning Python · PyTorch · Diffusion Policy · Residual Learning"
+          "href": "https://sites.google.com/view/iros2024-workshop-bench-in-rgm/contributions",
+          "label": "Paper"
         },
         {
           "rect": [
-            548.0,
-            368.9999694824219,
-            266.0,
-            60.0
+            379.0,
+            471.9999694824219,
+            26.45709228515625,
+            19.490020751953125
           ],
-          "href": "https://r-ush.github.io/portfolio/projects/sim-to-real/",
-          "label": "Simulation & Deployment Isaac Sim / PhysX · MuJoCo · System ID"
+          "href": "https://doi.org/10.1109/RAP.2026.3655333",
+          "label": "Paper"
         },
         {
           "rect": [
-            28.0,
-            537.0,
-            190.2104034423828,
-            28.15997314453125
+            441.0,
+            154.99996948242188,
+            373.0,
+            68.0
           ],
-          "href": "mailto:seunghwanum@gmail.com",
-          "label": "seunghwanum@gmail.com"
+          "href": "https://r-ush.github.io/portfolio/assets/evidence/humantech-award-1.png",
+          "label": "2025 Samsung Humantech Paper Award, Bronze Mechanical Engineering category"
         },
         {
           "rect": [
-            560.0,
-            540.0,
-            66.54949951171875,
-            19.8299560546875
+            441.0,
+            222.99996948242188,
+            373.0,
+            68.0
           ],
-          "href": "https://r-ush.github.io/portfolio",
-          "label": "Web portfolio"
+          "href": "https://r-ush.github.io/portfolio/assets/evidence/rgmc-award-1.png",
+          "label": "2024 ICRA RGMC Picking in Clutter, 2nd Team award"
         },
         {
           "rect": [
-            766.0,
-            514.0,
-            48.0,
-            48.0
+            441.0,
+            290.9999694824219,
+            373.0,
+            68.0
           ],
-          "href": "https://r-ush.github.io/portfolio",
-          "label": ""
+          "href": "https://sites.google.com/view/iros2024-workshop-bench-in-rgm",
+          "label": "2024 IROS Workshop Best Extended Abstract Overcoming Heavy Clutter · First author"
+        },
+        {
+          "rect": [
+            441.0,
+            358.9999694824219,
+            373.0,
+            68.0
+          ],
+          "href": "https://r-ush.github.io/bilateral_leader_arm/",
+          "label": "2026 KRoC RED Show, 1st Team award"
+        },
+        {
+          "rect": [
+            441.0,
+            426.9999694824219,
+            373.0,
+            68.0
+          ],
+          "href": "https://rachy103.github.io/handling-hand/",
+          "label": "2026 KSCDC Bronze · Handling Hand Team award"
+        },
+        {
+          "rect": [
+            697.0,
+            130.99996948242188,
+            92.171875,
+            17.45001220703125
+          ],
+          "href": "https://r-ush.github.io/",
+          "label": "All papers and patents"
+        },
+        {
+          "rect": [
+            87.69603729248047,
+            508.5,
+            338.47415924072266,
+            9.0
+          ],
+          "href": "https://doi.org/10.1109/TMECH.2025.3649851",
+          "label": "\"PALM-Gripper: Integrated Gripper With Parallel Adaptable Mechanism for Shelf Picking in Logistics"
+        },
+        {
+          "rect": [
+            87.69603729248047,
+            520.0,
+            410.5480728149414,
+            9.0
+          ],
+          "href": "https://doi.org/10.1109/LRA.2023.3330051",
+          "label": "\"ReC-Gripper: A Reconfigurable Combined Suction and Fingered Gripper for Various Logistics Picking and Stowing Tasks"
+        },
+        {
+          "rect": [
+            87.69603729248047,
+            531.5,
+            268.68897247314453,
+            9.0
+          ],
+          "href": "https://sites.google.com/view/iros2024-workshop-bench-in-rgm/contributions",
+          "label": "\"Overcoming Heavy Clutter: Utilizing the Hybrid Grasping Network and Gripper"
+        },
+        {
+          "rect": [
+            87.69603729248047,
+            552.5,
+            398.78177642822266,
+            9.0
+          ],
+          "href": "https://doi.org/10.1109/RAP.2026.3655333",
+          "label": "\"Toward Reliable Bin-Picking: Collision-Aware Robotic Design and Control Strategy for Heavily Cluttered Environment"
+        },
+        {
+          "rect": [
+            40.0,
+            189.12301635742188,
+            106.00201416015625,
+            15.600006103515625
+          ],
+          "href": "https://doi.org/10.1109/TMECH.2025.3649851",
+          "label": "PALM-Gripper"
+        },
+        {
+          "rect": [
+            40.0,
+            277.1230163574219,
+            91.15081787109375,
+            15.600006103515625
+          ],
+          "href": "https://doi.org/10.1109/LRA.2023.3330051",
+          "label": "ReC-Gripper"
+        },
+        {
+          "rect": [
+            40.0,
+            365.1230163574219,
+            197.62081909179688,
+            15.600006103515625
+          ],
+          "href": "https://sites.google.com/view/iros2024-workshop-bench-in-rgm/contributions",
+          "label": "Overcoming Heavy Clutter"
+        },
+        {
+          "rect": [
+            499.0,
+            338.7817077636719,
+            107.05804443359375,
+            8.899993896484375
+          ],
+          "href": "https://sites.google.com/view/iros2024-workshop-bench-in-rgm/contributions",
+          "label": "Overcoming Heavy Clutter"
+        },
+        {
+          "rect": [
+            40.0,
+            453.1230163574219,
+            208.75921630859375,
+            15.600006103515625
+          ],
+          "href": "https://doi.org/10.1109/RAP.2026.3655333",
+          "label": "Toward Reliable Bin-Picking"
         }
       ],
       "media": [],
@@ -14626,7 +15982,155 @@
           "link_label": "Open project page"
         }
       ],
-      "evidence_hotspots": [],
+      "evidence_hotspots": [
+        {
+          "id": "palm-paper",
+          "label": "T-MECH paper",
+          "rect": [
+            40.0,
+            189.12301635742188,
+            106.00201416015625,
+            15.600006103515625
+          ]
+        },
+        {
+          "id": "palm-paper",
+          "label": "T-MECH paper",
+          "rect": [
+            87.73001098632812,
+            510.00146484375,
+            48.217498779296875,
+            7.5
+          ]
+        },
+        {
+          "id": "rec-paper",
+          "label": "RA-L paper",
+          "rect": [
+            40.0,
+            277.1230163574219,
+            91.15081787109375,
+            15.600006103515625
+          ]
+        },
+        {
+          "id": "rec-paper",
+          "label": "RA-L paper",
+          "rect": [
+            87.73001098632812,
+            521.50146484375,
+            41.87248229980469,
+            7.5
+          ]
+        },
+        {
+          "id": "iros-paper",
+          "label": "IROS abstract",
+          "rect": [
+            40.0,
+            365.1230163574219,
+            197.62081909179688,
+            15.600006103515625
+          ]
+        },
+        {
+          "id": "iros-paper",
+          "label": "IROS abstract",
+          "rect": [
+            499.0,
+            338.7817077636719,
+            107.05804443359375,
+            8.899993896484375
+          ]
+        },
+        {
+          "id": "iros-paper",
+          "label": "IROS abstract",
+          "rect": [
+            87.73001098632812,
+            533.00146484375,
+            90.21748352050781,
+            7.5
+          ]
+        },
+        {
+          "id": "rap-paper",
+          "label": "RA-P paper",
+          "rect": [
+            40.0,
+            453.1230163574219,
+            208.75921630859375,
+            15.600006103515625
+          ]
+        },
+        {
+          "id": "rap-paper",
+          "label": "RA-P paper",
+          "rect": [
+            87.73001098632812,
+            554.00146484375,
+            94.70249938964844,
+            7.5
+          ]
+        },
+        {
+          "id": "humantech-award",
+          "label": "Humantech Bronze",
+          "rect": [
+            499.0,
+            166.44235229492188,
+            250.92962646484375,
+            12.199996948242188
+          ]
+        },
+        {
+          "id": "rgmc-award",
+          "label": "RGMC 2nd",
+          "rect": [
+            499.0,
+            234.44235229492188,
+            203.447265625,
+            12.199996948242188
+          ]
+        },
+        {
+          "id": "iros-award-program",
+          "label": "IROS award",
+          "rect": [
+            499.0,
+            302.4423522949219,
+            232.37347412109375,
+            12.20001220703125
+          ]
+        },
+        {
+          "id": "kroc-award-photo",
+          "label": "KRoC award",
+          "rect": [
+            499.0,
+            370.4423522949219,
+            119.913818359375,
+            12.20001220703125
+          ]
+        },
+        {
+          "id": "kscdc-source",
+          "label": "KSCDC",
+          "rect": [
+            499.0,
+            438.4423522949219,
+            183.890625,
+            12.20001220703125
+          ]
+        }
+      ]
+    },
+    {
+      "number": 11,
+      "id": "experience",
+      "title": "Experience & Skills",
+      "svg": "/slides-en/page-11.svg",
+      "text": "EXPERIENCE & SKILLS\nResearch & Development Experience\nCollaborative research · Device design · Computer vision · Robot control\nAIDIN ROBOTICS · SKKU\n2022.05-\nCollaborative\nresearch\nGripper and grasp-strategy research for logistics shelves. Contributed to\narm/hand teleoperation, force-informed demonstration collection, and learning\nimplementation.\nMechanism design · Compliant control · ROS/ROS2 · Robot learning\nPRIMETECH\n2026.05-08\nContract vision R&D\nDeveloped a Windows RGB-D module for pallet/box occupancy, empty-slot\ndetection, box pose, and QR-face orientation.\nPython · OpenCV · PyTorch · Orbbec RGB-D SDK · Windows\nCarbonSix\n2024.10-11 / 2026.06-07\nDevice design\nDesigned a gravity-compensated direct-teaching device and a\ncamera-calibration device.\nMechanism design · Gravity compensation · Camera calibration\nKITECH\n2021.10-12\nStudent researcher\nDesigned and developed the control system for a 2-DoF manipulator.\nManipulator control · System implementation\nSKILLS\nMechanism Design\nInventor · CATIA · Adaptive / Reconfigurable Mechanisms\nControl & Sensing\nC++ · ROS / ROS2 · Impedance / Admittance · F/T\nRobot Learning\nPython · PyTorch · Diffusion Policy · Residual Learning\nSimulation & Deployment\nIsaac Sim / PhysX · MuJoCo · System ID\nResearch interests: practical task automation through\nmechanism design, compliant control, and robot\nlearning.\nseunghwanum@gmail.com\nWeb portfolio\nSEUNGHWAN UM  /  ROBOTICS\n2026.11\n11 / 11\n",
       "text_runs": [
         {
           "line": 0,
@@ -16787,7 +18291,200 @@
           ],
           "end": 798.3218
         }
-      ]
+      ],
+      "links": [
+        {
+          "rect": [
+            548.0,
+            158.99996948242188,
+            266.0,
+            60.0
+          ],
+          "href": "https://r-ush.github.io/portfolio/projects/rec-gripper/",
+          "label": "Mechanism Design Inventor · CATIA · Adaptive / Reconfigurable Mechanisms"
+        },
+        {
+          "rect": [
+            548.0,
+            228.99996948242188,
+            266.0,
+            60.0
+          ],
+          "href": "https://r-ush.github.io/portfolio/projects/teleoperation-control/",
+          "label": "Control & Sensing C++ · ROS / ROS2 · Impedance / Admittance · F/T"
+        },
+        {
+          "rect": [
+            548.0,
+            298.9999694824219,
+            266.0,
+            60.0
+          ],
+          "href": "https://r-ush.github.io/portfolio/projects/human-corrections/",
+          "label": "Robot Learning Python · PyTorch · Diffusion Policy · Residual Learning"
+        },
+        {
+          "rect": [
+            548.0,
+            368.9999694824219,
+            266.0,
+            60.0
+          ],
+          "href": "https://r-ush.github.io/portfolio/projects/sim-to-real/",
+          "label": "Simulation & Deployment Isaac Sim / PhysX · MuJoCo · System ID"
+        },
+        {
+          "rect": [
+            28.0,
+            537.0,
+            190.2104034423828,
+            28.15997314453125
+          ],
+          "href": "mailto:seunghwanum@gmail.com",
+          "label": "seunghwanum@gmail.com"
+        },
+        {
+          "rect": [
+            560.0,
+            540.0,
+            66.54949951171875,
+            19.8299560546875
+          ],
+          "href": "https://r-ush.github.io/portfolio",
+          "label": "Web portfolio"
+        },
+        {
+          "rect": [
+            766.0,
+            514.0,
+            48.0,
+            48.0
+          ],
+          "href": "https://r-ush.github.io/portfolio",
+          "label": ""
+        }
+      ],
+      "media": [],
+      "extras": [],
+      "evidence": [
+        {
+          "id": "palm-paper",
+          "label": "T-MECH paper",
+          "kind": "Paper: first page",
+          "title": "PALM-Gripper: Integrated Gripper With Parallel Adaptable Mechanism for Shelf Picking in Logistics",
+          "image": "/assets/evidence/palm-paper-1.png",
+          "url": "https://doi.org/10.1109/TMECH.2025.3649851",
+          "description": "IEEE/ASME Transactions on Mechatronics · First author",
+          "link_label": "Read paper",
+          "triggers": [
+            "IEEE/ASME T-MECH",
+            "IEEE/ASME Transactions on Mechatronics"
+          ]
+        },
+        {
+          "id": "rec-paper",
+          "label": "RA-L paper",
+          "kind": "Paper: first page",
+          "title": "ReC-Gripper: A Reconfigurable Combined Suction and Fingered Gripper for Various Logistics Picking and Stowing Tasks",
+          "image": "/assets/evidence/rec-paper-1.png",
+          "url": "https://doi.org/10.1109/LRA.2023.3330051",
+          "description": "IEEE Robotics and Automation Letters · First author",
+          "link_label": "Read paper",
+          "triggers": [
+            "IEEE RA-L",
+            "IEEE Robotics and Automation Letters"
+          ]
+        },
+        {
+          "id": "iros-paper",
+          "label": "IROS abstract",
+          "kind": "Paper: first page",
+          "title": "Overcoming Heavy Clutter: Utilizing the Hybrid Grasping Network and Gripper",
+          "image": "/assets/evidence/iros-paper-1.png",
+          "url": "https://sites.google.com/view/iros2024-workshop-bench-in-rgm/contributions",
+          "description": "IROS 2024 Workshop · First-author extended abstract",
+          "link_label": "Read paper",
+          "triggers": [
+            "IROS extended abstract"
+          ]
+        },
+        {
+          "id": "rap-paper",
+          "label": "RA-P paper",
+          "kind": "Paper: first page",
+          "title": "Toward Reliable Bin-Picking: Collision-Aware Robotic Design and Control Strategy for Heavily Cluttered Environment",
+          "image": "/assets/evidence/rap-paper-1.png",
+          "url": "https://doi.org/10.1109/RAP.2026.3655333",
+          "description": "IEEE Robotics and Automation Practice · Co-first author",
+          "link_label": "Read paper",
+          "triggers": [
+            "IEEE RA-P 2026"
+          ]
+        },
+        {
+          "id": "humantech-award",
+          "label": "Humantech Bronze",
+          "kind": "Award certificate",
+          "title": "Samsung Humantech Paper Award, Bronze · Mechanical Engineering",
+          "image": "/assets/evidence/humantech-award-1.png",
+          "url": "https://r-ush.github.io/portfolio/assets/evidence/humantech-award-1.png",
+          "description": "Feb. 12, 2025 · Mechanical Engineering Bronze · PALM-Gripper research",
+          "link_label": "View certificate",
+          "triggers": [
+            "Samsung Humantech Paper Award, Bronze"
+          ]
+        },
+        {
+          "id": "rgmc-award",
+          "label": "RGMC 2nd",
+          "kind": "Award certificate",
+          "title": "ICRA 2024 RGMC Picking in Clutter, 2nd",
+          "image": "/assets/evidence/rgmc-award-1.png",
+          "url": "https://r-ush.github.io/portfolio/assets/evidence/rgmc-award-1.png",
+          "description": "ICRA 2024 RGMC Picking in Clutter · AIDIN-ROBOTORY team, 2nd",
+          "link_label": "View certificate",
+          "triggers": [
+            "RGMC Picking in Clutter, 2nd",
+            "ICRA 2024 RGMC"
+          ]
+        },
+        {
+          "id": "iros-award-program",
+          "label": "IROS award",
+          "kind": "Award: official program",
+          "title": "IROS 2024 Workshop · Best Extended Abstract",
+          "image": "/assets/evidence/iros-award-program.png",
+          "url": "https://sites.google.com/view/iros2024-workshop-bench-in-rgm",
+          "description": "Award recorded in the official workshop program.",
+          "link_label": "Open official program",
+          "triggers": [
+            "IROS 2024 Workshop Best Extended Abstract"
+          ]
+        },
+        {
+          "id": "kroc-award-photo",
+          "label": "KRoC award",
+          "kind": "Award ceremony photo",
+          "title": "RED Show: top prize, general category",
+          "image": "/assets/evidence/kroc-award-photo.jpg",
+          "url": "https://r-ush.github.io/bilateral_leader_arm/",
+          "description": "KRoC 2026 RED Show · Ceremony photo for the related team project",
+          "link_label": "Open project page",
+          "triggers": [
+            "KRoC 2026 RED Show, 1st"
+          ]
+        },
+        {
+          "id": "kscdc-source",
+          "label": "KSCDC",
+          "kind": "Project materials",
+          "title": "Handling Hand · KSCDC 2026 Bronze",
+          "url": "https://rachy103.github.io/handling-hand/",
+          "description": "Handling Hand project and demonstration videos",
+          "link_label": "Open project page"
+        }
+      ],
+      "evidence_hotspots": []
     }
   ]
 }

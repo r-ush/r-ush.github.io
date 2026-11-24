@@ -18,8 +18,11 @@ tables. The following aggregate-only sections apply to the original research pag
 - Only known slide/source/video/download IDs are accepted. Client-supplied IP,
   locations, URLs, queries, free text and arbitrary paths are rejected. GPC, DNT,
   bots and the existing owner-network secret are honored before database writes.
-- The API returns only the last seven days and up to 500 recent visits; summary
-  totals cover that full seven-day window. Expired rows and their activity are
+- The API returns only the last 30 days and up to 500 recent visits; summary
+  totals cover that full 30-day window. Authenticated `?export=all` returns all visits
+  in that window for CSV/JSON downloads, without the display limit. The dashboard
+  offers one CSV row per visit and a separate CSV row per activity. Both use UTF-8
+  BOM for Excel, KST timestamps, quoting and spreadsheet-formula escaping. Expired rows and their activity are
   deleted hourly (up to one hour after expiry). The original 180-day aggregate
   cleanup still runs once daily at 00:15 KST. Public maps never include these rows.
 - Source previews require two seconds. Autoplay is not a manual play; direct

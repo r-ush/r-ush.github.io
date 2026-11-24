@@ -113,7 +113,7 @@ export default {
         return json({ error: 'Authentication required' }, 401);
       }
       if (url.pathname === '/api/portfolio') {
-        try { return json(await portfolioReport(env.DB)); }
+        try { return json(await portfolioReport(env.DB, new Date(), { allVisits: url.searchParams.get('export') === 'all' })); }
         catch { return json({ error: 'Portfolio statistics unavailable' }, 503); }
       }
       const days = Number(url.searchParams.get('days') || 7);

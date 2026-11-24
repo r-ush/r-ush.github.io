@@ -4,6 +4,7 @@ import { readFileSync } from 'node:fs';
 import { parseHTML } from 'linkedom';
 import { setImmediate } from 'node:timers/promises';
 import vm from 'node:vm';
+import { portfolioCSV } from '../public/portfolio-export.mjs';
 
 const source = readFileSync(new URL('../../portfolio/analytics.js', import.meta.url), 'utf8');
 const html = readFileSync(new URL('../../portfolio/index.html', import.meta.url), 'utf8');
@@ -65,9 +66,9 @@ test('hidden pages wait, downloads are identified, and idle time does not keep a
 });
 test('portfolio dashboard authenticates in memory, labels examples, and renders empty records', async () => {
   const { document, window } = parseHTML(readFileSync(new URL('../public/portfolio.html', import.meta.url), 'utf8'));
-  const requests = [], context = { document, Intl, Date, Blob, URL, setTimeout, fetch: async (...args) => { requests.push(args); return { ok: false, status: 401 }; } };
+  const requests = [], downloads = [], context = { document, Intl, Date, Blob, portfolioCSV, URL: { createObjectURL: blob => { downloads.push(blob); return 'blob:test'; }, revokeObjectURL() {} }, setTimeout: fn => fn(), fetch: async (...args) => { requests.push(args); return { ok: false, status: 401 }; } };
   Object.defineProperty(context, 'localStorage', { get() { throw Error('No persistent credentials'); } });
-  vm.runInNewContext(readFileSync(new URL('../public/portfolio.js', import.meta.url), 'utf8'), context);
+  vm.runInNewContext(readFileSync(new URL('../public/portfolio.js', import.meta.url), 'utf8').replace(/^import[^\n]+\n/, ''), context);
   document.getElementById('token').value = 'test-key'; document.getElementById('login-form').dispatchEvent(new window.Event('submit', { cancelable: true })); await setImmediate();
   assert.equal(document.getElementById('report').hidden, true);
   assert.equal(document.getElementById('token').value, '');
@@ -76,6 +77,12 @@ test('portfolio dashboard authenticates in memory, labels examples, and renders 
   assert.equal(document.getElementById('demo-notice').hidden, false);
   assert.equal(document.querySelectorAll('.visit').length, 1);
   assert.match(document.getElementById('visits').textContent, /192\.0\.2\.10 \(예시\)/);
+  document.getElementById('csv-visits').click(); await setImmediate();
+  document.getElementById('csv-activity').click(); await setImmediate();
+  assert.equal(downloads.length, 2); assert.equal(downloads[0].type, 'text/csv;charset=utf-8');
+  assert.match(await downloads[0].text(), /최초 접속 \(KST\)/);
+  assert.match(await downloads[1].text(), /활동 종류/);
+  assert.match(await downloads[0].text(), /192\.0\.2\.10/);
   document.getElementById('logout').click(); assert.equal(document.getElementById('report').hidden, true);
 });
 test('research changes, source previews and deliberate video controls record specific content', async () => {

@@ -51,13 +51,29 @@ test('existing visit IDs cannot be overwritten by another network or reading ord
   assert.equal(report.summary.find(x => x.kind === 'read').seconds, 25);
   assert.equal(report.summary.find(x => x.kind === 'download').count, 1);
 });
-test('seven-day query window and scheduled cleanup remove expired visits and activity', async () => {
+test('30-day window preserves older visits and deletes only expired visits and activity', async () => {
   const e = env(), now = new Date('2026-11-24T12:00:00Z');
-  await persistPortfolio(e.DB, validatePortfolio(batch), request(), new Date(now.getTime() - 8 * 86400000));
+  await persistPortfolio(e.DB, validatePortfolio(batch), request(), new Date(now.getTime() - 31 * 86400000));
   const recent = { ...batch, visit: 'b'.repeat(32) };
   await persistPortfolio(e.DB, validatePortfolio(recent), request(recent), now);
-  assert.equal((await portfolioReport(e.DB, now)).total, 1);
+  const older = { ...batch, visit: 'c'.repeat(32) };
+  await persistPortfolio(e.DB, validatePortfolio(older), request(older), new Date(now.getTime() - 29 * 86400000));
+  const result = await portfolioReport(e.DB, now);
+  assert.equal(result.total, 2); assert.equal(result.days, 30);
   await cleanupPortfolio(e.DB, now);
-  assert.equal(e.DB.sqlite.prepare('SELECT COUNT(*) n FROM portfolio_visits').get().n, 1);
+  assert.equal(e.DB.sqlite.prepare('SELECT COUNT(*) n FROM portfolio_visits').get().n, 2);
   assert.equal(e.DB.sqlite.prepare('SELECT COUNT(*) n FROM portfolio_activity WHERE visit=?').get(batch.visit).n, 0);
+});
+test('authenticated full exports include more than the 500 displayed visits', async () => {
+  const e = env();
+  for (let i = 0; i < 501; i++) {
+    const entry = { ...batch, visit: i.toString(16).padStart(32, '0') };
+    await persistPortfolio(e.DB, validatePortfolio(entry), request(entry));
+  }
+  assert.equal((await portfolioReport(e.DB)).visits.length, 500);
+  const endpoint = 'https://metrics.example/api/portfolio?export=all';
+  assert.equal((await worker.fetch(new Request(endpoint), e)).status, 401);
+  const response = await worker.fetch(new Request(endpoint, { headers: { Authorization: 'Bearer ' + key } }), e);
+  const full = await response.json();
+  assert.equal(full.visits.length, 501); assert.equal(full.total, 501); assert.equal(full.limit, null);
 });

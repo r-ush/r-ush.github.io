@@ -1,7 +1,7 @@
 import config from '../../portfolio/analytics-config.json' with { type: 'json' };
 import { environment, geography, validAddress } from './metrics.mjs';
 
-export const PORTFOLIO_DAYS = 7;
+export const PORTFOLIO_DAYS = 30;
 const targets = {
   view: Object.keys(config.slides), read: Object.keys(config.slides),
   source: Object.keys(config.sources), 'video-play': Object.keys(config.videos),
@@ -48,10 +48,10 @@ export async function cleanupPortfolio(db, now = new Date()) {
     db.prepare('DELETE FROM portfolio_visits WHERE first_seen < ?').bind(cutoff)
   ]);
 }
-export async function portfolioReport(db, now = new Date()) {
+export async function portfolioReport(db, now = new Date(), { allVisits = false } = {}) {
   const from = new Date(now.getTime() - PORTFOLIO_DAYS * 86400000).toISOString();
   const [visits, activity, totals] = await Promise.all([
-    db.prepare('SELECT * FROM portfolio_visits WHERE first_seen >= ? ORDER BY last_seen DESC LIMIT 500').bind(from).all(),
+    db.prepare('SELECT * FROM portfolio_visits WHERE first_seen >= ? ORDER BY last_seen DESC' + (allVisits ? '' : ' LIMIT 500')).bind(from).all(),
     db.prepare(`SELECT a.* FROM portfolio_activity a JOIN portfolio_visits v ON v.visit=a.visit
       WHERE v.first_seen >= ? ORDER BY v.last_seen DESC`).bind(from).all(),
     db.prepare('SELECT COUNT(*) AS visits FROM portfolio_visits WHERE first_seen >= ?').bind(from).all()
@@ -65,6 +65,6 @@ export async function portfolioReport(db, now = new Date()) {
     row.count += item.count; row.seconds += item.seconds; summary.set(key, row);
   }
   return { days: PORTFOLIO_DAYS, from, to: now.toISOString(), total: totals.results?.[0]?.visits || 0,
-    limit: 500, labels: { slides: config.slides, sources: config.sources, downloads: config.downloads, videos: config.videoLabels },
+    limit: allVisits ? null : 500, labels: { slides: config.slides, sources: config.sources, downloads: config.downloads, videos: config.videoLabels },
     summary: [...summary.values()], visits: (visits.results || []).map(v => ({ ...v, activity: byVisit.get(v.visit) || [] })) };
 }

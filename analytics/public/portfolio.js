@@ -1,7 +1,8 @@
+import { portfolioCSV } from './portfolio-export.mjs';
 const $ = id => document.getElementById(id);
 const dt = new Intl.DateTimeFormat('ko-KR', { timeZone: 'Asia/Seoul', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit' });
 const country = new Intl.DisplayNames(['ko'], { type: 'region' });
-let token = '', data = null, sample = false, generation = 0;
+let token = '', data = null, sample = false, generation = 0, exporting = false;
 const el = (tag, text, cls) => { const node = document.createElement(tag); if (text !== undefined) node.textContent = text; if (cls) node.className = cls; return node; };
 const duration = seconds => Math.floor(seconds / 60) + '분 ' + seconds % 60 + '초';
 const kinds = { view: '열람', read: '활동 시간', source: '자료 미리보기', download: '다운로드 클릭', language: '화면 언어', 'video-play': '직접 재생/확대', 'video-seek': '영상 구간 탐색', 'video-complete': '직접 재생 후 90% 시청', outbound: '외부 링크' };
@@ -9,7 +10,7 @@ function target(item) { return data.labels.slides[item.target] || data.labels.so
 function value(item) { return item.kind === 'read' ? duration(item.seconds) : item.count + '회'; }
 function demo() {
   const activity = [{ kind: 'view', target: 'palm-gripper', count: 1, seconds: 0 }, { kind: 'read', target: 'palm-gripper', count: 0, seconds: 48 }, { kind: 'download', target: 'cv-ko', count: 1, seconds: 0 }];
-  return { days: 7, total: 1, limit: 500, from: new Date(Date.now() - 7 * 86400000).toISOString(), to: new Date().toISOString(), labels: { slides: { 'palm-gripper': 'PALM-Gripper' }, sources: {}, downloads: { 'cv-ko': '국문 CV' }, videos: {} }, summary: activity, visits: [{ visit: 'sample', first_seen: new Date().toISOString(), last_seen: new Date().toISOString(), path: '/portfolio/hardware-first/', ip: '192.0.2.10 (예시)', country: 'KR', region: 'KR-11', city: 'KR-11/Seoul (예시)', device: 'Desktop / other', browser: 'Chrome', os: 'Windows', activity }] };
+  return { days: 30, total: 1, limit: 500, from: new Date(Date.now() - 30 * 86400000).toISOString(), to: new Date().toISOString(), labels: { slides: { 'palm-gripper': 'PALM-Gripper' }, sources: {}, downloads: { 'cv-ko': '국문 CV' }, videos: {} }, summary: activity, visits: [{ visit: 'sample', first_seen: new Date().toISOString(), last_seen: new Date().toISOString(), path: '/portfolio/hardware-first/', ip: '192.0.2.10 (예시)', country: 'KR', region: 'KR-11', city: 'KR-11/Seoul (예시)', device: 'Desktop / other', browser: 'Chrome', os: 'Windows', activity }] };
 }
 function card(title, value, note) { const node = el('div', undefined, 'kpi'); node.append(el('span', title, 'kpi-label'), el('strong', value, 'kpi-value'), el('span', note, 'kpi-note')); return node; }
 function renderRows(id, rows) {
@@ -60,8 +61,30 @@ $('login-form').addEventListener('submit', event => { event.preventDefault(); to
 $('demo').addEventListener('click', () => { token = ''; sample = true; refresh(); });
 $('refresh').addEventListener('click', refresh);
 $('logout').addEventListener('click', () => { generation++; token = ''; data = null; sample = false; $('report').hidden = true; $('login').hidden = false; $('visits').replaceChildren(); $('status').textContent = ''; });
-$('export').addEventListener('click', () => {
-  if (!data) return;
-  const url = URL.createObjectURL(new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' }));
-  const link = el('a'); link.href = url; link.download = 'portfolio-visits-' + new Date().toISOString().slice(0, 10) + '.json'; link.click(); setTimeout(() => URL.revokeObjectURL(url), 1000);
-});
+async function download(type) {
+  if (!data || exporting) return;
+  exporting = true;
+  const current = generation, demoExport = sample;
+  const buttons = ['csv-visits', 'csv-activity', 'export'].map($);
+  buttons.forEach(button => { button.disabled = true; });
+  $('status').textContent = '최근 30일 전체 기록을 준비하는 중입니다.';
+  try {
+    let full = data;
+    if (!demoExport) {
+      const response = await fetch('/api/portfolio?export=all', { credentials: 'omit', cache: 'no-store', headers: { Authorization: 'Bearer ' + token } });
+      if (!response.ok) throw Error(response.status === 401 ? '관리자 키를 확인해 주세요.' : '기록을 저장하지 못했습니다. 다시 시도해 주세요.');
+      full = await response.json();
+    }
+    if (current !== generation) return;
+    const json = type === 'json', text = json ? JSON.stringify(full, null, 2) : portfolioCSV(full, type);
+    const url = URL.createObjectURL(new Blob([text], { type: json ? 'application/json' : 'text/csv;charset=utf-8' }));
+    const stamp = new Date(Date.now() + 9 * 3600000).toISOString().slice(0, 10);
+    const link = el('a'); link.href = url; link.download = (demoExport ? 'sample-' : '') + 'portfolio-' + (json ? 'records' : type) + '-' + stamp + (json ? '.json' : '.csv');
+    link.click(); setTimeout(() => URL.revokeObjectURL(url), 1000);
+    $('status').textContent = (demoExport ? '예시 ' : '') + '접속 ' + full.total + '건의 파일 다운로드를 시작했습니다.';
+  } catch (error) { if (current === generation) $('status').textContent = error.message; }
+  finally { exporting = false; buttons.forEach(button => { button.disabled = false; }); }
+}
+$('csv-visits').addEventListener('click', () => download('visits'));
+$('csv-activity').addEventListener('click', () => download('activity'));
+$('export').addEventListener('click', () => download('json'));

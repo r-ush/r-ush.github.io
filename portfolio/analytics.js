@@ -20,7 +20,7 @@
   const optout = document.createElement('button'); optout.type = 'button';
   notice.append(policy, optout); document.querySelector('.toolbar').append(notice);
   function noticeText() {
-    policy.textContent = en() ? 'IP & usage · 7 days' : 'IP·이용기록 · 7일';
+    policy.textContent = en() ? 'IP & usage · 30 days' : 'IP·이용기록 · 30일';
     optout.textContent = excluded() ? (en() ? 'Excluded' : '수집 제외됨') : (en() ? 'Exclude me' : '수집 제외');
     optout.disabled = excluded();
   }

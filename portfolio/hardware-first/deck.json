@@ -1,7 +1,7 @@
 {
   "width": 841.8897705078125,
   "height": 595.2755737304688,
-  "pdf_sha256": "2906a2bf517f9eac1e34a5f796a8ba8150dc36375deab78ac39eb49ffb2de6a5",
+  "pdf_sha256": "92f8bf11e7f3a39a95bab0794fdfad9c95d06281c7000cf7ab4abe0466c46ff0",
   "language": "ko",
   "pdf_file": "portfolio.pdf",
   "download_name": "엄승환_로봇포트폴리오_하드웨어중심.pdf",
@@ -2582,7 +2582,7 @@
       "id": "rec-gripper",
       "title": "ReC-Gripper",
       "svg": "slides/page-03.svg",
-      "text": "01  /  RECONFIGURABLE GRIPPER\nReC-Gripper\n흡착·손가락 파지를 결합한 재구성 그리퍼 설계 및 선반 피킹·적재 실험\nRGMC Trial 1 · 02:53-03:53 (원본 x2)\nRGMC Trial 3 · 25:00-26:00 (원본 x2)\n기구 설계, 파지·적재 실험, 결과 분석 및 논문 작성(제1저자)\nIEEE Robotics and Automation Letters 게재 · ICRA 2024 발표\n1.\n흡착부와 손가락을 결합한 재구성 메커니즘 설계\n2.\n작업별 그리퍼 구성 전환 및 선반 접근·파지 동작 구현\n3.\n실물 그리퍼를 이용한 선반 피킹·적재 실험\n[2] Um, S., et al. \"ReC-Gripper: A Reconfigurable Combined Suction and Fingered Gripper for Various Logistics Picking and Stowing Tasks\" IEEE Robotics and Automation Letters (2024).\n영상·상세\nSEUNGHWAN UM  /  ROBOTICS\n2026.11\n03 / 11\n",
+      "text": "01  /  RECONFIGURABLE GRIPPER\nReC-Gripper\n흡착·손가락 파지를 결합한 재구성 그리퍼 설계 및 선반 피킹·적재 실험\nReC-Gripper의 선반 적재\nRGMC · 02:53-03:53 + 25:00-26:00 (원본 x2)\n기구 설계, 파지·적재 실험, 결과 분석 및 논문 작성(제1저자)\nIEEE Robotics and Automation Letters 게재 · ICRA 2024 발표\n1.\n흡착부와 손가락을 결합한 재구성 메커니즘 설계\n2.\n작업별 그리퍼 구성 전환 및 선반 접근·파지 동작 구현\n3.\n실물 그리퍼를 이용한 선반 피킹·적재 실험\n[2] Um, S., et al. \"ReC-Gripper: A Reconfigurable Combined Suction and Fingered Gripper for Various Logistics Picking and Stowing Tasks\" IEEE Robotics and Automation Letters (2024).\n영상·상세\nSEUNGHWAN UM  /  ROBOTICS\n2026.11\n03 / 11\n",
       "text_runs": [
         {
           "line": 0,
@@ -2716,42 +2716,26 @@
         },
         {
           "line": 3,
-          "text": "RGMC Trial 1 · 02:53-03:53 (원본 x2)",
+          "text": "ReC-Gripper의 선반 적재",
           "x": [
             28.0,
             33.612,
-            40.0704,
-            48.5068,
-            54.3488,
-            57.5872,
-            62.5,
-            65.7568,
-            68.02,
-            72.804,
-            75.0672,
-            78.3056,
-            83.3748,
-            86.6132,
-            88.628,
-            91.8664,
-            96.9356,
-            102.0048,
-            104.0196,
-            109.0888,
-            114.158,
-            117.93,
-            122.9992,
-            128.0684,
-            130.0832,
-            135.1524,
-            140.2216,
-            143.46,
-            146.266,
-            155.466,
-            164.666,
-            167.9044,
-            172.1824,
-            177.2516
+            38.534,
+            44.376,
+            48.148,
+            54.6064,
+            57.8632,
+            60.1264,
+            65.6556,
+            71.1848,
+            76.1068,
+            79.3636,
+            88.5636,
+            91.802,
+            101.002,
+            110.202,
+            113.4404,
+            122.6404
           ],
           "y": 395.2,
           "size": 9.2,
@@ -2760,14 +2744,14 @@
           "rect": [
             28.0,
             387.8418,
-            152.0576,
+            103.8404,
             9.2
           ],
-          "end": 180.0576
+          "end": 131.8404
         },
         {
           "line": 4,
-          "text": "RGMC Trial 3 · 25:00-26:00 (원본 x2)",
+          "text": "RGMC · 02:53-03:53 + 25:00-26:00 (원본 x2)",
           "x": [
             433.0,
             438.612,
@@ -2775,34 +2759,40 @@
             453.5068,
             459.3488,
             462.5872,
-            467.5,
-            470.7568,
-            473.02,
-            477.804,
-            480.0672,
-            483.3056,
-            488.3748,
-            491.6132,
-            493.628,
-            496.8664,
-            501.9356,
-            507.0048,
-            509.0196,
-            514.0888,
-            519.158,
-            522.93,
-            527.9992,
-            533.0684,
-            535.0832,
-            540.1524,
-            545.2216,
-            548.46,
-            551.266,
-            560.466,
-            569.666,
-            572.9044,
-            577.1824,
-            582.2516
+            464.602,
+            467.8404,
+            472.9096,
+            477.9788,
+            479.9936,
+            485.0628,
+            490.132,
+            493.904,
+            498.9732,
+            504.0424,
+            506.0572,
+            511.1264,
+            516.1956,
+            519.434,
+            525.8832,
+            529.1216,
+            534.1908,
+            539.26,
+            541.2748,
+            546.344,
+            551.4132,
+            555.1852,
+            560.2544,
+            565.3236,
+            567.3384,
+            572.4076,
+            577.4768,
+            580.7152,
+            583.5212,
+            592.7212,
+            601.9212,
+            605.1596,
+            609.4376,
+            614.5068
           ],
           "y": 395.2,
           "size": 9.2,
@@ -2811,10 +2801,10 @@
           "rect": [
             433.0,
             387.8418,
-            152.0576,
+            184.3129,
             9.2
           ],
-          "end": 585.0576
+          "end": 617.3129
         },
         {
           "line": 5,
@@ -3558,9 +3548,9 @@
             381,
             252
           ],
-          "video": "/assets/videos/rec-rgmc-trial1-0253-0353.mp4",
-          "poster": "/assets/rec-rgmc-trial1-0253-0353.jpg",
-          "caption": "RGMC Trial 1 · 02:53-03:53 (원본 x2)"
+          "video": "/assets/videos/rec-picking-stowing.mp4",
+          "poster": "/assets/rec-picking-stowing.jpg",
+          "caption": "재구성 그리퍼의 선반 적재 · 1×"
         },
         {
           "rect": [
@@ -3569,21 +3559,16 @@
             381,
             252
           ],
-          "video": "/assets/videos/rec-rgmc-trial3-2500-2600.mp4",
-          "poster": "/assets/rec-rgmc-trial3-2500-2600.jpg",
-          "caption": "RGMC Trial 3 · 25:00-26:00 (원본 x2)"
+          "video": "/assets/videos/rec-rgmc-combined-2min.mp4",
+          "poster": "/assets/rec-rgmc-combined-2min.jpg",
+          "caption": "RGMC · 02:53-03:53 + 25:00-26:00 (원본 x2)"
         }
       ],
       "extras": [
         {
-          "video": "/assets/videos/rec-rgmc-trial1-0253-0353.mp4",
-          "poster": "/assets/rec-rgmc-trial1-0253-0353.jpg",
-          "caption": "RGMC Trial 1 · 02:53-03:53 (원본 x2)"
-        },
-        {
-          "video": "/assets/videos/rec-rgmc-trial3-2500-2600.mp4",
-          "poster": "/assets/rec-rgmc-trial3-2500-2600.jpg",
-          "caption": "RGMC Trial 3 · 25:00-26:00 (원본 x2)"
+          "video": "/assets/videos/rec-rgmc-combined-2min.mp4",
+          "poster": "/assets/rec-rgmc-combined-2min.jpg",
+          "caption": "RGMC · 02:53-03:53 + 25:00-26:00 (원본 x2)"
         },
         {
           "video": "/assets/videos/rec-suction-mechanism.mp4",

@@ -6,9 +6,10 @@ The alternate research order is https://r-ush.github.io/portfolio/.
 KR / EN changes the current document without a separate English route.
 Both original CVs are downloadable from either order.
 
-ReC's inline videos are two one-minute RGMC excerpts: 02:53-03:53 on the left
-and 25:00-26:00 on the right. Original Trial 1 / Trial 3 and x2 annotations are
-retained, with no extra speed change. Four other ReC clips remain in the gallery.
+ReC keeps the original shelf-stowing video on the left. The right video joins
+02:53-03:53 followed by 25:00-26:00 into one two-minute RGMC edit. Original
+Trial 1 / Trial 3 and x2 annotations are retained, with no extra speed change.
+The ReC gallery contains the combined edit and four existing demonstration clips.
 
 ReC, PALM and Collision pages carry small numbered references at the bottom.
 The publications and awards page uses its existing paper links without a duplicate

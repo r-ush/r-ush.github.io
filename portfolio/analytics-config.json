@@ -51,7 +51,8 @@
     "video-16": "https://r-ush.github.io/scooping_robotic_hand/static/videos/black_object_grasping_rollout_final.mp4",
     "video-17": "https://r-ush.github.io/scooping_robotic_hand/static/videos/comparison_w_wo_impedance.mp4",
     "video-18": "/assets/videos/rec-rgmc-trial1-0253-0353.mp4",
-    "video-19": "/assets/videos/rec-rgmc-trial3-2500-2600.mp4"
+    "video-19": "/assets/videos/rec-rgmc-trial3-2500-2600.mp4",
+    "video-20": "/assets/videos/rec-rgmc-combined-2min.mp4"
   },
   "videoLabels": {
     "video-01": "물체와 선반에 맞춰 적응하는 PALM-Gripper의 손가락.",
@@ -72,7 +73,8 @@
     "video-16": "Diffusion Policy 기반 scooping·파지 · 다중 장면·카메라 뷰 편집본",
     "video-17": "순응 제어 적용 전후 scooping 동작 비교 · 원본 조건 표기 유지",
     "video-18": "RGMC Trial 1 · 02:53-03:53 (원본 x2)",
-    "video-19": "RGMC Trial 3 · 25:00-26:00 (원본 x2)"
+    "video-19": "RGMC Trial 3 · 25:00-26:00 (원본 x2)",
+    "video-20": "RGMC · 02:53-03:53 + 25:00-26:00 (원본 x2)"
   },
   "downloads": {
     "cv-ko": "국문 CV",

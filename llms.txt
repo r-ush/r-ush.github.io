@@ -9,6 +9,7 @@
 ## Publications
 
 - **PALM-Gripper: Integrated Gripper with Parallel AdaptabLe Mechanism for Shelf Picking in Logistics** (IEEE Transactions on Mechatronics, 2026). Authors: Seunghwan Um, Yeong Gwang Son, Juyong Hong, Chun Soo Kim, Issac Rhee, Heeyeon Jeong, Hyouk Ryeol Choi. Paper: https://ieeexplore.ieee.org/document/11361366
+- **Object-Mesh-Free Dexterous Robot Demonstrations from Human RGB-D Video and Teleoperation** (Machines, 2026, selected as Cover Issue). Authors: Juyong Hong, Seunghwan Um, Young Gwang Son, Chul Hyun Kwon, Chemin Ahn, Taehyun Bae, Sihoon Leeu, Taehwan Yun, Taiho Ko, Hyouk Ryeol Choi. Paper: https://doi.org/10.3390/machines14111303 Project page: https://sihoonleeu.github.io/human-to-robot/
 - **Toward Reliable Bin-Picking: Collision-Aware Robotic Design and Control Strategy for Heavily Cluttered Environment** (IEEE Robotics and Automation Practice, 2026). Authors: Seunghwan Um, Yeong Gwang Son, Jaeyun Sim, Hyouk Ryeol Choi. Paper: https://ieeexplore.ieee.org/document/11358698
 - **Plug-and-Play Shape Matching Module for Zero-Shot Mesh-Free Grasp Refinement on Unknown Objects** (IEEE RA-L, presented at ICRA 2026). Authors: Juyong Hong, Yeong Gwang Son, Seunghwan Um, Hyouk Ryeol Choi. Paper: https://ieeexplore.ieee.org/document/11206455
 - **Corner-Grasp: Multi-Action Grasp Detection and Active Gripper Adaptation for Grasping in Cluttered Environments** (arXiv preprint, 2025). Authors: Yeong Gwang Son, Seunghwan Um, Juyong Hong, Tat Hieu Bui, Hyouk Ryeol Choi.

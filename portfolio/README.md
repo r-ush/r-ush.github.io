@@ -6,8 +6,9 @@ The alternate research order is https://r-ush.github.io/portfolio/.
 KR / EN changes the current document without a separate English route.
 Both original CVs are downloadable from either order.
 
-ReC, PALM and Collision pages carry small numbered references at the bottom;
-the publications page carries all four. Each includes the lead author, complete
+ReC, PALM and Collision pages carry small numbered references at the bottom.
+The publications and awards page uses its existing paper links without a duplicate
+reference list. Each research-page reference includes the lead author, complete
 paper title, full venue and year, with a link on the title. Numbering is consistent
 across languages and reading orders. The authoring source keeps the metadata in
 `publication-references.json` and renders it into both the PDFs and web artwork.

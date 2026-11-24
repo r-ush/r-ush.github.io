@@ -120,6 +120,7 @@
     const gap=side?18:0;
     const scale=Math.max(.1,Math.min((availableW-panelWidth-gap)/width,availableH/height))*zoom;
     frame.style.width=`${width*scale}px`;frame.style.height=`${height*scale}px`;
+    frame.style.setProperty('--page-scale',String(scale));
     byId('page-desk').style.width=`${width*scale+panelWidth+gap}px`;
     byId('page-desk').style.height=`${height*scale}px`;
     if(panelWidth)byId('page-desk').style.setProperty('--evidence-width',`${panelWidth}px`);
@@ -205,7 +206,7 @@
     if(next!==null){event.preventDefault();go(next);}
   });
   let swipe=null;
-  stage.addEventListener('pointerdown',event=>{if(event.pointerType==='touch'&&zoom===1&&!event.target.closest('video,button,a,input,svg'))swipe={x:event.clientX,y:event.clientY};});
+  stage.addEventListener('pointerdown',event=>{if(event.pointerType==='touch'&&zoom===1&&!event.target.closest('video,button,a,input,.selectable-text'))swipe={x:event.clientX,y:event.clientY};});
   stage.addEventListener('pointerup',event=>{if(!swipe)return;const dx=event.clientX-swipe.x,dy=event.clientY-swipe.y;swipe=null;if(Math.abs(dx)>60&&Math.abs(dx)>Math.abs(dy)*1.5)go(current+(dx<0?1:-1));});
   stage.addEventListener('pointercancel',()=>{swipe=null;});
   window.addEventListener('hashchange',()=>{dialogs.forEach(d=>{if(d.open)d.close();});go(core.indexFromHash(location.hash,pages),false);});

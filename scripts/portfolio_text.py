@@ -1,4 +1,4 @@
-"""Read native PDF character positions for a selectable, invisible web text layer."""
+"""Read native PDF character positions and hit boxes for web text selection."""
 
 def extract_text_runs(page, links, media):
     runs = []
@@ -25,10 +25,13 @@ def extract_text_runs(page, links, media):
                     if current is None or current['link'] != link:
                         current = {'line': line_number, 'text': '', 'x': [],
                                    'y': round(span['origin'][1], 4), 'size': round(span['size'], 4),
-                                   'bold': bool(span['flags'] & 16), 'link': link}
+                                   'bold': bool(span['flags'] & 16), 'link': link,
+                                   'rect': [round(x0, 4), round(y0, 4), 0, round(y1-y0, 4)]}
                         runs.append(current)
                     current['text'] += char['c']
                     current['x'].append(round(char['origin'][0], 4))
+                    current['end'] = round(x1, 4)
+                    current['rect'][2] = round(x1-current['rect'][0], 4)
             line_number += 1
     copied = '\n'.join(''.join(run['text'] for run in runs if run['line'] == number) for number in range(line_number)) + '\n'
     if copied != page.get_text():

@@ -23,10 +23,11 @@ dialog{width:min(880px,calc(100% - 32px));max-height:calc(100dvh - 48px);padding
 .cv-link:hover{background:#e5e9e4}
 @media(max-width:780px){.topbar{height:auto;min-height:42px;flex-wrap:wrap;padding:4px 8px;gap:3px 8px}.topbar .brand{flex:1}.language-switch{margin-left:0}.topbar nav{width:100%;flex-wrap:wrap;justify-content:flex-end;gap:3px}.cv-link{padding:4px 7px;margin-left:2px}}
 
-/* Native text selection aligned to the PDF's character positions. */
-.selectable-text{position:absolute;inset:0;width:100%;height:100%;z-index:2;overflow:visible;pointer-events:none;user-select:text;-webkit-user-select:text}
-.selectable-text text{font-family:"Malgun Gothic","Apple SD Gothic Neo",sans-serif;fill:transparent;stroke:none;white-space:pre;pointer-events:all;cursor:text;user-select:text;-webkit-user-select:text}
-.selectable-text text::selection{background:#83bb9c80;color:#133d2c;fill:#133d2c}
+/* HTML text uses full rectangular hit areas; empty page space cannot anchor a selection. */
+.slide{user-select:none;-webkit-user-select:none}
+.selectable-text{position:absolute;left:0;top:0;z-index:2;transform:scale(var(--page-scale,1));transform-origin:0 0;pointer-events:none;user-select:text;-webkit-user-select:text}
+.selectable-text .text-run{position:absolute;display:block;font-family:"Malgun Gothic","Apple SD Gothic Neo",sans-serif;font-kerning:none;font-variant-ligatures:none;color:transparent;white-space:pre;pointer-events:auto;cursor:text;user-select:text;-webkit-user-select:text}
+.selectable-text ::selection{background:transparent;color:transparent}
 .slide>.sr-only{user-select:none;-webkit-user-select:none}
 .slide .page-link,.slide .evidence-hotspot{z-index:1}
 @media print{.selectable-text{display:none}}

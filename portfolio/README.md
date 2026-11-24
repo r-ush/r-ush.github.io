@@ -7,8 +7,11 @@ KR / EN changes the current document without a separate English route.
 Both original CVs are downloadable from either order.
 
 Page text is selectable directly over the unchanged PDF artwork in both languages.
-`text-layer.js` uses native SVG text at the PDF's character positions; copying
-preserves original text and line breaks. Dragging a selection does not open source
+`text-layer.js` uses HTML text with PDF character positions and rectangular hit
+areas. Mouse dragging retains its initial anchor and maps gaps to the nearest
+character, including after zooming. Copying resolves both text and element
+boundaries without defaulting to the page start, and preserves line breaks.
+Selection highlights use PDF bounds. Dragging a selection does not open source
 previews or trigger touch page navigation. Video controls remain above the text.
 The authoring build generates `text_runs` automatically. To refresh only the text
 metadata from the unchanged PDFs here, use `python scripts/portfolio_text.py --dist portfolio`.

@@ -6,6 +6,10 @@ The alternate research order is https://r-ush.github.io/portfolio/.
 KR / EN changes the current document without a separate English route.
 Both original CVs are downloadable from either order.
 
+ReC's inline videos are two one-minute RGMC excerpts: 02:53-03:53 on the left
+and 25:00-26:00 on the right. Original Trial 1 / Trial 3 and x2 annotations are
+retained, with no extra speed change. Four other ReC clips remain in the gallery.
+
 ReC, PALM and Collision pages carry small numbered references at the bottom.
 The publications and awards page uses its existing paper links without a duplicate
 reference list. Each research-page reference includes the lead author, complete

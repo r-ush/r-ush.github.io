@@ -17,6 +17,8 @@ parser.add_argument('--source', required=True, type=Path)
 args = parser.parse_args()
 source = args.source.resolve()
 dest = ROOT/'portfolio'
+prior_config_path = dest/'analytics-config.json'
+prior_config = json.loads(prior_config_path.read_text(encoding='utf-8')) if prior_config_path.exists() else {}
 if source == dest.resolve() or not (source/'index.html').is_file():
     parser.error('Use a separate, completed standalone export directory')
 html = (source/'index.html').read_text(encoding='utf-8')
@@ -35,13 +37,22 @@ for file in source.rglob('*'):
     shutil.copy2(file, target)
 deck = json.loads((dest/'deck.json').read_text(encoding='utf-8'))
 captions = {clip['video']: clip['caption'] for page in deck['pages'] for clip in page['extras']}
-videos = {f'video-{i+1:02}': url for i, url in enumerate(sorted(captions))}
+# Keep historical video IDs and labels when clips are added or replaced.
+videos = dict(prior_config.get('videos', {}))
+video_labels = dict(prior_config.get('videoLabels', {}))
+by_url = {url: key for key, url in videos.items()}
+next_id = max((int(key.split('-')[1]) for key in videos), default=0) + 1
+for url in sorted(captions):
+    if url not in by_url:
+        key = f'video-{next_id:02}'
+        videos[key] = url; by_url[url] = key; next_id += 1
+    video_labels[by_url[url]] = captions[url]
 config = {
     'endpoint': 'https://rush-analytics.r-ush.workers.dev/collect/portfolio',
     'paths': ['/portfolio/', '/portfolio/hardware-first/'],
     'slides': {page['id']: page['title'] for page in deck['pages']},
     'sources': {item['id']: item['label'] for page in deck['pages'] for item in page['evidence']},
-    'videos': videos, 'videoLabels': {key: captions[url] for key, url in videos.items()},
+    'videos': videos, 'videoLabels': video_labels,
     'downloads': {'cv-ko': '국문 CV', 'cv-en': 'English CV', 'portfolio-ko': '국문 포트폴리오', 'portfolio-en': 'English portfolio'},
 }
 (dest/'analytics-config.json').write_text(json.dumps(config, ensure_ascii=False, indent=2)+'\n', encoding='utf-8')
@@ -59,4 +70,4 @@ for variant in ['', 'hardware-first']:
         else:
             content = content.replace('</body>', f'<script src="{url}" defer></script></body>')
     page.write_text(content, encoding='utf-8')
-print(f'Synced standalone portfolio: {len(deck["pages"])} pages, {len(videos)} videos; not published')
+print(f'Synced standalone portfolio: {len(deck["pages"])} pages, {len(captions)} active videos; historical video IDs retained; not published')

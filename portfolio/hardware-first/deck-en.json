@@ -1,7 +1,7 @@
 {
   "width": 841.8897705078125,
   "height": 595.2755737304688,
-  "pdf_sha256": "0e5878352ecb45223e1cb2b242623dd11fa292b9fdcb0df00bde1bcae0f9ce1a",
+  "pdf_sha256": "9d822d65731d49eec35728e4266b732b3b425eb6f5352870d775983b53abe138",
   "language": "en",
   "pdf_file": "portfolio-en.pdf",
   "download_name": "Seunghwan_Um_Robotics_Portfolio_Hardware_First.pdf",
@@ -3209,7 +3209,7 @@
       "id": "rec-gripper",
       "title": "ReC-Gripper",
       "svg": "slides-en/page-03.svg",
-      "text": "01  /  RECONFIGURABLE GRIPPER\nReC-Gripper\nA reconfigurable suction-and-finger gripper for shelf picking and stowing.\nReC-Gripper shelf stowing\nICRA 2024 RGMC · Trial 1 (original x2 label retained)\nMechanism design, picking/stowing experiments, analysis, and\nfirst-author paper preparation.\nIEEE Robotics and Automation Letters · Presented at ICRA 2024\n1.\nDesigned a reconfigurable mechanism combining suction and fingers.\n2.\nImplemented configuration changes for shelf approach and grasping.\n3.\nEvaluated shelf picking and stowing with the physical gripper.\n[2] Um, S., et al. \"ReC-Gripper: A Reconfigurable Combined Suction and Fingered Gripper for Various Logistics Picking and Stowing Tasks\" IEEE Robotics and Automation Letters (2024).\nDetails\nSEUNGHWAN UM  /  ROBOTICS\n2026.11\n03 / 11\n",
+      "text": "01  /  RECONFIGURABLE GRIPPER\nReC-Gripper\nA reconfigurable suction-and-finger gripper for shelf picking and stowing.\nRGMC Trial 1 · 02:53-03:53 (original x2)\nRGMC Trial 3 · 25:00-26:00 (original x2)\nMechanism design, picking/stowing experiments, analysis, and\nfirst-author paper preparation.\nIEEE Robotics and Automation Letters · Presented at ICRA 2024\n1.\nDesigned a reconfigurable mechanism combining suction and fingers.\n2.\nImplemented configuration changes for shelf approach and grasping.\n3.\nEvaluated shelf picking and stowing with the physical gripper.\n[2] Um, S., et al. \"ReC-Gripper: A Reconfigurable Combined Suction and Fingered Gripper for Various Logistics Picking and Stowing Tasks\" IEEE Robotics and Automation Letters (2024).\nDetails\nSEUNGHWAN UM  /  ROBOTICS\n2026.11\n03 / 11\n",
       "text_runs": [
         {
           "line": 0,
@@ -3378,33 +3378,48 @@
         },
         {
           "line": 3,
-          "text": "ReC-Gripper shelf stowing",
+          "text": "RGMC Trial 1 · 02:53-03:53 (original x2)",
           "x": [
             28.0,
             33.612,
-            38.534,
-            44.376,
-            48.148,
-            54.6064,
-            57.8632,
-            60.1264,
-            65.6556,
-            71.1848,
-            76.1068,
-            79.3636,
-            82.602,
-            86.5856,
-            91.9124,
-            96.8344,
-            99.0976,
+            40.0704,
+            48.5068,
+            54.3488,
+            57.5872,
+            62.5,
+            65.7568,
+            68.02,
+            72.804,
+            75.0672,
+            78.3056,
+            83.3748,
+            86.6132,
+            88.628,
+            91.8664,
+            96.9356,
             102.0048,
-            105.2432,
-            109.2268,
-            112.4008,
-            117.9116,
-            124.6828,
-            126.946,
-            132.2636
+            104.0196,
+            109.0888,
+            114.158,
+            117.93,
+            122.9992,
+            128.0684,
+            130.0832,
+            135.1524,
+            140.2216,
+            143.46,
+            146.266,
+            151.7768,
+            155.0336,
+            157.2968,
+            162.8352,
+            165.0984,
+            170.416,
+            175.2,
+            177.4632,
+            180.7016,
+            184.9796,
+            190.0488
           ],
           "y": 395.2,
           "size": 9.2,
@@ -3413,97 +3428,67 @@
           "rect": [
             28.0,
             387.8418,
-            109.802,
+            164.8548,
             9.2
           ],
-          "end": 137.802
+          "end": 192.8548
         },
         {
           "line": 4,
-          "text": "ICRA 2024 RGMC",
+          "text": "RGMC Trial 3 · 25:00-26:00 (original x2)",
           "x": [
             433.0,
-            435.484,
-            441.326,
-            446.938,
-            452.9916,
-            456.23,
-            461.2992,
-            466.3684,
-            471.4376,
-            476.5068,
-            479.7452,
-            485.3572,
-            491.8156,
-            500.252
-          ],
-          "y": 395.2,
-          "size": 9.2,
-          "bold": false,
-          "link": 6,
-          "rect": [
-            433.0,
-            387.8418,
-            73.094,
-            9.2
-          ],
-          "end": 506.094
-        },
-        {
-          "line": 4,
-          "text": " · Trial 1 (original x2 label retained)",
-          "x": [
-            506.094,
-            509.3324,
-            511.3472,
-            514.5856,
-            519.4984,
-            522.7552,
-            525.0184,
-            529.8024,
-            532.0656,
-            535.304,
-            540.3732,
-            543.6116,
-            546.4176,
-            551.9284,
-            555.1852,
-            557.4484,
-            562.9868,
-            565.25,
-            570.5676,
-            575.3516,
-            577.6148,
-            580.8532,
-            585.1312,
-            590.2004,
-            593.4388,
-            595.702,
-            600.486,
-            606.0152,
-            610.9372,
-            613.2004,
-            616.4388,
-            619.6956,
-            624.6176,
-            627.7916,
-            632.5756,
-            634.8388,
-            640.1564,
-            645.0784,
-            650.6168
+            438.612,
+            445.0704,
+            453.5068,
+            459.3488,
+            462.5872,
+            467.5,
+            470.7568,
+            473.02,
+            477.804,
+            480.0672,
+            483.3056,
+            488.3748,
+            491.6132,
+            493.628,
+            496.8664,
+            501.9356,
+            507.0048,
+            509.0196,
+            514.0888,
+            519.158,
+            522.93,
+            527.9992,
+            533.0684,
+            535.0832,
+            540.1524,
+            545.2216,
+            548.46,
+            551.266,
+            556.7768,
+            560.0336,
+            562.2968,
+            567.8352,
+            570.0984,
+            575.416,
+            580.2,
+            582.4632,
+            585.7016,
+            589.9796,
+            595.0488
           ],
           "y": 395.2,
           "size": 9.2,
           "bold": false,
           "link": null,
           "rect": [
-            506.094,
+            433.0,
             387.8418,
-            147.3289,
+            164.8549,
             9.2
           ],
-          "end": 653.4229
+          "end": 597.8549
         },
         {
           "line": 5,
@@ -4434,16 +4419,6 @@
           ],
           "href": "https://doi.org/10.1109/LRA.2023.3330051",
           "label": "IEEE Robotics and Automation Letters"
-        },
-        {
-          "rect": [
-            433.0,
-            387.8417663574219,
-            73.09402465820312,
-            9.20001220703125
-          ],
-          "href": "https://r-ush.github.io/portfolio/assets/evidence/rgmc-award-1.png",
-          "label": "ICRA 2024 RGMC"
         }
       ],
       "media": [
@@ -4454,9 +4429,9 @@
             381,
             252
           ],
-          "video": "/assets/videos/rec-picking-stowing.mp4",
-          "poster": "/assets/rec-picking-stowing.jpg",
-          "caption": "Reconfigurable shelf stowing · 1x"
+          "video": "/assets/videos/rec-rgmc-trial1-0253-0353.mp4",
+          "poster": "/assets/rec-rgmc-trial1-0253-0353.jpg",
+          "caption": "RGMC Trial 1 · 02:53-03:53 (original x2)"
         },
         {
           "rect": [
@@ -4465,16 +4440,21 @@
             381,
             252
           ],
-          "video": "/assets/videos/rec-rgmc-selected.mp4",
-          "poster": "/assets/rec-rgmc-selected.jpg",
-          "caption": "ICRA 2024 RGMC · Trial 1 (original x2 label retained)"
+          "video": "/assets/videos/rec-rgmc-trial3-2500-2600.mp4",
+          "poster": "/assets/rec-rgmc-trial3-2500-2600.jpg",
+          "caption": "RGMC Trial 3 · 25:00-26:00 (original x2)"
         }
       ],
       "extras": [
         {
-          "video": "/assets/videos/rec-rgmc-selected.mp4",
-          "poster": "/assets/rec-rgmc-selected.jpg",
-          "caption": "ICRA 2024 RGMC · Trial 1 (original x2 label retained)"
+          "video": "/assets/videos/rec-rgmc-trial1-0253-0353.mp4",
+          "poster": "/assets/rec-rgmc-trial1-0253-0353.jpg",
+          "caption": "RGMC Trial 1 · 02:53-03:53 (original x2)"
+        },
+        {
+          "video": "/assets/videos/rec-rgmc-trial3-2500-2600.mp4",
+          "poster": "/assets/rec-rgmc-trial3-2500-2600.jpg",
+          "caption": "RGMC Trial 3 · 25:00-26:00 (original x2)"
         },
         {
           "video": "/assets/videos/rec-suction-mechanism.mp4",
@@ -4546,16 +4526,6 @@
             554.00146484375,
             129.0751953125,
             7.5
-          ]
-        },
-        {
-          "id": "rgmc-award",
-          "label": "RGMC 2nd",
-          "rect": [
-            433.0,
-            387.8417663574219,
-            73.09402465820312,
-            9.20001220703125
           ]
         }
       ]
